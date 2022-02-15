@@ -37,10 +37,6 @@ a {
   padding: 1rem;
 }
 
-body {
-  background-color: aqua;
-}
-
 .btnTransparent {
   box-sizing: border-box;
   border-radius: 10px;
@@ -111,8 +107,35 @@ body {
   transition: 0.8s;
 }
 
+nav ul {
+  display: flex;
+  gap: 1rem;
+  text-align: center;
+  justify-content: center;
+}
+nav ul li a {
+  list-style-type: none;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+nav ul li a:hover {
+  color: #2A4876;
+  transition: 0.8s;
+}
+
+.copyright {
+  padding-top: 2rem;
+  text-align: center;
+  justify-content: center;
+  color: #FFFFFF;
+}
+
 Body {
   background-color: gainsboro;
+}
+
+body {
+  background-color: red;
 }
 
 /*# sourceMappingURL=style.css.map */
