@@ -1,0 +1,26 @@
+nav {
+  ul {
+    display: flex;
+    gap: 1rem;
+    text-align: center;
+    justify-content: center;
+
+    li a {
+      list-style-type: none;
+      text-decoration: none;
+      color: $white;
+    }
+  }
+  ul li a:hover {
+    color: $blue;
+    transition: 0.8s;
+  }
+}
+
+.copyright{
+  padding-top: 2rem;
+  text-align: center;
+  justify-content: center;
+  color: $white;
+}
+

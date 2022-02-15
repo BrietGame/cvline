@@ -11,12 +11,23 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
+<footer>
+    <div class="wrap1">
+        <nav>
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">CGU Mentions légales</a></li>
+                <li><a href="#">CGU Mentions légales</a></li>
+                <li><a href="#">A propos</a></li>
+                <li><a href="#">S'iscrire/ Se connecter</a></li>
+            </ul>
+        </nav>
+        <div class="copyright">
+            <p>Copiryght CV LINE Compary</p>
+        </div>
+    </div>
 
-		</div>
-	</footer>
-</div>
+</footer>
 
 <?php wp_footer(); ?>
 
