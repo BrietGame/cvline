@@ -6,6 +6,9 @@ $(document).ready(function() {
     const errorSurname = $('#error_surname');
     const errorName = $('#error_name');
     const errorEmail = $('#error_mail');
+    const errorAdress = $('#error_adress');
+    const errorPostal = $('#error_postal');
+    const errorCity = $('#error_city');
 
     $('#global_cv').on('submit', function (e) {
         // ajax
@@ -51,6 +54,15 @@ $(document).ready(function() {
                     }
                     if (res.errors.email != null) {
                         errorEmail.html(res.errors.email)
+                    }
+                    if (res.errors.adress != null) {
+                        errorAdress.html(res.errors.adress)
+                    }
+                    if (res.errors.postal != null) {
+                        errorPostal.html(res.errors.postal)
+                    }
+                    if (res.errors.city != null) {
+                        errorCity.html(res.errors.city)
                     }
                 }
             }

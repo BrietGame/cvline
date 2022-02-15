@@ -38,6 +38,17 @@ function emailValidation($errors,$email,$key)
     return $errors;
 }
 
+function intValidation($errors,$int,$key){
+    if(!empty($int)){
+        if(is_numeric($int) != true){
+            $errors[$key] = 'Veuillez renseigner un nombre';
+        }
+    }else{
+        $errors[$key] = 'Veuillez renseigner ce champ';
+    }
+    return $errors;
+}
+
 function showJson($data){
     header("Content-type: application/json");
     $json = json_encode($data, JSON_PRETTY_PRINT);
@@ -56,23 +67,3 @@ function path($slug) {
     return esc_url(home_url($slug));
 }
 
-
-
-function getImageFeatured($id, $size = 'thumbnail', $alt = '')
-{
-    $image_url = get_the_post_thumbnail_url($id, $size);
-    if(!empty($image_url)) {
-        return '<img src="'.$image_url.'" alt="'.$alt.'"/>';
-    }
-    return '<img src="'.asset().'img/camion_V33.png" width="300px" height="200px" />';
-}
-
-
-function getImageAttachment($id_attachment,$size = 'thumbnail', $alt = '')
-{
-    $image = wp_get_attachment_image_src($id_attachment,$size);
-    if(!empty($image)) {
-        return '<img src="'.$image[0].'" alt="'.$alt.'"/>';
-    }
-    return '';
-}

@@ -6,7 +6,7 @@ get_header();
     <div>
         <h1>GenerationCv</h1>
     </div>
-
+<section>
 <form method="POST" id="global_cv">
     <input type="text" id="js_surname" name="surname" placeholder="Doe">
     <span class="error" id="error_surname"></span>
@@ -18,14 +18,41 @@ get_header();
     <span class="error" id="error_mail"></span>
 
     <input type="text" id="js_adress" name="adress" placeholder="8 rue exemple">
+    <span class="error" id="error_adress"></span>
+
     <input type="number" id="js_postal" name="postal" placeholder="76100">
+    <span class="error" id="error_postal"></span>
+
     <input type="text" id="js_city" name="city" placeholder="Rouen">
+    <span class="error" id="error_city"></span>
 
     <input type="submit" name="submitted" id="js_submitted_global">
 
 </form>
+</section>
+<section>
+    <form method="POST" id="experience_cv">
+        <input type="date" id="js_predate" name="predate" placeholder="">
+        <span class="error" id="error_predate"></span>
 
+        <input type="date" id="js_lastdate" name="lastdate" placeholder="">
+        <span class="error" id="error_lastdate"></span>
 
+        <input type="text" id="js_post_name" name="postname" placeholder="*Boulanger">
+        <span class="error" id="error_post_name"></span>
+
+        <input type="text" id="js_entreprise_name" name="entreprisename" placeholder="Elsi & Franck">
+        <span class="error" id="error_entreprise_name"></span>
+
+        <input type="text" id="js_post_place" name="postplace" placeholder="Cherbourg">
+        <span class="error" id="error_post_place"></span>
+
+        <input type="text" id="js_post_description" name="postdescription" placeholder="Je sais faire du pain">
+        <span class="error" id="error_post_description"></span>
+
+        <input type="submit" name="submitted" id="js_submitted_experience">
+    </form>
+</section>
 
 <?php
 get_footer();

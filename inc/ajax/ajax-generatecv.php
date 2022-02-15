@@ -16,7 +16,12 @@ function getGeneratecvWithAjax(){
     $postal = cleanXss('postal');
     $city = cleanXss('city');
 
+    $errors = textValidation($errors, $surname, 'surname', 2, 55);
+    $errors = textValidation($errors, $name, 'name', 2, 50);
     $errors = emailValidation($errors, $email, 'email');
+    $errors = textValidation($errors, $adress, 'adress', 5, 70);
+    $errors = intValidation($errors, $postal, 'postal');
+    $errors = textValidation($errors, $city, 'city', 10, 70);
 
     if(count($errors) === 0) {
         $success = true;

@@ -42,10 +42,10 @@ a {
   border-radius: 10px;
   cursor: pointer;
   color: #FFFFFF;
-  font-size: 36px;
+  font-size: 25px;
   padding: 1rem 2rem 1rem 2rem;
   border: 1px solid #FFFFFF;
-  Font-family: Libre Franklin, sans-serif;
+  Font-family: Noto Serif, serif;
   transition: 0.8s;
 }
 
@@ -113,6 +113,11 @@ a {
   border-bottom: 2px solid black;
 }
 
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
 nav ul {
   display: flex;
   gap: 1rem;
@@ -137,7 +142,31 @@ nav ul li a:hover {
 }
 
 Body {
-  background-color: gainsboro;
+  background: url("../cvline/asset/img/bg/image-accueil.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.titre h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  color: #FFFFFF;
+  font-family: Noto Serif, serif;
+  font-weight: 400;
+  padding-top: 3rem;
+}
+
+.btnGroup {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0 2rem 0;
+}
+
+.btnGroup2 {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding-bottom: 4rem;
 }
 
 .container {

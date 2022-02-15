@@ -22,14 +22,7 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'projet-cvtheques' ); ?></a>
 
-    <header>
-        <div class="logo">
-            <a href="<?= path('/page-innow'); ?>">
-                <img src="<?= asset().'img/logo_innow.png' ?>" alt="">
-            </a>
-        </div>
-    </header>
-    <?php
+<div class="logo">
+    <img src=" <?php echo get_template_directory_uri() ?>/asset/img/logoCVline1.svg" alt="logo">
+</div>
