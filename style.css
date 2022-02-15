@@ -27,6 +27,17 @@ a {
 .wrap {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 1rem;
+}
+
+.wrap1 {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+body {
+  background-color: aqua;
 }
 
 /*# sourceMappingURL=style.css.map */
