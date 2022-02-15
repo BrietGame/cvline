@@ -107,6 +107,12 @@ a {
   transition: 0.8s;
 }
 
+.input_group input {
+  background: none;
+  border: none;
+  border-bottom: 2px solid black;
+}
+
 nav ul {
   display: flex;
   gap: 1rem;
@@ -134,8 +140,53 @@ Body {
   background-color: gainsboro;
 }
 
-body {
-  background-color: red;
+.container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+.container .input_group {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.container .input_group label {
+  font-family: Libre Franklin, sans-serif;
+  font-size: 1rem;
+}
+.container .input_group input {
+  background: none;
+  border: none;
+  border-bottom: 2px solid #000000;
+  font-family: Libre Franklin, sans-serif;
+}
+.container .input_group input::placeholder {
+  font-family: Libre Franklin, sans-serif;
+}
+.container .register {
+  background-color: #141414;
+  width: 50%;
+  padding: 6rem;
+}
+.container .register h2 {
+  text-align: center;
+  font-family: Noto Serif, serif;
+  color: #FFFFFF;
+}
+.container .register label {
+  color: #FFFFFF;
+}
+.container .register input {
+  border-color: #FFFFFF;
+}
+.container .login {
+  width: 50%;
+  padding: 6rem;
+}
+.container .login label {
+  color: #000000;
+}
+.container .login input {
+  border-color: #000000;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,3 +1,50 @@
-body {
-    background-color: red;
+.container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    
+
+    // Généralités
+    .input_group {
+        display: flex;
+        flex-flow: column nowrap;
+
+        label {
+            font-family: $franklin;
+            font-size: 1rem;
+        }
+        input {
+            background: none;
+            border: none;
+            border-bottom: 2px solid $black;
+            font-family: $franklin;
+        }
+        input::placeholder {
+            font-family: $franklin;
+        }
+    }
+
+    // Spécificités du RegisterForm
+    .register {
+        background-color: #141414;
+        width: 50%;
+        padding: 6rem;
+        
+        h2 {
+            text-align: center;
+            font-family: $noto;
+            color: $white;
+        }
+        label { color: $white; }
+        input { border-color: $white; }
+    }
+    // Spécificités du LoginForm
+    .login {
+        width: 50%;
+        padding: 6rem;
+
+
+        label { color: $black; }
+        input { border-color: $black; }
+    }
 }
