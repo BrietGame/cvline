@@ -1,35 +1,32 @@
 /*!
-Theme Name: Projet CVtheques
-Theme URI: http://underscores.me/
-Author: Underscores.me
-Author URI: http://underscores.me/
-Description: Description
+Theme Name: cvline
+Theme URI: https://exemple.fr
+Author: cvline
+Author URI: https://exemple.fr
+Description: ici description
 Version: 1.0.0
-Tested up to: 5.4
-Requires PHP: 5.6
-License: GNU General Public License v2 or later
-License URI: LICENSE
-Text Domain: projet-cvtheques
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned.
-
-Projet CVtheques is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
-*/
-
+Tested up to: 5.8.3
+Requires PHP: 7.3
+Text Domain: cvline
+ */
 * {
-	margin:0;padding: 0;box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-ul, ol{
-	list-style: none;
+ul, li {
+  list-style: none;
 }
 
-a{
-	text-decoration: none;
+a {
+  text-decoration: none;
 }
+
+/*REPONSIVE*/
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=style.css.map */
