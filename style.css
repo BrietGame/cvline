@@ -9,6 +9,7 @@ Tested up to: 5.8.3
 Requires PHP: 7.3
 Text Domain: cvline
  */
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700&family=Noto+Serif:wght@400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -38,6 +39,80 @@ a {
 
 body {
   background-color: aqua;
+}
+
+.btnTransparent {
+  box-sizing: border-box;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #FFFFFF;
+  font-size: 36px;
+  padding: 1rem 2rem 1rem 2rem;
+  border: 1px solid #FFFFFF;
+  Font-family: Libre Franklin, sans-serif;
+  transition: 0.8s;
+}
+
+.btnTransparent:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+  transition: 0.8s;
+}
+
+.btnWhite {
+  color: #2A4876;
+  border: 1px solid #2A4876;
+  border-radius: 16px;
+  Font-family: Libre Franklin, sans-serif;
+  Font-size: 24px;
+  Vertical-align: Top;
+  padding: 0 2rem 0 2rem;
+  background-color: #FFFFFF;
+  transition: 0.8s;
+}
+
+.btnWhite:hover {
+  background-color: #2A4876;
+  color: #FFFFFF;
+  transition: 0.8s;
+}
+
+.btnBlue {
+  color: #FFFFFF;
+  border: 1px solid #2A4876;
+  border-radius: 16px;
+  Font-family: Libre Franklin, sans-serif;
+  font-size: 24px;
+  background-color: #2A4876;
+  padding: 0 2rem 0 2rem;
+  transition: 0.8s;
+}
+
+.btnBlue:hover {
+  color: #2A4876;
+  background-color: #FFFFFF;
+  transition: 0.8s;
+}
+
+.btnBlack {
+  color: #FFFFFF;
+  border: 1px solid #2A4876;
+  border-radius: 16px;
+  font-family: Libre Franklin, sans-serif;
+  font-size: 24px;
+  background-color: #000000;
+  padding: 0 2rem 0 2rem;
+  transition: 0.8s;
+}
+
+.btnBlack:hover {
+  color: #000000;
+  background-color: #FFFFFF;
+  transition: 0.8s;
+}
+
+Body {
+  background-color: gainsboro;
 }
 
 /*# sourceMappingURL=style.css.map */
