@@ -10,12 +10,12 @@ Requires PHP: 7.3
 Text Domain: cvline
  */
 
-
 //BASE ET VARIABLES
 @import "inc/base";
 @import "inc/responsive";
 @import "inc/wrap";
 @import "inc/variables";
+@import "inc/function";
 
 //PAGES
 @import "pages/header";
