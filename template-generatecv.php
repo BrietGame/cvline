@@ -18,8 +18,13 @@ get_header();
     <span class="error" id="error_mail"></span>
 
     <input type="text" id="js_adress" name="adress" placeholder="8 rue exemple">
+    <span class="error" id="error_adress"></span>
+
     <input type="number" id="js_postal" name="postal" placeholder="76100">
+    <span class="error" id="error_postal"></span>
+
     <input type="text" id="js_city" name="city" placeholder="Rouen">
+    <span class="error" id="error_city"></span>
 
     <input type="submit" name="submitted" id="js_submitted_global">
 
