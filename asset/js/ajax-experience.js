@@ -1,56 +1,70 @@
-console.log('Ok Ajax global');
+console.log('Ok Ajax experience');
 
 $(document).ready(function() {
 
-    const submitButton = $('#js_submitted_global');
-    const errorSurname = $('#error_surname');
-    const errorName = $('#error_name');
-    const errorEmail = $('#error_mail');
+    const submitButton2 = $('#js_submitted_experience');
+    const errorPredate = $('#error_predate');
+    const errorLastdate = $('#error_lastdate');
+    const errorPostname = $('#error_post_name');
+    const errorEntreprisename = $('#error_entreprise_name');
+    const errorPostplace = $('#error_post_place');
+    const errorPostdescription = $('#error_post_description');
 
-    $('#global_cv').on('submit', function (e) {
+    $('#experience_cv').on('submit', function (e) {
         // ajax
         e.preventDefault();
 
-        const surname = $('#js_surname').val();
-        const name = $('#js_name').val();
-        const email = $('#js_email').val();
-        const adress = $('#js_adress').val();
-        const postal = $('#js_postal').val();
-        const city = $('#js_city').val();
+        const predate = $('#js_predate').val();
+        const lastdate = $('#js_lastdate').val();
+        const postname = $('#js_post_name').val();
+        const entreprisename = $('#js_entreprise_name').val();
+        const postplace = $('#js_post_place').val();
+        const postdescription = $('#js_post_description').val();
 
         console.log('Clicked');
         $.ajax({
-            url: ajaxUrl,
+            url: ajaxUrlexp,
             type: 'POST',
             data: {
-                action: 'ajax_generatecv',
-                surname: surname,
-                name: name,
-                email: email,
-                adress: adress,
-                postal: postal,
-                city: city,
+                action: 'ajax_experience',
+                predate: predate,
+                lastdate: lastdate,
+                postname: postname,
+                entreprisename: entreprisename,
+                postplace: postplace,
+                postdescription: postdescription,
+
+
             },
             beforeSend: function () {
-                console.log('ajax start : ok');
+                console.log('ajax start : salut');
                 $('.error').html('')
             },
             success: function (res) {
                 console.log(res);
 
-                if (res.success) {
+                if (res.success2) {
                     //retirer la possibilité de soumettre une deuxieme fois le formulaire
-                    submitButton.prop("disabled", true)
+                    submitButton2.prop("disabled", true)
                 } else {
                     //if success envoie form
-                    if (res.errors.surname != null){
-                        errorSurname.html(res.errors.surname)
+                    if (res.errors.predate != null){
+                        errorPredate.html(res.errors.predate)
                     }
-                    if (res.errors.name != null) {
-                        errorName.html(res.errors.name)
+                    if (res.errors.lastdate != null) {
+                        errorLastdate.html(res.errors.lastdate)
                     }
-                    if (res.errors.email != null) {
-                        errorEmail.html(res.errors.email)
+                    if (res.errors.postname != null) {
+                        errorPostname.html(res.errors.postname)
+                    }
+                    if (res.errors.entreprisename != null) {
+                        errorEntreprisename.html(res.errors.entreprisename)
+                    }
+                    if (res.errors.postplace != null) {
+                        errorPostplace.html(res.errors.postplace)
+                    }
+                    if (res.errors.postdescription != null) {
+                        errorPostdescription.html(res.errors.postdescription)
                     }
                 }
             }
