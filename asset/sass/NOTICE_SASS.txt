@@ -1,0 +1,5 @@
+Ouvrir fichier "style.scss" dans un terminal
+
+Puis ajouter : sass style.scss ../../style.css --watch
+
+Le code scss se compile ! 

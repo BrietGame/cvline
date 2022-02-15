@@ -1,0 +1,23 @@
+/*!
+Theme Name: cvline
+Theme URI: https://exemple.fr
+Author: cvline
+Author URI: https://exemple.fr
+Description: ici description
+Version: 1.0.0
+Tested up to: 5.8.3
+Requires PHP: 7.3
+Text Domain: cvline
+ */
+
+
+//BASE ET VARIABLES
+@import "inc/base";
+@import "inc/responsive";
+@import "inc/wrap";
+@import "inc/variables";
+
+//PAGES
+@import "pages/header";
+@import "pages/footer";
+@import "pages/homepage";
