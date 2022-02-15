@@ -144,9 +144,13 @@ add_action('widgets_init', 'projet_cvtheques_widgets_init');
 function projet_cvtheques_scripts()
 {
     wp_enqueue_style('projet-cvtheques-style', get_stylesheet_uri(), array(), _S_VERSION);
-    wp_style_add_data('projet-cvtheques-style', 'rtl', 'replace');
 
-    wp_enqueue_script('projet-cvtheques-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
+    wp_deregister_script('jquery');
+    wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', array(), '3.6.0', true);
+
+
+    wp_enqueue_script('ajax-generatecv', get_template_directory_uri() . '/asset/js/ajax-generatecv.js', array('jquery'), _S_VERSION, true);
+    wp_add_inline_script('ajax-generatecv', 'const ajaxUrl = ' . json_encode(admin_url('admin-ajax.php')), 'before');
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
