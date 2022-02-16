@@ -15,6 +15,8 @@ function getSchoolWithAjax(){
     $schoolPlace = cleanXss('school_place');
     $schoolDescription = cleanXss('school_description');
 
+    $errors = dateValidation($errors, $schoolStart, 'school_start');
+    $errors = dateValidation($errors, $schoolEnd, 'school_end');
     $errors = textValidation($errors, $schoolFormation, 'school_formation', 4, 60);
     $errors = textValidation($errors, $schoolName, 'school_name', 4, 45);
     $errors = textValidation($errors, $schoolPlace, 'school_place', 4, 50);
