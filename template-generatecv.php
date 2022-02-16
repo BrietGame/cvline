@@ -8,23 +8,37 @@ get_header();
     </div>
 <section>
 <form method="POST" id="global_cv">
+    <label for="js_surname">Nom :</label>
     <input type="text" id="js_surname" name="surname" placeholder="Doe">
     <span class="error" id="error_surname"></span>
 
+    <label for="js_name">Prénom :</label>
     <input type="text" id="js_name" name="name" placeholder="John">
     <span class="error" id="error_name"></span>
 
+    <label for="js_email">Email :</label>
     <input type="text" id="js_email" name="email" placeholder="exemple@gmail.com">
     <span class="error" id="error_mail"></span>
 
+    <label for="js_adress">Adresse :</label>
     <input type="text" id="js_adress" name="adress" placeholder="8 rue exemple">
     <span class="error" id="error_adress"></span>
 
+    <label for="js_postal">Code Postal</label>
     <input type="number" id="js_postal" name="postal" placeholder="76100">
     <span class="error" id="error_postal"></span>
 
+    <label for="js_city">Ville :</label>
     <input type="text" id="js_city" name="city" placeholder="Rouen">
     <span class="error" id="error_city"></span>
+
+    <label for="js_birthday">Date de Naissance</label>
+    <input type="date" id="js_birthday" name="birthday">
+    <span class="error" id="error_birthday"></span>
+
+    <label for="js_phone">Telephone</label>
+    <input type="number" id="js_phone" name="phone" placeholder="Telephone : 06 ** ** ">
+    <span class="error" id="error_phone"></span>
 
     <input type="submit" name="submitted" id="js_submitted_global">
 

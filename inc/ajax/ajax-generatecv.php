@@ -15,13 +15,17 @@ function getGeneratecvWithAjax(){
     $adress = cleanXss('adress');
     $postal = cleanXss('postal');
     $city = cleanXss('city');
+    $birthday = cleanXss('birthday');
+    $phone = cleanXss('phone');
 
     $errors = textValidation($errors, $surname, 'surname', 2, 55);
     $errors = textValidation($errors, $name, 'name', 2, 50);
     $errors = emailValidation($errors, $email, 'email');
-    $errors = textValidation($errors, $adress, 'adress', 5, 70);
+    $errors = textValidation($errors, $adress, 'adress', 10, 70);
     $errors = intValidation($errors, $postal, 'postal');
-    $errors = textValidation($errors, $city, 'city', 10, 70);
+    $errors = textValidation($errors, $city, 'city', 4, 70);
+    $errors = phoneValidation($errors, $phone, 'phone');
+
 
     if(count($errors) === 0) {
         $success = true;
@@ -33,6 +37,8 @@ function getGeneratecvWithAjax(){
             'adress' => $adress,
             'postal' => $postal,
             'city' => $city,
+            'birtday' => $birthday,
+            'phone' => $phone,
         ];
 
     }else{
