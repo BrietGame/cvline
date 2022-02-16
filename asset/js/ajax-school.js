@@ -1,7 +1,7 @@
 console.log('Ok Ajax school');
 
-$(document).ready(function() {
-    const submitButton = $('#js_hobbie_button');
+$(document).ready(function () {
+    const submitButton = $('#js_school_button');
     const errorSchoolStart = $('#error_school_start');
     const errorSchoolEnd = $('#error_school_end');
     const errorSchoolFormation = $('#error_school_formation');
@@ -43,22 +43,22 @@ $(document).ready(function() {
                 if (res.success) {
                     submitButton.prop("disabled", true)
                 } else {
-                    if (res.errors.school_start != null){
+                    if (res.errors.school_start != null) {
                         errorSchoolStart.html(res.errors.school_start)
                     }
-                    if (res.errors.school_end != null){
+                    if (res.errors.school_end != null) {
                         errorSchoolEnd.html(res.errors.school_end)
                     }
-                    if (res.errors.school_formation != null){
+                    if (res.errors.school_formation != null) {
                         errorSchoolFormation.html(res.errors.school_formation)
                     }
-                    if (res.errors.school_name != null){
+                    if (res.errors.school_name != null) {
                         errorSchoolName.html(res.errors.school_name)
                     }
-                    if (res.errors.school_place != null){
+                    if (res.errors.school_place != null) {
                         errorSchoolPlace.html(res.errors.school_place)
                     }
-                    if (res.errors.school_description != null){
+                    if (res.errors.school_description != null) {
                         errorSchoolDescription.html(res.errors.school_description)
                     }
                 }
