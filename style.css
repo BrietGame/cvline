@@ -177,6 +177,7 @@ Body {
 .container .input_group {
   display: flex;
   flex-flow: column nowrap;
+  margin: 1rem 0;
 }
 .container .input_group label {
   font-family: Libre Franklin, sans-serif;
@@ -185,14 +186,11 @@ Body {
 .container .input_group input {
   background: none;
   border: none;
-  border-bottom: 2px solid #000000;
+  border-bottom: 2px solid;
   font-family: Libre Franklin, sans-serif;
-}
-.container .input_group input::placeholder {
-  font-family: Libre Franklin, sans-serif;
+  padding: 0.3rem 0.5rem;
 }
 .container .register {
-  background-color: #141414;
   width: 50%;
   padding: 6rem;
 }
@@ -206,16 +204,41 @@ Body {
 }
 .container .register input {
   border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+.container .register input::placeholder {
+  font-family: Libre Franklin, sans-serif;
+  color: rgba(255, 255, 255, 0.4);
+}
+.container .register input[type=submit] {
+  color: #000000;
+  cursor: pointer;
+}
+.container .register .checkbox {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 0.2rem;
 }
 .container .login {
   width: 50%;
   padding: 6rem;
+}
+.container .login h2 {
+  text-align: center;
+  font-family: Noto Serif, serif;
+  color: #000000;
 }
 .container .login label {
   color: #000000;
 }
 .container .login input {
   border-color: #000000;
+  color: #000000;
+}
+.container .login input::placeholder {
+  font-family: Libre Franklin, sans-serif;
+  color: rgba(0, 0, 0, 0.4);
 }
 
 /*# sourceMappingURL=style.css.map */

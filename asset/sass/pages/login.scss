@@ -8,6 +8,7 @@
     .input_group {
         display: flex;
         flex-flow: column nowrap;
+        margin: 1rem 0;
 
         label {
             font-family: $franklin;
@@ -16,17 +17,15 @@
         input {
             background: none;
             border: none;
-            border-bottom: 2px solid $black;
+            border-bottom: 2px solid;
             font-family: $franklin;
-        }
-        input::placeholder {
-            font-family: $franklin;
+            padding: .3rem .5rem;
         }
     }
 
     // Spécificités du RegisterForm
     .register {
-        background-color: #141414;
+        // background-color: #141414;
         width: 50%;
         padding: 6rem;
         
@@ -36,15 +35,37 @@
             color: $white;
         }
         label { color: $white; }
-        input { border-color: $white; }
+        input { border-color: $white; color: $white;}
+        input::placeholder {
+            font-family: $franklin;
+            color: rgba($color: #FFFFFF, $alpha: .4)
+        }
+        input[type="submit"] {
+            color: $black;
+            cursor: pointer;
+        }
+        .checkbox {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            gap: .2rem;
+        }
     }
     // Spécificités du LoginForm
     .login {
         width: 50%;
         padding: 6rem;
-
-
+        
+        h2 {
+            text-align: center;
+            font-family: $noto;
+            color: $black;
+        }
         label { color: $black; }
-        input { border-color: $black; }
+        input { border-color: $black; color: $black;}
+        input::placeholder {
+            font-family: $franklin;
+            color: rgba($color: #000000, $alpha: .4)
+        }
     }
 }
