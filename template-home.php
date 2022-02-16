@@ -13,8 +13,9 @@
     </div>
 
     <div class="btnGroup2">
-        <a class="btnWhite" href="#">Générez son cv</a>
-        <a class="btnBlue" href="#">Espace Recruteur</a>
+
+        <a class="btnWhite" href="#"><i class="fa-solid fa-file-lines"></i>Générez son cv</a>
+        <a class="btnBlue" href="#"><i class="fa-solid fa-user"></i>Espace Recruteur</a>
     </div>
 </div>
 

@@ -143,7 +143,9 @@ add_action('widgets_init', 'projet_cvtheques_widgets_init');
  */
 function projet_cvtheques_scripts()
 {
+
     wp_enqueue_style('projet-cvtheques-style', get_stylesheet_uri(), array(), _S_VERSION);
+    wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css', array(), '1.0.0');
 
     wp_deregister_script('jquery');
     wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', array(), '3.6.0', true);
