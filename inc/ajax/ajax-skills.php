@@ -7,26 +7,25 @@ add_action('wp_ajax_nopriv_ajax_skill', 'getSkillWithAjax'); //Pour que tout le 
 function getSkillWithAjax(){
 
     $errors = array();
-    $success = false;
+    $success3 = false;
 
-    $skill = cleanXss('searchskill');
+    $searchskill = cleanXss('searchskill');
 
-
-    $errors = textValidation($errors, $skill, 'searchskill', 2, 55);
+    $errors = textValidation($errors, $searchskill, 'searchskill',2, 55);
 
 
     if(count($errors) === 0) {
-        $success = true;
+        $success3 = true;
         $data = [
-            'success' => $success,
-            'searchskill' => $skill,
+            'success3' => $success3,
+            'searchskill' => $searchskill,
 
         ];
 
     }else{
         $data = array(
             'errors' => $errors,
-            'success' => $success,
+            'success3' => $success3,
         );
     }
 
