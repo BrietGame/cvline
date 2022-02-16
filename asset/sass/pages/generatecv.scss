@@ -1,0 +1,67 @@
+#generate_cv {
+
+    .header {
+        background-image: url('../cvline/asset/img/bg/banner_cv.jpg');
+        background-repeat: no-repeat;
+        background-size: auto;
+        height: 100%;
+
+        h2 {
+            font-family: $noto;
+            font-size: 3rem;
+            text-align: center;
+            color: $white;
+        }
+    }
+
+    // Fil d'Ariane
+    #fil_ariane {
+
+        #step {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            gap: 1rem;
+            padding: .3rem .4rem;
+
+            .nb {
+                border: 2px solid $blue;
+                background-color: $white;
+                color: $blue;
+                padding: .5rem;
+                border-radius: 100%;
+                width: 40px;
+                height: 40px;
+                font-family: $noto;
+                font-size: 1.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+            .text {
+                font-family: $noto;
+                color: $blue;
+            }
+        }
+
+        // Différents Background-color selon l'etat en Js
+        .active {
+            background-color: $blue!important;
+            .nb {
+                border-color: $white!important;
+                background-color: $blue!important;
+                color: $white!important;
+            }
+            .text { color: $white!important; }
+        }
+        .success { 
+            background-color: $blue!important;
+            .nb {
+                background-color: $white!important;
+                color: $blue!important;
+            }
+            .text { color: $white!important; }
+        }
+    }
+}
