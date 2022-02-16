@@ -8,48 +8,98 @@
         <h2>Générer mon CV</h2>
     </div>
 
-    <div class="wrap1">
+    <div class="wrap">
         <section id="fil_ariane">
-            <div id="step" class="active">
+            <div id="step" data-id="1" class="success">
                 <span class="nb">1</span>
-                <span class="text">Informations globales</span>
+                <span class="text">Mes informations</span>
+            </div>
+            <div id="step" data-id="2" class="active">
+                <span class="nb">2</span>
+                <span class="text">Mes expériences</span>
+            </div>
+            <div id="step" data-id="3" class="">
+                <span class="nb">3</span>
+                <span class="text">Mes compétences</span>
+            </div>
+            <div id="step" data-id="4" class="">
+                <span class="nb">4</span>
+                <span class="text">Mes hobbies</span>
+            </div>
+            <div id="step" data-id="5" class="">
+                <span class="nb">5</span>
+                <span class="text">Mon parcours</span>
+            </div>
+            <div id="step" data-id="6" class="">
+                <span class="nb">6</span>
+                <span class="text">Récapitulatif</span>
             </div>
         </section>
         <section id="step_one" class="wrap2">
             <form method="POST" id="global_cv">
-                <label for="js_surname">Nom :</label>
-                <input type="text" id="js_surname" name="surname" placeholder="Doe">
-                <span class="error" id="error_surname"></span>
+                <div class="input_group">
+                    <label for="js_surname">Nom :</label>
+                    <input type="text" id="js_surname" name="surname" placeholder="Doe">
+                    <span class="error" id="error_surname"></span>
+                </div>
 
-                <label for="js_name">Prénom :</label>
-                <input type="text" id="js_name" name="name" placeholder="John">
-                <span class="error" id="error_name"></span>
+                <div class="input_group">
+                    <label for="js_name">Prénom :</label>
+                    <input type="text" id="js_name" name="name" placeholder="John">
+                    <span class="error" id="error_name"></span>
+                </div>
 
-                <label for="js_email">Email :</label>
-                <input type="text" id="js_email" name="email" placeholder="exemple@gmail.com">
-                <span class="error" id="error_mail"></span>
+                <div class="input_group">
+                    <label for="js_email">Email :</label>
+                    <input type="text" id="js_email" name="email" placeholder="exemple@gmail.com">
+                    <span class="error" id="error_mail"></span>
+                </div>
 
-                <label for="js_adress">Adresse :</label>
-                <input type="text" id="js_adress" name="adress" placeholder="8 rue exemple">
-                <span class="error" id="error_adress"></span>
 
-                <label for="js_postal">Code Postal</label>
-                <input type="number" id="js_postal" name="postal" placeholder="76100">
-                <span class="error" id="error_postal"></span>
+                <div class="input_group">
+                    <label for="js_adress">Adresse :</label>
+                    <input type="text" id="js_adress" name="adress" placeholder="8 rue exemple">
+                    <span class="error" id="error_adress"></span>
+                </div>
 
-                <label for="js_city">Ville :</label>
-                <input type="text" id="js_city" name="city" placeholder="Rouen">
-                <span class="error" id="error_city"></span>
 
-                <label for="js_birthday">Date de Naissance</label>
-                <input type="date" id="js_birthday" name="birthday">
-                <span class="error" id="error_birthday"></span>
+                <div class="two_input">
+                    <div class="input_group">
+                        <label for="js_postal">Code Postal</label>
+                        <input type="number" id="js_postal" name="postal" placeholder="76100">
+                        <span class="error" id="error_postal"></span>
+                    </div>
 
-                <label for="js_phone">Telephone</label>
-                <input type="number" id="js_phone" name="phone" placeholder="Telephone : 06 ** ** ">
-                <span class="error" id="error_phone"></span>
+                    <div class="input_group">
+                        <label for="js_city">Ville :</label>
+                        <input type="text" id="js_city" name="city" placeholder="Rouen">
+                        <span class="error" id="error_city"></span>
+                    </div>
+                </div>
 
-                <input type="submit" name="submitted" id="js_submitted_global">
+                <div class="two_input">
+                    <div class="input_group">
+                        <label for="js_birthday">Date de Naissance</label>
+                        <input type="date" id="js_birthday" name="birthday">
+                        <span class="error" id="error_birthday"></span>
+                    </div>
+                    <div class="input_group">
+                        <label for="js_permis_b"><input type="checkbox" id="js_permis_b" name="permis_b" value="permis b"> Permis B</label>
+                        <label for="js_permis_c"><input type="checkbox" id="js_permis_c" name="permis_c" value="permis c"> Permis C</label>
+                        <label for="js_permis_moto"><input type="checkbox" id="js_permis_moto" name="permis_moto" value="permis moto"> Permis Moto</label>
+                    </div>
+                </div>
+
+                <div class="input_group">
+                    <label for="js_phone">Telephone</label>
+                    <input type="number" id="js_phone" name="phone" placeholder="Telephone : 06 ** ** ">
+                    <span class="error" id="error_phone"></span>
+                </div>
+
+                <div class="btnForm">
+                    <a href="#" class="btnBlack">Annuler</a>
+                    <input class="btnBlue" type="submit" name="submitted" id="js_submitted_global">
+                </div>
 
             </form>
         </section>
