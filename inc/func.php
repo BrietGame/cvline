@@ -62,6 +62,17 @@ function phoneValidation($errors, $phoneNumber, $key){
 
 }
 
+function dateValidation($errors,$value,$key){
+    if(strtotime($value) >= strtotime(date('Y-m-d'))){
+        $errors[$key] = 'Veuillez rentrez une date valide';
+    }
+    if(empty($value)){
+        $errors[$key] = 'Veuillez selectionez une date';
+    }
+    return $errors;
+}
+
+
 function showJson($data){
     header("Content-type: application/json");
     $json = json_encode($data, JSON_PRETTY_PRINT);
