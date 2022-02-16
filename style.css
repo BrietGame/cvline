@@ -57,14 +57,16 @@ a {
 
 .btnWhite {
   color: #2A4876;
-  border: 1px solid #2A4876;
-  border-radius: 16px;
+  border-radius: 10px;
   Font-family: Libre Franklin, sans-serif;
   Font-size: 24px;
-  Vertical-align: Top;
-  padding: 0 2rem 0 2rem;
   background-color: #FFFFFF;
   transition: 0.8s;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 16.6rem;
+  height: 2.8rem;
 }
 
 .btnWhite:hover {
@@ -75,13 +77,17 @@ a {
 
 .btnBlue {
   color: #FFFFFF;
-  border: 1px solid #2A4876;
-  border-radius: 16px;
+  border-radius: 10px;
   Font-family: Libre Franklin, sans-serif;
   font-size: 24px;
   background-color: #2A4876;
-  padding: 0 2rem 0 2rem;
   transition: 0.8s;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 16.6rem;
+  height: 2.8rem;
+  padding: 10px;
 }
 
 .btnBlue:hover {
@@ -141,7 +147,7 @@ nav ul li a:hover {
   color: #FFFFFF;
 }
 
-Body {
+body {
   background: url("../cvline/asset/img/bg/image-accueil.jpg") no-repeat center center fixed;
   background-size: cover;
 }
