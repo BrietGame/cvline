@@ -21,9 +21,9 @@ $(document).ready(function() {
         const postplace = $('#js_post_place').val();
         const postdescription = $('#js_post_description').val();
 
-        console.log('Clicked : OK');
+        console.log('Clicked');
         $.ajax({
-            url: ajaxUrl,
+            url: ajaxUrlexp,
             type: 'POST',
             data: {
                 action: 'ajax_experience',
@@ -33,6 +33,8 @@ $(document).ready(function() {
                 entreprisename: entreprisename,
                 postplace: postplace,
                 postdescription: postdescription,
+
+
             },
             beforeSend: function () {
                 console.log('ajax start : salut');

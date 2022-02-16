@@ -155,8 +155,6 @@ function projet_cvtheques_scripts()
     wp_enqueue_script('ajax-generatecv', get_template_directory_uri() . '/asset/js/ajax-generatecv.js', array('jquery'), _S_VERSION, true);
     wp_enqueue_script('ajax-experience', get_template_directory_uri() . '/asset/js/ajax-experience.js', array('jquery'), _S_VERSION, true);
     wp_add_inline_script('ajax-generatecv', 'const ajaxUrl = ' . json_encode(admin_url('admin-ajax.php')), 'before');
-    wp_add_inline_script('ajax-experience', 'const ajaxUrlexp = ' . json_encode(admin_url('admin-ajax.php')), 'before');
-
 
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
