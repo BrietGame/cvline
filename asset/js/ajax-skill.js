@@ -1,4 +1,4 @@
-console.log('Ok Ajax skill');
+console.log('cc skill');
 
 $(document).ready(function() {
 
