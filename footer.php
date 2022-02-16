@@ -16,14 +16,14 @@
         <nav>
             <ul>
                 <li><a href="#">FAQ</a></li>
-                <li><a href="#">CGU Mentions légales</a></li>
-                <li><a href="#">CGU Mentions légales</a></li>
-                <li><a href="#">A propos</a></li>
-                <li><a href="#">S'iscrire/ Se connecter</a></li>
+                <li><a href="#">CGU</a></li>
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#">À propos</a></li>
+                <li><a href="#">S'inscrire/ Se connecter</a></li>
             </ul>
         </nav>
         <div class="copyright">
-            <p>Copiryght CV LINE Compary</p>
+            <p> © Copyright CV LINE Company</p>
         </div>
     </div>
 
