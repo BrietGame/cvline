@@ -77,6 +77,50 @@ get_header();
         </form>
     </section>
 
+    <section>
+        <h2>Loisirs</h2>
+        <form method="POST" id="hobbie_cv">
+            <input type="text" id="js_search_hobbie" name="hobbie" placeholder="jeux-video, ... ">
+            <span class="error" id="error_hobbie"></span>
+
+            <input type="submit" name="submit_hobbie" id="js_hobbie_button">
+
+        </form>
+    </section>
+
+    <section>
+        <h2>Parcours</h2>
+        <form method="POST" id="school_cv">
+
+            <label for="js_school_start">Debut :</label>
+            <input type="date" id="js_school_start" name="school_start">
+            <span class="error" id="error_school_start"></span>
+
+            <label for="js_school_end">Fin :</label>
+            <input type="date" id="js_school_end" name="school_end">
+            <span class="error" id="error_school_end"></span>
+
+            <label for="js_school_formation">Intitulé :</label>
+            <input type="text" id="js_school_formation" name="school_formation">
+            <span class="error" id="error_school_formation"></span>
+
+            <label for="js_school_name">Nom école :</label>
+            <input type="text" id="js_school_name" name="school_name">
+            <span class="error" id="error_school_name"></span>
+
+            <label for="js_school_place">Lieu :</label>
+            <input type="text" id="js_school_place" name="school_place">
+            <span class="error" id="error_school_place"></span>
+
+            <label for="js_school_description">Description :</label>
+            <textarea id="js_school_description" name="school_description" cols="30" rows="10"></textarea>
+            <span class="error" id="error_school_description"></span>
+
+            <input type="submit" name="submit_hobbie" id="js_hobbie_button">
+
+        </form>
+    </section>
+
 <?php
 get_footer();
 ?>
