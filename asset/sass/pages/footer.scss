@@ -9,6 +9,7 @@ nav {
       list-style-type: none;
       text-decoration: none;
       color: $white;
+      font-family: $noto;
     }
   }
   ul li a:hover {
@@ -22,5 +23,6 @@ nav {
   text-align: center;
   justify-content: center;
   color: $white;
+  font-family: $noto;
 }
 
