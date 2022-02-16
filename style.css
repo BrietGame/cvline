@@ -161,7 +161,7 @@ nav ul li a:hover {
   background-size: cover;
   height: 100%;
 }
-#home .wrap2 .titre h1 {
+#home .wrap1 .titre h1 {
   display: flex;
   justify-content: center;
   font-size: 50px;
@@ -170,12 +170,12 @@ nav ul li a:hover {
   font-weight: 400;
   padding-top: 3rem;
 }
-#home .wrap2 .btnGroup {
+#home .wrap1 .btnGroup {
   display: flex;
   justify-content: center;
   padding: 2rem 0 2rem 0;
 }
-#home .wrap2 .btnGroup2 {
+#home .wrap1 .btnGroup2 {
   display: flex;
   justify-content: center;
   gap: 2rem;
