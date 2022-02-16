@@ -59,7 +59,6 @@ function phoneValidation($errors, $phoneNumber, $key){
         $errors[$key] = 'Veuillez renseigner un numéro';
     }
     return $errors;
-
 }
 
 function dateValidation($errors,$value,$key){

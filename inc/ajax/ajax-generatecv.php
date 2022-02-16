@@ -24,6 +24,7 @@ function getGeneratecvWithAjax(){
     $errors = textValidation($errors, $adress, 'adress', 10, 70);
     $errors = intValidation($errors, $postal, 'postal');
     $errors = textValidation($errors, $city, 'city', 4, 70);
+    $errors = dateValidation($errors, $birthday, 'birthday');
     $errors = phoneValidation($errors, $phone, 'phone');
 
 
