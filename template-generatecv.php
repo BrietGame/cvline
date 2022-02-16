@@ -68,6 +68,15 @@ get_header();
     </form>
 </section>
 
+    <section>
+        <form method="POST" id="skill">
+            <input type="text" id="js_search_skill" name="searchskill" placeholder="*Savoir faire, savoir être.">
+            <span class="error" id="error_search_skill"></span>
+            <input type="submit" name="submit_skill" id="js_skill">
+
+        </form>
+    </section>
+
 <?php
 get_footer();
 ?>
