@@ -1,6 +1,7 @@
 console.log('Ok Ajax global');
+const dataFinal = [];
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     const submitButton = $('#js_submitted_global');
     const errorSurname = $('#error_surname');
@@ -50,9 +51,10 @@ $(document).ready(function() {
                 if (res.success) {
                     //retirer la possibilité de soumettre une deuxieme fois le formulaire
                     submitButton.prop("disabled", true)
+                    dataFinal.push(res);
                 } else {
                     //if success envoie form
-                    if (res.errors.surname != null){
+                    if (res.errors.surname != null) {
                         errorSurname.html(res.errors.surname)
                     }
                     if (res.errors.name != null) {

@@ -1,6 +1,6 @@
 console.log('Ok Ajax experience');
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     const submitButton2 = $('#js_submitted_experience');
     const errorPredate = $('#error_predate');
@@ -40,13 +40,13 @@ $(document).ready(function() {
             },
             success: function (res) {
                 console.log(res);
-
+                dataFinal.push(res);
                 if (res.success2) {
                     //retirer la possibilité de soumettre une deuxieme fois le formulaire
                     submitButton2.prop("disabled", true)
                 } else {
                     //if success envoie form
-                    if (res.errors.predate != null){
+                    if (res.errors.predate != null) {
                         errorPredate.html(res.errors.predate)
                     }
                     if (res.errors.lastdate != null) {

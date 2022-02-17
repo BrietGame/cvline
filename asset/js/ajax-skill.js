@@ -1,6 +1,6 @@
 console.log('cc skill');
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     const submitButton3 = $('#js_skill');
     const errorSkill = $('#error_search_skill');
@@ -27,13 +27,13 @@ $(document).ready(function() {
             },
             success: function (res) {
                 console.log(res);
-
+                dataFinal.push(res);
                 if (res.success3) {
                     //retirer la possibilitÃ© de soumettre une deuxieme fois le formulaire
                     submitButton3.prop("disabled", true)
                 } else {
                     //if success envoie form
-                    if (res.errors.searchskill != null){
+                    if (res.errors.searchskill != null) {
                         errorSkill.html(res.errors.searchskill)
                     }
 

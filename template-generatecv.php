@@ -39,6 +39,11 @@
             <h2 class="title">Mes informations</h2>
             <form method="POST" id="global_cv">
                 <div class="input_group">
+                    <label for="js_post_search">Nom du poste recherché :</label>
+                    <input type="text" id="js_post_search" name="post_search" placeholder="Developpeur Web">
+                    <span class="error" id="error_js_post_search"></span>
+                </div>
+                <div class="input_group">
                     <label for="js_surname">Nom :</label>
                     <input type="text" id="js_surname" name="surname" placeholder="Doe">
                     <span class="error" id="error_surname"></span>
@@ -103,6 +108,18 @@
                     <label for="js_phone">Telephone</label>
                     <input type="number" id="js_phone" name="phone" placeholder="Telephone : 06 ** ** ">
                     <span class="error" id="error_phone"></span>
+                </div>
+
+                <div class="input_group">
+                    <label for="js_website">Site internet</label>
+                    <input type="text" id="js_website" name="website" placeholder="www.example.com">
+                    <span class="error" id="error_website"></span>
+                </div>
+
+                <div class="input_group">
+                    <label for="js_about_me">A propos de moi</label>
+                    <textarea type="text" id="js_about_me" name="about_me" placeholder="A propos de moi"></textarea>
+                    <span class="error" id="error_about_me"></span>
                 </div>
 
                 <div class="btnForm">
@@ -268,8 +285,12 @@
                 </div>
             </form>
         </section>
+
+        <a href="" id="final_submit">Générer son PUTAIN DE CV</a>
+        <?php debug($_POST) ?>
     </div>
 </section>
+
 
 <?php
 get_footer();

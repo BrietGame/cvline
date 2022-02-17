@@ -1,6 +1,6 @@
 console.log('Ok Ajax hobbie');
 
-$(document).ready(function() {
+$(document).ready(function () {
     const submitButton = $('#js_hobbie_button');
     const errorHobbie = $('#error_hobbie');
 
@@ -24,11 +24,11 @@ $(document).ready(function() {
             },
             success: function (res) {
                 console.log(res);
-
+                dataFinal.push(res);
                 if (res.success) {
                     submitButton.prop("disabled", true)
                 } else {
-                    if (res.errors.hobbie != null){
+                    if (res.errors.hobbie != null) {
                         errorHobbie.html(res.errors.hobbie)
                     }
 
