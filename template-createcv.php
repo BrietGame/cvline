@@ -22,7 +22,8 @@ $wpdb->insert(
         "cv_birthday" => $birthday,
         "cv_phone" => $phone,
         "cv_postal" => $postal,
-        "cv_city" => $city
+        "cv_city" => $city,
+        "cv_created_at" => current_time('mysql')
     )
 );
 ?>
