@@ -35,7 +35,7 @@
                 <span class="text">Récapitulatif</span>
             </div>
         </section>
-        <section id="step_one" class="wrap2">
+        <section id="step_one" class="wrap1">
             <h2 class="title">Mes informations</h2>
             <form method="POST" id="global_cv">
                 <div class="input_group">
@@ -106,13 +106,13 @@
                 </div>
 
                 <div class="btnForm">
-                    <a href="#" class="btnBlack">Annuler</a>
-                    <input class="btnBlue" type="submit" name="submitted" id="js_submitted_global">
+                    <a href="#" class="btnBlack">Précédent</a>
+                    <input class="btnBlue" type="submit" name="submitted" id="js_submitted_global" value="Suivant">
                 </div>
 
             </form>
         </section>
-        <section id="step_two" class="wrap2">
+        <section id="step_two" class="wrap1">
             <h2 class="title">Mes expériences</h2>
             <form method="POST" id="experience_cv">
                 <div class="two_input">
@@ -160,8 +160,8 @@
                 </div>
 
                 <div class="btnForm">
-                    <a href="#" class="btnBlack">Annuler</a>
-                    <input class="btnBlue" type="submit" name="submitted" id="js_submitted_experience">
+                    <a href="#" class="btnBlack">Précédent</a>
+                    <input class="btnBlue" type="submit" name="submitted" id="js_submitted_experience" value="Suivant">
                 </div>
             </form>
         </section>
@@ -169,29 +169,48 @@
         <section id="step_three" class="wrap1">
             <h2 class="title">Mes compétences</h2>
             <form method="POST" id="skill">
-                <div class="input_group">
-                    <input type="text" id="js_search_skill" name="searchskill" placeholder="*Savoir faire, savoir être.">
+                <div id="todo" class="input_group">
+                    <input type="text" id="js_search_skill" name="searchskill" placeholder="*Savoir faire, savoir être." onkeyup="searchSkill()">
                     <span class="error" id="error_search_skill"></span>
+                    <ul id="result_search_skill">
+                        <!-- Mettre dans une boucle -->
+                        <li><a href="" id="bdd_item_skill" data-content="Adele">Adele</a></li>
+                        <!-- Fin de la boucle -->
+                    </ul>
+                    <span onclick="newSkill()" class="addBtn">Ajouter cette compétence</span>
+
+                    <span>Ma sélection</span>
+                    <ul id="result_skills">
+                    </ul>
                 </div>
 
                 <div class="btnForm">
-                    <a href="#" class="btnBlack">Annuler</a>
-                    <input type="submit" name="submit_skill" id="js_skill">
+                    <a href="#" class="btnBlack">Précédent</a>
+                    <input type="submit" name="submit_skill" id="js_skill" value="Suivant">
                 </div>
             </form>
         </section>
 
         <section id="step_four" class="wrap1">
-            <h2 class="title">Mes hobbies</h2>
+            <h2 class="title">Mes loisirs</h2>
             <form method="POST" id="hobbie_cv">
-                <div class="input_group">
-                    <input type="text" id="js_search_hobbie" name="hobbie" placeholder="jeux-video, ... ">
+                <div id="todo" class="input_group">
+                    <input type="text" id="js_search_hobbie" name="hobbie" placeholder="Mon loisir" onkeyup="searchHobbie()">
                     <span class="error" id="error_hobbie"></span>
+                    <ul id="result_search_hobbie">
+                        <!-- Mettre dans une boucle -->
+                        <li><a href="" id="bdd_item_hobbie" data-content="Jeux-vidéos">Jeux-vidéos</a></li>
+                        <!-- Fin de la boucle -->
+                    </ul>
+                    <span onclick="newHobbie()" class="addBtn">Ajouter ce loisir</span>
+                    <span>Ma sélection</span>
+                    <ul id="result_hobbies">
+                    </ul>
                 </div>
 
                 <div class="btnForm">
-                    <a href="#" class="btnBlack">Annuler</a>
-                    <input type="submit" name="submit_hobbie" id="js_hobbie_button">
+                    <a href="#" class="btnBlack">Précédent</a>
+                    <input type="submit" name="submit_hobbie" id="js_hobbie_button" value="Suivant">
                 </div>
             </form>
         </section>
@@ -212,8 +231,6 @@
                         <span class="error" id="error_school_end"></span>
                     </div>
                 </div>
-
-
 
                 <div class="input_group">
                     <label for="js_school_formation">Intitulé :</label>
@@ -246,14 +263,12 @@
                 </div>
 
                 <div class="btnForm">
-                    <a href="#" class="btnBlack">Annuler</a>
-                    <input type="submit" name="submit_school" id="js_school_button">
+                    <a href="#" class="btnBlack">Précédent</a>
+                    <input type="submit" name="submit_school" id="js_school_button" value="Suivant">
                 </div>
             </form>
         </section>
-
     </div>
-
 </section>
 
 <?php

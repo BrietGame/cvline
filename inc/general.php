@@ -152,6 +152,9 @@ function projet_cvtheques_scripts()
 
 
 
+
+    wp_enqueue_script('todo-skill', get_template_directory_uri() . '/asset/js/todo-skill.js', array('jquery'), _S_VERSION, true);
+    wp_enqueue_script('todo-hobbies', get_template_directory_uri() . '/asset/js/todo-hobbies.js', array('jquery'), _S_VERSION, true);
     wp_enqueue_script('ajax-generatecv', get_template_directory_uri() . '/asset/js/ajax-generatecv.js', array('jquery'), _S_VERSION, true);
     wp_enqueue_script('ajax-experience', get_template_directory_uri() . '/asset/js/ajax-experience.js', array('jquery'), _S_VERSION, true);
     wp_enqueue_script('ajax-skill', get_template_directory_uri() . '/asset/js/ajax-skill.js', array('jquery'), _S_VERSION, true);
