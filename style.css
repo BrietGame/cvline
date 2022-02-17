@@ -32,7 +32,13 @@ a {
 }
 
 .wrap1 {
-  max-width: 500px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.wrap2 {
+  max-width: 600px;
   margin: 0 auto;
   padding: 1rem;
 }
@@ -57,14 +63,12 @@ a {
 
 .btnWhite {
   color: #2A4876;
-  border: 1px solid #2A4876;
-  border-radius: 16px;
-  Font-family: Libre Franklin, sans-serif;
-  Font-size: 24px;
-  Vertical-align: Top;
-  padding: 0 2rem 0 2rem;
+  border-radius: 10px;
+  font-family: Libre Franklin, sans-serif;
+  font-size: 1rem;
   background-color: #FFFFFF;
   transition: 0.8s;
+  padding: 0.2rem 1.5rem;
 }
 
 .btnWhite:hover {
@@ -75,17 +79,17 @@ a {
 
 .btnBlue {
   color: #FFFFFF;
-  border: 1px solid #2A4876;
   border-radius: 16px;
-  Font-family: Libre Franklin, sans-serif;
-  font-size: 24px;
+  font-family: Libre Franklin, sans-serif;
+  font-size: 1rem;
   background-color: #2A4876;
-  padding: 0 2rem 0 2rem;
+  padding: 0.2rem 1.5rem;
   transition: 0.8s;
 }
 
 .btnBlue:hover {
   color: #2A4876;
+  border: 1px solid #2A4876;
   background-color: #FFFFFF;
   transition: 0.8s;
 }
@@ -95,9 +99,9 @@ a {
   border: 1px solid #2A4876;
   border-radius: 16px;
   font-family: Libre Franklin, sans-serif;
-  font-size: 24px;
+  font-size: 1rem;
   background-color: #000000;
-  padding: 0 2rem 0 2rem;
+  padding: 0.2rem 1.5rem;
   transition: 0.8s;
 }
 
@@ -105,12 +109,6 @@ a {
   color: #000000;
   background-color: #FFFFFF;
   transition: 0.8s;
-}
-
-.input_group input {
-  background: none;
-  border: none;
-  border-bottom: 2px solid black;
 }
 
 .logo {
@@ -128,6 +126,7 @@ nav ul li a {
   list-style-type: none;
   text-decoration: none;
   color: #FFFFFF;
+  font-family: Noto Serif, serif;
 }
 nav ul li a:hover {
   color: #2A4876;
@@ -139,14 +138,16 @@ nav ul li a:hover {
   text-align: center;
   justify-content: center;
   color: #FFFFFF;
+  font-family: Noto Serif, serif;
 }
 
-.conteneur {
-  background: url("../cvline/asset/img/bg/image-accueil.jpg") no-repeat;
+#home {
+  background-image: url("../cvline/asset/img/bg/image-accueil.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
+  height: 100%;
 }
-
-.titre h1 {
+#home .wrap1 .titre h1 {
   display: flex;
   justify-content: center;
   font-size: 50px;
@@ -155,14 +156,12 @@ nav ul li a:hover {
   font-weight: 400;
   padding-top: 3rem;
 }
-
-.btnGroup {
+#home .wrap1 .btnGroup {
   display: flex;
   justify-content: center;
   padding: 2rem 0 2rem 0;
 }
-
-.btnGroup2 {
+#home .wrap1 .btnGroup2 {
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -177,6 +176,7 @@ nav ul li a:hover {
 .container .input_group {
   display: flex;
   flex-flow: column nowrap;
+  margin: 1rem 0;
 }
 .container .input_group label {
   font-family: Libre Franklin, sans-serif;
@@ -185,14 +185,11 @@ nav ul li a:hover {
 .container .input_group input {
   background: none;
   border: none;
-  border-bottom: 2px solid #000000;
+  border-bottom: 2px solid;
   font-family: Libre Franklin, sans-serif;
-}
-.container .input_group input::placeholder {
-  font-family: Libre Franklin, sans-serif;
+  padding: 0.3rem 0.5rem;
 }
 .container .register {
-  background-color: #141414;
   width: 50%;
   padding: 6rem;
 }
@@ -206,16 +203,41 @@ nav ul li a:hover {
 }
 .container .register input {
   border-color: #FFFFFF;
+  color: #FFFFFF;
+}
+.container .register input::placeholder {
+  font-family: Libre Franklin, sans-serif;
+  color: rgba(255, 255, 255, 0.4);
+}
+.container .register input[type=submit] {
+  color: #000000;
+  cursor: pointer;
+}
+.container .register .checkbox {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 0.2rem;
 }
 .container .login {
   width: 50%;
   padding: 6rem;
+}
+.container .login h2 {
+  text-align: center;
+  font-family: Noto Serif, serif;
+  color: #000000;
 }
 .container .login label {
   color: #000000;
 }
 .container .login input {
   border-color: #000000;
+  color: #000000;
+}
+.container .login input::placeholder {
+  font-family: Libre Franklin, sans-serif;
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .bienvenue {
@@ -268,6 +290,282 @@ nav ul li a:hover {
   background: none;
   border-bottom: 1px solid #000000;
   display: flex;
+}
+
+#generate_cv .header {
+  background-image: url("../cvline/asset/img/bg/banner_cv.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  height: 100%;
+}
+#generate_cv .header h2 {
+  font-family: Noto Serif, serif;
+  font-size: 3rem;
+  text-align: center;
+  color: #FFFFFF;
+}
+#generate_cv .title {
+  text-align: center;
+  font-family: Noto Serif, serif;
+  color: #2A4876;
+}
+#generate_cv #fil_ariane {
+  display: flex;
+  flex-flow: row nowrap;
+}
+#generate_cv #fil_ariane #step {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.3rem 0.4rem;
+}
+#generate_cv #fil_ariane #step .nb {
+  border: 2px solid #2A4876;
+  background-color: #FFFFFF;
+  color: #2A4876;
+  padding: 0.5rem;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  font-family: Noto Serif, serif;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#generate_cv #fil_ariane #step .text {
+  font-family: Noto Serif, serif;
+  color: #2A4876;
+}
+#generate_cv #fil_ariane .active {
+  background-color: #2A4876 !important;
+}
+#generate_cv #fil_ariane .active .nb {
+  border-color: #FFFFFF !important;
+  background-color: #2A4876 !important;
+  color: #FFFFFF !important;
+}
+#generate_cv #fil_ariane .active .text {
+  color: #FFFFFF !important;
+}
+#generate_cv #fil_ariane .success {
+  background-color: #2A4876 !important;
+}
+#generate_cv #fil_ariane .success .nb {
+  background-color: #FFFFFF !important;
+  color: #2A4876 !important;
+}
+#generate_cv #fil_ariane .success .text {
+  color: #FFFFFF !important;
+}
+#generate_cv .two_input {
+  display: flex !important;
+  flex-flow: row nowrap !important;
+  justify-content: space-between !important;
+  align-items: center;
+  margin: 1rem auto;
+}
+#generate_cv .two_input .input_group {
+  width: 40%;
+  margin: 0;
+}
+#generate_cv .input_group {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 1rem auto;
+}
+#generate_cv .input_group label {
+  font-family: Libre Franklin, sans-serif;
+  color: #000000;
+}
+#generate_cv .input_group input {
+  background: none;
+  border: none;
+  border-bottom: 2px solid #000000;
+  padding: 0.3rem 0.4rem;
+  font-family: Libre Franklin, sans-serif;
+  color: #000000;
+}
+#generate_cv .input_group input::placeholder {
+  font-family: Libre Franklin, sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+}
+#generate_cv .input_group input[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -border-radius: 4px;
+  height: 15px;
+  width: 15px;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+#generate_cv .input_group input[type=checkbox]:checked {
+  background: #2A4876;
+  margin: 0px;
+  position: relative;
+}
+#generate_cv .input_group input[type=checkbox]:checked:before {
+  color: #2A4876;
+  position: absolute;
+}
+#generate_cv .input_group textarea {
+  background: none;
+  border: none;
+  border-bottom: 2px solid #000000;
+  padding: 0.3rem 0.4rem;
+  font-family: Libre Franklin, sans-serif;
+  color: #000000;
+  resize: none;
+  height: 300px;
+}
+#generate_cv .input_group textarea::placeholder {
+  font-family: Libre Franklin, sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+}
+#generate_cv .input_group .error {
+  font-family: Libre Franklin, sans-serif;
+  font-size: 0.8rem;
+  color: #FF0202;
+  padding-top: 0.2rem;
+}
+#generate_cv .btnForm {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  gap: 1rem;
+}
+#generate_cv .btnForm input[type=submit] {
+  border: none;
+  cursor: pointer;
+  color: #FFFFFF;
+  border-radius: 16px;
+  font-family: Libre Franklin, sans-serif;
+  font-size: 1rem;
+  background-color: #2A4876;
+  padding: 0.2rem 1.5rem;
+  transition: 0.8s;
+}
+#generate_cv .btnForm input[type=submit]:hover {
+  color: #2A4876;
+  border: 1px solid #2A4876;
+  background-color: #FFFFFF;
+  transition: 0.8s;
+}
+#generate_cv #todo {
+  /* Style the list items */
+  /* Set all odd list items to a different color (zebra-stripes) */
+  /* Darker background-color on hover */
+  /* When clicked on, add a background color and strike out text */
+  /* Add a "checked" mark when clicked on */
+  /* Style the close button */
+  /* Style the "Add" button */
+}
+#generate_cv #todo #result_search_skill, #generate_cv #todo #result_search_hobbie {
+  background-image: url("/css/searchicon.png");
+  /* Add a search icon to input */
+  background-position: 10px 12px;
+  /* Position the search icon */
+  background-repeat: no-repeat;
+  /* Do not repeat the icon image */
+  width: 100%;
+  /* Full-width */
+  font-size: 16px;
+  /* Increase font-size */
+  padding: 12px 20px 12px 40px;
+  /* Add some padding */
+  border: 1px solid #ddd;
+  /* Add a grey border */
+  margin-bottom: 12px;
+  /* Add some space below the input */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#generate_cv #todo #result_search_skill ul li a, #generate_cv #todo #result_search_hobbie ul li a {
+  border: 1px solid #ddd;
+  /* Add a border to all links */
+  margin-top: -1px;
+  /* Prevent double borders */
+  background-color: #FF0202;
+  /* Grey background color */
+  padding: 12px;
+  /* Add some padding */
+  text-decoration: none;
+  /* Remove default text underline */
+  font-size: 18px;
+  /* Increase the font-size */
+  color: black;
+  /* Add a black text color */
+  display: block;
+  /* Make it into a block element to fill the whole list */
+}
+#generate_cv #todo #result_search_skill ul li a:hover:not(.header), #generate_cv #todo #result_search_hobbie ul li a:hover:not(.header) {
+  background-color: #eee;
+  /* Add a hover effect to all links, except for headers */
+}
+#generate_cv #todo ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#generate_cv #todo ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+#generate_cv #todo ul li:hover {
+  background: #ddd;
+}
+#generate_cv #todo ul li.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+#generate_cv #todo ul li.checked::before {
+  content: "";
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+#generate_cv #todo .close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+#generate_cv #todo .close:hover {
+  background-color: #f44336;
+  color: white;
+}
+#generate_cv #todo .addBtn {
+  padding: 10px;
+  width: 25%;
+  background: #d9d9d9;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}
+#generate_cv #todo .addBtn:hover {
+  background-color: #bbb;
 }
 
 /*# sourceMappingURL=style.css.map */

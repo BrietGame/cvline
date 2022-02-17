@@ -9,6 +9,8 @@ $(document).ready(function() {
     const errorAdress = $('#error_adress');
     const errorPostal = $('#error_postal');
     const errorCity = $('#error_city');
+    const errorBirthday = $('#error_birthday');
+    const errorPhone = $('#error_phone');
 
     $('#global_cv').on('submit', function (e) {
         // ajax
@@ -20,6 +22,8 @@ $(document).ready(function() {
         const adress = $('#js_adress').val();
         const postal = $('#js_postal').val();
         const city = $('#js_city').val();
+        const birthday = $('#js_birthday').val();
+        const phone = $('#js_phone').val();
 
         console.log('Clicked');
         $.ajax({
@@ -33,6 +37,8 @@ $(document).ready(function() {
                 adress: adress,
                 postal: postal,
                 city: city,
+                birthday: birthday,
+                phone: phone,
             },
             beforeSend: function () {
                 console.log('ajax start : ok');
@@ -63,6 +69,12 @@ $(document).ready(function() {
                     }
                     if (res.errors.city != null) {
                         errorCity.html(res.errors.city)
+                    }
+                    if (res.errors.birthday != null) {
+                        errorBirthday.html(res.errors.birthday)
+                    }
+                    if (res.errors.phone != null) {
+                        errorPhone.html(res.errors.phone)
                     }
                 }
             }

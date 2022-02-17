@@ -49,6 +49,29 @@ function intValidation($errors,$int,$key){
     return $errors;
 }
 
+function phoneValidation($errors, $phoneNumber, $key){
+    if(!empty($phoneNumber)){
+        $regex = '#^0[2-6-7]{1}\d{8}$#';
+        if( !preg_match( $regex, $phoneNumber ) ) {
+            $errors[$key] = 'Renseignez un numéro valide';
+        }
+    }else{
+        $errors[$key] = 'Veuillez renseigner un numéro';
+    }
+    return $errors;
+}
+
+function dateValidation($errors,$value,$key){
+    if(strtotime($value) >= strtotime(date('Y-m-d'))){
+        $errors[$key] = 'Veuillez rentrez une date valide';
+    }
+    if(empty($value)){
+        $errors[$key] = 'Veuillez selectionez une date';
+    }
+    return $errors;
+}
+
+
 function showJson($data){
     header("Content-type: application/json");
     $json = json_encode($data, JSON_PRETTY_PRINT);

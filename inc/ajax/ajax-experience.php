@@ -16,18 +16,28 @@ function getExperienceWithAjax(){
     $postplace = cleanXss('postplace');
     $postdescription = cleanXss('postdescription');
 
+    $errors = dateValidation($errors, $predate,'predate');
+    $errors = dateValidation($errors, $lastdate,'lastdate');
+    $errors = textValidation($errors, $postname,'postname',2, 70);
+    $errors = textValidation($errors, $entreprisename,'entreprisename',2, 70);
+    $errors = textValidation($errors, $postplace,'postplace',2, 55);
+    $errors = textValidation($errors, $postdescription,'postdescription',2, 500);
+
+
 //    $errors = emailValidation($errors, $pos, 'email');
 
     if(count($errors) === 0) {
         $success2 = true;
         $data = [
             'success2' => $success2,
-            'predate' => $predate,
-            'lastdate' => $lastdate,
-            'postname' => $postname,
-            'entreprisename' => $entreprisename,
-            'postplace' => $postplace,
-            'postdescription' => $postdescription,
+            [
+                'predate' => $predate,
+                'lastdate' => $lastdate,
+                'postname' => $postname,
+                'entreprisename' => $entreprisename,
+                'postplace' => $postplace,
+                'postdescription' => $postdescription,
+            ],
         ];
 
     }else{

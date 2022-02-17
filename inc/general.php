@@ -143,18 +143,25 @@ add_action('widgets_init', 'projet_cvtheques_widgets_init');
  */
 function projet_cvtheques_scripts()
 {
+
     wp_enqueue_style('projet-cvtheques-style', get_stylesheet_uri(), array(), _S_VERSION);
+    wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css', array(), '1.0.0');
 
     wp_deregister_script('jquery');
     wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', array(), '3.6.0', true);
 
 
 
+
+    wp_enqueue_script('todo-skill', get_template_directory_uri() . '/asset/js/todo-skill.js', array('jquery'), _S_VERSION, true);
+    wp_enqueue_script('todo-hobbies', get_template_directory_uri() . '/asset/js/todo-hobbies.js', array('jquery'), _S_VERSION, true);
     wp_enqueue_script('ajax-generatecv', get_template_directory_uri() . '/asset/js/ajax-generatecv.js', array('jquery'), _S_VERSION, true);
     wp_enqueue_script('ajax-experience', get_template_directory_uri() . '/asset/js/ajax-experience.js', array('jquery'), _S_VERSION, true);
-    wp_add_inline_script('ajax-generatecv', 'const ajaxUrl = ' . json_encode(admin_url('admin-ajax.php')), 'before');
-    wp_add_inline_script('ajax-experience', 'const ajaxUrlexp = ' . json_encode(admin_url('admin-ajax.php')), 'before');
+    wp_enqueue_script('ajax-skill', get_template_directory_uri() . '/asset/js/ajax-skill.js', array('jquery'), _S_VERSION, true);
+    wp_enqueue_script('ajax-hobbie', get_template_directory_uri() . '/asset/js/ajax-hobbie.js', array('jquery'), _S_VERSION, true);
+    wp_enqueue_script('ajax-school', get_template_directory_uri() . '/asset/js/ajax-school.js', array('jquery'), _S_VERSION, true);
 
+    wp_add_inline_script('ajax-generatecv', 'const ajaxUrl = ' . json_encode(admin_url('admin-ajax.php')), 'before');
 
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
