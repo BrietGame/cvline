@@ -14,6 +14,13 @@
         }
     }
 
+    .title {
+        text-align: center;
+        font-family: $noto;
+        color: $blue;
+    }
+       
+
     // Fil d'Ariane
     #fil_ariane {
         display: flex;
@@ -71,6 +78,7 @@
         display: flex!important;
         flex-flow: row nowrap!important;
         justify-content: space-between!important;
+        align-items: center;
         margin: 1rem auto;
 
         .input_group {
@@ -98,6 +106,42 @@
             color: $black;
         }
         input::placeholder {
+            font-family: $franklin;
+            color: rgba($color: #000000, $alpha: .5);
+        }
+
+        // Checkbox
+        input[type=checkbox] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            -border-radius: 4px;
+            height: 15px;
+            width: 15px;
+            background: #fff;
+            border: 1px solid #ccc;
+        }
+        input[type="checkbox"]:checked {
+            background: $blue;
+            margin:0px;
+            position: relative;
+            &:before {              
+              color: $blue;
+              position: absolute;
+            }
+          }
+
+        textarea {
+            background: none;
+            border: none;
+            border-bottom: 2px solid $black;
+            padding: .3rem .4rem;
+            font-family: $franklin;
+            color: $black;
+            resize: none;
+            height: 300px;
+        }
+        textarea::placeholder {
             font-family: $franklin;
             color: rgba($color: #000000, $alpha: .5);
         }

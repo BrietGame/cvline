@@ -36,6 +36,7 @@
             </div>
         </section>
         <section id="step_one" class="wrap2">
+            <h2 class="title">Mes informations</h2>
             <form method="POST" id="global_cv">
                 <div class="input_group">
                     <label for="js_surname">Nom :</label>
@@ -84,9 +85,17 @@
                         <span class="error" id="error_birthday"></span>
                     </div>
                     <div class="input_group">
-                        <label for="js_permis_b"><input type="checkbox" id="js_permis_b" name="permis_b" value="permis b"> Permis B</label>
-                        <label for="js_permis_c"><input type="checkbox" id="js_permis_c" name="permis_c" value="permis c"> Permis C</label>
-                        <label for="js_permis_moto"><input type="checkbox" id="js_permis_moto" name="permis_moto" value="permis moto"> Permis Moto</label>
+                        <label for="pet-select">Sélectionnez vot:</label>
+
+                        <select name="pets" id="pet-select">
+                            <option value="">--Please choose an option--</option>
+                            <option value="dog">Dog</option>
+                            <option value="cat">Cat</option>
+                            <option value="hamster">Hamster</option>
+                            <option value="parrot">Parrot</option>
+                            <option value="spider">Spider</option>
+                            <option value="goldfish">Goldfish</option>
+                        </select>
                     </div>
                 </div>
 
@@ -103,80 +112,143 @@
 
             </form>
         </section>
-        <section id="step_two">
+        <section id="step_two" class="wrap2">
+            <h2 class="title">Mes expériences</h2>
             <form method="POST" id="experience_cv">
-                <input type="date" id="js_predate" name="predate" placeholder="">
-                <span class="error" id="error_predate"></span>
+                <div class="two_input">
+                    <div class="input_group">
+                        <label for="js_predate">Année de début</label>
+                        <input type="date" id="js_predate" name="predate" placeholder="">
+                        <span class="error" id="error_predate"></span>
+                    </div>
 
-                <input type="date" id="js_lastdate" name="lastdate" placeholder="">
-                <span class="error" id="error_lastdate"></span>
+                    <div class="input_group">
+                        <label for="js_lastdate">Année de fin</label>
+                        <input type="date" id="js_lastdate" name="lastdate" placeholder="">
+                        <span class="error" id="error_lastdate"></span>
+                        <label for="js_post_active"><input type="checkbox" id="js_post_active" name="js_post_active" value="Je suis à ce poste"> Je suis encore à ce poste</label>
+                    </div>
+                </div>
 
-                <input type="text" id="js_post_name" name="postname" placeholder="*Boulanger">
-                <span class="error" id="error_post_name"></span>
+                <div class="input_group">
+                    <label for="js_post_name">Nom du poste</label>
+                    <input type="text" id="js_post_name" name="postname" placeholder="*Boulanger">
+                    <span class="error" id="error_post_name"></span>
+                </div>
 
-                <input type="text" id="js_entreprise_name" name="entreprisename" placeholder="Elsi & Franck">
-                <span class="error" id="error_entreprise_name"></span>
+                <div class="input_group">
+                    <label for="js_entreprise_name">Nom de l'entreprise / Association</label>
+                    <input type="text" id="js_entreprise_name" name="entreprisename" placeholder="Elsi & Franck">
+                    <span class="error" id="error_entreprise_name"></span>
+                </div>
 
-                <input type="text" id="js_post_place" name="postplace" placeholder="Cherbourg">
-                <span class="error" id="error_post_place"></span>
+                <div class="two_input">
+                    <div class="input_group">
+                        <label for="js_post_place">Lieu du poste</label>
+                        <input type="text" id="js_post_place" name="postplace" placeholder="Cherbourg">
+                        <span class="error" id="error_post_place"></span>
+                    </div>
+                    <div class="input_group">
+                        <label for="js_teletravail_post"><input type="checkbox" id="js_teletravail_post" name="js_teletravail_post" value="J'étais en télétravail"> J'étais en télétravail</label>
+                    </div>
+                </div>
 
-                <input type="text" id="js_post_description" name="postdescription" placeholder="Je sais faire du pain">
-                <span class="error" id="error_post_description"></span>
+                <div class="input_group">
+                    <label for="js_post_description">Description du poste</label>
+                    <textarea id="js_post_description" name="postdescription" placeholder="Je sais faire du pain"></textarea>
+                    <span class="error" id="error_post_description"></span>
+                </div>
 
-                <input type="submit" name="submitted" id="js_submitted_experience">
+                <div class="btnForm">
+                    <a href="#" class="btnBlack">Annuler</a>
+                    <input class="btnBlue" type="submit" name="submitted" id="js_submitted_experience">
+                </div>
             </form>
         </section>
 
-        <section id="step_three">
+        <section id="step_three" class="wrap1">
+            <h2 class="title">Mes compétences</h2>
             <form method="POST" id="skill">
-                <input type="text" id="js_search_skill" name="searchskill" placeholder="*Savoir faire, savoir être.">
-                <span class="error" id="error_search_skill"></span>
-                <input type="submit" name="submit_skill" id="js_skill">
+                <div class="input_group">
+                    <input type="text" id="js_search_skill" name="searchskill" placeholder="*Savoir faire, savoir être.">
+                    <span class="error" id="error_search_skill"></span>
+                </div>
 
+                <div class="btnForm">
+                    <a href="#" class="btnBlack">Annuler</a>
+                    <input type="submit" name="submit_skill" id="js_skill">
+                </div>
             </form>
         </section>
 
-        <section id="step_four">
-            <h2>Loisirs</h2>
+        <section id="step_four" class="wrap1">
+            <h2 class="title">Mes hobbies</h2>
             <form method="POST" id="hobbie_cv">
-                <input type="text" id="js_search_hobbie" name="hobbie" placeholder="jeux-video, ... ">
-                <span class="error" id="error_hobbie"></span>
+                <div class="input_group">
+                    <input type="text" id="js_search_hobbie" name="hobbie" placeholder="jeux-video, ... ">
+                    <span class="error" id="error_hobbie"></span>
+                </div>
 
-                <input type="submit" name="submit_hobbie" id="js_hobbie_button">
-
+                <div class="btnForm">
+                    <a href="#" class="btnBlack">Annuler</a>
+                    <input type="submit" name="submit_hobbie" id="js_hobbie_button">
+                </div>
             </form>
         </section>
 
-        <section id="step_five">
-            <h2>Parcours</h2>
+        <section id="step_five" class="wrap1">
+            <h2 class="title">Mon parcours</h2>
             <form method="POST" id="school_cv">
 
-                <label for="js_school_start">Debut :</label>
-                <input type="date" id="js_school_start" name="school_start">
-                <span class="error" id="error_school_start"></span>
+                <div class="two_input">
+                    <div class="input_group">
+                        <label for="js_school_start">Debut :</label>
+                        <input type="date" id="js_school_start" name="school_start">
+                        <span class="error" id="error_school_start"></span>
+                    </div>
+                    <div class="input_group">
+                        <label for="js_school_end">Fin :</label>
+                        <input type="date" id="js_school_end" name="school_end">
+                        <span class="error" id="error_school_end"></span>
+                    </div>
+                </div>
 
-                <label for="js_school_end">Fin :</label>
-                <input type="date" id="js_school_end" name="school_end">
-                <span class="error" id="error_school_end"></span>
 
-                <label for="js_school_formation">Intitulé :</label>
-                <input type="text" id="js_school_formation" name="school_formation">
-                <span class="error" id="error_school_formation"></span>
 
-                <label for="js_school_name">Nom école :</label>
-                <input type="text" id="js_school_name" name="school_name">
-                <span class="error" id="error_school_name"></span>
+                <div class="input_group">
+                    <label for="js_school_formation">Intitulé :</label>
+                    <input type="text" id="js_school_formation" name="school_formation">
+                    <span class="error" id="error_school_formation"></span>
+                </div>
 
-                <label for="js_school_place">Lieu :</label>
-                <input type="text" id="js_school_place" name="school_place">
-                <span class="error" id="error_school_place"></span>
+                <div class="input_group">
+                    <label for="js_school_name">Nom école :</label>
+                    <input type="text" id="js_school_name" name="school_name">
+                    <span class="error" id="error_school_name"></span>
+                </div>
 
-                <label for="js_school_description">Description :</label>
-                <textarea id="js_school_description" name="school_description" cols="30" rows="10"></textarea>
-                <span class="error" id="error_school_description"></span>
+                <div class="two_input">
+                    <div class="input_group">
+                        <label for="js_school_place">Lieu :</label>
+                        <input type="text" id="js_school_place" name="school_place">
+                        <span class="error" id="error_school_place"></span>
+                    </div>
+                    <div class="input_group">
+                        <label for="js_teletravail_school"><input type="checkbox" id="js_teletravail_school" name="js_teletravail_school" value="J'étais en télétravail"> J'étais en télétravail</label>
+                    </div>
+                </div>
 
-                <input type="submit" name="submit_school" id="js_school_button">
 
+                <div class="input_group">
+                    <label for="js_school_description">Description :</label>
+                    <textarea id="js_school_description" name="school_description" cols="30" rows="10"></textarea>
+                    <span class="error" id="error_school_description"></span>
+                </div>
+
+                <div class="btnForm">
+                    <a href="#" class="btnBlack">Annuler</a>
+                    <input type="submit" name="submit_school" id="js_school_button">
+                </div>
             </form>
         </section>
 

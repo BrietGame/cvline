@@ -252,6 +252,11 @@ nav ul li a:hover {
   text-align: center;
   color: #FFFFFF;
 }
+#generate_cv .title {
+  text-align: center;
+  font-family: Noto Serif, serif;
+  color: #2A4876;
+}
 #generate_cv #fil_ariane {
   display: flex;
   flex-flow: row nowrap;
@@ -307,6 +312,7 @@ nav ul li a:hover {
   display: flex !important;
   flex-flow: row nowrap !important;
   justify-content: space-between !important;
+  align-items: center;
   margin: 1rem auto;
 }
 #generate_cv .two_input .input_group {
@@ -331,6 +337,39 @@ nav ul li a:hover {
   color: #000000;
 }
 #generate_cv .input_group input::placeholder {
+  font-family: Libre Franklin, sans-serif;
+  color: rgba(0, 0, 0, 0.5);
+}
+#generate_cv .input_group input[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -border-radius: 4px;
+  height: 15px;
+  width: 15px;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+#generate_cv .input_group input[type=checkbox]:checked {
+  background: #2A4876;
+  margin: 0px;
+  position: relative;
+}
+#generate_cv .input_group input[type=checkbox]:checked:before {
+  color: #2A4876;
+  position: absolute;
+}
+#generate_cv .input_group textarea {
+  background: none;
+  border: none;
+  border-bottom: 2px solid #000000;
+  padding: 0.3rem 0.4rem;
+  font-family: Libre Franklin, sans-serif;
+  color: #000000;
+  resize: none;
+  height: 300px;
+}
+#generate_cv .input_group textarea::placeholder {
   font-family: Libre Franklin, sans-serif;
   color: rgba(0, 0, 0, 0.5);
 }
