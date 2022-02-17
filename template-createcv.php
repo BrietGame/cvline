@@ -20,7 +20,9 @@ $wpdb->insert(
         "cv_email" => $email,
         "cv_adress" => $adress,
         "cv_birthday" => $birthday,
-        "cv_phone" => $phone
+        "cv_phone" => $phone,
+        "cv_postal" => $postal,
+        "cv_city" => $city
     )
 );
 ?>
