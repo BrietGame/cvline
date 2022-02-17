@@ -1,0 +1,62 @@
+
+
+.bienvenue{
+  font-size: 50px;
+  font-family: $noto;
+  color: $blue;
+  text-align: center;
+  padding-bottom: 3rem;
+}
+#conteneurProfil{
+  display: flex;
+
+  .profil{
+    width: 40%;
+    .imgProfil {
+      img {
+        width: 200px;
+        height: 214px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+    }
+    .btnGroup3{
+      padding-bottom: 2rem;
+    }
+  }
+  .formulaire{
+    width: 60%;
+    .form{
+      gap: 2rem;
+      .nomEtPrenom{
+        display: flex;
+        gap: 1rem;
+        padding-bottom: 1rem;
+      }
+      .dateNaissance{
+        padding-bottom: 1rem;
+      }
+      .codePostalEtVille{
+        display: flex;
+        gap: 1rem;
+        padding-top: 1rem;
+      }
+      .pays{
+        padding-top: 1rem;
+      }
+    }
+    input{
+      border: none;
+      background:none;
+      border-bottom: 1px solid $black;
+      display: flex;
+
+    }
+  }
+}
+
+
+
+
+
+

@@ -1,9 +1,9 @@
-Body{
 
-  background: url('../cvline/asset/img/bg/image-accueil.jpg') no-repeat center center fixed;
-  background-size: cover;
+.conteneur{
+    background: url('../cvline/asset/img/bg/image-accueil.jpg') no-repeat ;
+    background-size: cover;
+
 }
-
 .titre {
   h1{
     display: flex;

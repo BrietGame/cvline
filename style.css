@@ -141,8 +141,8 @@ nav ul li a:hover {
   color: #FFFFFF;
 }
 
-Body {
-  background: url("../cvline/asset/img/bg/image-accueil.jpg") no-repeat center center fixed;
+.conteneur {
+  background: url("../cvline/asset/img/bg/image-accueil.jpg") no-repeat;
   background-size: cover;
 }
 
@@ -216,6 +216,58 @@ Body {
 }
 .container .login input {
   border-color: #000000;
+}
+
+.bienvenue {
+  font-size: 50px;
+  font-family: Noto Serif, serif;
+  color: #2A4876;
+  text-align: center;
+  padding-bottom: 3rem;
+}
+
+#conteneurProfil {
+  display: flex;
+}
+#conteneurProfil .profil {
+  width: 40%;
+}
+#conteneurProfil .profil .imgProfil img {
+  width: 200px;
+  height: 214px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+#conteneurProfil .profil .btnGroup3 {
+  padding-bottom: 2rem;
+}
+#conteneurProfil .formulaire {
+  width: 60%;
+}
+#conteneurProfil .formulaire .form {
+  gap: 2rem;
+}
+#conteneurProfil .formulaire .form .nomEtPrenom {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+#conteneurProfil .formulaire .form .dateNaissance {
+  padding-bottom: 1rem;
+}
+#conteneurProfil .formulaire .form .codePostalEtVille {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+#conteneurProfil .formulaire .form .pays {
+  padding-top: 1rem;
+}
+#conteneurProfil .formulaire input {
+  border: none;
+  background: none;
+  border-bottom: 1px solid #000000;
+  display: flex;
 }
 
 /*# sourceMappingURL=style.css.map */
