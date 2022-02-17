@@ -18,8 +18,9 @@ function getSkillWithAjax(){
         $success3 = true;
         $data = [
             'success3' => $success3,
-            'searchskill' => $searchskill,
-
+            [
+                'searchskill' => $searchskill,
+            ],
         ];
 
     }else{
