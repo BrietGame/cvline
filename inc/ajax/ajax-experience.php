@@ -30,12 +30,14 @@ function getExperienceWithAjax(){
         $success2 = true;
         $data = [
             'success2' => $success2,
-            'predate' => $predate,
-            'lastdate' => $lastdate,
-            'postname' => $postname,
-            'entreprisename' => $entreprisename,
-            'postplace' => $postplace,
-            'postdescription' => $postdescription,
+            [
+                'predate' => $predate,
+                'lastdate' => $lastdate,
+                'postname' => $postname,
+                'entreprisename' => $entreprisename,
+                'postplace' => $postplace,
+                'postdescription' => $postdescription,
+            ],
         ];
 
     }else{

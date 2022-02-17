@@ -16,7 +16,10 @@ function getHobbieWithAjax(){
         $success = true;
         $data = [
             'success' => $success,
-            'hobbie' => $hobbie,
+            [
+                'hobbie' => $hobbie,
+            ],
+
 
         ];
 

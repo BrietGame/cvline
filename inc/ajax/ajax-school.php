@@ -27,12 +27,14 @@ function getSchoolWithAjax(){
         $success = true;
         $data = [
             'success' => $success,
-            'schoolStart' => $schoolStart,
-            'schoolEnd' => $schoolEnd,
-            'schoolFormation' => $schoolFormation,
-            'schoolName' => $schoolName,
-            'schoolPlace' => $schoolPlace,
-            'schoolDescription' => $schoolDescription,
+            [
+                'schoolStart' => $schoolStart,
+                'schoolEnd' => $schoolEnd,
+                'schoolFormation' => $schoolFormation,
+                'schoolName' => $schoolName,
+                'schoolPlace' => $schoolPlace,
+                'schoolDescription' => $schoolDescription,
+            ],
         ];
 
     }else{
