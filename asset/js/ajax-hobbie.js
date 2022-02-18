@@ -16,7 +16,7 @@ $(document).ready(function () {
             type: 'POST',
             data: {
                 action: 'ajax_hobbie',
-                hobbie: dataHobbiesContentArray,
+                // hobbie: dataHobbiesContentArray,
             },
             beforeSend: function () {
                 console.log('ajax start : hobbie');

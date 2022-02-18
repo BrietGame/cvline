@@ -19,7 +19,7 @@ $(document).ready(function () {
             // Bien écrire les name dans " data "
             data: {
                 action: 'ajax_skill',
-                searchskill: dataSkillsContentArray
+                // searchskill: dataSkillsContentArray
             },
             beforeSend: function () {
                 console.log('ajax start : skills');
