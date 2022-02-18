@@ -26,5 +26,6 @@
 	<?php wp_body_open(); ?>
 
 	<div class="logo">
-		<img src=" <?php echo get_template_directory_uri() ?>/asset/img/logoCVline1.svg" alt="logo">
+
+        <a href="<?php echo path('/'); ?>"><img src=" <?php echo get_template_directory_uri() ?>/asset/img/logoCVline1.svg" alt="logo"></a>
 	</div>

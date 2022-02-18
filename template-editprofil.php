@@ -1,75 +1,85 @@
 <?php
-get_header();
 /* Template Name: editProfil */
 ?>
-<div class="wrap3">
-    <div class="titre">
-        <h1>Mon espace</h1>
+
+<section id="profil">
+    <div class="header">
+    <?= get_header() ?>
+        <h2>Mon espace</h2>
+    </div>
+    <div class="wrap3">
+        <div class="titre">
+            <h1>Bienvenue John sur votre espace recruteur/candidat</h1>
+        </div>
+        <div id="conteneurProfil">
+
+            <div class="profilUser">
+                <div class="imgProfil">
+                    <img src=" <?php echo get_template_directory_uri() ?>/asset/img/lucImg.jpg" alt="img profil">
+                </div>
+                <div class="btnGroup">
+                <div class="btnGroup3">
+                    <a class="btnBlue" href="#">Modifier mon profil </a>
+                </div>
+
+                <div class="btnGroup4">
+                    <a class="btnWhite" href="#">Accéder à la CVthèque</a>
+                </div>
+            </div>
+            </div>
+
+            <div class="formulaire">
+                <form class="form" action="#" method="post">
+                    <div class="two_input">
+                        <div class="input_group">
+                            <label for="js_surname">Nom : </label>
+                            <input type="text" id="js_surname" name="surname" placeholder="Doe">
+                            <span class="error" id="error_surname"></span>
+                        </div>
+
+                        <div class="input_group">
+                            <label for="js_name">Prénom : </label>
+                            <input type="text" id="js_name" name="name" placeholder="John" >
+                            <span class="error" id="error_name"></span>
+                        </div>
+                    </div>
+
+                        <div class="input_group">
+                            <label for="js_birthday">Date de naissance</label>
+                            <input type="date" id="js_birthday"  name="birthday">
+                            <span class="error" id="error_birthday"></span>
+                        </div>
+
+                    <div class="input_group">
+                        <label for="js_adress">Adresse</label>
+                        <input type="text" id="js_adress" name="adress" placeholder="32 rue de la république">
+                        <span class="error" id="error_adress"></span>
+                    </div>
+                    <div class="two_input">
+                        <div class="input_group">
+                            <label for="codePostal">Code Postal</label>
+                            <input type="text" id="codePostal" placeholder="76100" name="codePostal">
+                            <span class="error" id="error_postal"></span>
+                        </div>
+                        <div class="input_group">
+                            <label for="js_city">Ville</label>
+                            <input type="text" id="js_city" name="city" placeholder="Rouen" >
+                            <span class="error" id="error_city"></span>
+                        </div>
+                    </div>
+
+                    <div class="input_group">
+                        <label for="pays">Pays</label>
+                        <input type="text" id="pays"  name="pays" placeholder="France" >
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 
-    <div class="bienvenue">
-        <p>Bienvenue John sur votre espace recruteur/candidat</p>
-    </div>
 
-<div id="conteneurProfil">
+    <?php
+    get_footer();
+    ?>
+</section>
 
-    <div class="profil">
-        <div class="imgProfil">
-            <img src=" <?php echo get_template_directory_uri() ?>/asset/img/lucImg.jpg" alt="img profil">
-        </div>
-
-        <div class="btnGroup3">
-            <a class="btnBlue" href="#">Modifier mon profil </a>
-        </div>
-        <div class="btnGroup4">
-            <a class="btnWhite" href="#">Accéder à la CVthèque</a>
-        </div>
-    </div>
-
-    <div class="formulaire">
-        <form class="form" action="#" method="post">
-            <div class="nomEtPrenom">
-                <label for="nom">Nom</label>
-                <input type="text" id="name" placeholder="Doe" name="Nom">
-
-                <label for="prenom">Prénom</label>
-                <input type="text" id="prenom" placeholder="Doe" name="Prenom">
-            </div>
-
-            <div class="dateNaissance">
-                <label for="bday">Date de naissance</label>
-                <input type="text" id="dateDeNaissance"  placeholder="DD/MM/YYYY" name="DatedeNaissance">
-            </div>
-            <div class="adresse">
-                <label for="adresse">Adresse</label>
-                <input type="text" id="adresse"  placeholder="32 rue de la république" name="adresse">
-            </div>
-
-            <div class="codePostalEtVille">
-                <label for="codePostal">Code Postal</label>
-                <input type="text" id="codePostal" placeholder="76100" name="codePostal">
-
-                <label for="ville">Ville</label>
-                <input type="text" id="ville" placeholder="Rouen" name="ville">
-            </div>
-            <div class="pays">
-                <label for="pays">Pays</label>
-                <input type="text" id="pays"  placeholder="France" name="pays">
-            </div>
-        </form>
-    </div>s
-</div>
-
-
-
-
-
-
-
-</div>
-
-
-
-<?php
-get_footer();
-?>

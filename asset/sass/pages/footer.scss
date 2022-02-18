@@ -22,7 +22,9 @@ nav {
   padding-top: 2rem;
   text-align: center;
   justify-content: center;
-  color: $white;
   font-family: $noto;
+      .text-copy{
+    color: $white;
+  }
 }
 
