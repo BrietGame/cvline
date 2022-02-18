@@ -178,6 +178,7 @@
 
                 <div class="btnForm">
                     <a href="#" class="btnBlack">Précédent</a>
+                    <a href="#" class="btnBlack" id="addMoreExp">Ajouter un autre</a>
                     <input class="btnBlue" type="submit" name="submitted" id="js_submitted_experience" value="Suivant">
                 </div>
             </form>
@@ -286,7 +287,7 @@
             </form>
         </section>
 
-        <a href="" id="final_submit">Générer son PUTAIN DE CV</a>
+        <a href="" class="btnBlue" id="final_submit">Générer son CV</a>
         <?php debug($_POST) ?>
     </div>
 </section>
