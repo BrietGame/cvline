@@ -1,7 +1,7 @@
 <?php
 get_header();
 /* Template Name: CreateCv */
-debug($_POST);
+
 $surname = $_POST['dataFinal'][0]['surname'];
 $name = $_POST['dataFinal'][0]['name'];
 $birthday = $_POST['dataFinal'][0]['birtday'];
@@ -80,6 +80,39 @@ for($i = 0; $i <= 5 ; $i++){
         )
     );
 }
+
+//COMPETENCES
+
+$finalDataSkill = $_POST['dataFinal'][2];
+
+for($i = 0; $i <= 5 ; $i++){
+
+    $skillName = $finalDataSkill[$i];
+
+    $wpdb->insert(
+        $wpdb->prefix . 'cv_skills',
+        array(
+            "skills_name" => $skillName,
+        )
+    );
+}
+
+//LOISIR
+
+$finalDataHobbie = $_POST['dataFinal'][3];
+
+for($i = 0; $i <= 5 ; $i++){
+
+    $hobbieName = $finalDataHobbie[$i];
+
+    $wpdb->insert(
+        $wpdb->prefix . 'cv_hobbie',
+        array(
+            "hobbie_name" => $hobbieName,
+        )
+    );
+}
+
 
 ?>
 
