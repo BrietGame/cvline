@@ -2,7 +2,7 @@
 
 .btnTransparent{
   box-sizing: border-box;
-  border-radius: 10px;
+  border-radius: 16px;
   cursor:pointer;
   color: $white;
   font-size: 25px;
@@ -19,12 +19,13 @@
 
 .btnWhite {
   color:$blue ;
-  border-radius: 10px;
+  border-radius: 16px;
   font-family:$franklin;
   font-size: 1rem;
   background-color: $white;
   transition: .8s;
   padding: .2rem 1.5rem;
+  border: 1px solid $blue;
 }
 .btnWhite:hover{
   background-color: $blue;
@@ -37,8 +38,10 @@
   font-family: $franklin;
   font-size: 1rem;
   background-color: $blue;
-  padding: .2rem 1.5rem;
+  padding: .2rem 2.5rem;
   transition: .8s;
+  border: 1px solid $blue;
+
 }
 .btnBlue:hover{
   color: $blue;

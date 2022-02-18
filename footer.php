@@ -16,15 +16,16 @@
     <div class="wrap1">
         <nav>
             <ul>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">CGU</a></li>
-                <li><a href="#">Mentions légales</a></li>
-                <li><a href="#">À propos</a></li>
-                <li><a href="#">S'inscrire/ Se connecter</a></li>
+                <li><a href="<?php echo path('faq'); ?>">FAQ</a></li>
+                <li><a href="<?php echo path('cgu'); ?>">CGU</a></li>
+                <li><a href="<?php echo path('legals'); ?>">Mentions légales</a></li>
+                <li><a href="<?php echo path('about'); ?>">À propos</a></li>
+                <li><a href="<?php echo path('login'); ?>">S'inscrire/ Se connecter</a></li>
             </ul>
         </nav>
         <div class="copyright">
-            <p> © Copyright CV LINE Company</p>
+            <a  href="<?php echo path('/'); ?>">
+                <p class="text-copy"> © Copyright CV LINE Company</p></a>
         </div>
     </div>
 
