@@ -28,6 +28,8 @@ $wpdb->insert(
     )
 );
 
+// Mes Expériences
+
 
 $predate = $_POST['dataFinal'][1][0]['predate'];
 $lastdate = $_POST['dataFinal'][1][0]['lastdate'];
@@ -35,6 +37,8 @@ $postname = $_POST['dataFinal'][1][0]['postname'];
 $entreprisename = $_POST['dataFinal'][1][0]['entreprisename'];
 $postplace = $_POST['dataFinal'][1][0]['postplace'];
 $postdescription = $_POST['dataFinal'][1][0]['postdescription'];
+
+
 
 $wpdb->insert(
     $wpdb->prefix . 'cv_school',
@@ -45,6 +49,29 @@ $wpdb->insert(
         "school_name" => $entreprisename,
         "school_place" => $postplace,
         "school_description" => $postdescription
+    )
+);
+
+// Mon parcours
+
+$schoolStart = $_POST['dataFinal'][4][0]['schoolStart'];
+$schoolEnd = $_POST['dataFinal'][4][0]['schoolEnd'];
+$schoolFormation = $_POST['dataFinal'][4][0]['schoolFormation'];
+$schoolName = $_POST['dataFinal'][4][0]['schoolName'];
+$schoolPlace = $_POST['dataFinal'][4][0]['schoolPlace'];
+$schoolDescription = $_POST['dataFinal'][4][0]['schoolDescription'];
+
+
+
+$wpdb->insert(
+    $wpdb->prefix . 'cv_work',
+    array(
+        "work_year_start" => $schoolStart,
+        "work_year_end" => $schoolEnd,
+        "work_company" => $schoolFormation,
+        "work_name" => $schoolName,
+        "work_place" => $schoolPlace,
+        "work_description" => $schoolDescription
     )
 );
 ?>
