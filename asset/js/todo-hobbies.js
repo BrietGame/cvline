@@ -16,7 +16,6 @@ function searchHobbie() {
             li[i].style.display = "";
         } else {
             li[i].style.display = "none";
-            err.innerText = "Rien n'a été trouvé, vous pouvez tout de même ajouter ce hobbie";
         }
     }
 }
@@ -61,6 +60,9 @@ function newHobbie() {
         alert("Vous n'avez rien renseigné !");
     } else {
         document.getElementById("result_hobbies").appendChild(li);
+        let data_content = li.dataset.content = inputValue; // Récupère la valeur dans un data-content
+        console.log(data_content);
+        dataHobbiesContentArray.push(data_content);
     }
     document.getElementById("js_search_hobbie").value = "";
 

@@ -1,15 +1,13 @@
 <?php
-/* Template Name: Faq */
+
+/* Template Name: FAQ */
+get_header();
 ?>
 
-<?php
-get_header()
-?>
-
-<div class="faq">
-    <h1>page FAQ</h1>
+<div>
+    <h1>FAQ</h1>
 </div>
 
+
 <?php
-get_footer()
-?>
+get_footer();

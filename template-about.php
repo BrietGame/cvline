@@ -2,14 +2,12 @@
 /* Template Name: About */
 ?>
 
+<section id="home">
+    <?= get_header() ?>
 
 
-<?= get_header() ?>
-
-
-<div class="about">
-    <h1>page a propos</h1>
-</div>
-
-
-<?= get_footer() ?>
+    <div>
+        <h1>à Propos</h1>
+    </div>
+    <?= get_footer() ?>
+</section>

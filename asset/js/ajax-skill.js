@@ -1,6 +1,7 @@
 console.log('cc skill');
+let dataSkillsContentArray = [];
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     const submitButton3 = $('#js_skill');
     const errorSkill = $('#error_search_skill');
@@ -10,8 +11,6 @@ $(document).ready(function() {
         // ajax
         e.preventDefault();
 
-        const searchskill = $('#js_search_skill').val();
-
         console.log('Clicked');
         $.ajax({
             url: ajaxUrl,
@@ -19,21 +18,23 @@ $(document).ready(function() {
             // Bien écrire les name dans " data "
             data: {
                 action: 'ajax_skill',
-                searchskill: searchskill,
+                searchskill: dataSkillsContentArray
             },
             beforeSend: function () {
                 console.log('ajax start : skills');
                 $('.error').html('')
             },
             success: function (res) {
-                console.log(res);
+                console.log(dataSkillsContentArray);
 
+                console.log(res);
+                dataFinal.push(dataSkillsContentArray);
                 if (res.success3) {
                     //retirer la possibilitÃ© de soumettre une deuxieme fois le formulaire
                     submitButton3.prop("disabled", true)
                 } else {
                     //if success envoie form
-                    if (res.errors.searchskill != null){
+                    if (res.errors.searchskill != null) {
                         errorSkill.html(res.errors.searchskill)
                     }
 

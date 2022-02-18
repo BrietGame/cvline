@@ -39,7 +39,7 @@ $(document).ready(function () {
             },
             success: function (res) {
                 console.log(res);
-
+                dataFinal.push(res);
                 if (res.success) {
                     submitButton.prop("disabled", true)
                 } else {
