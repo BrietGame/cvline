@@ -6,12 +6,12 @@
 
   .wrap1 {
     .titre {
-      h1{
+      h1 {
         display: flex;
         justify-content: center;
-        font-size: 50px ;
+        font-size: 50px;
         color: $white;
-        font-family:$noto ;
+        font-family: $noto;
         font-weight: 400;
         padding-top: 3rem;
       }
@@ -22,11 +22,10 @@
       padding: 2rem 0 2rem 0 ;
     }
     .btnGroup2{
-       display: flex;
+      display: flex;
       justify-content: center;
       gap: 2rem;
       padding-bottom: 4rem;
     }
   }
 }
-

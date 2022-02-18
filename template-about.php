@@ -1,6 +1,7 @@
 <?php
-/* Template Name: à Propos */
+/* Template Name: About */
 ?>
+
 <section id="home">
     <?= get_header() ?>
 

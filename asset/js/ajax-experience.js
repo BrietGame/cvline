@@ -1,8 +1,10 @@
 console.log('Ok Ajax experience');
 
+const allExp = [];
+
 $(document).ready(function () {
 
-    const submitButton2 = $('#js_submitted_experience');
+    const addMoreExp = $('#addMoreExp');
     const errorPredate = $('#error_predate');
     const errorLastdate = $('#error_lastdate');
     const errorPostname = $('#error_post_name');
@@ -43,7 +45,9 @@ $(document).ready(function () {
                 dataFinal.push(res);
                 if (res.success2) {
                     //retirer la possibilité de soumettre une deuxieme fois le formulaire
-                    submitButton2.prop("disabled", true)
+                    // submitButton2.prop("disabled", true)
+                    allExp.push(res);
+                    console.log(allExp);
                 } else {
                     //if success envoie form
                     if (res.errors.predate != null) {
@@ -69,3 +73,4 @@ $(document).ready(function () {
         })
     })
 })
+

@@ -1,6 +1,7 @@
 <?php
 /* Template Name: HomePage */
 ?>
+
 <section id="home">
     <?= get_header() ?>
     <div class="wrap1">
@@ -9,7 +10,7 @@
         </div>
 
         <div class="btnGroup">
-            <a class="btnTransparent" href="#">S'inscrire/Se connecter</a>
+            <a class="btnTransparent" href="<?php echo path('login'); ?>">S'inscrire/Se connecter</a>
         </div>
 
         <div class="btnGroup2">
@@ -17,5 +18,7 @@
             <a class="btnBlue" href="#"><i class="fa-solid fa-user"></i>Espace Recruteur</a>
         </div>
     </div>
+
     <?= get_footer() ?>
 </section>
+

@@ -1,5 +1,6 @@
 console.log('Ok Ajax school');
 
+allSchool = [];
 $(document).ready(function () {
     const submitButton = $('#js_school_button');
     const errorSchoolStart = $('#error_school_start');
@@ -41,7 +42,9 @@ $(document).ready(function () {
                 console.log(res);
                 dataFinal.push(res);
                 if (res.success) {
-                    submitButton.prop("disabled", true)
+                    // submitButton.prop("disabled", true)
+                    allSchool.push(res);
+                    console.log(allSchool)
                 } else {
                     if (res.errors.school_start != null) {
                         errorSchoolStart.html(res.errors.school_start)

@@ -10,6 +10,7 @@ nav {
       text-decoration: none;
       color: $white;
       font-family: $noto;
+      font-size: 18px;
     }
   }
   ul li a:hover {
@@ -22,7 +23,10 @@ nav {
   padding-top: 2rem;
   text-align: center;
   justify-content: center;
-  color: $white;
   font-family: $noto;
+  font-size: 18px;
+      .text-copy{
+    color: $white;
+  }
 }
 

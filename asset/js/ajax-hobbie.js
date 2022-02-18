@@ -8,7 +8,8 @@ $(document).ready(function () {
     $('#hobbie_cv').on('submit', function (e) {
         // ajax
         e.preventDefault();
-        const hobbie = $('#js_search_hobbie').val();
+
+        const hobbie = $('#bdd_item_hobbie').val();
 
         console.log('Click ok');
         $.ajax({
