@@ -10,12 +10,14 @@ function getExperienceWithAjax()
     $errors = array();
     $success2 = false;
 
+
     $predate = cleanXss('predate');
     $lastdate = cleanXss('lastdate');
     $postname = cleanXss('postname');
     $entreprisename = cleanXss('entreprisename');
     $postplace = cleanXss('postplace');
     $postdescription = cleanXss('postdescription');
+
 
     $errors = dateValidation($errors, $predate, 'predate');
     $errors = dateValidation($errors, $lastdate, 'lastdate');
@@ -37,7 +39,7 @@ function getExperienceWithAjax()
                 'postname' => $postname,
                 'entreprisename' => $entreprisename,
                 'postplace' => $postplace,
-                'postdescription' => $postdescription,
+                'postdescription' => $postdescription
             ],
         ];
     } else {

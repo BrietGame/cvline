@@ -49,7 +49,6 @@ list.addEventListener('click', function (ev) {
         ev.target.classList.toggle('checked');
     }
 }, false);
-
 // Create a new list item when clicking on the "Add" button
 function newHobbie() {
     var li = document.createElement("li");

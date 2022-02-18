@@ -1,6 +1,7 @@
 console.log('cc skill');
 let dataSkillsContentArray = [];
 
+
 $(document).ready(function () {
 
     const submitButton3 = $('#js_skill');
@@ -18,7 +19,7 @@ $(document).ready(function () {
             // Bien écrire les name dans " data "
             data: {
                 action: 'ajax_skill',
-                searchskill: dataSkillsContentArray
+                // searchskill: dataSkillsContentArray
             },
             beforeSend: function () {
                 console.log('ajax start : skills');

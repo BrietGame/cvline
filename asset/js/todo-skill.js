@@ -19,7 +19,6 @@ function searchSkill() {
     }
   }
 }
-
 $(document).ready(function () {
   let aItemSkill = $('#bdd_item_skill');
   let inputSearchSkill = $('#js_search_skill');
