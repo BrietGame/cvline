@@ -1,6 +1,7 @@
 console.log('cc skill');
 let dataSkillsContentArray = [];
 
+
 $(document).ready(function () {
 
     const submitButton3 = $('#js_skill');
