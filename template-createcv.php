@@ -15,7 +15,7 @@ global $wpdb;
 $wpdb->insert(
     $wpdb->prefix . 'cv_global',
     array(
-        "cv_surname" => $surname,
+        "school_surname" => $surname,
         "cv_name" => $name,
         "cv_email" => $email,
         "cv_adress" => $adress,
@@ -26,6 +26,26 @@ $wpdb->insert(
         "cv_created_at" => current_time('mysql')
     )
 );
+
+//$predate = $_POST['dataFinal'][0]['predate'];
+//$lastdate = $_POST['dataFinal'][0]['lastdate'];
+//$postname = $_POST['dataFinal'][0]['postname'];
+//$entreprisename = $_POST['dataFinal'][0]['entreprisename'];
+//$postplace = $_POST['dataFinal'][0]['postplace'];
+//$postdescription = $_POST['dataFinal'][0]['postdescription'];
+//
+//global $wpdb;
+//$wpdb->insert(
+//    $wpdb->prefix . 'cv_school',
+//    array(
+//        "school_year_start" => $predate,
+//        "school_year_end" => $lastdate,
+//        "school_job" => $postname,
+//        "school_name" => $entreprisename,
+//        "school_place" => $postplace,
+//        "school_description" => $postdescription
+//    )
+//);
 ?>
 
 <div>
