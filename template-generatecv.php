@@ -280,6 +280,8 @@
                     <span class="error" id="error_school_description"></span>
                 </div>
 
+                <a href="#" class="btnBlack" id="addMoreSchool">Ajouter</a>
+
                 <div class="btnForm">
                     <a href="#" class="btnBlack">Précédent</a>
                     <input type="submit" name="submit_school" id="js_school_button" value="Suivant">

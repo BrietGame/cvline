@@ -2,6 +2,8 @@ console.log('Ok Ajax school');
 
 allSchool = [];
 $(document).ready(function () {
+
+    const addMoreSchool = $('#addMoreSchool');
     const submitButton = $('#js_school_button');
     const errorSchoolStart = $('#error_school_start');
     const errorSchoolEnd = $('#error_school_end');
@@ -10,7 +12,7 @@ $(document).ready(function () {
     const errorSchoolPlace = $('#error_school_place');
     const errorSchoolDescription = $('#error_school_description');
 
-    $('#school_cv').on('submit', function (e) {
+    addMoreSchool.on('click', function (e) {
         // ajax
         e.preventDefault();
 
@@ -39,10 +41,8 @@ $(document).ready(function () {
                 $('.error').html('')
             },
             success: function (res) {
-                console.log(res);
-                dataFinal.push(res);
+                console.log('success')
                 if (res.success) {
-                    // submitButton.prop("disabled", true)
                     allSchool.push(res);
                     console.log(allSchool)
                 } else {
@@ -68,4 +68,15 @@ $(document).ready(function () {
             }
         })
     })
+
+    $('#school_cv').on('submit', function (e){
+        e.preventDefault();
+
+        submitButton.prop("disabled", true);
+        dataFinal.push(allSchool);
+        console.log(dataFinal)
+
+    })
+
+
 })
