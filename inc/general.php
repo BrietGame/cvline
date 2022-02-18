@@ -171,6 +171,11 @@ function projet_cvtheques_scripts()
 }
 add_action('wp_enqueue_scripts', 'projet_cvtheques_scripts');
 
+// ROLES
+
+add_role('Recruteur', 'Recruteur', get_role('subscriber')->capabilities);
+add_role('Candidat', 'Candidat', get_role('subscriber')->capabilities);
+
 function my_login_logo()
 { ?>
     <style type="text/css">
