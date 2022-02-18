@@ -16,7 +16,6 @@ function searchSkill() {
       li[i].style.display = "";
     } else {
       li[i].style.display = "none";
-      err.innerText = "Rien n'a été trouvé, vous pouvez tout de même ajouter cette compétence";
     }
   }
 }
@@ -62,6 +61,9 @@ function newSkill() {
     alert("Vous n'avez rien renseigné!");
   } else {
     document.getElementById("result_skills").appendChild(li);
+    let data_content = li.dataset.content = inputValue; // Récupère la valeur dans un data-content
+    console.log(data_content);
+    dataSkillsContentArray.push(data_content);
   }
   document.getElementById("js_search_skill").value = "";
 

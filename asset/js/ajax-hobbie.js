@@ -1,4 +1,5 @@
 console.log('Ok Ajax hobbie');
+let dataHobbiesContentArray = [];
 
 $(document).ready(function () {
     const submitButton = $('#js_hobbie_button');
@@ -16,7 +17,7 @@ $(document).ready(function () {
             type: 'POST',
             data: {
                 action: 'ajax_hobbie',
-                hobbie: hobbie,
+                hobbie: dataHobbiesContentArray,
             },
             beforeSend: function () {
                 console.log('ajax start : hobbie');
@@ -24,7 +25,8 @@ $(document).ready(function () {
             },
             success: function (res) {
                 console.log(res);
-                dataFinal.push(res);
+                console.log(dataHobbiesContentArray);
+                dataFinal.push(dataHobbiesContentArray);
                 if (res.success) {
                     submitButton.prop("disabled", true)
                 } else {
