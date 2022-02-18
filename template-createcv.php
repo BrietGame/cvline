@@ -1,7 +1,7 @@
 <?php
 get_header();
 /* Template Name: CreateCv */
-
+$postsearch = $_POST['dataFinal'][0]['post_search'];
 $surname = $_POST['dataFinal'][0]['surname'];
 $name = $_POST['dataFinal'][0]['name'];
 $birthday = $_POST['dataFinal'][0]['birtday'];
@@ -16,6 +16,8 @@ global $wpdb;
 $wpdb->insert(
     $wpdb->prefix . 'cv_global',
     array(
+
+        "cv_post_search" => $postsearch,
         "cv_surname" => $surname,
         "cv_name" => $name,
         "cv_email" => $email,
@@ -24,7 +26,8 @@ $wpdb->insert(
         "cv_phone" => $phone,
         "cv_postal" => $postal,
         "cv_city" => $city,
-        "cv_created_at" => current_time('mysql')
+        "cv_created_at" => current_time('mysql'),
+
     )
 );
 
