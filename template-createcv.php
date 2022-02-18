@@ -15,7 +15,7 @@ global $wpdb;
 $wpdb->insert(
     $wpdb->prefix . 'cv_global',
     array(
-        "school_surname" => $surname,
+        "cv_surname" => $surname,
         "cv_name" => $name,
         "cv_email" => $email,
         "cv_adress" => $adress,
