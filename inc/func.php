@@ -102,3 +102,10 @@ function recupInputValue($key)
         echo $_POST[$key];
     }
 }
+
+function viewError($errors, $key)
+{
+    if (!empty($errors[$key])) {
+        echo $errors[$key];
+    }
+}
