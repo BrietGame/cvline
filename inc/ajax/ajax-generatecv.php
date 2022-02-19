@@ -9,6 +9,7 @@ function getGeneratecvWithAjax(){
     $errors = array();
     $success = false;
 
+    $postsearch = cleanXss('post_search');
     $surname = cleanXss('surname');
     $name = cleanXss('name');
     $email = cleanXss('email');
@@ -18,6 +19,7 @@ function getGeneratecvWithAjax(){
     $birthday = cleanXss('birthday');
     $phone = cleanXss('phone');
 
+    $errors = textValidation($errors, $postsearch, 'post_search', 2, 55);
     $errors = textValidation($errors, $surname, 'surname', 2, 55);
     $errors = textValidation($errors, $name, 'name', 2, 50);
     $errors = emailValidation($errors, $email, 'email');
@@ -31,6 +33,7 @@ function getGeneratecvWithAjax(){
     if(count($errors) === 0) {
         $success = true;
         $data = [
+            'post_search'=> $postsearch,
             'success' => $success,
             'surname' => $surname,
             'name' => $name,

@@ -12,7 +12,7 @@ $(document).ready(function () {
     const errorPostplace = $('#error_post_place');
     const errorPostdescription = $('#error_post_description');
 
-    addMoreExp.on('click', function (e){
+    addMoreExp.on('click', function (e) {
         e.preventDefault();
 
         const predate = $('#js_predate').val();
