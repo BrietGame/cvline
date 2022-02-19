@@ -289,8 +289,34 @@
             </form>
         </section>
 
+        <section id="step_six" class="wrap1">
+            <h2 class="title">Recapitulatif</h2>
+            <div id="vueCvFinal">
+
+                <div class="generateGlobalInfo"></div>
+
+                <h2>Expériences</h2>
+                <div class="generateExp"></div>
+
+                <h2>Mes compétences</h2>
+                <div class="generateSkillsCv"></div>
+
+                <h2>Mes loisirs</h2>
+                <div class="generateHobbiesCv"></div>
+
+
+                <h2>Parcours</h2>
+                <div class="generateSchoolCv"></div>
+
+            </div>
+
+        </section>
+
+
+
+
         <a href="" class="btnBlue" id="final_submit">Générer son CV</a>
-        <?php debug($_POST) ?>
+
     </div>
 </section>
 

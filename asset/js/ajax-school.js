@@ -43,8 +43,7 @@ $(document).ready(function () {
             success: function (res) {
                 console.log('success')
                 if (res.success) {
-                    allSchool.push(res);
-                    console.log(allSchool)
+                    dataFinal.push(res);
                 } else {
                     if (res.errors.school_start != null) {
                         errorSchoolStart.html(res.errors.school_start)
@@ -69,14 +68,54 @@ $(document).ready(function () {
         })
     })
 
+
     $('#school_cv').on('submit', function (e){
         e.preventDefault();
 
         submitButton.prop("disabled", true);
-        dataFinal.push(allSchool);
         console.log(dataFinal)
 
+        const generateGlobalInfo = $('.generateGlobalInfo');
+        const generateExpCv = $('.generateExp');
+        const generateSkillsCv = $('.generateSkillsCv');
+        const generateHobbiesCv = $('.generateHobbiesCv');
+        const generateSchoolCv = $('.generateSchoolCv');
+
+        let generateGlobalInfoHtml = `
+                <h2>Nom du poste </h2>
+                <p>Nom : ${dataFinal[0].surname}</p>
+                <p>Prenom : ${dataFinal[0].name}</p>
+                <p>Date de naissance : ${dataFinal[0].birthday}</p>
+                <p>Telephone : ${dataFinal[0].phone}</p>
+                <p>Adresse : ${dataFinal[0].adress}</p>
+                <p>Ville : ${dataFinal[0].city}</p>
+                <p>Postal : ${dataFinal[0].postal}</p>
+                <p>Email : ${dataFinal[0].email}</p>   
+        `
+
+        generateGlobalInfo.append(generateGlobalInfoHtml);
+
+
+        $.each(dataFinal[1], function(count){
+
+            const startExp = Object.values(dataFinal[1][count])[0].predate;
+            const endExp = Object.values(dataFinal[1][count])[0].lastdate;
+            const postName = Object.values(dataFinal[1][count])[0].postname;
+            const entrepriseName = Object.values(dataFinal[1][count])[0].entreprisename;
+            const postPlace = Object.values(dataFinal[1][count])[0].postplace;
+            const postDescription = Object.values(dataFinal[1][count])[0].postdescription;
+            const generateExpHtml = ` 
+                              <div class="experiences">
+                                  <p>${startExp}</p>
+                                  <p>${endExp}</p>
+                                  <p>${postName}</p>
+                                  <p>${entrepriseName}</p>
+                                  <p>${postPlace}</p>
+                                  <p>${postDescription}</p>
+                              </div>
+                                    `
+            generateExpCv.append(generateExpHtml);
+        });
+
     })
-
-
 })
