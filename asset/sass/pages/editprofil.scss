@@ -103,8 +103,123 @@
 
   }
 }
+@media only screen and (min-width : 390px){
+  #profil {
+    .wrap3{
+      .titre{
+        h1{
+          font-size: 27px;
+          text-align: center;
+          padding: 1rem;
+        }
+      }
+      #conteneurProfil{
+        display: inherit;
+        .profilUser{
+          width: 94%;
+          .imgProfil{
+            img{
+              height: 134px;
+              width:133px ;
+            }
+          }
+          .btnGroup{
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+          }
+        }
+        .formulaire{
+          width: 77%;
+          padding: 0 0 0 4rem;
+        }
+      }
+    }
+    .btnBlue{
+     font-size: 13px;
+      padding: 2px;
+    }
+    .btnWhite{
+      font-size: 13px;
+      padding: 2px;
+    }
+  }
+}
 
+@media only screen and (min-width : 720px){
+  #profil {
+    .wrap3{
+      .titre{
+        h1{
+          font-size: 40px;
+        }
+      }
+      #conteneurProfil{
+        display: inherit;
+        .profilUser{
+          width: 94%;
+          .imgProfil{
+            img{
+              height: 134px;
+              width:133px ;
+            }
+          }
+          .btnGroup{
+          }
+        }
+        .formulaire{
+          padding: 1rem 1rem 0 9rem;
+        }
+      }
+    }
+    .btnBlue{
+      font-size: 1rem;
+      padding: 0.2rem 2.5rem;
+    }
+    .btnWhite{
+      font-size: 1rem;
+      padding: 0.2rem 1.5rem;
+    }
+  }
+}
+@media only screen and (min-width : 1024px){
+  #profil {
+    .wrap3{
+      .titre{
+        h1{
+          font-size: 55px;
+        }
+      }
+      #conteneurProfil{
+        display: flex;
+        .profilUser{
+          width: 40%;
+          .imgProfil{
+            img{
+             display: flex;
+              justify-content: center;
+            }
+          }
+          .btnGroup{
+            padding: 8rem 0 0 6rem;
+            display: inherit;
+          }
+        }
+        .btnBlue{
+          padding: 0.2rem 2.5rem;
+        }
+        .btnWhite{
+          padding: 0.2rem 1.5rem;
+        }
+        .formulaire{
+         width: 50%;
+        }
+      }
+    }
 
-
+  }
+}
 
 

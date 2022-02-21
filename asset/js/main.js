@@ -1,12 +1,12 @@
 $(document).ready(function () {
-    function openNav() {
+    function openRegisterMenu() {
         document.getElementById("myNav").className = "overlay slide-in-left ";
         document.getElementById("wraphome").className = "displaynone";
         document.getElementById("footer").className = "displaynone";
     }
 
     /* Close when someone clicks on the "x" symbol inside the overlay */
-    function closeNav() {
+    function closeRegisterMenu() {
         document.getElementById("myNav").className = "overlay slide-out-left";
         setTimeout(function () {
             document.getElementById("myNav").className = "displaynone";
@@ -16,6 +16,11 @@ $(document).ready(function () {
     }
 
     $('#modalBtn').on('click', function (e) {
-        openNav();
+        e.preventDefault();
+        openRegisterMenu();
+    })
+    $('#close').on('click', function (e) {
+        e.preventDefault();
+        closeRegisterMenu();
     })
 });

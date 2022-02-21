@@ -169,9 +169,6 @@ function projet_cvtheques_scripts()
         wp_enqueue_script('ajax-final', get_template_directory_uri() . '/asset/js/ajax-final.js', array('jquery'), _S_VERSION, true);
         wp_add_inline_script('ajax-generatecv', 'const ajaxUrl = ' . json_encode(admin_url('admin-ajax.php')), 'before');
     }
-
-
-
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
@@ -201,4 +198,3 @@ function my_custom_login()
     echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/asset/sass/pages/login.scss" />';
 }
 add_action('login_head', 'my_custom_login');
-

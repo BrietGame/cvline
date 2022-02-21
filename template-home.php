@@ -103,11 +103,14 @@ $user = wp_get_current_user();
         </div>
     </div>
 
+    <?php
+    get_footer() ?>
+
     <!-- The overlay -->
     <div id="myNav" class="displaynone">
 
         <!-- Button to close the overlay navigation -->
-        <a href="javascript:void(0)" id="close" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="javascript:void(0)" id="close" class="closebtn" onclick="closeRegisterMenu()">&times;</a>
 
         <!-- Overlay content -->
         <div id="login_register" class="overlay-content">
@@ -115,7 +118,9 @@ $user = wp_get_current_user();
                 <?php if (is_user_logged_in()) { ?>
                     <div class="container_islogged">
                         <div class="left">
-                            <h2>Ravi de vous revoir <?php if (!empty($meta_user['first_name'][0])) { echo $meta_user['first_name'][0]; } ?> !</h2>
+                            <h2>Ravi de vous revoir <?php if (!empty($meta_user['first_name'][0])) {
+                                                        echo $meta_user['first_name'][0];
+                                                    } ?> !</h2>
                             <p>Bienvenue sur CVLine ! La solution à portée de main pour générer votre CV.</p>
                             <p>Grâce à notre système, vous n'avez qu'à simplement renseigner les informations dont on a besoin pour vous générer votre CV afin que vous puissez vous lancer dans le monde du travail !</p>
                             <a href="<?= path('logout') ?>" class="btnWhite">Se déconnecter</a>
@@ -197,6 +202,7 @@ $user = wp_get_current_user();
         </div>
     </div>
     <?= get_footer() ?>
+
 </section>
 
 <script>
