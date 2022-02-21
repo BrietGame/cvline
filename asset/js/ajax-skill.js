@@ -33,6 +33,14 @@ $(document).ready(function () {
                 if (res.success3) {
                     //retirer la possibilitÃ© de soumettre une deuxieme fois le formulaire
                     submitButton3.prop("disabled", true)
+                    $('#step[data-id="3"]').removeClass('active');
+                    $('#step[data-id="3"]').addClass('success');
+                    $('#step_three').removeClass('wrap1');
+                    $('#step_three').addClass('displaynone');
+
+                    $('#step[data-id="4"]').toggleClass('active');
+                    $('#step_four').removeClass('displaynone');
+                    $('#step_four').addClass('wrap1');
                 } else {
                     //if success envoie form
                     if (res.errors.searchskill != null) {

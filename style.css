@@ -715,6 +715,22 @@ nav ul li a:hover {
     right: 35px;
   }
 }
+#forgot_password .wrap h2 {
+  font-size: 3rem;
+  color: #2A4876;
+  padding-bottom: 2rem;
+}
+#forgot_password .wrap .formMp {
+  font-size: 1.5rem;
+}
+#forgot_password .wrap .input_group label {
+  color: #FFFFFF;
+}
+#forgot_password .wrap .input_group input {
+  border-bottom: 2px solid #FFFFFF;
+  font-size: 2rem;
+}
+
 #login_register .wrap {
   display: flex;
   flex-flow: row nowrap;

@@ -10,27 +10,27 @@
 
     <div class="wrap">
         <section id="fil_ariane">
-            <div id="step" data-id="1" class="success">
+            <div id="step" data-id="1" class="active">
                 <span class="nb">1</span>
                 <span class="text">Mes informations</span>
             </div>
-            <div id="step" data-id="2" class="active">
+            <div id="step" data-id="2">
                 <span class="nb">2</span>
                 <span class="text">Mes expériences</span>
             </div>
-            <div id="step" data-id="3" class="">
+            <div id="step" data-id="3">
                 <span class="nb">3</span>
                 <span class="text">Mes compétences</span>
             </div>
-            <div id="step" data-id="4" class="">
+            <div id="step" data-id="4">
                 <span class="nb">4</span>
                 <span class="text">Mes hobbies</span>
             </div>
-            <div id="step" data-id="5" class="">
+            <div id="step" data-id="5">
                 <span class="nb">5</span>
                 <span class="text">Mon parcours</span>
             </div>
-            <div id="step" data-id="6" class="">
+            <div id="step" data-id="6">
                 <span class="nb">6</span>
                 <span class="text">Récapitulatif</span>
             </div>
@@ -128,7 +128,7 @@
 
             </form>
         </section>
-        <section id="step_two" class="wrap1">
+        <section id="step_two" class="displaynone">
             <h2 class="title">Mes expériences</h2>
             <form method="POST" id="experience_cv">
                 <div class="two_input">
@@ -182,7 +182,7 @@
             </form>
         </section>
 
-        <section id="step_three" class="wrap1">
+        <section id="step_three" class="displaynone">
             <h2 class="title">Mes compétences</h2>
             <form method="POST" id="skill">
                 <div id="todo" class="input_group">
@@ -206,7 +206,7 @@
             </form>
         </section>
 
-        <section id="step_four" class="wrap1">
+        <section id="step_four" class="displaynone">
             <h2 class="title">Mes loisirs</h2>
             <form method="POST" id="hobbie_cv">
                 <div id="todo" class="input_group">
@@ -229,7 +229,7 @@
             </form>
         </section>
 
-        <section id="step_five" class="wrap1">
+        <section id="step_five" class="displaynone">
             <h2 class="title">Mon parcours</h2>
             <form method="POST" id="school_cv">
 
@@ -284,7 +284,7 @@
             </form>
         </section>
 
-        <section id="step_six" class="wrap1">
+        <section id="step_six" class="displaynone">
             <h2 class="title">Recapitulatif</h2>
             <div id="vueCvFinal">
 

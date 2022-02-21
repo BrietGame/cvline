@@ -29,6 +29,14 @@ $(document).ready(function () {
                 dataFinal.push(dataHobbiesContentArray);
                 if (res.success) {
                     submitButton.prop("disabled", true)
+                    $('#step[data-id="4"]').removeClass('active');
+                    $('#step[data-id="4"]').addClass('success');
+                    $('#step_four').removeClass('wrap1');
+                    $('#step_four').addClass('displaynone');
+
+                    $('#step[data-id="5"]').toggleClass('active');
+                    $('#step_five').removeClass('displaynone');
+                    $('#step_five').addClass('wrap1');
                 } else {
                     if (res.errors.hobbie != null) {
                         errorHobbie.html(res.errors.hobbie)
