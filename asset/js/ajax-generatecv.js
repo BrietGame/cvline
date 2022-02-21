@@ -54,6 +54,14 @@ $(document).ready(function () {
                 if (res.success) {
                     //retirer la possibilité de soumettre une deuxieme fois le formulaire
                     submitButton.prop("disabled", true)
+                    $('#step[data-id="1"]').removeClass('active');
+                    $('#step[data-id="1"]').addClass('success');
+                    $('#step_one').removeClass('wrap1');
+                    $('#step_one').addClass('displaynone');
+
+                    $('#step[data-id="2"]').toggleClass('active');
+                    $('#step_two').removeClass('displaynone');
+                    $('#step_two').addClass('wrap1');
                     dataFinal.push(res);
                 } else {
                     //if success envoie form
