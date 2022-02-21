@@ -85,7 +85,7 @@ $(document).ready(function () {
         const generateSchoolCv = $('.generateSchoolCv');
 
         const generateGlobalInfoHtml = `
-                <h2>Nom du poste </h2>
+                <h2>${dataFinal[0].post_search}</h2>
                 <p>Nom : ${dataFinal[0].surname}</p>
                 <p>Prenom : ${dataFinal[0].name}</p>
                 <p>Date de naissance : ${dataFinal[0].birthday}</p>
@@ -108,7 +108,7 @@ $(document).ready(function () {
             const postPlace = Object.values(dataFinal[1][count])[0].postplace;
             const postDescription = Object.values(dataFinal[1][count])[0].postdescription;
             const generateExpHtml = ` 
-                           
+                                 
                                   <p>Début : ${startExp}</p>
                                   <p>Fin : ${endExp}</p>
                                   <p>Nom du poste : ${postName}</p>
