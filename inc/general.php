@@ -152,6 +152,7 @@ function projet_cvtheques_scripts()
 
 
 
+    wp_enqueue_script('data-cookie', get_template_directory_uri() . '/asset/js/data-cookie.js', array('jquery'), _S_VERSION, true);
 
     if (is_page_template('template-home.php')) {
         wp_enqueue_script('mainjs', get_template_directory_uri() . '/asset/js/main.js', array('jquery'), _S_VERSION, true);

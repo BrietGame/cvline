@@ -55,6 +55,18 @@ $(document).ready(function () {
                     //retirer la possibilité de soumettre une deuxieme fois le formulaire
                     submitButton.prop("disabled", true)
                     dataFinal.push(res);
+
+
+                    createCookie('postsearch', postsearch);
+                    createCookie('surname', surname);
+                    createCookie('name', name);
+                    createCookie('email', email);
+                    createCookie('adress', adress);
+                    createCookie('postal', postal);
+                    createCookie('city', city);
+                    createCookie('birthday', birthday);
+                    createCookie('phone', phone);
+
                     $('#step[data-id="1"]').removeClass('active');
                     $('#step[data-id="1"]').addClass('success');
                     $('#step_one').removeClass('wrap1');
@@ -63,6 +75,7 @@ $(document).ready(function () {
                     $('#step[data-id="2"]').toggleClass('active');
                     $('#step_two').removeClass('displaynone');
                     $('#step_two').addClass('wrap1');
+
                 } else {
                     //if success envoie form
                     if (res.errors.postsearch != null) {

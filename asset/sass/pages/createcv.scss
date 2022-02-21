@@ -1,0 +1,200 @@
+#cv_1 {
+  h1 ,h2 ,h3 , h4 {
+    font-family: $noto;
+  }
+ p {
+   font-family: $franklin;
+ }
+  .wrap_createcv {
+    max-width: 1000px;
+    margin: 0 auto;
+
+  }
+  #aboutme {
+
+
+    p {
+      font-size: 1em;
+      line-height: 1.5em;
+    }
+
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+.flexcontact {
+  display: flex;
+}
+.flexcontact2 {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+    /*SECTIONS*/
+    .section_createcv {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      width: 100%;
+      padding-bottom: 20px;
+      margin: 20px auto;
+      box-shadow: 0px 0px 10px #bbb;
+      background-color: #fff;
+    }
+
+    .section_createcv h2 {
+      margin: 20px 0;
+      width: 90%;
+    }
+
+    .section_createcv > div {
+      width: 90%;
+    }
+
+    /*SECTION INFOS*/
+    .photo {
+      display: flex;
+
+      align-items: center;
+    }
+
+    .photo img {
+      width: 200px;
+      height: 200px;
+      border: 3px solid #fff;
+      box-shadow: 0px 0px 10px #777;
+      border-radius: 50%;
+      margin-top: -80px;
+    }
+
+    .prez {
+      padding-bottom: 6rem;
+    }
+
+    .prez p {
+      font-family: $noto;
+    }
+
+    .prez a {
+      display: block;
+      text-align: center;
+      padding: 10px;
+      margin: 10px auto 30px auto;
+      color: #fff;
+      background-color: #EA0;
+      box-shadow: 0px 0px 10px #ccc;
+      border-radius: 5px;
+    }
+
+    .contact {
+      padding-top: 6rem;
+    }
+
+    .contact-flex {
+
+    }
+
+    .contact-flex p:first-child {
+      font-weight: bold;
+      padding-top: 1rem;
+      font-family: $franklin;
+    }
+
+    .contact-flex p:last-child {
+      flex: 0 0 30%;
+
+
+      font-family: $noto;
+    }
+
+    .social {
+      display: flex;
+      justify-content: space-around;
+      margin: 10px auto 0px auto;
+      padding: 2rem 0 2rem 0;
+    }
+
+    .social img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+    /*SECTION EXP ET FORMATION*/
+    #skillpro {
+      h2 {
+
+      }
+
+
+
+      .exp {
+
+        padding-top: 3rem;
+
+        .text_left {
+          display: flex;
+        }
+        .exp-info {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          padding: 0 0rem 0 6rem;
+        }
+        .exp-logo img {
+          width : 150px;
+        }
+
+
+      }
+
+
+    }
+    /*SECTION COMPETENCES*/
+    .h3gauche {
+      width: 90%;
+    }
+
+    .comp {
+      display: flex;
+      flex-flow: row wrap;
+      margin-bottom: 10px;
+    }
+
+    .comp p {
+      flex: 0 0 40%;
+    }
+
+
+
+    .comp2 {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+    }
+
+
+
+    /*SECTION INTERETS*/
+    .interet {
+      flex: 0 1 50%;
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .interet img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      box-shadow: 0px 0px 15px #555;
+    }
+
+    /*VERSION BUREAU DU CV*/
+
+
+}
+
+
+
