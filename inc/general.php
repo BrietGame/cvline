@@ -153,17 +153,23 @@ function projet_cvtheques_scripts()
 
 
 
-    wp_enqueue_script('todo-skill', get_template_directory_uri() . '/asset/js/todo-skill.js', array('jquery'), _S_VERSION, true);
-    wp_enqueue_script('todo-hobbies', get_template_directory_uri() . '/asset/js/todo-hobbies.js', array('jquery'), _S_VERSION, true);
-    wp_enqueue_script('ajax-generatecv', get_template_directory_uri() . '/asset/js/ajax-generatecv.js', array('jquery'), _S_VERSION, true);
-    wp_enqueue_script('ajax-experience', get_template_directory_uri() . '/asset/js/ajax-experience.js', array('jquery'), _S_VERSION, true);
-    wp_enqueue_script('ajax-skill', get_template_directory_uri() . '/asset/js/ajax-skill.js', array('jquery'), _S_VERSION, true);
-    wp_enqueue_script('ajax-hobbie', get_template_directory_uri() . '/asset/js/ajax-hobbie.js', array('jquery'), _S_VERSION, true);
-    wp_enqueue_script('ajax-school', get_template_directory_uri() . '/asset/js/ajax-school.js', array('jquery'), _S_VERSION, true);
-    wp_enqueue_script('ajax-final', get_template_directory_uri() . '/asset/js/ajax-final.js', array('jquery'), _S_VERSION, true);
-    // wp_enqueue_script('ajax-auth', get_template_directory_uri() . '/asset/js/ajax-auth.js', array('jquery'), _S_VERSION, true);
+    if (is_page_template('template-home.php')) {
+        wp_enqueue_script('mainjs', get_template_directory_uri() . '/asset/js/main.js', array('jquery'), _S_VERSION, true);
+        // wp_enqueue_script('ajax-auth', get_template_directory_uri() . '/asset/js/ajax-auth.js', array('jquery'), _S_VERSION, true);
+    }
 
-    wp_add_inline_script('ajax-generatecv', 'const ajaxUrl = ' . json_encode(admin_url('admin-ajax.php')), 'before');
+    if (is_page_template('template-generatecv.php')) {
+        wp_enqueue_script('todo-skill', get_template_directory_uri() . '/asset/js/todo-skill.js', array('jquery'), _S_VERSION, true);
+        wp_enqueue_script('todo-hobbies', get_template_directory_uri() . '/asset/js/todo-hobbies.js', array('jquery'), _S_VERSION, true);
+        wp_enqueue_script('ajax-generatecv', get_template_directory_uri() . '/asset/js/ajax-generatecv.js', array('jquery'), _S_VERSION, true);
+        wp_enqueue_script('ajax-experience', get_template_directory_uri() . '/asset/js/ajax-experience.js', array('jquery'), _S_VERSION, true);
+        wp_enqueue_script('ajax-skill', get_template_directory_uri() . '/asset/js/ajax-skill.js', array('jquery'), _S_VERSION, true);
+        wp_enqueue_script('ajax-hobbie', get_template_directory_uri() . '/asset/js/ajax-hobbie.js', array('jquery'), _S_VERSION, true);
+        wp_enqueue_script('ajax-school', get_template_directory_uri() . '/asset/js/ajax-school.js', array('jquery'), _S_VERSION, true);
+        wp_enqueue_script('ajax-final', get_template_directory_uri() . '/asset/js/ajax-final.js', array('jquery'), _S_VERSION, true);
+        wp_add_inline_script('ajax-generatecv', 'const ajaxUrl = ' . json_encode(admin_url('admin-ajax.php')), 'before');
+    }
+
 
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
@@ -195,3 +201,4 @@ function my_custom_login()
     echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/asset/sass/pages/login.scss" />';
 }
 add_action('login_head', 'my_custom_login');
+

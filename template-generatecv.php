@@ -123,7 +123,6 @@
                 </div>
 
                 <div class="btnForm">
-                    <a href="#" class="btnBlack">Précédent</a>
                     <input class="btnBlue" type="submit" name="submitted" id="js_submitted_global" value="Suivant">
                 </div>
 
@@ -177,7 +176,6 @@
                 </div>
 
                 <div class="btnForm">
-                    <a href="#" class="btnBlack">Précédent</a>
                     <a href="#" class="btnBlack" id="addMoreExp">Ajouter un autre</a>
                     <input class="btnBlue" type="submit" name="submitted" id="js_submitted_experience" value="Suivant">
                 </div>
@@ -203,7 +201,6 @@
                 </div>
 
                 <div class="btnForm">
-                    <a href="#" class="btnBlack">Précédent</a>
                     <input type="submit" name="submit_skill" id="js_skill" value="Suivant">
                 </div>
             </form>
@@ -227,7 +224,6 @@
                 </div>
 
                 <div class="btnForm">
-                    <a href="#" class="btnBlack">Précédent</a>
                     <input type="submit" name="submit_hobbie" id="js_hobbie_button" value="Suivant">
                 </div>
             </form>
@@ -283,7 +279,6 @@
                 <a href="#" class="btnBlack" id="addMoreSchool">Ajouter</a>
 
                 <div class="btnForm">
-                    <a href="#" class="btnBlack">Précédent</a>
                     <input type="submit" name="submit_school" id="js_school_button" value="Suivant">
                 </div>
             </form>
