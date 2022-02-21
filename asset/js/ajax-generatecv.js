@@ -4,6 +4,7 @@ const dataFinal = [];
 $(document).ready(function () {
 
     const submitButton = $('#js_submitted_global');
+    const errorPostsearch =$('#error_js_post_search')
     const errorSurname = $('#error_surname');
     const errorName = $('#error_name');
     const errorEmail = $('#error_mail');
@@ -17,6 +18,7 @@ $(document).ready(function () {
         // ajax
         e.preventDefault();
 
+        const postsearch =$('#js_post_search').val();
         const surname = $('#js_surname').val();
         const name = $('#js_name').val();
         const email = $('#js_email').val();
@@ -32,6 +34,7 @@ $(document).ready(function () {
             type: 'POST',
             data: {
                 action: 'ajax_generatecv',
+                post_search: postsearch,
                 surname: surname,
                 name: name,
                 email: email,
@@ -54,6 +57,9 @@ $(document).ready(function () {
                     dataFinal.push(res);
                 } else {
                     //if success envoie form
+                    if (res.errors.postsearch != null) {
+                        errorPostsearch.html(res.errors.postsearch)
+                    }
                     if (res.errors.surname != null) {
                         errorSurname.html(res.errors.surname)
                     }

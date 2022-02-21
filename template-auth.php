@@ -1,12 +1,13 @@
 <?php
 get_header();
-/* Template Name: Login */
+/* Template Name: Auth */
 ?>
 
-<div class="container">
-    <div class="register">
+<div class="split left slide-in-right">
+    <div class="centered">
+        <img src="img_avatar2.png" alt="Avatar woman">
         <h2>S'inscrire</h2>
-        <form method="post" action="<?php echo site_url('wp-login.php?action=register', 'login_post') ?>" class="wp-user-form">
+        <form method="post" action="" class="wp-user-form">
             <div class="input_group username">
                 <label for="user_login"><?php _e('Username'); ?>: </label>
                 <input type="text" name="user_login" value="<?php echo esc_attr(stripslashes($user_login)); ?>" placeholder="Entrer votre nom d'utilisateur" size="20" id="user_login" tabindex="101" />
@@ -31,9 +32,13 @@ get_header();
             </div>
         </form>
     </div>
-    <div class="login">
+</div>
+
+<div class="split right">
+    <div class="centered">
+        <img src="img_avatar.png" alt="Avatar man">
         <h2>Se connecter</h2>
-        <form method="post" action="<?php bloginfo('url') ?>/wp-login.php" class="wp-user-form">
+        <form method="post" action="" class="wp-user-form">
             <div class="input_group username">
                 <label for="user_login"><?php _e('Username'); ?>: </label>
                 <input type="text" name="log" value="<?php echo esc_attr(stripslashes($user_login)); ?>" placeholder="email@email.com" size="20" id="user_login" tabindex="11" />

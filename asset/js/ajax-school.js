@@ -1,6 +1,9 @@
 console.log('Ok Ajax school');
 
+allSchool = [];
 $(document).ready(function () {
+
+    const addMoreSchool = $('#addMoreSchool');
     const submitButton = $('#js_school_button');
     const errorSchoolStart = $('#error_school_start');
     const errorSchoolEnd = $('#error_school_end');
@@ -9,7 +12,7 @@ $(document).ready(function () {
     const errorSchoolPlace = $('#error_school_place');
     const errorSchoolDescription = $('#error_school_description');
 
-    $('#school_cv').on('submit', function (e) {
+    addMoreSchool.on('click', function (e) {
         // ajax
         e.preventDefault();
 
@@ -38,10 +41,11 @@ $(document).ready(function () {
                 $('.error').html('')
             },
             success: function (res) {
-                console.log(res);
-                dataFinal.push(res);
+                allSchool.push(res);
+                console.log(allSchool)
+
                 if (res.success) {
-                    submitButton.prop("disabled", true)
+                    console.log('success')
                 } else {
                     if (res.errors.school_start != null) {
                         errorSchoolStart.html(res.errors.school_start)
@@ -64,5 +68,99 @@ $(document).ready(function () {
                 }
             }
         })
+    })
+
+
+    $('#school_cv').on('submit', function (e){
+        e.preventDefault();
+
+        submitButton.prop("disabled", true);
+        dataFinal.push(allSchool);
+        console.log(dataFinal)
+
+        const generateGlobalInfo = $('.generateGlobalInfo');
+        const generateExpCv = $('.generateExp');
+        const generateSkillsCv = $('.generateSkillsCv');
+        const generateHobbiesCv = $('.generateHobbiesCv');
+        const generateSchoolCv = $('.generateSchoolCv');
+
+        const generateGlobalInfoHtml = `
+                <h2>${dataFinal[0].post_search}</h2>
+                <p>Nom : ${dataFinal[0].surname}</p>
+                <p>Prenom : ${dataFinal[0].name}</p>
+                <p>Date de naissance : ${dataFinal[0].birthday}</p>
+                <p>Telephone : ${dataFinal[0].phone}</p>
+                <p>Adresse : ${dataFinal[0].adress}</p>
+                <p>Ville : ${dataFinal[0].city}</p>
+                <p>Postal : ${dataFinal[0].postal}</p>
+                <p>Email : ${dataFinal[0].email}</p>   
+        `
+
+        generateGlobalInfo.append(generateGlobalInfoHtml);
+
+
+        $.each(dataFinal[1], function(count){
+
+            const startExp = Object.values(dataFinal[1][count])[0].predate;
+            const endExp = Object.values(dataFinal[1][count])[0].lastdate;
+            const postName = Object.values(dataFinal[1][count])[0].postname;
+            const entrepriseName = Object.values(dataFinal[1][count])[0].entreprisename;
+            const postPlace = Object.values(dataFinal[1][count])[0].postplace;
+            const postDescription = Object.values(dataFinal[1][count])[0].postdescription;
+            const generateExpHtml = ` 
+                                 
+                                  <p>Début : ${startExp}</p>
+                                  <p>Fin : ${endExp}</p>
+                                  <p>Nom du poste : ${postName}</p>
+                                  <p>Entreprise : ${entrepriseName}</p>
+                                  <p>Lieu : ${postPlace}</p>
+                                  <p>Description : ${postDescription}</p>
+                             
+                                    `
+            generateExpCv.append(generateExpHtml);
+        });
+
+        $.each(dataFinal[2], function(count){
+
+            const skillsName = dataFinal[2][count];
+
+            const generateSkills = `
+                <p>${skillsName}</p>
+            `
+
+            generateSkillsCv.append(generateSkills);
+        });
+
+        $.each(dataFinal[3], function(count){
+
+            const hobbiesName = dataFinal[3][count];
+
+            const generateHobbies = `
+                <p>${hobbiesName}</p>
+            `
+
+            generateHobbiesCv.append(generateHobbies);
+        });
+
+        $.each(dataFinal[4], function(count){
+
+            const schoolDescription = Object.values(dataFinal[4][count])[0].schoolDescription;
+            const schoolEnd = Object.values(dataFinal[4][count])[0].schoolEnd;
+            const schoolFormation = Object.values(dataFinal[4][count])[0].schoolFormation;
+            const schoolName = Object.values(dataFinal[4][count])[0].schoolName;
+            const schoolPlace = Object.values(dataFinal[4][count])[0].schoolPlace;
+            const schoolStart = Object.values(dataFinal[4][count])[0].schoolStart;
+
+            const generateSchoolHtml = `
+                <p>${schoolStart}</p>
+                <p>${schoolEnd}</p>
+                <p>${schoolFormation}</p>
+                <p>${schoolName}</p>
+                <p>${schoolPlace}</p>
+                <p>${schoolDescription}</p>
+            `
+            generateSchoolCv.append(generateSchoolHtml);
+        });
+
     })
 })

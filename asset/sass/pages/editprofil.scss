@@ -16,14 +16,21 @@
   .input_group{
     display: flex;
     flex-flow: column nowrap;
-    padding-bottom: 2rem;
+    margin: 1rem auto;
+
     input{
       background: none;
       border: none;
       border-bottom: 2px solid $black;
+      padding: .3rem .4rem;
+
       font-family: $franklin;
       color: $black;
     }
+    input::placeholder {
+      font-family: $franklin;
+      color: rgba($color: #000000, $alpha: .5);
+  }
   }
 
   .two_input{

@@ -12,11 +12,12 @@
 
 ?>
 
-<footer>
+<footer id="footer">
     <div class="wrap1">
         <div class="copyright">
-            <a  href="<?php echo path('/'); ?>">
-                <p class="text-copy"> © Copyright CV LINE Company</p></a>
+            <a href="<?php echo path('/'); ?>">
+                <p class="text-copy"> © Copyright CV LINE Company</p>
+            </a>
         </div>
     </div>
 

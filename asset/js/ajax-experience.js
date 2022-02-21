@@ -1,8 +1,10 @@
 console.log('Ok Ajax experience');
 
+const allExp = [];
+
 $(document).ready(function () {
 
-    const submitButton2 = $('#js_submitted_experience');
+    const addMoreExp = $('#addMoreExp');
     const errorPredate = $('#error_predate');
     const errorLastdate = $('#error_lastdate');
     const errorPostname = $('#error_post_name');
@@ -10,8 +12,7 @@ $(document).ready(function () {
     const errorPostplace = $('#error_post_place');
     const errorPostdescription = $('#error_post_description');
 
-    $('#experience_cv').on('submit', function (e) {
-        // ajax
+    addMoreExp.on('click', function (e) {
         e.preventDefault();
 
         const predate = $('#js_predate').val();
@@ -21,7 +22,6 @@ $(document).ready(function () {
         const postplace = $('#js_post_place').val();
         const postdescription = $('#js_post_description').val();
 
-        console.log('Clicked : OK');
         $.ajax({
             url: ajaxUrl,
             type: 'POST',
@@ -39,11 +39,11 @@ $(document).ready(function () {
                 $('.error').html('')
             },
             success: function (res) {
-                console.log(res);
-                dataFinal.push(res);
+                allExp.push(res);
+                console.log(allExp)
+
                 if (res.success2) {
-                    //retirer la possibilité de soumettre une deuxieme fois le formulaire
-                    submitButton2.prop("disabled", true)
+                    console.log("success")
                 } else {
                     //if success envoie form
                     if (res.errors.predate != null) {
@@ -68,4 +68,17 @@ $(document).ready(function () {
             }
         })
     })
+
+    $('#experience_cv').on('submit', function (e) {
+        const submitButton = $('#js_submitted_experience');
+        // ajax
+        e.preventDefault();
+        console.log('Clicked : OK');
+
+        submitButton.prop("disabled", true)
+        dataFinal.push(allExp);
+        console.log(dataFinal)
+    })
 })
+
+

@@ -16,14 +16,18 @@ Text Domain: cvline
 @import "inc/wrap";
 @import "inc/variables";
 @import "inc/function";
+@import "inc/keyframes";
+@import "inc/animations";
 
 //PAGES
 @import "pages/header";
 @import "pages/footer";
 @import "pages/homepage";
-@import "pages/login";
+@import "pages/authentification";
 
 @import "pages/editprofil";
 
 @import "pages/generatecv";
 
+
+.displaynone { display: none; }

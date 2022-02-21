@@ -161,6 +161,7 @@ function projet_cvtheques_scripts()
     wp_enqueue_script('ajax-hobbie', get_template_directory_uri() . '/asset/js/ajax-hobbie.js', array('jquery'), _S_VERSION, true);
     wp_enqueue_script('ajax-school', get_template_directory_uri() . '/asset/js/ajax-school.js', array('jquery'), _S_VERSION, true);
     wp_enqueue_script('ajax-final', get_template_directory_uri() . '/asset/js/ajax-final.js', array('jquery'), _S_VERSION, true);
+    // wp_enqueue_script('ajax-auth', get_template_directory_uri() . '/asset/js/ajax-auth.js', array('jquery'), _S_VERSION, true);
 
 
     wp_add_inline_script('ajax-generatecv', 'const ajaxUrl = ' . json_encode(admin_url('admin-ajax.php')), 'before');
@@ -171,6 +172,11 @@ function projet_cvtheques_scripts()
     }
 }
 add_action('wp_enqueue_scripts', 'projet_cvtheques_scripts');
+
+// ROLES
+
+add_role('Recruteur', 'Recruteur', get_role('subscriber')->capabilities);
+add_role('Candidat', 'Candidat', get_role('subscriber')->capabilities);
 
 function my_login_logo()
 { ?>
