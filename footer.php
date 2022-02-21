@@ -14,15 +14,6 @@
 
 <footer>
     <div class="wrap1">
-        <nav>
-            <ul>
-                <li><a href="<?php echo path('faq'); ?>">FAQ</a></li>
-                <li><a href="<?php echo path('cgu'); ?>">CGU</a></li>
-                <li><a href="<?php echo path('legals'); ?>">Mentions légales</a></li>
-                <li><a href="<?php echo path('about'); ?>">À propos</a></li>
-                <li><a href="<?php echo path('login'); ?>">S'inscrire/ Se connecter</a></li>
-            </ul>
-        </nav>
         <div class="copyright">
             <a  href="<?php echo path('/'); ?>">
                 <p class="text-copy"> © Copyright CV LINE Company</p></a>

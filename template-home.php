@@ -19,6 +19,7 @@
         </div>
     </div>
 
-    <?= get_footer() ?>
+<?php
+get_footer()?>
 </section>
 

@@ -12,7 +12,7 @@
 
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> xmlns="http://www.w3.org/1999/html">
 
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
@@ -28,4 +28,26 @@
 	<div class="logo">
 
         <a href="<?php echo path('/'); ?>"><img src=" <?php echo get_template_directory_uri() ?>/asset/img/logoCVline1.svg" alt="logo"></a>
-	</div>
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a class="#" href="<?php echo path('login'); ?>">S'inscrire/Se connecter</a>
+                <a href="<?php echo path('faq'); ?>">FAQ</a>
+                <a href="<?php echo path('cgu'); ?>">CGU</a>
+                <a href="<?php echo path('legals'); ?>">Mentions légales</a>
+                <a href="<?php echo path('about'); ?>">À propos</a>
+            </div>
+        </div>
+        <span class="openNav" onclick="openNav()">&#9776;</span>
+    </div>
+
+<script>
+
+    function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+    }
+
+    function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+    }
+</script>

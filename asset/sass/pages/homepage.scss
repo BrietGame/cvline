@@ -29,3 +29,51 @@
     }
   }
 }
+
+
+@media only screen and (min-width : 390px) {
+  #home .wrap1{
+    .titre h1{
+      font-size: 25px;
+    }
+    .btnTransparent{
+      font-size: 19px;
+    }
+    .btnGroup2{
+      .btnWhite{
+        font-size: 16px;
+        padding: 2.5px;
+        i{
+          padding: 5px;
+        }
+      }
+      .btnBlue{
+        font-size: 16px;
+        padding: 2.5px;
+        i{
+          padding: 5px;
+        }
+      }
+    }
+
+  }
+}
+@media only screen and (min-width : 720px){
+  #home .wrap1{
+    .titre h1{
+      font-size: 50px;
+    }
+    .btnTransparent{
+      font-size: 25px;
+    }
+    .btnGroup2{
+      .btnWhite{
+        font-size: 20px;
+      }
+      .btnBlue{
+        font-size: 20px;
+      }
+    }
+
+  }
+}
