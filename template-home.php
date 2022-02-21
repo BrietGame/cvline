@@ -106,6 +106,7 @@ $user = wp_get_current_user();
     <?php
     get_footer() ?>
 
+
     <!-- The overlay -->
     <div id="myNav" class="displaynone">
 
@@ -193,11 +194,29 @@ $user = wp_get_current_user();
                             </div>
 
                             <div class="btnForm">
+                                <a href="" id="btnForgetPwd" class="btnWhite">Mot de passe oublié</a>
                                 <input type="submit" name="submitted_login" id="submitted_login" value="Se connecter">
                             </div>
                         </form>
                     </div>
                 <?php } ?>
+            </div>
+        </div>
+    </div>
+    <!-- The overlay -->
+    <div id="forgotpwd" class="displaynone">
+
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" id="closeForgetPwd" class="closebtn">&times;</a>
+
+        <!-- Overlay content -->
+        <div id="login_register" class="overlay-content">
+            <div class="wrap">
+                <div id="forgot_password" class="overlay-content">
+                    <div class="wrap">
+                        <h2>Mot de passe oublié</h2>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

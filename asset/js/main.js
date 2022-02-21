@@ -15,6 +15,18 @@ $(document).ready(function () {
         }, 500)
     }
 
+    function openForgetPwd() {
+        document.getElementById("forgotpwd").className = "overlay slide-in-left ";
+    }
+
+    /* Close when someone clicks on the "x" symbol inside the overlay */
+    function closeForgetPwd() {
+        document.getElementById("forgotpwd").className = "overlay slide-out-left";
+        setTimeout(function () {
+            document.getElementById("forgotpwd").className = "displaynone";
+        }, 500)
+    }
+
     $('#modalBtn').on('click', function (e) {
         e.preventDefault();
         openRegisterMenu();
@@ -22,5 +34,14 @@ $(document).ready(function () {
     $('#close').on('click', function (e) {
         e.preventDefault();
         closeRegisterMenu();
+    })
+
+    $('#btnForgetPwd').on('click', function (e) {
+        e.preventDefault();
+        openForgetPwd();
+    })
+    $("#closeForgetPwd").on('click', function (e) {
+        e.preventDefault();
+        closeForgetPwd();
     })
 });
