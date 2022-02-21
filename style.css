@@ -424,10 +424,10 @@ nav ul li a:hover {
 }
 
 /* The navigation links inside the overlay */
-.overlay a {
+.overlay #close {
   padding: 8px;
   text-decoration: none;
-  font-size: 36px;
+  font-size: 4rem;
   color: #818181;
   display: block;
   /* Display block instead of inline */
@@ -466,6 +466,34 @@ nav ul li a:hover {
   justify-content: space-between;
   align-items: center;
 }
+#login_register .wrap h2 {
+  font-family: Noto Serif, serif;
+  text-align: center;
+  color: #2A4876;
+  font-size: 2rem;
+}
+#login_register .wrap .container_islogged {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+#login_register .wrap .container_islogged .left {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+#login_register .wrap .container_islogged .left p {
+  font-family: Libre Franklin, sans-serif;
+  color: white;
+}
+#login_register .wrap .container_islogged .right {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+#login_register .wrap .container_islogged .right .btnWhite, #login_register .wrap .container_islogged .right .btnBlue {
+  font-size: 1rem;
+}
 #login_register .wrap .left, #login_register .wrap .right {
   width: 40%;
   /* The container */
@@ -476,6 +504,12 @@ nav ul li a:hover {
   /* Create the indicator (the dot/circle - hidden when not checked) */
   /* Show the indicator (dot/circle) when checked */
   /* Style the indicator (dot/circle) */
+}
+#login_register .wrap .left #eye, #login_register .wrap .right #eye {
+  cursor: pointer;
+}
+#login_register .wrap .left #eye:hover, #login_register .wrap .right #eye:hover {
+  opacity: 50%;
 }
 #login_register .wrap .left input, #login_register .wrap .left input::placeholder, #login_register .wrap .left label, #login_register .wrap .right input, #login_register .wrap .right input::placeholder, #login_register .wrap .right label {
   color: white;
