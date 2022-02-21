@@ -5,8 +5,48 @@
         justify-content: space-between;
         align-items: center;
 
+        h2 {
+            font-family: $noto;
+            text-align: center;
+            color: $blue;
+            font-size: 2rem;
+        }
+
+        .container_islogged {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+
+            .left {
+                display: flex;
+                flex-flow: column nowrap;
+                gap: 1rem;
+
+                p {
+                    font-family: $franklin;
+                    color: white;
+                }
+            }
+            .right {
+                display: flex;
+                flex-flow: column nowrap;
+                gap: 1rem;
+    
+                .btnWhite, .btnBlue {
+                    font-size: 1rem;
+                }
+            }
+        }
+
         .left, .right {
             width: 40%;
+
+            #eye {
+                cursor: pointer;
+            }
+            #eye:hover {
+                opacity: 50%;
+            }
 
             input, input::placeholder, label {
                 color: white;

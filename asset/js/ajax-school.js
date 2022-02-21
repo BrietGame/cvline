@@ -71,12 +71,20 @@ $(document).ready(function () {
     })
 
 
-    $('#school_cv').on('submit', function (e){
+    $('#school_cv').on('submit', function (e) {
         e.preventDefault();
 
         submitButton.prop("disabled", true);
         dataFinal.push(allSchool);
         console.log(dataFinal)
+        $('#step[data-id="5"]').removeClass('active');
+        $('#step[data-id="5"]').addClass('success');
+        $('#step_five').removeClass('wrap1');
+        $('#step_five').addClass('displaynone');
+
+        $('#step[data-id="6"]').toggleClass('active');
+        $('#step_six').removeClass('displaynone');
+        $('#step_six').addClass('wrap1');
 
         const generateGlobalInfo = $('.generateGlobalInfo');
         const generateExpCv = $('.generateExp');
@@ -99,7 +107,7 @@ $(document).ready(function () {
         generateGlobalInfo.append(generateGlobalInfoHtml);
 
 
-        $.each(dataFinal[1], function(count){
+        $.each(dataFinal[1], function (count) {
 
             const startExp = Object.values(dataFinal[1][count])[0].predate;
             const endExp = Object.values(dataFinal[1][count])[0].lastdate;
@@ -120,7 +128,7 @@ $(document).ready(function () {
             generateExpCv.append(generateExpHtml);
         });
 
-        $.each(dataFinal[2], function(count){
+        $.each(dataFinal[2], function (count) {
 
             const skillsName = dataFinal[2][count];
 
@@ -131,7 +139,7 @@ $(document).ready(function () {
             generateSkillsCv.append(generateSkills);
         });
 
-        $.each(dataFinal[3], function(count){
+        $.each(dataFinal[3], function (count) {
 
             const hobbiesName = dataFinal[3][count];
 
@@ -142,7 +150,7 @@ $(document).ready(function () {
             generateHobbiesCv.append(generateHobbies);
         });
 
-        $.each(dataFinal[4], function(count){
+        $.each(dataFinal[4], function (count) {
 
             const schoolDescription = Object.values(dataFinal[4][count])[0].schoolDescription;
             const schoolEnd = Object.values(dataFinal[4][count])[0].schoolEnd;
