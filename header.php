@@ -31,7 +31,12 @@
         <div id="menuprincipal" class="displaynone">
             <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
             <div class="overlay-content">
-                <a class="#" href="<?php echo path('login'); ?>">S'inscrire/Se connecter</a>
+                <?php if (is_user_logged_in()) { ?>
+                    <a class="btnTransparent" id="modalBtn">Accéder à mon espace</a>
+                    <a href="<?= path('logout') ?>" class="btnWhite">Se déconnecter</a>
+                <?php } else { ?>
+                    <a class="btnTransparent" id="modalBtn">Se créer un compte</a>
+                <?php } ?>
                 <a href="<?php echo path('faq'); ?>">FAQ</a>
                 <a href="<?php echo path('cgu'); ?>">CGU</a>
                 <a href="<?php echo path('legals'); ?>">Mentions légales</a>
