@@ -81,9 +81,9 @@ $user = wp_get_current_user();
 
         <div class="btnGroup">
             <?php if (is_user_logged_in()) { ?>
-                <a class="btnTransparent" id="modalBtn">Accéder à mon espace</a>
+                <a class="btnTransparent" id="modalBtn2">Accéder à mon espace</a>
             <?php } else { ?>
-                <a class="btnTransparent" id="modalBtn">Se créer un compte</a>
+                <a class="btnTransparent" id="modalBtn2">Se créer un compte</a>
             <?php } ?>
         </div>
 
@@ -210,23 +210,23 @@ $user = wp_get_current_user();
         <a href="javascript:void(0)" id="closeForgetPwd" class="closebtn">&times;</a>
 
         <!-- Overlay content -->
-                <div id="forgot_password" class="overlay-content">
-                    <div class="wrap">
-                        <h2>Mot de passe oublié</h2>
-                        <div class="formMp">
-                            <form class="form" action="#" method="post">
-                                <div class="input_group">
-                                    <label for="email">Email : </label>
-                                    <input type="text" id="email" name="email" value="">
-                                </div>
-                            <div class="btnform">
-                                <input type="submit" name="submitted_mp" id="mp-submitted" value="Récupèrer mon mot de passe">
-                            </div>
-                            </form>
+        <div id="forgot_password" class="overlay-content">
+            <div class="wrap">
+                <h2>Mot de passe oublié</h2>
+                <div class="formMp">
+                    <form class="form" action="#" method="post">
+                        <div class="input_group">
+                            <label for="email">Email : </label>
+                            <input type="text" id="email" name="email" value="">
                         </div>
-                    </div>
+                        <div class="btnform">
+                            <input type="submit" name="submitted_mp" id="mp-submitted" value="Récupèrer mon mot de passe">
+                        </div>
+                    </form>
                 </div>
             </div>
+        </div>
+    </div>
     <?= get_footer() ?>
 
 </section>

@@ -29,6 +29,12 @@ $(document).ready(function () {
 
     $('#modalBtn').on('click', function (e) {
         e.preventDefault();
+        console.log('TEST');
+        openRegisterMenu();
+    })
+    $('#modalBtn2').on('click', function (e) {
+        e.preventDefault();
+        console.log('TEST');
         openRegisterMenu();
     })
     $('#close').on('click', function (e) {

@@ -57,7 +57,4 @@
                 document.getElementById("menuprincipal").className = "displaynone";
             }, 500)
         }
-        $('#openMenu').on('click', function(e) {
-            openMenu();
-        })
     </script>
