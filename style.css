@@ -569,7 +569,7 @@ nav ul li a:hover {
     font-size: 60px;
   }
 }
-@media only screen and (min-width: 720px) and (max-height: 450px) {
+@media only screen and (min-width: 720px) and (min-width: 880px) {
   #home .wrap1 .overlay a {
     font-size: 20px;
   }
