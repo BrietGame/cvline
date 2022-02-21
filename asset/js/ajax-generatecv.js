@@ -4,7 +4,7 @@ const dataFinal = [];
 $(document).ready(function () {
 
     const submitButton = $('#js_submitted_global');
-    const errorPostsearch =$('#error_js_post_search')
+    const errorPostsearch = $('#error_js_post_search')
     const errorSurname = $('#error_surname');
     const errorName = $('#error_name');
     const errorEmail = $('#error_mail');
@@ -18,7 +18,7 @@ $(document).ready(function () {
         // ajax
         e.preventDefault();
 
-        const postsearch =$('#js_post_search').val();
+        const postsearch = $('#js_post_search').val();
         const surname = $('#js_surname').val();
         const name = $('#js_name').val();
         const email = $('#js_email').val();
@@ -55,6 +55,14 @@ $(document).ready(function () {
                     //retirer la possibilité de soumettre une deuxieme fois le formulaire
                     submitButton.prop("disabled", true)
                     dataFinal.push(res);
+                    $('#step[data-id="1"]').removeClass('active');
+                    $('#step[data-id="1"]').addClass('success');
+                    $('#step_one').removeClass('wrap1');
+                    $('#step_one').addClass('displaynone');
+
+                    $('#step[data-id="2"]').toggleClass('active');
+                    $('#step_two').removeClass('displaynone');
+                    $('#step_two').addClass('wrap1');
                 } else {
                     //if success envoie form
                     if (res.errors.postsearch != null) {
