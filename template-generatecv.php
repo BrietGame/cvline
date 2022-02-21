@@ -10,27 +10,27 @@
 
     <div class="wrap">
         <section id="fil_ariane">
-            <div id="step" data-id="1" class="success">
+            <div id="step" data-id="1" class="active">
                 <span class="nb">1</span>
                 <span class="text">Mes informations</span>
             </div>
-            <div id="step" data-id="2" class="active">
+            <div id="step" data-id="2">
                 <span class="nb">2</span>
                 <span class="text">Mes expériences</span>
             </div>
-            <div id="step" data-id="3" class="">
+            <div id="step" data-id="3">
                 <span class="nb">3</span>
                 <span class="text">Mes compétences</span>
             </div>
-            <div id="step" data-id="4" class="">
+            <div id="step" data-id="4">
                 <span class="nb">4</span>
                 <span class="text">Mes hobbies</span>
             </div>
-            <div id="step" data-id="5" class="">
+            <div id="step" data-id="5">
                 <span class="nb">5</span>
                 <span class="text">Mon parcours</span>
             </div>
-            <div id="step" data-id="6" class="">
+            <div id="step" data-id="6">
                 <span class="nb">6</span>
                 <span class="text">Récapitulatif</span>
             </div>
@@ -123,13 +123,12 @@
                 </div>
 
                 <div class="btnForm">
-                    <a href="#" class="btnBlack">Précédent</a>
                     <input class="btnBlue" type="submit" name="submitted" id="js_submitted_global" value="Suivant">
                 </div>
 
             </form>
         </section>
-        <section id="step_two" class="wrap1">
+        <section id="step_two" class="displaynone">
             <h2 class="title">Mes expériences</h2>
             <form method="POST" id="experience_cv">
                 <div class="two_input">
@@ -177,14 +176,13 @@
                 </div>
 
                 <div class="btnForm">
-                    <a href="#" class="btnBlack">Précédent</a>
                     <a href="#" class="btnBlack" id="addMoreExp">Ajouter un autre</a>
                     <input class="btnBlue" type="submit" name="submitted" id="js_submitted_experience" value="Suivant">
                 </div>
             </form>
         </section>
 
-        <section id="step_three" class="wrap1">
+        <section id="step_three" class="displaynone">
             <h2 class="title">Mes compétences</h2>
             <form method="POST" id="skill">
                 <div id="todo" class="input_group">
@@ -203,13 +201,12 @@
                 </div>
 
                 <div class="btnForm">
-                    <a href="#" class="btnBlack">Précédent</a>
                     <input type="submit" name="submit_skill" id="js_skill" value="Suivant">
                 </div>
             </form>
         </section>
 
-        <section id="step_four" class="wrap1">
+        <section id="step_four" class="displaynone">
             <h2 class="title">Mes loisirs</h2>
             <form method="POST" id="hobbie_cv">
                 <div id="todo" class="input_group">
@@ -227,13 +224,12 @@
                 </div>
 
                 <div class="btnForm">
-                    <a href="#" class="btnBlack">Précédent</a>
                     <input type="submit" name="submit_hobbie" id="js_hobbie_button" value="Suivant">
                 </div>
             </form>
         </section>
 
-        <section id="step_five" class="wrap1">
+        <section id="step_five" class="displaynone">
             <h2 class="title">Mon parcours</h2>
             <form method="POST" id="school_cv">
 
@@ -283,13 +279,12 @@
                 <a href="#" class="btnBlack" id="addMoreSchool">Ajouter</a>
 
                 <div class="btnForm">
-                    <a href="#" class="btnBlack">Précédent</a>
                     <input type="submit" name="submit_school" id="js_school_button" value="Suivant">
                 </div>
             </form>
         </section>
 
-        <section id="step_six" class="wrap1">
+        <section id="step_six" class="displaynone">
             <h2 class="title">Recapitulatif</h2>
             <div id="vueCvFinal">
 
