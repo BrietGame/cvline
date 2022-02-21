@@ -39,14 +39,6 @@ $(document).ready(function () {
                 $('.error').html('')
             },
             success: function (res) {
-                $('#step[data-id="2"]').removeClass('active');
-                $('#step[data-id="2"]').addClass('success');
-                $('#step_two').removeClass('wrap1');
-                $('#step_two').addClass('displaynone');
-
-                $('#step[data-id="3"]').toggleClass('active');
-                $('#step_three').removeClass('displaynone');
-                $('#step_three').addClass('wrap1');
                 allExp.push(res);
                 console.log(allExp)
 
@@ -86,6 +78,14 @@ $(document).ready(function () {
         submitButton.prop("disabled", true)
         dataFinal.push(allExp);
         console.log(dataFinal)
+        $('#step[data-id="2"]').removeClass('active');
+                $('#step[data-id="2"]').addClass('success');
+                $('#step_two').removeClass('wrap1');
+                $('#step_two').addClass('displaynone');
+
+                $('#step[data-id="3"]').toggleClass('active');
+                $('#step_three').removeClass('displaynone');
+                $('#step_three').addClass('wrap1');
     })
 })
 
