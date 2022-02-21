@@ -639,6 +639,14 @@ nav ul li a:hover {
   }
 }
 @media only screen and (min-width: 720px) {
+  #home .wrap1 {
+    /* The Overlay (background) */
+    /* Position the content inside the overlay */
+    /* The navigation links inside the overlay */
+    /* When you mouse over the navigation links, change their color */
+    /* Position the close button (top right corner) */
+    /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+  }
   #home .wrap1 .titre h1 {
     font-size: 50px;
   }
@@ -651,7 +659,78 @@ nav ul li a:hover {
   #home .wrap1 .btnGroup2 .btnBlue {
     font-size: 20px;
   }
+  #home .wrap1 .overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  #home .wrap1 .overlay-content {
+    position: relative;
+    top: 25%;
+    /* 25% from the top */
+    width: 100%;
+    /* 100% width */
+    text-align: center;
+    /* Centered text/links */
+    margin-top: 30px;
+    /* 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+  #home .wrap1 .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    /* Display block instead of inline */
+    transition: 0.3s;
+    /* Transition effects on hover (color) */
+  }
+  #home .wrap1 .overlay a:hover, #home .wrap1 .overlay a:focus {
+    color: #f1f1f1;
+  }
+  #home .wrap1 .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
 }
+@media only screen and (min-width: 720px) and (min-width: 880px) {
+  #home .wrap1 .overlay a {
+    font-size: 20px;
+  }
+  #home .wrap1 .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+#forgot_password .wrap h2 {
+  font-size: 3rem;
+  color: #2A4876;
+  padding-bottom: 2rem;
+}
+#forgot_password .wrap .formMp {
+  font-size: 1.5rem;
+}
+#forgot_password .wrap .input_group label {
+  color: #FFFFFF;
+}
+#forgot_password .wrap .input_group input {
+  border-bottom: 2px solid #FFFFFF;
+  font-size: 2rem;
+}
+
 #login_register .wrap {
   display: flex;
   flex-flow: row nowrap;
