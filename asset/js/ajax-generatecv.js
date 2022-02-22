@@ -67,6 +67,8 @@ $(document).ready(function () {
                     createCookie('birthday', birthday);
                     createCookie('phone', phone);
 
+                    stepSuccess();
+
                     $('#step[data-id="1"]').removeClass('active');
                     $('#step[data-id="1"]').addClass('success');
                     $('#step_one').removeClass('wrap1');

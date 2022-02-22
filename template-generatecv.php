@@ -133,13 +133,13 @@
             <form method="POST" id="experience_cv">
                 <div class="two_input">
                     <div class="input_group">
-                        <label for="js_predate">Année de début</label>
+                        <label for="js_predate">Début</label>
                         <input type="date" id="js_predate" name="predate" placeholder="">
                         <span class="error" id="error_predate"></span>
                     </div>
 
                     <div class="input_group">
-                        <label for="js_lastdate">Année de fin</label>
+                        <label for="js_lastdate">Fin</label>
                         <input type="date" id="js_lastdate" name="lastdate" placeholder="">
                         <span class="error" id="error_lastdate"></span>
                         <label for="js_post_active"><input type="checkbox" id="js_post_active" name="js_post_active" value="Je suis à ce poste"> Je suis encore à ce poste</label>
@@ -176,7 +176,7 @@
                 </div>
 
                 <div class="btnForm">
-                    <a href="#" class="btnBlack" id="addMoreExp">Ajouter un autre</a>
+                    <a href="#" class="btnBlack" id="addMoreExp">Ajouter cette expérience</a>
                     <input class="btnBlue" type="submit" name="submitted" id="js_submitted_experience" value="Suivant">
                 </div>
             </form>
@@ -276,7 +276,7 @@
                     <span class="error" id="error_school_description"></span>
                 </div>
 
-                <a href="#" class="btnBlack" id="addMoreSchool">Ajouter</a>
+                <a href="#" class="btnBlack" id="addMoreSchool">Ajouter ce parcours</a>
 
                 <div class="btnForm">
                     <input type="submit" name="submit_school" id="js_school_button" value="Suivant">
@@ -305,12 +305,12 @@
 
             </div>
 
+            <a href="" class="btnBlue" id="final_submit">Générer son CV</a>
         </section>
 
 
 
 
-        <a href="" class="btnBlue" id="final_submit">Générer son CV</a>
 
     </div>
 </section>
