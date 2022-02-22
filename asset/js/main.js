@@ -1,4 +1,15 @@
 $(document).ready(function () {
+    // HEADER
+    function openMenu() {
+        document.getElementById("menuprincipal").className = "overlay slide-in-left ";
+    }
+
+    function closeMenu() {
+        document.getElementById("menuprincipal").className = "overlay slide-out-left";
+        setTimeout(function () {
+            document.getElementById("menuprincipal").className = "displaynone";
+        }, 500)
+    }
     function openRegisterMenu() {
         document.getElementById("myNav").className = "overlay slide-in-left ";
         document.getElementById("wraphome").className = "displaynone";
@@ -27,14 +38,23 @@ $(document).ready(function () {
         }, 500)
     }
 
+    $('#openMenuPrincipal').on('click', function (e) {
+        e.preventDefault();
+        console.log('MENU');
+        openMenu();
+    })
+    $('#closeMenuPrincipal').on('click', function (e) {
+        e.preventDefault();
+        console.log('MENU');
+        closeMenu();
+    })
+
     $('#modalBtn').on('click', function (e) {
         e.preventDefault();
-        console.log('TEST');
         openRegisterMenu();
     })
     $('#modalBtn2').on('click', function (e) {
         e.preventDefault();
-        console.log('TEST');
         openRegisterMenu();
     })
     $('#close').on('click', function (e) {
