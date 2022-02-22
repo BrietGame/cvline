@@ -1,9 +1,11 @@
 <?php
 get_header();
 /* Template Name: Modele de Cv */
+require __DIR__ . '/vendor/autoload.php';
 
+use Spipu\Html2Pdf\Html2Pdf;
 
-
+$html2pdf = new Html2Pdf();
 ?>
 
     <div>
@@ -218,5 +220,9 @@ get_header();
 
 
 <?php
+
+$html = ob_get_clean();
+$html2pdf->writeHTML($html);
+$html2pdf->output();
 get_footer();
 ?>
