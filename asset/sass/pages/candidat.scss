@@ -1,12 +1,16 @@
+
 body{
   background-color: #f8f7fe;
 }
+
+
 #espaceCandidat {
 
   .header {
     background-image: url('../cvline/asset/img/bg/edit_profil.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+
   }
 
   h2 {
@@ -44,6 +48,19 @@ body{
       padding: 3rem;
 
     }
+
+
+  }
+
+  #input_candidat {
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+
   }
 
   #CvUser {
@@ -51,8 +68,13 @@ body{
     padding: 0;
     margin: 0;
 
+
     div {
       div {
+
+    li {
+      a {
+
         border: 1px solid #ddd;
         margin-top: -1px;
         background-color: #f6f6f6;
@@ -70,5 +92,10 @@ body{
       }
     }
 
+
   }
 }
+
+  }
+}
+
