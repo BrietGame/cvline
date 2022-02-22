@@ -1180,7 +1180,7 @@ nav ul li a:hover {
   padding: 0;
   margin: 0;
 }
-#recruteur #recrutcv li a {
+#recruteur #recrutcv div div {
   border: 1px solid #ddd;
   margin-top: -1px;
   background-color: #f6f6f6;
@@ -1190,7 +1190,7 @@ nav ul li a:hover {
   color: black;
   display: block;
 }
-#recruteur #recrutcv li a:hover:not(.header) {
+#recruteur #recrutcv div div:hover:not(.header) {
   background-color: #eee;
 }
 
