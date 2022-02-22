@@ -110,7 +110,7 @@ $(document).ready(function () {
                     <div class="left">
                         <p>Nom : <span>${dataFinal[0].surname}</span></p>
                         <p>Prenom : <span>${dataFinal[0].name}</span></p>
-                        <p>Date de naissance : <span>${dataFinal[0].birthday}</span></p>
+                        <p>Date de naissance : <span>${dataFinal[0].birtday}</span></p>
                         <p>Telephone : <span>${dataFinal[0].phone}</span></p>
                     </div>
                     <div class="right">
