@@ -29,6 +29,7 @@ $(document).ready(function () {
                 dataFinal.push(dataHobbiesContentArray);
                 if (res.success) {
                     submitButton.prop("disabled", true)
+                    stepSuccess();
                     $('#step[data-id="4"]').removeClass('active');
                     $('#step[data-id="4"]').addClass('success');
                     $('#step_four').removeClass('wrap1');

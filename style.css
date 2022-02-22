@@ -1170,7 +1170,7 @@ nav ul li a:hover {
   background-image: url("../cvline/asset/img/bg/banner_cv.jpg");
   background-repeat: no-repeat;
   background-size: auto;
-  height: 100%;
+  height: 50%;
 }
 #generate_cv .header h2 {
   font-family: Noto Serif, serif;
@@ -1186,6 +1186,7 @@ nav ul li a:hover {
 #generate_cv #fil_ariane {
   display: flex;
   flex-flow: row nowrap;
+  padding-bottom: 3rem;
 }
 #generate_cv #fil_ariane #step {
   display: flex;

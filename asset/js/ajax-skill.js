@@ -33,6 +33,7 @@ $(document).ready(function () {
                 if (res.success3) {
                     //retirer la possibilitÃ© de soumettre une deuxieme fois le formulaire
                     submitButton3.prop("disabled", true)
+                    stepSuccess();
                     $('#step[data-id="3"]').removeClass('active');
                     $('#step[data-id="3"]').addClass('success');
                     $('#step_three').removeClass('wrap1');

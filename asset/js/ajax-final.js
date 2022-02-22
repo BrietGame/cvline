@@ -23,6 +23,11 @@ $(document).ready(function () {
                 // Insertion en DB
                 console.log(dataFinal)
                 $.post("../create_cv/", { dataFinal })
+
+                setTimeout(function () {
+                    finalSuccess();
+                    document.location.href = "../create_cv/";
+                }, 2000)
             }
         })
     })

@@ -6,7 +6,7 @@
         background-image: url('../cvline/asset/img/bg/banner_cv.jpg');
         background-repeat: no-repeat;
         background-size: auto;
-        height: 100%;
+        height: 50%;
 
         h2 {
             font-family: $noto;
@@ -30,6 +30,7 @@
     #fil_ariane {
         display: flex;
         flex-flow: row nowrap;
+        padding-bottom: 3rem;
         #step {
             display: flex;
             flex-flow: row nowrap;
