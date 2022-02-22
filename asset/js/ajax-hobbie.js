@@ -42,7 +42,6 @@ $(document).ready(function () {
                     if (res.errors.hobbie != null) {
                         errorHobbie.html(res.errors.hobbie)
                     }
-
                 }
             }
         })

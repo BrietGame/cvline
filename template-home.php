@@ -135,6 +135,33 @@ $user = wp_get_current_user();
                 <?php } else { ?>
                     <div class="left">
                         <h2>S'inscrire</h2>
+                        <!--<form id="signupform" action="<?php echo wp_registration_url(); ?>" method="post">
+                            <div class="input_group">
+                                <label for="email">Adresse mail<strong>*</strong></label>
+                                <input type="text" name="email" id="email">
+                                <span class="error"><?php if (!empty($_GET['register-errors']) && $_GET['register-errors'] == 'email') {
+                                                        echo "Veuillez renseigner une adresse mail valide";
+                                                    } else if (!empty($_GET['register-errors']) && $_GET['register-errors'] == 'email_exists') {
+                                                        echo 'L\'adresse mail existe déjà.';
+                                                    } ?></span>
+                            </div>
+
+                            <div class="two_input">
+                                <div class="input_group">
+                                    <label for="first_name">Prénom</label>
+                                    <input type="text" name="first_name" id="first-name">
+                                </div>
+
+                                <div class="input_group">
+                                    <label for="last_name">Nom</label>
+                                    <input type="text" name="last_name" id="last-name">
+                                </div>
+                            </div>
+
+                            <div class="btnForm">
+                                <input type="submit" name="submit" class="register-button" value="S'inscrire" />
+                            </div>
+                        </form>-->
                         <form action="" method="POST" novalidate id="loginForm">
                             <div class="two_input">
                                 <div class="input_group_radio">
@@ -214,7 +241,7 @@ $user = wp_get_current_user();
             <div class="wrap">
                 <h2>Mot de passe oublié</h2>
                 <div class="formMp">
-                    <form class="form" action="#" method="post">
+                    <!--<form class="form" action="#" method="post">
                         <div class="input_group">
                             <label for="email">Email : </label>
                             <input type="text" id="email" name="email" value="">
@@ -222,7 +249,23 @@ $user = wp_get_current_user();
                         <div class="btnform">
                             <input type="submit" name="submitted_mp" id="mp-submitted" value="Récupèrer mon mot de passe">
                         </div>
-                    </form>
+                    </form>-->
+                    <div id="password-lost-form" class="widecolumn">
+                        <?php if ($attributes['show_title']) : ?>
+                            <h3><?php _e('Mot de passe oublié ?', 'personalize-login'); ?></h3>
+                        <?php endif; ?>
+
+                        <form id="lostpasswordform" action="<?php echo wp_lostpassword_url(); ?>" method="post">
+                            <div class="input_group">
+                                <label for="user_login"><?php _e('Email', 'personalize-login'); ?></label>
+                                <input type="text" name="user_login" id="user_login">
+                            </div>
+
+                            <div class="btnForm">
+                                <input type="submit" name="submit" value="<?php _e('Envoyer la demande de réinitialisation', 'personalize-login'); ?>" />
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
