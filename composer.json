@@ -1,6 +1,9 @@
 {
     "require": {
+<<<<<<< HEAD
+=======
         "dompdf/dompdf": "^1.2",
+>>>>>>> 45040798965123357c3a3fce2e32a1577ea3dcff
         "spipu/html2pdf": "^5.2"
     }
 }
