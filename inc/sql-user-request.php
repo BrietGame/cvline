@@ -39,6 +39,7 @@ LEFT JOIN {$wpdb->prefix}pivot_school
 ON {$wpdb->prefix}cv_school.school_id = {$wpdb->prefix}pivot_school.school_id
 WHERE {$wpdb->prefix}pivot_school.cv_id = $getUserCv", OBJECT);
 
+//    debug($getCvInfo);
 //    debug($getInfoWork);
 //    debug($getInfoSkills);
 //    debug($getInfoHobbie);
