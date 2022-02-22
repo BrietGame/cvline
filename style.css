@@ -990,7 +990,7 @@ nav ul li a:hover {
 }
 
 #profil .header {
-  background-image: url("../cvline/asset/img/bg/edit_profil.jpg");
+  background-image: url("../cvline/asset/img/bg/banner_profil.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -998,7 +998,7 @@ nav ul li a:hover {
   font-family: Noto Serif, serif;
   font-size: 3rem;
   text-align: center;
-  color: #FFFFFF;
+  color: #2A4876;
   padding-bottom: 3rem;
 }
 #profil .input_group {
@@ -1166,45 +1166,19 @@ nav ul li a:hover {
     width: 50%;
   }
 }
-body {
-  background-color: #f8f7fe;
-}
-
-#espaceCandidat .header {
-  background-image: url("../cvline/asset/img/bg/edit_profil.jpg");
+#candidat .header {
+  background-image: url("../cvline/asset/img/bg/banner_candidat.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
-#espaceCandidat h2 {
+#candidat .header h2 {
+  font-family: Noto Serif, serif;
   font-size: 3rem;
-  display: flex;
-  justify-content: center;
-  color: #2A4876;
-}
-#espaceCandidat .search {
-  display: flex;
-  justify-content: center;
-  padding-top: 3rem;
-}
-#espaceCandidat #input_candidat {
-  color: #2A4876;
-  border-radius: 16px;
-  font-family: Libre Franklin, sans-serif;
-  font-size: 1.5rem;
-  background-color: #FFFFFF;
-  transition: 0.8s;
-  padding: 0.2rem 1.5rem;
-  border: 1px solid #2A4876;
-  width: 50%;
   text-align: center;
+  color: #2A4876;
+  padding-bottom: 3rem;
 }
-#espaceCandidat .titre h1 {
-  font-size: 2rem;
-  display: flex;
-  justify-content: center;
-  padding: 3rem;
-}
-#espaceCandidat #input_candidat {
+#candidat #input_candidat {
   background-position: 10px 12px;
   background-repeat: no-repeat;
   width: 100%;
@@ -1213,12 +1187,16 @@ body {
   border: 1px solid #ddd;
   margin-bottom: 12px;
 }
-#espaceCandidat #CvUser {
+#candidat #candidatcv {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
-#espaceCandidat #CvUser div div li a {
+#candidat #candidatcv a {
+  list-style: none;
+  color: grey;
+}
+#candidat #candidatcv div {
   border: 1px solid #ddd;
   margin-top: -1px;
   background-color: #f6f6f6;
@@ -1228,10 +1206,49 @@ body {
   color: black;
   display: block;
 }
-#espaceCandidat #CvUser div div li a:hover:not(.header) {
+#candidat #candidatcv div:hover:not(.header) {
   background-color: #eee;
 }
 
+#pagination_candidat {
+  margin-top: 50px;
+}
+#pagination_candidat .center {
+  text-align: center;
+}
+#pagination_candidat .pagination {
+  display: inline-block;
+}
+#pagination_candidat .pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+}
+#pagination_candidat .pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+#pagination_candidat .pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+#recruteur .header {
+  background-image: url("../cvline/asset/img/bg/banner_recruteur.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#recruteur .header h2 {
+  font-family: Noto Serif, serif;
+  font-size: 3rem;
+  text-align: center;
+  color: #2A4876;
+  padding-bottom: 3rem;
+}
 #recruteur #input_recrut {
   background-position: 10px 12px;
   background-repeat: no-repeat;
@@ -1292,7 +1309,7 @@ body {
 }
 
 #generate_cv .header {
-  background-image: url("../cvline/asset/img/bg/banner_cv.jpg");
+  background-image: url("../cvline/asset/img/bg/banner_generatecv.jpg");
   background-repeat: no-repeat;
   background-size: auto;
   height: 50%;
@@ -1301,7 +1318,7 @@ body {
   font-family: Noto Serif, serif;
   font-size: 3rem;
   text-align: center;
-  color: #FFFFFF;
+  color: #2A4876;
 }
 #generate_cv .title {
   text-align: center;

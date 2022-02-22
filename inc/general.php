@@ -177,6 +177,10 @@ function projet_cvtheques_scripts()
         wp_enqueue_script('comment-reply');
     }
 
+    if (is_page_template('template-recruteur.php') || is_page_template('template-candidat.php')) {
+        wp_enqueue_script('search', get_template_directory_uri() . '/asset/js/search.js', array('jquery'), _S_VERSION, true);
+    }
+
 
     wp_enqueue_script('mainjs', get_template_directory_uri() . '/asset/js/main.js', array('jquery'), _S_VERSION, true);
 }
