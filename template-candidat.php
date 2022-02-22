@@ -12,15 +12,16 @@ if (!is_user_logged_in()) {
         <h2>Espace candidat</h2>
     </div>
     <div class="wrap3">
-        <div class="search">
-            <input type="search" id="search" name="search">
-        </div>
-        <div class="titre">
+        <section id="candidat">
+            <input type="text" id="input_candidat" onkeyup="myFunction()" placeholder="Search for names..">
+
+            <div class="titre">
             <h1>Résulat de votre recherche : ( mot clés entrés )</h1>
         </div>
         <div id="conteneurCandidat">
 
-            <div class="CvUser">
+                <ul id="CvUser">
+                    <li><a href="#">anais</a></li>
                 <div class="btnGroup">
                     <div class="btnGroup3">
                         <a class="btnWhite" href="#">Page précédente </a>
