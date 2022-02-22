@@ -146,6 +146,7 @@ function projet_cvtheques_scripts()
 
     wp_enqueue_style('projet-cvtheques-style', get_stylesheet_uri(), array(), _S_VERSION);
     wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css', array(), '1.0.0');
+    wp_enqueue_style('izitoastcss', 'https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css', array(), '1.0.0');
 
     wp_deregister_script('jquery');
     wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', array(), '3.6.0', true);
@@ -153,6 +154,8 @@ function projet_cvtheques_scripts()
 
 
     wp_enqueue_script('data-cookie', get_template_directory_uri() . '/asset/js/data-cookie.js', array('jquery'), _S_VERSION, true);
+    wp_enqueue_script('toastjs', get_template_directory_uri() . '/asset/js/toast.js', _S_VERSION, true);
+    wp_enqueue_script('izitoastjs', 'https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.js', _S_VERSION, true);
 
     if (is_page_template('template-home.php')) {
         wp_enqueue_script('mainjs', get_template_directory_uri() . '/asset/js/main.js', array('jquery'), _S_VERSION, true);

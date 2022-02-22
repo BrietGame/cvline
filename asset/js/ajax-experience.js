@@ -1,6 +1,8 @@
 console.log('Ok Ajax experience');
 
 const allExp = [];
+let vide = true;
+
 
 $(document).ready(function () {
 
@@ -41,9 +43,10 @@ $(document).ready(function () {
             success: function (res) {
                 allExp.push(res);
                 console.log(allExp)
-
                 if (res.success2) {
                     console.log("success")
+                    vide = false;
+                    underStepSuccess('expérience');
                     $('#js_predate').val('');
                     $('#js_lastdate').val('');
                     $('#js_post_name').val('');
@@ -81,17 +84,22 @@ $(document).ready(function () {
         e.preventDefault();
         console.log('Clicked : OK');
 
-        submitButton.prop("disabled", true)
-        dataFinal.push(allExp);
-        console.log(dataFinal)
-        $('#step[data-id="2"]').removeClass('active');
-        $('#step[data-id="2"]').addClass('success');
-        $('#step_two').removeClass('wrap1');
-        $('#step_two').addClass('displaynone');
+        if (vide === false) {
+            submitButton.prop("disabled", true)
+            stepSuccess();
+            dataFinal.push(allExp);
+            console.log(dataFinal)
+            $('#step[data-id="2"]').removeClass('active');
+            $('#step[data-id="2"]').addClass('success');
+            $('#step_two').removeClass('wrap1');
+            $('#step_two').addClass('displaynone');
 
-        $('#step[data-id="3"]').toggleClass('active');
-        $('#step_three').removeClass('displaynone');
-        $('#step_three').addClass('wrap1');
+            $('#step[data-id="3"]').toggleClass('active');
+            $('#step_three').removeClass('displaynone');
+            $('#step_three').addClass('wrap1');
+        } else {
+            stepError();
+        }
     })
 })
 
