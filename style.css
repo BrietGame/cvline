@@ -1166,6 +1166,39 @@ nav ul li a:hover {
     width: 50%;
   }
 }
+#espaceCandidat .header {
+  background-image: url("../cvline/asset/img/bg/edit_profil.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#espaceCandidat #input_candidat {
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+#espaceCandidat #CvUser {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#espaceCandidat #CvUser li a {
+  border: 1px solid #ddd;
+  margin-top: -1px;
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
+}
+#espaceCandidat #CvUser li a:hover:not(.header) {
+  background-color: #eee;
+}
+
 #recruteur #input_recrut {
   background-position: 10px 12px;
   background-repeat: no-repeat;
@@ -1180,7 +1213,11 @@ nav ul li a:hover {
   padding: 0;
   margin: 0;
 }
-#recruteur #recrutcv div div {
+#recruteur #recrutcv a {
+  list-style: none;
+  color: grey;
+}
+#recruteur #recrutcv div {
   border: 1px solid #ddd;
   margin-top: -1px;
   background-color: #f6f6f6;
@@ -1190,7 +1227,7 @@ nav ul li a:hover {
   color: black;
   display: block;
 }
-#recruteur #recrutcv div div:hover:not(.header) {
+#recruteur #recrutcv div:hover:not(.header) {
   background-color: #eee;
 }
 
