@@ -13,26 +13,28 @@ if (!is_user_logged_in()) {
     </div>
     <div class="wrap3">
         <section id="candidat">
-            <input type="text" id="input_candidat" onkeyup="myFunction()" placeholder="Search for names..">
-
+            <div class="search">
+                <input type="text" id="input_candidat" onkeyup="myFunction()" placeholder="Tapez votre recherche">
+            </div>
             <div class="titre">
-            <h1>Résulat de votre recherche : ( mot clés entrés )</h1>
-        </div>
-        <div id="conteneurCandidat">
+                <h1>Résulat de votre recherche : ( mot clés entrés )</h1>
+            </div>
+            <div id="conteneurCandidat">
 
                 <ul id="CvUser">
                     <li><a href="#">anais</a></li>
-                <div class="btnGroup">
-                    <div class="btnGroup3">
-                        <a class="btnWhite" href="#">Page précédente </a>
-                    </div>
+                    <div class="btnGroup">
+                        <div class="btnGroup3">
+                            <a class="btnWhite" href="#">Page précédente </a>
+                        </div>
 
-                    <div class="btnGroup4">
-                        <a class="btnBlue" href="">Page suivante</a>
+                        <div class="btnGroup4">
+                            <a class="btnBlue" href="">Page suivante</a>
+                        </div>
                     </div>
-                </div>
+                </ul>
             </div>
-        </div>
+    </div>
     </div>
 
     <?php
