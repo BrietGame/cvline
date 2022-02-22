@@ -1,21 +1,9 @@
 <?php
-/* Template Name: Download CV */
+require __DIR__ . '/vendor/autoload.php';
 
-// somewhere early in your project's loading, require the Composer autoloader
-// see: http://getcomposer.org/doc/00-intro.md
-require 'vendor/autoload.php';
+use Spipu\Html2Pdf\Html2Pdf;
 
-// reference the Dompdf namespace
-use Dompdf\Dompdf;
-
-// instantiate and use the dompdf class
-$dompdf = new Dompdf();
-$options = $dompdf->getOptions();
-$options->setDefaultFont('Courier');
-$options->set('isRemoteEnabled', TRUE);
-$options->setIsHtml5ParserEnabled(true);
-$dompdf->setOptions($options);
-ob_start();
+$html2pdf = new Html2Pdf();
 ?>
 <style>
     #cv_2 {
@@ -66,13 +54,5 @@ ob_start();
 </div>
 <?php
 $html = ob_get_clean();
-$dompdf->loadHtml($html);
-
-// (Optional) Setup the paper size and orientation
-$dompdf->setPaper('A4', 'portrait');
-
-// Render the HTML as PDF
-$dompdf->render();
-
-// Output the generated PDF to Browser
-$dompdf->stream("", array("Attachment" => false));
+$html2pdf->writeHTML($html);
+$html2pdf->output();
