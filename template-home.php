@@ -83,7 +83,7 @@ $user = wp_get_current_user();
             <?php if (is_user_logged_in()) { ?>
                 <a class="btnTransparent" id="modalBtn2">Accéder à mon espace</a>
             <?php } else { ?>
-                <a class="btnTransparent" id="modalBtn2">Se créer un compte</a>
+                <a class="btnTransparent" id="modalBtn2">S'authentifier</a>
             <?php } ?>
         </div>
 

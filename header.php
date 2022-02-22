@@ -35,7 +35,7 @@
                     <a class="btnTransparent" id="modalBtn">Accéder à mon espace</a>
                     <a href="<?= path('logout') ?>" class="btnWhite">Se déconnecter</a>
                 <?php } else { ?>
-                    <a class="btnTransparent" id="modalBtn">Se créer un compte</a>
+                    <a class="btnTransparent" id="modalBtn">S'authentifier</a>
                 <?php } ?>
                 <a href="<?php echo path('faq'); ?>">FAQ</a>
                 <a href="<?php echo path('cgu'); ?>">CGU</a>
