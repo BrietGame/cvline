@@ -22,15 +22,10 @@ if (!is_user_logged_in()) {
             <div id="conteneurCandidat">
 
                 <ul id="CvUser">
-                    <li><a href="#">anais</a></li>
-                    <div class="btnGroup">
-                        <div class="btnGroup3">
-                            <a class="btnWhite" href="#">Page précédente </a>
-                        </div>
-
-                        <div class="btnGroup4">
-                            <a class="btnBlue" href="">Page suivante</a>
-                        </div>
+                    <div class="decritpion_cv_info">
+                        <a href="#">Poste</a>
+                        <p>Nom Prénom</p>
+                        <p>Description</p>
                     </div>
                 </ul>
             </div>

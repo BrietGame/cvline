@@ -1209,7 +1209,7 @@ body {
   padding: 0;
   margin: 0;
 }
-#espaceCandidat #CvUser li a {
+#espaceCandidat #CvUser div div {
   border: 1px solid #ddd;
   margin-top: -1px;
   background-color: #f6f6f6;
@@ -1219,14 +1219,8 @@ body {
   color: black;
   display: block;
 }
-#espaceCandidat #CvUser li a:hover:not(.header) {
+#espaceCandidat #CvUser div div:hover:not(.header) {
   background-color: #eee;
-}
-#espaceCandidat #CvUser .btnGroup {
-  padding-top: 4rem;
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
 }
 
 #recruteur #input_recrut {
@@ -1243,7 +1237,7 @@ body {
   padding: 0;
   margin: 0;
 }
-#recruteur #recrutcv li a {
+#recruteur #recrutcv div div {
   border: 1px solid #ddd;
   margin-top: -1px;
   background-color: #f6f6f6;
@@ -1253,7 +1247,7 @@ body {
   color: black;
   display: block;
 }
-#recruteur #recrutcv li a:hover:not(.header) {
+#recruteur #recrutcv div div:hover:not(.header) {
   background-color: #eee;
 }
 

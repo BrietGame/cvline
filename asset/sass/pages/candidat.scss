@@ -8,17 +8,20 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
   }
-  h2{
+
+  h2 {
     font-size: 3rem;
     display: flex;
     justify-content: center;
     color: $blue;
   }
-  .search{
+
+  .search {
     display: flex;
     justify-content: center;
     padding-top: 3rem;
   }
+
   #input_candidat {
     color: #2A4876;
     border-radius: 16px;
@@ -32,22 +35,24 @@ body{
     text-align: center;
 
   }
- .titre{
-   h1{
-     font-size: 2rem;
-     display: flex;
-     justify-content: center;
-     padding: 3rem;
 
-   }
- }
+  .titre {
+    h1 {
+      font-size: 2rem;
+      display: flex;
+      justify-content: center;
+      padding: 3rem;
+
+    }
+  }
+
   #CvUser {
     list-style-type: none;
     padding: 0;
     margin: 0;
 
-    li {
-      a {
+    div {
+      div {
         border: 1px solid #ddd;
         margin-top: -1px;
         background-color: #f6f6f6;
@@ -64,11 +69,6 @@ body{
         }
       }
     }
-    .btnGroup{
-      padding-top: 4rem;
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-    }
+
   }
 }

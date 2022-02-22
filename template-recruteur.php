@@ -12,17 +12,24 @@ get_header();
 <section id="recruteur">
     <input type="text" id="input_recrut" onkeyup="myFunction()" placeholder="Search for names..">
 
-    <ul id="recrutcv">
-        <li><a href="#">Adele</a></li>
-        <li><a href="#">Agnes</a></li>
+    <div id="recrutcv">
+        <div class="decritpion_cv_info">
+            <a href="#">Poste</a>
+            <p>Nom Prénom</p>
+            <p>Description</p>
+        </div>
+        <div class="decritpion_cv_info">
+            <a href="#">Poste</a>
+            <p>Nom Prénom</p>
+            <p>Description</p>
+        </div>
+        <div class="decritpion_cv_info">
+            <a href="#">Poste</a>
+            <p>Nom Prénom</p>
+            <p>Description</p>
+        </div>
 
-        <li><a href="#">Billy</a></li>
-        <li><a href="#">Bob</a></li>
-
-        <li><a href="#">Calvin</a></li>
-        <li><a href="#">Christina</a></li>
-        <li><a href="#">Cindy</a></li>
-    </ul>
+    </div>
 
 </section>
 <section id="pagination_recrut">
@@ -30,8 +37,8 @@ get_header();
     <div class="center">
         <div class="pagination">
             <a href="#">&laquo;</a>
-            <a href="#">1</a>
-            <a href="#" class="active">2</a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
             <a href="#">3</a>
             <a href="#">4</a>
             <a href="#">5</a>
@@ -46,8 +53,8 @@ get_header();
             var input, filter, ul, li, a, i, txtValue;
             input = document.getElementById('input_recrut');
             filter = input.value.toUpperCase();
-            ul = document.getElementById("recrutcv");
-            li = ul.getElementsByTagName('li');
+            div = document.getElementById("recrutcv");
+            li = div.getElementsByClassName('decritpion_cv_info');
 
             // Loop through all list items, and hide those who don't match the search query
             for (i = 0; i < li.length; i++) {
