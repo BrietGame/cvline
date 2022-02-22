@@ -46,8 +46,8 @@ $(document).ready(function () {
 
                 allSchool.push(res);
                 console.log(allSchool)
-                vide2 = false;
                 if (res.success) {
+                    vide2 = false;
                     console.log('success')
                     underStepSuccess('parcours');
                     $('#js_school_start').val('');
