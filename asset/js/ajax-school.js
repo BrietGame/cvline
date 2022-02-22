@@ -46,6 +46,12 @@ $(document).ready(function () {
 
                 if (res.success) {
                     console.log('success')
+                    $('#js_school_start').val('');
+                    $('#js_school_end').val('');
+                    $('#js_school_formation').val('');
+                    $('#js_school_name').val('');
+                    $('#js_school_place').val('');
+                    $('#js_school_description').val('');
                 } else {
                     if (res.errors.school_start != null) {
                         errorSchoolStart.html(res.errors.school_start)

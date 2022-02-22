@@ -44,6 +44,12 @@ $(document).ready(function () {
 
                 if (res.success2) {
                     console.log("success")
+                    $('#js_predate').val('');
+                    $('#js_lastdate').val('');
+                    $('#js_post_name').val('');
+                    $('#js_entreprise_name').val('');
+                    $('#js_post_place').val('');
+                    $('#js_post_description').val('');
                 } else {
                     //if success envoie form
                     if (res.errors.predate != null) {
@@ -79,13 +85,13 @@ $(document).ready(function () {
         dataFinal.push(allExp);
         console.log(dataFinal)
         $('#step[data-id="2"]').removeClass('active');
-                $('#step[data-id="2"]').addClass('success');
-                $('#step_two').removeClass('wrap1');
-                $('#step_two').addClass('displaynone');
+        $('#step[data-id="2"]').addClass('success');
+        $('#step_two').removeClass('wrap1');
+        $('#step_two').addClass('displaynone');
 
-                $('#step[data-id="3"]').toggleClass('active');
-                $('#step_three').removeClass('displaynone');
-                $('#step_three').addClass('wrap1');
+        $('#step[data-id="3"]').toggleClass('active');
+        $('#step_three').removeClass('displaynone');
+        $('#step_three').addClass('wrap1');
     })
 })
 
