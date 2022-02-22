@@ -1176,6 +1176,61 @@ nav ul li a:hover {
   justify-content: center;
 }
 
+#recruteur #input_recrut {
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+#recruteur #recrutcv {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#recruteur #recrutcv li a {
+  border: 1px solid #ddd;
+  margin-top: -1px;
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
+}
+#recruteur #recrutcv li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+#pagination_recrut {
+  margin-top: 50px;
+}
+#pagination_recrut .center {
+  text-align: center;
+}
+#pagination_recrut .pagination {
+  display: inline-block;
+}
+#pagination_recrut .pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+}
+#pagination_recrut .pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+#pagination_recrut .pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
 #generate_cv .header {
   background-image: url("../cvline/asset/img/bg/banner_cv.jpg");
   background-repeat: no-repeat;
