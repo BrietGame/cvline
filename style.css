@@ -1166,6 +1166,16 @@ nav ul li a:hover {
     width: 50%;
   }
 }
+#espaceCandidat .header {
+  background-image: url("../cvline/asset/img/bg/edit_profil.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#espaceCandidat .search {
+  display: flex;
+  justify-content: center;
+}
+
 #generate_cv .header {
   background-image: url("../cvline/asset/img/bg/banner_cv.jpg");
   background-repeat: no-repeat;

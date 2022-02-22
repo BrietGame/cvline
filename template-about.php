@@ -1,5 +1,5 @@
 <?php
-/* Template Name: About */
+/* Template Name: a propos */
 ?>
 
 <section id="home">
