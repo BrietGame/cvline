@@ -10,25 +10,16 @@ get_header();
     <h1>EspaceRecruteur</h1>
 </div>
 <section id="recruteur">
-    <input type="text" id="input_recrut" onkeyup="myFunction()" placeholder="Search for names..">
+    <input type="text" id="input_recrut" onkeyup="myFunction()" placeholder="Recherche par poste ...">
 
     <div id="recrutcv">
-        <div class="decritpion_cv_info">
-            <a href="#">Poste</a>
-            <p>Nom Prénom</p>
-            <p>Description</p>
-        </div>
-        <div class="decritpion_cv_info">
-            <a href="#">Poste</a>
-            <p>Nom Prénom</p>
-            <p>Description</p>
-        </div>
-        <div class="decritpion_cv_info">
-            <a href="#">Poste</a>
-            <p>Nom Prénom</p>
-            <p>Description</p>
-        </div>
-
+        <?php for($i=0; $i<=count($getCvRecruteur)-1; $i++) { ?>
+            <div class="decritpion_cv_info">
+                <a href="#"><?= $getCvRecruteur[$i]->cv_title_work ?></a>
+                <p><?= $getCvRecruteur[$i]->cv_surname .' '. $getCvRecruteur[$i]->cv_name ?></p>
+                <p><?= $getCvRecruteur[$i]->cv_created_at ?></p>
+            </div>
+        <?php } ?>
     </div>
 
 </section>
