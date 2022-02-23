@@ -738,6 +738,9 @@ nav ul li a:hover {
 #login_register .wrap .left, #login_register .wrap .right {
   width: 40%;
 }
+#login_register .wrap .left .cgu_link, #login_register .wrap .right .cgu_link {
+  font-size: 1rem;
+}
 #login_register .wrap .left #eye, #login_register .wrap .right #eye {
   cursor: pointer;
 }
