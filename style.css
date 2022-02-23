@@ -48,10 +48,10 @@ a {
   border-radius: 16px;
   cursor: pointer;
   color: #FFFFFF;
-  font-size: 25px;
+  font-size: 1rem;
   padding: 1rem 2rem 1rem 2rem;
   border: 1px solid #FFFFFF;
-  Font-family: Noto Serif, serif;
+  font-family: Libre Franklin, sans-serif;
   transition: 0.8s;
 }
 
@@ -68,7 +68,7 @@ a {
   font-size: 1rem;
   background-color: #FFFFFF;
   transition: 0.8s;
-  padding: 0.2rem 1.5rem;
+  padding: 0.8rem 1.5rem;
   border: 1px solid #2A4876;
 }
 
@@ -403,65 +403,86 @@ a {
   animation: slide-out-left 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
-.logo {
+header .logo {
   display: flex;
   justify-content: center;
 }
-.logo .overlay {
+header .logo a img {
+  width: 100%;
+}
+header .popup_header {
+  background-color: rgba(0, 0, 0, 0.8);
   height: 100%;
-  width: 0;
+  width: 100%;
   position: fixed;
   z-index: 1;
-  top: 0;
   left: 0;
-  background-color: black;
-  background-color: rgba(0, 0, 0, 0.9);
+  top: 0;
   overflow-x: hidden;
   transition: 0.5s;
 }
-.logo .overlay-content {
+header .popup_header .overlay-content {
   position: relative;
   top: 25%;
   width: 100%;
   text-align: center;
   margin-top: 30px;
 }
-.logo .overlay a {
-  padding: 8px;
+header .popup_header a {
+  padding: 1rem;
   text-decoration: none;
-  font-size: 36px;
-  color: #ffffff;
+  font-size: 1rem;
+  color: #818181;
   display: block;
   transition: 0.3s;
-  font-family: Noto Serif, serif;
 }
-.logo .overlay a:hover, .logo .overlay a:focus {
+header .popup_header a:hover, header .popup_header a:focus {
   color: #f1f1f1;
 }
-.logo .overlay .closebtn {
-  position: absolute;
-  top: 20px;
-  right: 45px;
+header .popup_header #close {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 4rem;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
 }
-.logo .openNav {
-  font-size: 50px;
+header .popup_header .closebtn {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 60px;
+}
+
+#openMenuPrincipal {
+  font-size: 3rem;
   cursor: pointer;
   position: absolute;
   top: 3%;
   right: 2%;
   color: #2A4876;
 }
+
 @media screen and (max-width: 880px) {
-  .logo .overlay a {
+  #menuprincipal .overlay a {
     font-size: 2.5rem;
   }
-  .logo .overlay .closebtn {
+  #menuprincipal .overlay .closebtn {
     font-size: 5rem;
     top: 15px;
     right: 35px;
   }
 }
-
+@media screen and (max-width: 380px) {
+  #menuprincipal .openNav {
+    font-size: 3rem;
+    cursor: pointer;
+    position: absolute;
+    top: 10%;
+    right: 6%;
+    color: #2A4876;
+  }
+}
 nav ul {
   display: flex;
   gap: 1rem;
@@ -522,74 +543,59 @@ nav ul li a:hover {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
-  /* The Overlay (background) */
-  /* Position the content inside the overlay */
-  /* The navigation links inside the overlay */
-  /* When you mouse over the navigation links, change their color */
-  /* The navigation links inside the overlay */
-  /* Position the close button (top right corner) */
-  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
 }
-#home .overlay {
-  /* Height & width depends on how you want to reveal the overlay (see JS below) */
+#home .popup_sign_form {
   height: 100%;
   width: 100%;
   position: fixed;
-  /* Stay in place */
   z-index: 1;
-  /* Sit on top */
   left: 0;
   top: 0;
   overflow-x: hidden;
-  /* Disable horizontal scroll */
   transition: 0.5s;
-  /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
-#home .overlay-content {
+#home .popup_sign_form .overlay-content {
   position: relative;
   top: 25%;
-  /* 25% from the top */
   width: 100%;
-  /* 100% width */
   text-align: center;
-  /* Centered text/links */
   margin-top: 30px;
-  /* 30px top margin to avoid conflict with the close button on smaller screens */
 }
-#home .overlay a {
+#home .popup_sign_form a {
   padding: 8px;
   text-decoration: none;
   font-size: 36px;
   color: #818181;
   display: block;
-  /* Display block instead of inline */
   transition: 0.3s;
-  /* Transition effects on hover (color) */
 }
-#home .overlay a:hover, #home .overlay a:focus {
+#home .popup_sign_form a:hover, #home .popup_sign_form a:focus {
   color: #f1f1f1;
 }
-#home .overlay #close {
+#home .popup_sign_form #close {
   padding: 8px;
   text-decoration: none;
   font-size: 4rem;
   color: #818181;
   display: block;
-  /* Display block instead of inline */
   transition: 0.3s;
-  /* Transition effects on hover (color) */
 }
-#home .overlay .closebtn {
+#home .popup_sign_form .closebtn {
   position: absolute;
-  top: 20px;
-  right: 45px;
+  top: 5%;
+  right: 5%;
   font-size: 60px;
 }
+@media screen and (max-width: 715px) {
+  #home .popup_sign_form {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
 @media screen and (max-height: 450px) {
-  #home .overlay a {
+  #home .popup_sign_form a {
     font-size: 20px;
   }
-  #home .overlay .closebtn {
+  #home .popup_sign_form .closebtn {
     font-size: 40px;
     top: 15px;
     right: 35px;
@@ -598,7 +604,7 @@ nav ul li a:hover {
 #home .wrap1 .titre h1 {
   display: flex;
   justify-content: center;
-  font-size: 50px;
+  font-size: 3rem;
   color: #FFFFFF;
   font-family: Noto Serif, serif;
   font-weight: 400;
@@ -616,11 +622,16 @@ nav ul li a:hover {
   gap: 2rem;
   padding-bottom: 4rem;
 }
+#home .wrap1 .btnGroup2 .btnWhite i {
+  padding: 0.4rem;
+}
 
-@media only screen and (min-width: 390px) {
+@media screen and (max-width: 663px) {
   #home .wrap1 .titre h1 {
-    font-size: 25px;
+    font-size: 2rem;
   }
+}
+@media only screen and (max-width: 390px) {
   #home .wrap1 .btnTransparent {
     font-size: 19px;
   }
@@ -639,83 +650,6 @@ nav ul li a:hover {
     padding: 5px;
   }
 }
-@media only screen and (min-width: 720px) {
-  #home .wrap1 {
-    /* The Overlay (background) */
-    /* Position the content inside the overlay */
-    /* The navigation links inside the overlay */
-    /* When you mouse over the navigation links, change their color */
-    /* Position the close button (top right corner) */
-    /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
-  }
-  #home .wrap1 .titre h1 {
-    font-size: 50px;
-  }
-  #home .wrap1 .btnTransparent {
-    font-size: 25px;
-  }
-  #home .wrap1 .btnGroup2 .btnWhite {
-    font-size: 20px;
-  }
-  #home .wrap1 .btnGroup2 .btnBlue {
-    font-size: 20px;
-  }
-  #home .wrap1 .overlay {
-    /* Height & width depends on how you want to reveal the overlay (see JS below) */
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    /* Stay in place */
-    z-index: 1;
-    /* Sit on top */
-    left: 0;
-    top: 0;
-    overflow-x: hidden;
-    /* Disable horizontal scroll */
-    transition: 0.5s;
-    /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
-  }
-  #home .wrap1 .overlay-content {
-    position: relative;
-    top: 25%;
-    /* 25% from the top */
-    width: 100%;
-    /* 100% width */
-    text-align: center;
-    /* Centered text/links */
-    margin-top: 30px;
-    /* 30px top margin to avoid conflict with the close button on smaller screens */
-  }
-  #home .wrap1 .overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: #818181;
-    display: block;
-    /* Display block instead of inline */
-    transition: 0.3s;
-    /* Transition effects on hover (color) */
-  }
-  #home .wrap1 .overlay a:hover, #home .wrap1 .overlay a:focus {
-    color: #f1f1f1;
-  }
-  #home .wrap1 .overlay .closebtn {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px;
-  }
-}
-@media only screen and (min-width: 720px) and (min-width: 880px) {
-  #home .wrap1 .overlay a {
-    font-size: 20px;
-  }
-  #home .wrap1 .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-  }
-}
 #forgot_password .wrap h2 {
   font-size: 3rem;
   color: #2A4876;
@@ -732,6 +666,14 @@ nav ul li a:hover {
   font-size: 2rem;
 }
 
+#registerform .btnForm {
+  flex-flow: column nowrap;
+}
+#registerform .btnForm #btnForgetPwd {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
 #login_register .wrap {
   display: flex;
   flex-flow: row nowrap;
@@ -743,6 +685,9 @@ nav ul li a:hover {
   text-align: center;
   color: #2A4876;
   font-size: 2rem;
+}
+#login_register .wrap #submitted_register:hover {
+  color: #2A4876;
 }
 #login_register .wrap .container_islogged {
   display: flex;
@@ -768,14 +713,6 @@ nav ul li a:hover {
 }
 #login_register .wrap .left, #login_register .wrap .right {
   width: 40%;
-  /* The container */
-  /* Hide the browser's default radio button */
-  /* Create a custom radio button */
-  /* On mouse-over, add a grey background color */
-  /* When the radio button is checked, add a blue background */
-  /* Create the indicator (the dot/circle - hidden when not checked) */
-  /* Show the indicator (dot/circle) when checked */
-  /* Style the indicator (dot/circle) */
 }
 #login_register .wrap .left #eye, #login_register .wrap .right #eye {
   cursor: pointer;
@@ -842,6 +779,16 @@ nav ul li a:hover {
   background: white;
 }
 
+@media screen and (max-width: 715px) {
+  #login_register .wrap {
+    flex-flow: column;
+    gap: 2rem;
+  }
+
+  #login_register .wrap .left, #login_register .wrap .right {
+    width: 80%;
+  }
+}
 #cv_1 {
   /*SECTION EXP ET FORMATION*/
   /*SECTION COMPETENCES*/
