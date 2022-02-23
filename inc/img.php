@@ -1,7 +1,7 @@
 <?php
 
 
-//add_image_size('imgblog',416, 416, true);
+add_image_size('imgcollaborateur',214, 115, true);
 
 
 

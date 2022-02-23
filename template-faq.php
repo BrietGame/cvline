@@ -2,8 +2,6 @@
 
 /* Template Name: FAQ */?>
 
-
-
  <?php
  $args = array(
          'post_type' => 'faq',
