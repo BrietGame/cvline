@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 <?php
 
 /**
@@ -24,4 +23,4 @@ get_header();
 
 <?php
 get_footer();
->>>>>>> 1c9ddfb9eb5b209c3871b882246a5bec13d70a47
+
