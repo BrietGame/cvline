@@ -1209,6 +1209,44 @@ nav ul li a:hover {
   border: 1px solid #4CAF50;
 }
 
+#faq {
+  background: #f8f7fe;
+}
+#faq .header {
+  background-image: url("../cvline/asset/img/bg/banner_cv.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#faq .wrap {
+  margin-top: 10rem;
+}
+#faq h2 {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  color: #2A4876;
+}
+#faq .accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+#faq .active, #faq .accordion:hover {
+  background-color: #ccc;
+}
+#faq .panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+
 #recruteur .header {
   background-image: url("../cvline/asset/img/bg/banner_recruteur.jpg");
   background-repeat: no-repeat;
