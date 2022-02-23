@@ -48,6 +48,11 @@
     }
   }
   
+  @media screen and (max-width: 715px) {
+    .popup_sign_form {
+      background-color: rgba($color: #000000, $alpha: 0.5);
+    }
+  }
 
   @media screen and (max-height: 450px) {
     .popup_sign_form a {

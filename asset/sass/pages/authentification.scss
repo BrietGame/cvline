@@ -1,3 +1,13 @@
+#registerform {
+    .btnForm {
+        flex-flow: column nowrap;
+
+        #btnForgetPwd {
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+    }
+}
 #login_register {
     .wrap {
         display: flex;
@@ -12,6 +22,9 @@
             font-size: 2rem;
         }
 
+        #submitted_register:hover {
+            color: $blue;
+        }
         .container_islogged {
             display: flex;
             flex-flow: row nowrap;
@@ -127,5 +140,15 @@
                 background: white;
             }
         }
+    }
+}
+
+@media screen and (max-width: 715px) {
+    #login_register .wrap {
+        flex-flow: column;
+        gap: 2rem;
+    }
+    #login_register .wrap .left, #login_register .wrap .right {
+        width: 80%;
     }
 }
