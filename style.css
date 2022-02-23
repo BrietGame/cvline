@@ -521,6 +521,7 @@ nav ul li a:hover {
   background-image: url("../cvline/asset/img/bg/image-accueil.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100%;
   /* The Overlay (background) */
   /* Position the content inside the overlay */
   /* The navigation links inside the overlay */
@@ -610,6 +611,7 @@ nav ul li a:hover {
 }
 #home .wrap1 .btnGroup2 {
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   gap: 2rem;
   padding-bottom: 4rem;
