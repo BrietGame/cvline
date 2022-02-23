@@ -48,8 +48,10 @@ a {
 }
 
 .btnTransparent {
+  max-width: 200px;
+  margin: 0 auto;
   box-sizing: border-box;
-  border-radius: 16px;
+  text-shadow: black 0.1em 0.1em 0.2em;
   cursor: pointer;
   color: #FFFFFF;
   font-size: 1rem;
@@ -57,11 +59,14 @@ a {
   border: 1px solid #FFFFFF;
   font-family: Libre Franklin, sans-serif;
   transition: 0.8s;
+  opacity: 90%;
 }
 
 .btnTransparent:hover {
+  text-shadow: white 0.1em 0.1em 0.2em;
+  border-radius: 16px;
   background-color: #FFFFFF;
-  color: #000000;
+  color: #2A4876;
   transition: 0.8s;
 }
 
@@ -74,6 +79,7 @@ a {
   transition: 0.8s;
   padding: 0.8rem 1.5rem;
   border: 1px solid #2A4876;
+  opacity: 90%;
 }
 
 .btnWhite:hover {
@@ -91,6 +97,9 @@ a {
   padding: 0.2rem 2.5rem;
   transition: 0.8s;
   border: 1px solid #2A4876;
+  display: flex;
+  align-items: center;
+  opacity: 80%;
 }
 
 .btnBlue:hover {
@@ -453,15 +462,29 @@ header .popup_header .overlay-content {
   margin-top: 30px;
 }
 header .popup_header a {
+  border: none;
   padding: 1rem;
   text-decoration: none;
   font-size: 1rem;
-  color: #818181;
+  color: white;
   display: block;
-  transition: 0.3s;
+  font-family: Libre Franklin, sans-serif;
 }
-header .popup_header a:hover, header .popup_header a:focus {
-  color: #f1f1f1;
+header .popup_header div > a:nth-child(2) a:nth-child(2):focus, header .popup_header a:nth-child(2):hover,
+header .popup_header div > a:nth-child(3) a:nth-child(3):focus, header .popup_header a:nth-child(3):hover,
+header .popup_header div > a:nth-child(4) a:nth-child(4):focus, header .popup_header a:nth-child(4):hover {
+  color: #2A4876;
+  background-color: white;
+  max-width: 200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 1rem 2rem 1rem 2rem;
+  font-family: Libre Franklin, sans-serif;
+  transition: 1.5s;
+  opacity: 90%;
 }
 header .popup_header #close {
   padding: 8px;
@@ -690,6 +713,71 @@ nav ul li a:hover {
   font-size: 2rem;
 }
 
+/*PARTIE COLLABORATEUR*/
+.row {
+  display: flex;
+  text-align: center;
+  padding: 6rem 6rem;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 1rem 1rem 2rem 1rem;
+}
+.container h2 {
+  padding-bottom: 1rem;
+}
+.container .contenuBtn {
+  padding-top: 1rem;
+}
+
+/* Clear floats */
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  background-color: #2A4876;
+  box-sizing: border-box;
+  border-radius: 16px;
+  cursor: pointer;
+  color: #FFFFFF;
+  font-size: 1rem;
+  padding: 0.5rem 2rem 0.5rem 1.5rem;
+  border: 1px solid #FFFFFF;
+  font-family: Libre Franklin, sans-serif;
+  transition: 0.8s;
+}
+
+.button:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+  transition: 0.8s;
+  border: 1px solid #2A4876;
+}
+
 #registerform .btnForm {
   flex-flow: column nowrap;
 }
@@ -735,8 +823,15 @@ nav ul li a:hover {
 #login_register .wrap .container_islogged .right .btnWhite, #login_register .wrap .container_islogged .right .btnBlue {
   font-size: 1rem;
 }
+#login_register .wrap #submitted_login {
+  padding: 0.5rem;
+}
 #login_register .wrap .left, #login_register .wrap .right {
-  width: 40%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 #login_register .wrap .left .cgu_link, #login_register .wrap .right .cgu_link {
   font-size: 1rem;
@@ -746,6 +841,9 @@ nav ul li a:hover {
 }
 #login_register .wrap .left #eye:hover, #login_register .wrap .right #eye:hover {
   opacity: 50%;
+}
+#login_register .wrap .left #registerform label, #login_register .wrap .right #registerform label {
+  padding: 1rem;
 }
 #login_register .wrap .left input, #login_register .wrap .left input::placeholder, #login_register .wrap .left label, #login_register .wrap .right input, #login_register .wrap .right input::placeholder, #login_register .wrap .right label {
   color: white;
@@ -1212,14 +1310,6 @@ nav ul li a:hover {
   border: 1px solid #4CAF50;
 }
 
-#faq {
-  background: #f8f7fe;
-}
-#faq .header {
-  background-image: url("../cvline/asset/img/bg/banner_cv.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 #faq .wrap {
   margin-top: 10rem;
 }
@@ -1230,8 +1320,6 @@ nav ul li a:hover {
   color: #2A4876;
 }
 #faq .accordion {
-  background-color: #eee;
-  color: #444;
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -1239,15 +1327,24 @@ nav ul li a:hover {
   border: none;
   outline: none;
   transition: 0.4s;
+  color: white;
+  background: #2A4876;
 }
 #faq .active, #faq .accordion:hover {
-  background-color: #ccc;
+  background-color: #FFFFFF;
+  color: #2A4876;
+  border: solid 1px #2A4876;
 }
 #faq .panel {
-  padding: 0 18px;
+  padding: 1rem;
   background-color: white;
   display: none;
   overflow: hidden;
+  color: #2A4876;
+  font-family: Libre Franklin, sans-serif;
+}
+#faq .panel p {
+  font-family: Libre Franklin, sans-serif;
 }
 
 #legals .wrap .title {
@@ -1351,7 +1448,7 @@ nav ul li a:hover {
 }
 
 #generate_cv .header {
-  background-image: url("../cvline/asset/img/bg/banner_generatecv.jpg");
+  background-image: url("../cvline/asset/img/bg/working.png");
   background-repeat: no-repeat;
   background-size: auto;
   height: 50%;
@@ -1360,7 +1457,8 @@ nav ul li a:hover {
   font-family: Noto Serif, serif;
   font-size: 3rem;
   text-align: center;
-  color: #2A4876;
+  color: #FFFFFF;
+  text-shadow: 1px 1px 2px black;
 }
 #generate_cv .title {
   text-align: center;

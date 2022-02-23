@@ -1,3 +1,4 @@
+
 #home {
   background-image: url('../cvline/asset/img/bg/image-accueil.jpg');
   background-repeat: no-repeat;
@@ -150,3 +151,73 @@
       }
     }
   }
+
+/*PARTIE COLLABORATEUR*/
+.row{
+  display: flex;
+  text-align: center;
+  padding: 6rem 6rem ;
+}
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+.container {
+  padding: 1rem 1rem 2rem 1rem;
+  h2{
+    padding-bottom: 1rem;
+  }
+  .contenuBtn{
+
+  padding-top: 1rem;
+  }
+}
+
+/* Clear floats */
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  background-color:  $blue;
+  box-sizing: border-box;
+  border-radius: 16px;
+  cursor: pointer;
+  color: $white;
+  font-size: 1rem;
+  padding: 0.5rem 2rem 0.5rem 1.5rem;
+  border: 1px solid $white;
+  font-family: $franklin;
+  transition: .8s;
+
+
+}
+
+.button:hover {
+  background-color: $white;
+  color: $black;
+  transition: .8s;
+  border: 1px solid $blue;
+}
