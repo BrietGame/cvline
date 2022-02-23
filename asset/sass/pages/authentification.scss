@@ -22,6 +22,7 @@
             font-size: 2rem;
         }
 
+
         #submitted_register:hover {
             color: $blue;
         }
@@ -51,8 +52,16 @@
             }
         }
 
+        #submitted_login {
+            padding: 0.5rem;
+        }
         .left, .right {
-            width: 40%;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
 
             .cgu_link {
                 font-size: 1rem;
@@ -64,6 +73,11 @@
             #eye:hover {
                 opacity: 50%;
             }
+
+            #registerform label{
+                padding: 1rem;
+            }
+
 
             input, input::placeholder, label {
                 color: white;

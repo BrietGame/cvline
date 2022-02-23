@@ -8,6 +8,7 @@
  $args = array(
          'post_type' => 'faq',
          'posts_per_page' => 9,
+        'order' => 'ASC',
  );
 
  $the_query = new WP_Query($args);
