@@ -7,54 +7,68 @@
  * @package Projet_CVtheques
  */
 
-get_header();
+
 ?>
 
-	<main id="primary" class="site-main">
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+    .center-xy {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+    }
+    html, body {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 16px;
+    }
+    html {
+        box-sizing: border-box;
+        user-select: none;
+    }
+    body {
+        background-color: #000;
+    }
+    *, *:before, *:after {
+        box-sizing: inherit;
+    }
+    .container {
+        width: 100%;
+    }
+    .copy-container {
+        text-align: center;
+    }
+    p {
+        color: #fff;
+        font-size: 24px;
+        letter-spacing: 0.2px;
+        margin: 0;
+    }
+    .handle {
+        background: #ffe500;
+        width: 14px;
+        height: 30px;
+        top: 0;
+        left: 0;
+        margin-top: 1px;
+        position: absolute;
+    }
 
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'projet-cvtheques' ); ?></h1>
-			</header><!-- .page-header -->
+</style>
 
-			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'projet-cvtheques' ); ?></p>
 
-					<?php
-					get_search_form();
+<div class="container">
+    <div class="copy-container center-xy">
+        <p>
+            404, page not found.
+        </p>
+        <span class="handle"></span>
 
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
+    </div>
+</div>
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'projet-cvtheques' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories(
-								array(
-									'orderby'    => 'count',
-									'order'      => 'DESC',
-									'show_count' => 1,
-									'title_li'   => '',
-									'number'     => 10,
-								)
-							);
-							?>
-						</ul>
-					</div><!-- .widget -->
 
-					<?php
-					/* translators: %1$s: smiley */
-					$projet_cvtheques_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'projet-cvtheques' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$projet_cvtheques_archive_content" );
 
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
 
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
-
-	</main><!-- #main -->
 
 <?php
-get_footer();

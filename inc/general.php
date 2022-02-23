@@ -183,6 +183,7 @@ function projet_cvtheques_scripts()
 
 
     wp_enqueue_script('mainjs', get_template_directory_uri() . '/asset/js/main.js', array('jquery'), _S_VERSION, true);
+    wp_enqueue_script('404js', get_template_directory_uri() . '/asset/js/404.js', _S_VERSION, true);
 }
 add_action('wp_enqueue_scripts', 'projet_cvtheques_scripts');
 

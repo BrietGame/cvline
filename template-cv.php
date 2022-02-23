@@ -1,6 +1,6 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
-/* Template Name: Cv 1 */
+/* Template Name: cv1 */
 
 use Spipu\Html2Pdf\Html2Pdf;
 
