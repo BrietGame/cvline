@@ -16,6 +16,10 @@ Text Domain: cvline
   box-sizing: border-box;
 }
 
+body {
+  background-color: #F8F7FF;
+}
+
 ul, li {
   list-style: none;
 }
@@ -401,6 +405,26 @@ a {
 .slide-out-left {
   -webkit-animation: slide-out-left 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   animation: slide-out-left 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+#notfound .wrap {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+#notfound .wrap .title {
+  font-family: Noto Serif, serif;
+  font-size: 5rem;
+  color: #2A4876;
+}
+#notfound .wrap .undertitle {
+  font-family: Libre Franklin, sans-serif;
+  font-size: 2rem;
+  color: black;
+}
+#notfound .wrap .btnBlue {
+  margin: 1rem auto;
 }
 
 header .logo {
