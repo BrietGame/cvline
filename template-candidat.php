@@ -3,6 +3,7 @@ if (!is_user_logged_in()) {
     wp_redirect(admin_url() . '../login');
 }
 /* Template Name: EspaceCandidat */
+//debug($getCvInfoGlobal);
 //debug($getCvInfo);
 ?>
 

@@ -8,6 +8,8 @@ $html2pdf = new Html2Pdf();
 //debug($getInfoWork);
 
 $singleCvID = $getCvInfo[$_GET['id']];
+//debug($getCvWork);
+//debug($getCvInfo);
 
 ?>
     <style>
@@ -72,16 +74,14 @@ $singleCvID = $getCvInfo[$_GET['id']];
         </div>
         <div class="right">
             <h1>Mon expérience</h1>
-            <div class="experience">
-                <h2>Vendeur</h2>
-                <span>Chez H&M à Rouen - 2019 | 2020</span>
-                <p class="description_post">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla maxime corrupti perspiciatis quae deserunt! Odio nostrum, corporis rerum nam libero explicabo laudantium voluptas exercitationem itaque cum amet enim. Quas, ex.</p>
-            </div>
-            <div class="experience">
-                <h2>Vendeur de Tacos</h2>
-                <span>Chez El Tacos au Mexique - 2015 | 2019</span>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla maxime corrupti perspiciatis quae deserunt! Odio nostrum, corporis rerum nam libero explicabo laudantium voluptas exercitationem itaque cum amet enim. Quas, ex.</p>
-            </div>
+            <?php for($i=0; $i<=count($getCvWork)-1; $i++) { ?>
+                <div class="experience">
+                    <h2><?= $getCvWork[$i]->jobname ?></h2>
+                    <span>Chez H&M à Rouen - 2019 | 2020</span>
+                    <p class="description_post">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla maxime corrupti perspiciatis quae deserunt! Odio nostrum, corporis rerum nam libero explicabo laudantium voluptas exercitationem itaque cum amet enim. Quas, ex.</p>
+                </div>
+            <?php } ?>
+
             <h1>Mon parcours</h1>
             <div class="parcours">
                 <h2>Développeur Web</h2>

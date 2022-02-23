@@ -4,6 +4,7 @@
 require get_template_directory() . '/inc/general.php';
 require get_template_directory() . '/inc/func.php';
 require get_template_directory() . '/inc/img.php';
+
 require get_template_directory() . '/inc/sql-user-request.php';
 require get_template_directory() . '/inc/sql-recruteur-request.php';
 
