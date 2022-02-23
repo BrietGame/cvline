@@ -13,6 +13,7 @@ if (!empty($_POST)) {
     $phone = $_POST['dataFinal'][0]['phone'];
     $adress = $_POST['dataFinal'][0]['adress'];
     $postal = $_POST['dataFinal'][0]['postal'];
+    $about = $_POST['dataFinal'][0]['about_me'];
     $city = $_POST['dataFinal'][0]['city'];
 
 
@@ -30,6 +31,7 @@ if (!empty($_POST)) {
             "cv_phone" => $phone,
             "cv_postal" => $postal,
             "cv_city" => $city,
+            "cv_presentation" => $about,
             "cv_created_at" => current_time('mysql'),
 
         )

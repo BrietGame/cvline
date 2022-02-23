@@ -22,9 +22,7 @@
             <div class="panel">
                 <p><?=get_the_content(); ?></p>
             }
-
         }
-
             </div>
         </button>
 

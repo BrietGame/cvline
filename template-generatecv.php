@@ -290,22 +290,45 @@
 
                 <div class="generateGlobalInfo"></div>
 
-                <h2>Expériences</h2>
-                <div class="generateExp"></div>
+                <div class="stats">
+                    <div id="exp_count" class="bloc">
 
-                <h2>Mes compétences</h2>
+                    </div>
+                    <div id="skill_count" class="bloc">
+
+                    </div>
+                    <div id="loisir_count" class="bloc">
+
+                    </div>
+                    <div id="school_count" class="bloc">
+
+                    </div>
+                </div>
+
+                <div class="expandparcours">
+                    <div class="left">
+                        <h2 class="title_section">Mes expériences</h2>
+                        <div class="generateExp"></div>
+                    </div>
+
+                    <div class="right">
+                        <h2 class="title_section">Mon Parcours</h2>
+                        <div class="generateSchoolCv"></div>
+                    </div>
+                </div>
+
+
+                <h2 class="title_section">Mes compétences</h2>
                 <div class="generateSkillsCv"></div>
 
-                <h2>Mes loisirs</h2>
+                <h2 class="title_section">Mes loisirs</h2>
                 <div class="generateHobbiesCv"></div>
-
-
-                <h2>Parcours</h2>
-                <div class="generateSchoolCv"></div>
 
             </div>
 
-            <a href="" class="btnBlue" id="final_submit">Générer son CV</a>
+            <div class="finalBtn">
+                <a href="" class="btnBlue" id="final_submit">Générer son CV</a>
+            </div>
         </section>
 
 
