@@ -2,31 +2,38 @@
 
 /* Template Name: FAQ */?>
 
-    <?php get_header(); ?>
+
 
  <?php
  $args = array(
-         'post_type' => 'post',
+         'post_type' => 'faq',
          'posts_per_page' => 9,
  );
 
  $the_query = new WP_Query($args);
 
- ?>
+?>
     <section id="faq">
-        <?php if ( $the_query->have_posts() ) {?>
-        <button class="accordion">';
-            <?=get_the_title();
-            while ( $the_query->have_posts() ){
-            $the_query->the_post(); ?>
+        <div class="header">
+            <?= get_header() ?>
+            <h2>FAQ</h2>
+        </div>
+        <div class="wrap">
+        <?php if ( $the_query->have_posts() ) {
+        while ( $the_query->have_posts() ){
+        $the_query->the_post(); ?>
+        <button class="accordion">
+            <?=get_the_title();?></button>
             <div class="panel">
                 <p><?=get_the_content(); ?></p>
-            }
-        }
             </div>
-        </button>
 
-</section>
+        <?php
+        }
+        }
+?>
+        </div>
+    </section>
 
 <script>
     var acc = document.getElementsByClassName("accordion");
@@ -47,5 +54,4 @@
             }
         });
     }</script>
-
   <?php get_footer();?>

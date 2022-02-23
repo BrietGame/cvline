@@ -1232,10 +1232,21 @@ body {
 }
 
 #faq {
-  background-image: url("../cvline/asset/img/bg/image-accueil.jpg");
+  background: #f8f7fe;
+}
+#faq .header {
+  background-image: url("../cvline/asset/img/bg/banner_cv.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
+}
+#faq .wrap {
+  margin-top: 10rem;
+}
+#faq h2 {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  color: #2A4876;
 }
 #faq .accordion {
   background-color: #eee;

@@ -1,8 +1,20 @@
 #faq {
-  background-image: url('../cvline/asset/img/bg/image-accueil.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
+  background: #f8f7fe;
+  .header {
+    background-image: url('../cvline/asset/img/bg/banner_cv.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+   .wrap{
+  margin-top: 10rem;
+   }
+  h2 {
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    color: $blue;
+  }
 
   .accordion {
     background-color: #eee;
