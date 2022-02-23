@@ -24,10 +24,12 @@
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
-
-    <div class="logo">
-
-        <a href="<?php echo path('/'); ?>"><img src=" <?php echo get_template_directory_uri() ?>/asset/img/logoCVline1.svg" alt="logo"></a>
+    <header>
+        <div class="logo">
+            <a href="<?php echo path('/'); ?>">
+                <img src=" <?php echo get_template_directory_uri() ?>/asset/img/logoCVline1.svg" alt="logo">
+            </a>
+        </div>
         <div id="menuprincipal" class="displaynone">
             <a href="javascript:void(0)" id="closeMenuPrincipal" class="closebtn">&times; </a>
             <div class="overlay-content">
@@ -38,10 +40,9 @@
                     <a class="btnTransparent" id="modalBtn">S'authentifier</a>
                 <?php } ?>
                 <a href="<?php echo path('faq'); ?>">FAQ</a>
-                <a href="<?php echo path('cgu'); ?>">CGU</a>
                 <a href="<?php echo path('legals'); ?>">Mentions légales</a>
-                <a href="<?php echo path('about'); ?>">À propos</a>
+                <a href="<?php echo path('/#about'); ?>">À propos</a>
             </div>
         </div>
-        <span id="openMenuPrincipal" class="openNav">&#9776; </span>
-    </div>
+        <span id="openMenuPrincipal">&#9776; </span>
+    </header>

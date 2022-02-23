@@ -26,7 +26,7 @@ $(document).ready(function () {
 
                 setTimeout(function () {
                     finalSuccess();
-                    document.location.href = "../create_cv/";
+                    document.location.href = "../espace-candidat/";
                 }, 2000)
             }
         })

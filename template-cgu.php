@@ -5,8 +5,12 @@
 <?= get_header() ?>
 
 
-<div class="cgu">
-    <h1>Page cgu</h1>
+<div id="cgu">
+    <div class="wrap">
+        <h2 class="title"><?= get_the_title(); ?></h2>
+        <!-- CONTENU -->
+        <?= get_the_content(); ?>
+    </div>
 </div>
 
 

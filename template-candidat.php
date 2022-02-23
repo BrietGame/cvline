@@ -7,11 +7,14 @@ if (!is_user_logged_in()) {
 ?>
 
 
-<section id="espaceCandidat">
+<div>
+</div>
+<section id="candidat">
     <div class="header">
         <?= get_header() ?>
-        <h2>Espace candidat</h2>
+        <h2>Espace Candidat</h2>
     </div>
+
     <div class="wrap3">
         <section id="candidat">
             <div class="search">
@@ -33,7 +36,22 @@ if (!is_user_logged_in()) {
             </div>
     </div>
 
-    <?php
-    get_footer();
-    ?>
 </section>
+<section id="pagination_candidat">
+
+    <div class="center">
+        <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">&raquo;</a>
+        </div>
+    </div>
+</section>
+<?php
+get_footer();
+?>

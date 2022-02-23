@@ -177,8 +177,13 @@ function projet_cvtheques_scripts()
         wp_enqueue_script('comment-reply');
     }
 
+    if (is_page_template('template-recruteur.php') || is_page_template('template-candidat.php')) {
+        wp_enqueue_script('search', get_template_directory_uri() . '/asset/js/search.js', array('jquery'), _S_VERSION, true);
+    }
+
 
     wp_enqueue_script('mainjs', get_template_directory_uri() . '/asset/js/main.js', array('jquery'), _S_VERSION, true);
+    wp_enqueue_script('404js', get_template_directory_uri() . '/asset/js/404.js', _S_VERSION, true);
 }
 add_action('wp_enqueue_scripts', 'projet_cvtheques_scripts');
 
@@ -198,6 +203,15 @@ function my_login_logo()
         }
     </style>
 <?php }
+
+add_action('after_setup_theme', 'remove_admin_bar');
+function remove_admin_bar()
+{
+    if (!current_user_can('administrator') && !is_admin()) {
+        show_admin_bar(false);
+    }
+}
+
 add_action('login_enqueue_scripts', 'my_login_logo');
 
 function my_custom_login()
