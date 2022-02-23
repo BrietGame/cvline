@@ -107,13 +107,9 @@ $user = wp_get_current_user();
     get_footer() ?>
 
 
-    <!-- The overlay -->
-    <div id="myNav" class="displaynone">
-
-        <!-- Button to close the overlay navigation -->
+    <div id="auth_popup" class="displaynone">
         <a href="javascript:void(0)" id="close" class="closebtn" onclick="closeRegisterMenu()">&times;</a>
 
-        <!-- Overlay content -->
         <div id="login_register" class="overlay-content">
             <div class="wrap">
                 <?php if (is_user_logged_in()) { ?>
@@ -135,33 +131,6 @@ $user = wp_get_current_user();
                 <?php } else { ?>
                     <div class="left">
                         <h2>S'inscrire</h2>
-                        <!--<form id="signupform" action="<?php echo wp_registration_url(); ?>" method="post">
-                            <div class="input_group">
-                                <label for="email">Adresse mail<strong>*</strong></label>
-                                <input type="text" name="email" id="email">
-                                <span class="error"><?php if (!empty($_GET['register-errors']) && $_GET['register-errors'] == 'email') {
-                                                        echo "Veuillez renseigner une adresse mail valide";
-                                                    } else if (!empty($_GET['register-errors']) && $_GET['register-errors'] == 'email_exists') {
-                                                        echo 'L\'adresse mail existe déjà.';
-                                                    } ?></span>
-                            </div>
-
-                            <div class="two_input">
-                                <div class="input_group">
-                                    <label for="first_name">Prénom</label>
-                                    <input type="text" name="first_name" id="first-name">
-                                </div>
-
-                                <div class="input_group">
-                                    <label for="last_name">Nom</label>
-                                    <input type="text" name="last_name" id="last-name">
-                                </div>
-                            </div>
-
-                            <div class="btnForm">
-                                <input type="submit" name="submit" class="register-button" value="S'inscrire" />
-                            </div>
-                        </form>-->
                         <form action="" method="POST" novalidate id="loginForm">
                             <div class="two_input">
                                 <div class="input_group_radio">
@@ -208,7 +177,7 @@ $user = wp_get_current_user();
                     </div>
                     <div class="right">
                         <h2>Se connecter</h2>
-                        <form action="" method="POST" novalidate>
+                        <form action="" method="POST" novalidate id="registerform">
                             <div class="input_group">
                                 <label for="login">Adresse mail ou nom d'utilisateur</label>
                                 <input type="text" name="login" id="login" placeholder="email@example.com or JohnDoe80" value="">
@@ -221,8 +190,8 @@ $user = wp_get_current_user();
                             </div>
 
                             <div class="btnForm">
-                                <a href="" id="btnForgetPwd" class="btnWhite">Mot de passe oublié</a>
                                 <input type="submit" name="submitted_login" id="submitted_login" value="Se connecter">
+                                <a href="" id="btnForgetPwd" class="btnWhite">Mot de passe oublié</a>
                             </div>
                         </form>
                     </div>
@@ -230,26 +199,13 @@ $user = wp_get_current_user();
             </div>
         </div>
     </div>
-    <!-- The overlay -->
     <div id="forgotpwd" class="displaynone">
-
-        <!-- Button to close the overlay navigation -->
         <a href="javascript:void(0)" id="closeForgetPwd" class="closebtn">&times;</a>
 
-        <!-- Overlay content -->
         <div id="forgot_password" class="overlay-content">
             <div class="wrap">
                 <h2>Mot de passe oublié</h2>
                 <div class="formMp">
-                    <!--<form class="form" action="#" method="post">
-                        <div class="input_group">
-                            <label for="email">Email : </label>
-                            <input type="text" id="email" name="email" value="">
-                        </div>
-                        <div class="btnform">
-                            <input type="submit" name="submitted_mp" id="mp-submitted" value="Récupèrer mon mot de passe">
-                        </div>
-                    </form>-->
                     <div id="password-lost-form" class="widecolumn">
                         <?php if ($attributes['show_title']) : ?>
                             <h3><?php _e('Mot de passe oublié ?', 'personalize-login'); ?></h3>
