@@ -1291,7 +1291,7 @@ body {
 }
 
 #generate_cv .header {
-  background-image: url("../cvline/asset/img/bg/banner_cv.jpg");
+  background-image: url("../cvline/asset/img/bg/working.png");
   background-repeat: no-repeat;
   background-size: auto;
   height: 50%;
@@ -1301,6 +1301,7 @@ body {
   font-size: 3rem;
   text-align: center;
   color: #FFFFFF;
+  text-shadow: 1px 1px 2px black;
 }
 #generate_cv .title {
   text-align: center;
