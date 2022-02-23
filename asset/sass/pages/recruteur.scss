@@ -1,5 +1,18 @@
 #recruteur {
 
+  .header{
+    background-image: url('../cvline/asset/img/bg/banner_recruteur.jpg');
+    background-repeat: no-repeat;
+     background-size: cover;
+
+    h2{
+      font-family: $noto;
+      font-size: 3rem;
+      text-align: center;
+      color: $blue;
+      padding-bottom: 3rem;
+    }
+  }
 
   #input_recrut {
     background-position: 10px 12px;

@@ -3,12 +3,12 @@
 .btnTransparent{
   box-sizing: border-box;
   border-radius: 16px;
-  cursor:pointer;
+  cursor: pointer;
   color: $white;
-  font-size: 25px;
+  font-size: 1rem;
   padding: 1rem 2rem 1rem 2rem;
   border: 1px solid $white;
-  Font-family: $noto;
+  font-family: $franklin;
   transition: .8s;
 }
 .btnTransparent:hover{
@@ -18,13 +18,13 @@
 }
 
 .btnWhite {
-  color:$blue ;
+  color: $blue;
   border-radius: 16px;
-  font-family:$franklin;
+  font-family: $franklin;
   font-size: 1rem;
   background-color: $white;
   transition: .8s;
-  padding: .2rem 1.5rem;
+  padding: .8rem 1.5rem;
   border: 1px solid $blue;
 }
 .btnWhite:hover{

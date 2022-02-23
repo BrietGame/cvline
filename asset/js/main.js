@@ -1,26 +1,26 @@
 $(document).ready(function () {
     // HEADER
     function openMenu() {
-        document.getElementById("menuprincipal").className = "overlay slide-in-left ";
+        document.getElementById("menuprincipal").className = "popup_header slide-in-left ";
     }
 
     function closeMenu() {
-        document.getElementById("menuprincipal").className = "overlay slide-out-left";
+        document.getElementById("menuprincipal").className = "popup_header slide-out-left";
         setTimeout(function () {
             document.getElementById("menuprincipal").className = "displaynone";
         }, 500)
     }
     function openRegisterMenu() {
-        document.getElementById("myNav").className = "overlay slide-in-left ";
+        document.getElementById("auth_popup").className = "popup_sign_form slide-in-left ";
         document.getElementById("wraphome").className = "displaynone";
         document.getElementById("footer").className = "displaynone";
     }
 
     /* Close when someone clicks on the "x" symbol inside the overlay */
     function closeRegisterMenu() {
-        document.getElementById("myNav").className = "overlay slide-out-left";
+        document.getElementById("auth_popup").className = "popup_sign_form slide-out-left";
         setTimeout(function () {
-            document.getElementById("myNav").className = "displaynone";
+            document.getElementById("auth_popup").className = "displaynone";
             document.getElementById("wraphome").className = "wrap1";
             document.getElementById("footer").className = "";
         }, 500)

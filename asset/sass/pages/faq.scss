@@ -1,0 +1,40 @@
+#faq {
+  background: #f8f7fe;
+  .header {
+    background-image: url('../cvline/asset/img/bg/banner_cv.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+   .wrap{
+  margin-top: 10rem;
+   }
+  h2 {
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    color: $blue;
+  }
+
+  .accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+  }
+}
+

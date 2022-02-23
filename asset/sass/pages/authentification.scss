@@ -1,3 +1,13 @@
+#registerform {
+    .btnForm {
+        flex-flow: column nowrap;
+
+        #btnForgetPwd {
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+    }
+}
 #login_register {
     .wrap {
         display: flex;
@@ -12,6 +22,9 @@
             font-size: 2rem;
         }
 
+        #submitted_register:hover {
+            color: $blue;
+        }
         .container_islogged {
             display: flex;
             flex-flow: row nowrap;
@@ -58,10 +71,6 @@
                 font-family: $franklin;
                 
             }
-
-
-
-            /* The container */
             .container {
                 display: flex;
                 flex-flow: row nowrap;
@@ -77,14 +86,12 @@
                 user-select: none;
             }
             
-            /* Hide the browser's default radio button */
             .container input {
                 position: absolute;
                 opacity: 0;
                 cursor: pointer;
             }
             
-            /* Create a custom radio button */
             .checkmark {
                 position: absolute;
                 top: 0;
@@ -95,29 +102,24 @@
                 border-radius: 50%;
             }
             
-            /* On mouse-over, add a grey background color */
             .container:hover input ~ .checkmark {
                 background-color: #ccc;
             }
             
-            /* When the radio button is checked, add a blue background */
             .container input:checked ~ .checkmark {
                 background-color: #2196F3;
             }
             
-            /* Create the indicator (the dot/circle - hidden when not checked) */
             .checkmark:after {
                 content: "";
                 position: absolute;
                 display: none;
             }
             
-            /* Show the indicator (dot/circle) when checked */
             .container input:checked ~ .checkmark:after {
                 display: block;
             }
             
-            /* Style the indicator (dot/circle) */
             .container .checkmark:after {
                 top: 9px;
                 left: 9px;
@@ -127,5 +129,15 @@
                 background: white;
             }
         }
+    }
+}
+
+@media screen and (max-width: 715px) {
+    #login_register .wrap {
+        flex-flow: column;
+        gap: 2rem;
+    }
+    #login_register .wrap .left, #login_register .wrap .right {
+        width: 80%;
     }
 }

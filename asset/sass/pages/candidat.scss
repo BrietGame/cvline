@@ -1,55 +1,16 @@
-
-body{
-  background-color: #f8f7fe;
-}
-
-
-#espaceCandidat {
-
-  .header {
-    background-image: url('../cvline/asset/img/bg/edit_profil.jpg');
+#candidat {
+  .header{
+    background-image: url('../cvline/asset/img/bg/banner_candidat.jpg');
     background-repeat: no-repeat;
-    background-size: cover;
+     background-size: cover;
 
-  }
-
-  h2 {
-    font-size: 3rem;
-    display: flex;
-    justify-content: center;
-    color: $blue;
-  }
-
-  .search {
-    display: flex;
-    justify-content: center;
-    padding-top: 3rem;
-  }
-
-  #input_candidat {
-    color: #2A4876;
-    border-radius: 16px;
-    font-family: Libre Franklin, sans-serif;
-    font-size: 1.5rem;
-    background-color: #FFFFFF;
-    transition: 0.8s;
-    padding: 0.2rem 1.5rem;
-    border: 1px solid #2A4876;
-    width: 50%;
-    text-align: center;
-
-  }
-
-  .titre {
-    h1 {
-      font-size: 2rem;
-      display: flex;
-      justify-content: center;
-      padding: 3rem;
-
+    h2{
+      font-family: $noto;
+      font-size: 3rem;
+      text-align: center;
+      color: $blue;
+      padding-bottom: 3rem;
     }
-
-
   }
 
   #input_candidat {
@@ -60,21 +21,20 @@ body{
     padding: 12px 20px 12px 40px;
     border: 1px solid #ddd;
     margin-bottom: 12px;
-
   }
 
-  #CvUser {
+
+  #candidatcv {
     list-style-type: none;
     padding: 0;
     margin: 0;
 
+    a {
+      list-style: none;
+      color: grey;
+    }
 
-    div {
-      div {
-
-    li {
-      a {
-
+      div{
         border: 1px solid #ddd;
         margin-top: -1px;
         background-color: #f6f6f6;
@@ -91,11 +51,36 @@ body{
         }
       }
     }
+  }
+#pagination_candidat {
+  margin-top: 50px;
+  .center {
+    text-align: center;
+  }
 
+  .pagination {
+    display: inline-block;
 
+    a {
+      color: black;
+      float: left;
+      padding: 8px 16px;
+      text-decoration: none;
+      transition: background-color .3s;
+      border: 1px solid #ddd;
+      margin: 0 4px;
+
+      &:hover {
+        &:not(.active) {
+          background-color: #ddd;
+        }
+      }
+    }
+
+    a.active {
+      background-color: #4CAF50;
+      color: white;
+      border: 1px solid #4CAF50;
+    }
   }
 }
-
-  }
-}
-
