@@ -8,8 +8,8 @@ $html2pdf = new Html2Pdf();
 //debug($getInfoWork);
 
 $singleCvID = $getCvInfo[$_GET['id']];
-//debug($getCvWork);
 //debug($getCvInfo);
+
 
 ?>
     <style>
@@ -77,38 +77,34 @@ $singleCvID = $getCvInfo[$_GET['id']];
             <?php for($i=0; $i<=count($getCvWork)-1; $i++) { ?>
                 <div class="experience">
                     <h2><?= $getCvWork[$i]->jobname ?></h2>
-                    <span>Chez H&M à Rouen - 2019 | 2020</span>
-                    <p class="description_post">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla maxime corrupti perspiciatis quae deserunt! Odio nostrum, corporis rerum nam libero explicabo laudantium voluptas exercitationem itaque cum amet enim. Quas, ex.</p>
+                    <span><?= $getCvWork[$i]->jobcompany.' | '.$getCvWork[$i]->jobstart.' - '.$getCvWork[$i]->jobend ?></span>
+                    <p class="description_post"><?= $getCvWork[$i]->jobdescription ?></p>
                 </div>
             <?php } ?>
 
             <h1>Mon parcours</h1>
-            <div class="parcours">
-                <h2>Développeur Web</h2>
-                <span>Chez Need For School à Rouen - 2021 | 2024</span>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla maxime corrupti perspiciatis quae deserunt! Odio nostrum, corporis rerum nam libero explicabo laudantium voluptas exercitationem itaque cum amet enim. Quas, ex.</p>
-            </div>
-            <div class="parcours">
-                <h2>Technicien d'études du batiment</h2>
-                <span>Chez le Corbusier à SER - 2020 | 2021</span>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla maxime corrupti perspiciatis quae deserunt! Odio nostrum, corporis rerum nam libero explicabo laudantium voluptas exercitationem itaque cum amet enim. Quas, ex.</p>
-            </div>
+            <?php for($i=0; $i<=count($getCvSchool)-1; $i++) { ?>
+                <div class="parcours">
+                    <h2><?= $getCvSchool[$i]->schooljob ?></h2>
+                    <span><?= $getCvSchool[$i]->schoolname.' | '.$getCvSchool[$i]->schoolstart.' - '.$getCvSchool[$i]->schoolend ?></span>
+                    <p><?= $getCvSchool[$i]->schoolplace ?></p>
+                    <p><?= $getCvSchool[$i]->schooldescription ?></p>
+                </div>
+            <?php } ?>
         </div>
+
         <h3>Mes compétences</h3>
         <ul class="skills">
-
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>PHP</li>
-            <li>CSS</li>
+            <?php for($i=0; $i<=count($getCvSkill)-1; $i++) { ?>
+                <li><?= $getCvSkill[$i]->skillname ?></li>
+            <?php } ?>
         </ul>
+
         <h3>Mes loisirs</h3>
         <ul class="skills">
-
-            <li>Jeux vidéos</li>
-            <li>Adele</li>
-            <li>Couper du bois</li>
-            <li>Lire</li>
+            <?php for($i=0; $i<=count($getCvHobbie)-1; $i++) { ?>
+                <li><?= $getCvHobbie[$i]->hobbiename ?></li>
+            <?php } ?>
         </ul>
     </div>
 <?php
