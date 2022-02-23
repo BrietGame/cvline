@@ -2,6 +2,7 @@
   background-image: url('../cvline/asset/img/bg/image-accueil.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100%;
 
   /* The Overlay (background) */
   .overlay {
@@ -90,6 +91,7 @@
     }
     .btnGroup2{
       display: flex;
+      flex-flow: row wrap;
       justify-content: center;
       gap: 2rem;
       padding-bottom: 4rem;
