@@ -3,6 +3,7 @@ if (!is_user_logged_in()) {
     wp_redirect(admin_url() . '../login');
 }
 /* Template Name: EspaceCandidat */
+//debug($getCvInfo);
 ?>
 
 
@@ -23,7 +24,7 @@ if (!is_user_logged_in()) {
                 <ul id="CvUser">
                     <?php for($i=0; $i<=count($getCvInfo)-1; $i++) { ?>
                         <div class="decritpion_cv_info">
-                        <a href="#"><?= $getCvInfo[$i]->cv_title_work ?></a>
+                        <a href="<?= path('template-cv1').'?id='.$i; ?>"><?= $getCvInfo[$i]->cv_title_work ?></a>
                         <p>De : <?= $getCvInfo[$i]->cv_surname.' '. $getCvInfo[$i]->cv_name ?></p>
                         <p>Le : <?= $getCvInfo[$i]->cv_created_at ?></p>
                     </div>
