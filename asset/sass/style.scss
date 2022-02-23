@@ -11,13 +11,14 @@ Text Domain: cvline
  */
 
 //BASE ET VARIABLES
+@import "inc/variables";
 @import "inc/base";
 @import "inc/responsive";
 @import "inc/wrap";
-@import "inc/variables";
 @import "inc/function";
 @import "inc/keyframes";
 @import "inc/animations";
+@import "inc/notfound";
 
 //PAGES
 @import "pages/header";
@@ -28,7 +29,7 @@ Text Domain: cvline
 @import "pages/editprofil";
 @import "pages/candidat";
 @import "pages/faq";
-
+@import "pages/legals";
 
 
 

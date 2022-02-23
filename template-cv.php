@@ -5,6 +5,10 @@ require __DIR__ . '/vendor/autoload.php';
 use Spipu\Html2Pdf\Html2Pdf;
 
 $html2pdf = new Html2Pdf();
+//debug($getInfoWork);
+
+$singleCvID = $getCvInfo[$_GET['id']];
+
 ?>
     <style>
 
@@ -54,17 +58,17 @@ $html2pdf = new Html2Pdf();
             <div class="about">
                 <img class="img_cv1" src="https://studiobontant.fr/images/galeries/Big/_DSC6716.jpg" alt="Logo Alexis BRIET">
                 <div class="text_left_cv">
-                <h3>Développeur Web</h3>
-                <span>Alexis BRIET</span>
-                    <p>19 ans</p>
-                    <p> 115 Avenue des Lilas </p>
-                    <p>83000 Toulon</p>
-                    <p>06 36 65 65 65</p>
-                    <p> alexis.briet@edhec.com</p>
+                <h3><?= $singleCvID->cv_title_work ?></h3>
+                <span><?= $singleCvID->cv_surname .' '. $singleCvID->cv_name ?></span>
+                    <p>Né(e) le : <?= $singleCvID->cv_birthday ?></p>
+                    <p>Adresse : <?= $singleCvID->cv_adress ?></p>
+                    <p><?= $singleCvID->cv_postal .', '. $singleCvID->cv_city ?></p>
+                    <p>Téléphone : <?= $singleCvID->cv_phone ?></p>
+                    <p>Email : <?= $singleCvID->cv_email ?></p>
                     <p>Permis B</p>
                 </div>
             </div>
-            <p class="aboutmecv">Je m'appelle Alexis et c'est mon anniversaire aujourd'hui !!! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias amet aperiam, cum dolorem facilis harum molestias numquam quod repellendus.</p>
+            <p class="aboutmecv"><?= $singleCvID->cv_presentation ?></p>
         </div>
         <div class="right">
             <h1>Mon expérience</h1>

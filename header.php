@@ -40,9 +40,8 @@
                     <a class="btnTransparent" id="modalBtn">S'authentifier</a>
                 <?php } ?>
                 <a href="<?php echo path('faq'); ?>">FAQ</a>
-                <a href="<?php echo path('cgu'); ?>">CGU</a>
                 <a href="<?php echo path('legals'); ?>">Mentions légales</a>
-                <a href="<?php echo path('about'); ?>">À propos</a>
+                <a href="<?php echo path('/#about'); ?>">À propos</a>
             </div>
         </div>
         <span id="openMenuPrincipal">&#9776; </span>

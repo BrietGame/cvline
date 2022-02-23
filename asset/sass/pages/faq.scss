@@ -11,8 +11,7 @@
   }
 
   .accordion {
-    background-color: #eee;
-    color: #444;
+
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -20,15 +19,27 @@
     border: none;
     outline: none;
     transition: 0.4s;
+    color: white;
+    background: $blue;
   }
   .active, .accordion:hover {
-    background-color: #ccc;
+    background-color: $white;
+    color: $blue;
+    border: solid 1px $blue;
   }
   .panel {
-    padding: 0 18px;
+    padding: 1rem;
     background-color: white;
     display: none;
     overflow: hidden;
+    color: $blue;
+    font-family: $franklin;
+
+  }
+  .panel p{
+    font-family: $franklin;
+
+
   }
 }
 

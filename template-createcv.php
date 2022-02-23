@@ -36,6 +36,7 @@ if (!empty($_POST)) {
 
         )
     );
+
     $lastIdCv = $wpdb->insert_id;
     // JOINTURE CV_ID to IDUser
     $wpdb->insert(

@@ -166,6 +166,9 @@ $user = wp_get_current_user();
                                 <input type="password" name="confirm_register_password" id="confirm_register_password">
                                 <span id="errorPasswordRegister" class="error"><?= viewError($errors_register, 'register_password') ?></span>
                             </div>
+                            <div class="input_group">
+                                <label for="cgu"><input type="checkbox" id="cgu" name="cgu" value="cgu"> J'accepte les <a class="cgu_link" href="<?= path('/legals') ?>">Conditions Générales d'Utilisations</a> de mes données.</label>
+                            </div>
 
                             <div class="btnForm">
                                 <input type="submit" name="submitted_register" id="submitted_register" value="S'inscrire">
