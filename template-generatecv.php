@@ -177,8 +177,8 @@
                     <ul id="result_search_skill">
                         <!-- Mettre dans une boucle -->
                         <li><a href="" id="bdd_item_skill" data-content="HTML">HTML</a></li>
-                        <li><a href="" id="bdd_item_skill" data-content="CSS">CSS</a></li>
-                        <li><a href="" id="bdd_item_skill" data-content="JavaScript">JavaScript</a></li>
+                        <li><a href="#" id="bdd_item_skill" data-content="CSS">CSS</a></li>
+                        <li><a href="#" id="bdd_item_skill" data-content="JavaScript">JavaScript</a></li>
                         <!-- Fin de la boucle -->
                     </ul>
                     <span onclick="newSkill()" class="addBtn">Ajouter cette compétence</span>
