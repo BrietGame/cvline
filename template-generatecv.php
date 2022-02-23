@@ -83,26 +83,12 @@
                     </div>
                 </div>
 
-                <div class="two_input">
-                    <div class="input_group">
-                        <label for="js_birthday">Date de Naissance</label>
-                        <input type="date" id="js_birthday" name="birthday">
-                        <span class="error" id="error_birthday"></span>
-                    </div>
-                    <div class="input_group">
-                        <label for="pet-select">Sélectionnez vot:</label>
-
-                        <select name="pets" id="pet-select">
-                            <option value="">--Please choose an option--</option>
-                            <option value="dog">Dog</option>
-                            <option value="cat">Cat</option>
-                            <option value="hamster">Hamster</option>
-                            <option value="parrot">Parrot</option>
-                            <option value="spider">Spider</option>
-                            <option value="goldfish">Goldfish</option>
-                        </select>
-                    </div>
+                <div class="input_group">
+                    <label for="js_birthday">Date de Naissance</label>
+                    <input type="date" id="js_birthday" name="birthday">
+                    <span class="error" id="error_birthday"></span>
                 </div>
+
 
                 <div class="input_group">
                     <label for="js_phone">Telephone</label>
@@ -190,7 +176,9 @@
                     <span class="error" id="error_search_skill"></span>
                     <ul id="result_search_skill">
                         <!-- Mettre dans une boucle -->
-                        <li><a href="" id="bdd_item_skill" data-content="Adele">Adele</a></li>
+                        <li><a href="" id="bdd_item_skill" data-content="HTML">HTML</a></li>
+                        <li><a href="#" id="bdd_item_skill" data-content="CSS">CSS</a></li>
+                        <li><a href="#" id="bdd_item_skill" data-content="JavaScript">JavaScript</a></li>
                         <!-- Fin de la boucle -->
                     </ul>
                     <span onclick="newSkill()" class="addBtn">Ajouter cette compétence</span>
@@ -215,6 +203,8 @@
                     <ul id="result_search_hobbie">
                         <!-- Mettre dans une boucle -->
                         <li><a href="" id="bdd_item_hobbie" data-content="Jeux-vidéos">Jeux-vidéos</a></li>
+                        <li><a href="" id="bdd_item_hobbie" data-content="Netflix">Netflix</a></li>
+                        <li><a href="" id="bdd_item_hobbie" data-content="Cinéma">Cinéma</a></li>
                         <!-- Fin de la boucle -->
                     </ul>
                     <span onclick="newHobbie()" class="addBtn">Ajouter ce loisir</span>
