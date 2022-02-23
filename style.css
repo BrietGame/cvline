@@ -1232,6 +1232,33 @@ body {
   background-color: #eee;
 }
 
+#faq {
+  background-image: url("../cvline/asset/img/bg/image-accueil.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+#faq .accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+#faq .active, #faq .accordion:hover {
+  background-color: #ccc;
+}
+#faq .panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+
 #recruteur #input_recrut {
   background-position: 10px 12px;
   background-repeat: no-repeat;
