@@ -738,6 +738,9 @@ nav ul li a:hover {
 #login_register .wrap .left, #login_register .wrap .right {
   width: 40%;
 }
+#login_register .wrap .left .cgu_link, #login_register .wrap .right .cgu_link {
+  font-size: 1rem;
+}
 #login_register .wrap .left #eye, #login_register .wrap .right #eye {
   cursor: pointer;
 }
@@ -1245,6 +1248,35 @@ nav ul li a:hover {
   background-color: white;
   display: none;
   overflow: hidden;
+}
+
+#legals .wrap .title {
+  font-family: Noto Serif, serif;
+  font-size: 3rem;
+  color: #2A4876;
+  text-align: center;
+}
+#legals .wrap #title_section {
+  font-family: Noto Serif, serif;
+  font-size: 2rem;
+  color: #2A4876;
+  padding: 3rem 0;
+}
+#legals .wrap h3 {
+  font-family: Noto Serif, serif;
+  font-size: 1.5rem;
+  color: #2A4876;
+  padding: 1rem 0;
+}
+#legals .wrap p {
+  font-family: Libre Franklin, sans-serif;
+}
+#legals .wrap strong {
+  color: #2A4876;
+}
+#legals .wrap a {
+  color: #2A4876;
+  text-decoration-line: underline;
 }
 
 #recruteur .header {
