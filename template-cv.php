@@ -6,11 +6,6 @@ use Spipu\Html2Pdf\Html2Pdf;
 
 $html2pdf = new Html2Pdf();
 //debug($getInfoWork);
-
-$singleCvID = $getCvInfo[$_GET['id']];
-//debug($getCvInfo);
-
-
 ?>
     <style>
 
@@ -56,22 +51,46 @@ $singleCvID = $getCvInfo[$_GET['id']];
 
     </style>
     <div id="cv_2">
-        <div class="left">
-            <div class="about">
-                <img class="img_cv1" src="https://studiobontant.fr/images/galeries/Big/_DSC6716.jpg" alt="Logo Alexis BRIET">
-                <div class="text_left_cv">
-                <h3><?= $singleCvID->cv_title_work ?></h3>
-                <span><?= $singleCvID->cv_surname .' '. $singleCvID->cv_name ?></span>
-                    <p>Né(e) le : <?= $singleCvID->cv_birthday ?></p>
-                    <p>Adresse : <?= $singleCvID->cv_adress ?></p>
-                    <p><?= $singleCvID->cv_postal .', '. $singleCvID->cv_city ?></p>
-                    <p>Téléphone : <?= $singleCvID->cv_phone ?></p>
-                    <p>Email : <?= $singleCvID->cv_email ?></p>
-                    <p>Permis B</p>
+
+        <?php if(is_page_template('template-candidat.php')){
+            $singleCvID = $getCvInfo[$_GET['id']]; ?>
+            <div class="left">
+                <div class="about">
+                    <img class="img_cv1" src="https://studiobontant.fr/images/galeries/Big/_DSC6716.jpg" alt="Logo Alexis BRIET">
+                    <div class="text_left_cv">
+                        <h3><?= $singleCvID->cv_title_work ?></h3>
+                        <span><?= $singleCvID->cv_surname .' '. $singleCvID->cv_name ?></span>
+                        <p>Né(e) le : <?= $singleCvID->cv_birthday ?></p>
+                        <p>Adresse : <?= $singleCvID->cv_adress ?></p>
+                        <p><?= $singleCvID->cv_postal .', '. $singleCvID->cv_city ?></p>
+                        <p>Téléphone : <?= $singleCvID->cv_phone ?></p>
+                        <p>Email : <?= $singleCvID->cv_email ?></p>
+                        <p>Permis B</p>
+                    </div>
                 </div>
+                <p class="aboutmecv"><?= $singleCvID->cv_presentation ?></p>
             </div>
-            <p class="aboutmecv"><?= $singleCvID->cv_presentation ?></p>
-        </div>
+        <?php }else{
+            $allCvId = $getCvRecruteur[$_GET['id']]; ?>
+
+            <div class="left">
+                <div class="about">
+                    <img class="img_cv1" src="https://studiobontant.fr/images/galeries/Big/_DSC6716.jpg" alt="Logo Alexis BRIET">
+                    <div class="text_left_cv">
+                        <h3><?= $allCvId->cv_title_work ?></h3>
+                        <span><?= $allCvId->cv_surname .' '. $allCvId->cv_name ?></span>
+                        <p>Né(e) le : <?= $allCvId->cv_birthday ?></p>
+                        <p>Adresse : <?= $allCvId->cv_adress ?></p>
+                        <p><?= $allCvId->cv_postal .', '. $allCvId->cv_city ?></p>
+                        <p>Téléphone : <?= $allCvId->cv_phone ?></p>
+                        <p>Email : <?= $allCvId->cv_email ?></p>
+                        <p>Permis B</p>
+                    </div>
+                </div>
+                <p class="aboutmecv"><?= $allCvId->cv_presentation ?></p>
+            </div>
+        <?php } ?>
+
         <div class="right">
             <h1>Mon expérience</h1>
             <?php for($i=0; $i<=count($getCvWork)-1; $i++) { ?>

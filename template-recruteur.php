@@ -3,6 +3,8 @@ if (!is_user_logged_in()) {
     wp_redirect(path('/'));
 }
 /* Template Name: EspaceRecruteur */
+
+
 ?>
 
 <section id="recruteur">
@@ -13,9 +15,9 @@ if (!is_user_logged_in()) {
     <input type="text" id="input_recrut" onkeyup="searchKeyWordsRecruteur()" placeholder="Search for names..">
 
     <div id="recrutcv">
-        <?php for ($i = 0; $i <= count($getCvRecruteur) - 1; $i++) { ?>
+        <?php for ($i = 0; $i <= count($getCvRecruteur)-1; $i++) { ?>
             <div class="decritpion_cv_info">
-                <a href="#"><?= $getCvRecruteur[$i]->cv_title_work ?></a>
+                <a href="<?= path('template-cv1').'?id='.$i.'&cv='.$getCvRecruteur[$i]->id; ?>"><?= $getCvRecruteur[$i]->cv_title_work ?></a>
                 <p><?= $getCvRecruteur[$i]->cv_surname . ' ' . $getCvRecruteur[$i]->cv_name ?></p>
                 <p><?= $getCvRecruteur[$i]->cv_created_at ?></p>
             </div>
