@@ -1,70 +1,71 @@
 <?php
 /* Template Name: HomePage */
-$errors_register = [];
-if (!empty($_POST['submitted_register'])) {
 
-    $register_email = cleanXss('register_email');
-    $register_pseudo = cleanXss('register_pseudo');
-    $register_password = cleanXss('register_password');
-    $confirm_register_password = cleanXss('confirm_register_password');
-    $role_choice = cleanXss('role');
-
-    if (empty($role_choice)) {
-        $errors_register['role'] = 'Veuillez définir votre status entre Candidat et Recruteur';
-    }
-    $errors_register = emailValidation($errors_register, $register_email, 'register_email');
-    $errors_register = textValidation($errors_register, $register_pseudo, 'register_pseudo');
-    $errors_register = textValidation($errors_register, $register_password, 'register_password');
-    $errors_register = textValidation($errors_register, $confirm_register_password, 'confirm_register_password');
-
-
-    if ($register_password == $confirm_register_password) {
-        if (count($errors_register) === 0) {
-            // Data sent to $_POST
-            $userdata = [
-                'user_login' => $register_pseudo,
-                'user_pass'  => $register_password,
-                'user_email' => $register_email,
-                'role' => $role_choice,
-            ];
-
-            /**
-             * It is not necessary to validate/clean the passed fields,
-             * WP will do it by itself.
-             */
-
-            $user_id = wp_insert_user($userdata);
-
-            if (!is_wp_error($user_id)) {
-                // return true;
-                wp_redirect(path('/'));
-            } else {
-                return $user_id->get_error_message();
-            }
-        }
-    } else {
-        $errors['password'] = 'Les mots de passe ne correspondent pas.';
-    }
-}
-
-$errors_login = [];
-if (!empty($_POST['submitted_login'])) {
-
-    $login = cleanXss('login');
-    $login_password = cleanXss('login_password');
-
-    $errors_login = textValidation($errors_login, $login, 'login');
-    $errors_login = textValidation($errors_login, $login_password, 'login_password');
-
-    if (count($errors_login) === 0) {
-        $credentials = array(
-            'user_login' => $login,
-            'user_password' => $login_password
-        );
-        wp_signon($credentials);
-        wp_redirect(path('/'));
-    }
-}
+//$errors_register = [];
+//if (!empty($_POST['submitted_register'])) {
+//
+//    $register_email = cleanXss('register_email');
+//    $register_pseudo = cleanXss('register_pseudo');
+//    $register_password = cleanXss('register_password');
+//    $confirm_register_password = cleanXss('confirm_register_password');
+//    $role_choice = cleanXss('role');
+//
+//    if (empty($role_choice)) {
+//        $errors_register['role'] = 'Veuillez définir votre status entre Candidat et Recruteur';
+//    }
+//    $errors_register = emailValidation($errors_register, $register_email, 'register_email');
+//    $errors_register = textValidation($errors_register, $register_pseudo, 'register_pseudo');
+//    $errors_register = textValidation($errors_register, $register_password, 'register_password');
+//    $errors_register = textValidation($errors_register, $confirm_register_password, 'confirm_register_password');
+//
+//
+//    if ($register_password == $confirm_register_password) {
+//        if (count($errors_register) === 0) {
+//            // Data sent to $_POST
+//            $userdata = [
+//                'user_login' => $register_pseudo,
+//                'user_pass'  => $register_password,
+//                'user_email' => $register_email,
+//                'role' => $role_choice,
+//            ];
+//
+//            /**
+//             * It is not necessary to validate/clean the passed fields,
+//             * WP will do it by itself.
+//             */
+//
+//            $user_id = wp_insert_user($userdata);
+//
+//            if (!is_wp_error($user_id)) {
+//                // return true;
+//                wp_redirect(path('/'));
+//            } else {
+//                return $user_id->get_error_message();
+//            }
+//        }
+//    } else {
+//        $errors['password'] = 'Les mots de passe ne correspondent pas.';
+//    }
+//}
+//
+//$errors_login = [];
+//if (!empty($_POST['submitted_login'])) {
+//
+//    $login = cleanXss('login');
+//    $login_password = cleanXss('login_password');
+//
+//    $errors_login = textValidation($errors_login, $login, 'login');
+//    $errors_login = textValidation($errors_login, $login_password, 'login_password');
+//
+//    if (count($errors_login) === 0) {
+//        $credentials = array(
+//            'user_login' => $login,
+//            'user_password' => $login_password
+//        );
+//        wp_signon($credentials);
+//        wp_redirect(path('/'));
+//    }
+//}
 
 $user = wp_get_current_user();
 // debug($user)
@@ -128,43 +129,43 @@ $user = wp_get_current_user();
                 <?php } else { ?>
                     <div class="left">
                         <h2>S'inscrire</h2>
-                        <form action="" method="POST" novalidate id="loginForm">
-                            <div class="two_input">
-                                <div class="input_group_radio">
-                                    <label class="container" for="candidat"> Candidat
-                                        <input type="radio" id="candidat" name="role" value="Candidat">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <div class="input_group_radio">
-                                    <label class="container" for="recruteur"> Recruteur
-                                        <input type="radio" id="recruteur" name="role" value="Recruteur">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                            </div>
+                        <form method="POST" novalidate id="loginForm">
+<!--                            <div class="two_input">-->
+<!--                                <div class="input_group_radio">-->
+<!--                                    <label class="container" for="candidat"> Candidat-->
+<!--                                        <input type="radio" id="candidat" name="role" value="Candidat">-->
+<!--                                        <span class="checkmark"></span>-->
+<!--                                    </label>-->
+<!--                                </div>-->
+<!--                                <div class="input_group_radio">-->
+<!--                                    <label class="container" for="recruteur"> Recruteur-->
+<!--                                        <input type="radio" id="recruteur" name="role" value="Recruteur">-->
+<!--                                        <span class="checkmark"></span>-->
+<!--                                    </label>-->
+<!--                                </div>-->
+<!--                            </div>-->
                             <div class="input_group">
-                                <span id="errorRoleRegister" class="error"><?= viewError($errors_register, 'role') ?></span>
+                                <span class="error" id="errorRoleRegister"></span>
                             </div>
                             <div class="input_group">
                                 <label for="register_email">Adresse mail</label>
-                                <input type="text" name="register_email" id="register_email" placeholder="email@example.com" value="<?= recupInputValue('register_email') ?>">
-                                <span id="errorEmailRegister" class="error"><?= viewError($errors_register, 'register_email') ?></span>
+                                <input type="text" name="register_email" id="register_email" placeholder="email@example.com"">
+                                <span class="error" id="errorEmailRegister"></span>
                             </div>
                             <div class="input_group">
                                 <label for="register_pseudo">Nom d'utilisateur</label>
-                                <input type="text" name="register_pseudo" id="register_pseudo" placeholder="JohnDoe80" value="<?= recupInputValue('register_pseudo') ?>">
-                                <span id="errorPseudoRegister" class="error"><?= viewError($errors_register, 'register_pseudo') ?></span>
+                                <input type="text" name="register_pseudo" id="register_pseudo" placeholder="JohnDoe80"">
+                                <span class="error" id="errorPseudoRegister"></span>
                             </div>
                             <div class="input_group">
                                 <label for="register_password">Mot de passe <i id="eye" class="far fa-eye" onclick="showHidePassword('register_password')"></i></label>
                                 <input type="password" name="register_password" id="register_password">
-                                <span id="errorPasswordRegister" class="error"><?= viewError($errors_register, 'register_password') ?></span>
+                                <span class="error" id="errorPasswordRegister"></span>
                             </div>
                             <div class="input_group">
                                 <label for="confirm_register_password">Confirmer le mot de passe <i id="eye" class="far fa-eye" onclick="showHidePassword('confirm_register_password')"></i></label>
                                 <input type="password" name="confirm_register_password" id="confirm_register_password">
-                                <span id="errorPasswordRegister" class="error"><?= viewError($errors_register, 'register_password') ?></span>
+                                <span class="error" id="errorPasswordRegisterConf"></span>
                             </div>
                             <div class="input_group">
                                 <label for="cgu"><input type="checkbox" id="cgu" name="cgu" value="cgu"> J'accepte les <a class="cgu_link" href="<?= path('/legals') ?>">Conditions Générales d'Utilisations</a> de mes données.</label>

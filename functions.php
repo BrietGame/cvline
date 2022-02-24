@@ -15,7 +15,7 @@ require_once get_template_directory() . '/inc/ajax/ajax-skills.php';
 require_once get_template_directory() . '/inc/ajax/ajax-hobbie.php';
 require_once get_template_directory() . '/inc/ajax/ajax-school.php';
 require_once get_template_directory() . '/inc/ajax/ajax-final.php';
-// require_once get_template_directory() . '/inc/ajax/ajax-auth.php';
+ require_once get_template_directory() . '/inc/ajax/ajax-auth.php';
 
 /* Extra */
 require get_template_directory() . '/inc/extra/template-functions.php';
