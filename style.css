@@ -1093,171 +1093,85 @@ nav ul li a:hover {
   color: #2A4876;
   padding-bottom: 3rem;
 }
-#profil .input_group {
-  display: flex;
-  flex-flow: column nowrap;
-  margin: 1rem auto;
-}
-#profil .input_group input {
-  background: none;
-  border: none;
-  border-bottom: 2px solid #000000;
-  padding: 0.3rem 0.4rem;
-  font-family: Libre Franklin, sans-serif;
-  color: #000000;
-}
-#profil .input_group input::placeholder {
-  font-family: Libre Franklin, sans-serif;
-  color: rgba(0, 0, 0, 0.5);
-}
-#profil .two_input {
-  display: flex !important;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  margin: 1rem auto;
-}
-#profil .two_input .input_group {
-  width: 50%;
-  margin: 0;
-}
-#profil .wrap3 .titre h1 {
+#profil .wrap .titre h1 {
   display: flex;
   justify-content: center;
-  font-size: 55px;
+  font-size: 3rem;
   color: #2A4876;
   font-family: Noto Serif, serif;
   font-weight: 400;
   padding: 2rem 0rem 5rem;
 }
-#profil .wrap3 #conteneurProfil {
-  display: flex;
+@media screen and (max-width: 700px) {
+  #profil .wrap .titre h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
 }
-#profil .wrap3 #conteneurProfil .profilUser {
+#profil .wrap #conteneurProfil {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+}
+#profil .wrap #conteneurProfil .profilUser {
+  width: 45%;
+}
+#profil .wrap #conteneurProfil .profilUser .imgProfil {
+  width: 50%;
+  min-width: 200px;
+}
+#profil .wrap #conteneurProfil .profilUser .imgProfil img {
+  width: 100%;
+}
+#profil .wrap #conteneurProfil .profilUser .btnGroup {
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+  max-width: 300px;
+}
+#profil .wrap #conteneurProfil .profilUser .btnGroup .btnBlue {
+  display: initial;
+}
+#profil .wrap #conteneurProfil .profilUser .btnGroup .btnWhite {
+  margin: 2rem 0;
+}
+@media screen and (max-width: 700px) {
+  #profil .wrap #conteneurProfil .profilUser {
+    width: auto;
+  }
+  #profil .wrap #conteneurProfil .profilUser .imgProfil {
+    width: auto;
+  }
+}
+#profil .wrap #conteneurProfil .formulaire {
   width: 40%;
 }
-#profil .wrap3 #conteneurProfil .profilUser .btnGroup {
-  padding: 8rem 0 0 6rem;
-}
-#profil .wrap3 #conteneurProfil .profilUser .btnGroup .btnGroup3 {
-  padding-bottom: 3rem;
-  align-items: center;
-}
-#profil .wrap3 #conteneurProfil .profilUser .imgProfil {
-  display: flex;
-  justify-content: center;
-}
-#profil .wrap3 #conteneurProfil .profilUser .imgProfil img {
-  width: 200px;
-  height: 214px;
-  border-radius: 50%;
-  overflow: hidden;
-}
-#profil .wrap3 #conteneurProfil .formulaire {
-  width: 40%;
-}
-#profil .wrap3 #conteneurProfil .formulaire .form {
+#profil .wrap #conteneurProfil .formulaire .form {
   gap: 2rem;
 }
-#profil .wrap3 #conteneurProfil .formulaire .form .two_input {
+#profil .wrap #conteneurProfil .formulaire .form .two_input {
   display: flex;
   gap: 1rem;
   padding-bottom: 1rem;
 }
-#profil .wrap3 #conteneurProfil .formulaire .form .pays {
+#profil .wrap #conteneurProfil .formulaire .form .pays {
   padding-top: 1rem;
 }
-
-@media only screen and (min-width: 390px) {
-  #profil .wrap3 .titre h1 {
-    font-size: 27px;
-    text-align: center;
-    padding: 1rem;
+@media screen and (max-width: 700px) {
+  #profil .wrap #conteneurProfil .formulaire {
+    width: 100%;
   }
-  #profil .wrap3 #conteneurProfil {
-    display: inherit;
-  }
-  #profil .wrap3 #conteneurProfil .profilUser {
-    width: 94%;
-  }
-  #profil .wrap3 #conteneurProfil .profilUser .imgProfil img {
-    height: 134px;
-    width: 133px;
-  }
-  #profil .wrap3 #conteneurProfil .profilUser .btnGroup {
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
+}
+@media screen and (max-width: 700px) {
+  #profil .wrap #conteneurProfil {
+    flex-flow: column nowrap;
     align-items: center;
-    flex-direction: column;
   }
-  #profil .wrap3 #conteneurProfil .formulaire {
-    width: 77%;
-    padding: 0 0 0 4rem;
-  }
-  #profil .btnBlue {
-    font-size: 13px;
-    padding: 2px;
-  }
-  #profil .btnWhite {
-    font-size: 13px;
-    padding: 2px;
+  #profil .wrap #conteneurProfil .profilUser .btnGroup {
+    align-items: center;
   }
 }
-@media only screen and (min-width: 720px) {
-  #profil .wrap3 .titre h1 {
-    font-size: 40px;
-  }
-  #profil .wrap3 #conteneurProfil {
-    display: inherit;
-  }
-  #profil .wrap3 #conteneurProfil .profilUser {
-    width: 94%;
-  }
-  #profil .wrap3 #conteneurProfil .profilUser .imgProfil img {
-    height: 134px;
-    width: 133px;
-  }
-  #profil .wrap3 #conteneurProfil .formulaire {
-    padding: 1rem 1rem 0 9rem;
-  }
-  #profil .btnBlue {
-    font-size: 1rem;
-    padding: 0.2rem 2.5rem;
-  }
-  #profil .btnWhite {
-    font-size: 1rem;
-    padding: 0.2rem 1.5rem;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  #profil .wrap3 .titre h1 {
-    font-size: 55px;
-  }
-  #profil .wrap3 #conteneurProfil {
-    display: flex;
-  }
-  #profil .wrap3 #conteneurProfil .profilUser {
-    width: 40%;
-  }
-  #profil .wrap3 #conteneurProfil .profilUser .imgProfil img {
-    display: flex;
-    justify-content: center;
-  }
-  #profil .wrap3 #conteneurProfil .profilUser .btnGroup {
-    padding: 8rem 0 0 6rem;
-    display: inherit;
-  }
-  #profil .wrap3 #conteneurProfil .btnBlue {
-    padding: 0.2rem 2.5rem;
-  }
-  #profil .wrap3 #conteneurProfil .btnWhite {
-    padding: 0.2rem 1.5rem;
-  }
-  #profil .wrap3 #conteneurProfil .formulaire {
-    width: 50%;
-  }
-}
+
 #faq .wrap {
   margin-top: 10rem;
 }
