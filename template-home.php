@@ -210,46 +210,8 @@ $user = wp_get_current_user();
             </div>
         </div>
     </div>
+    <?= get_footer() ?>
 </section>
-
-<?php
-$args = array(
-    'post_type' => 'collaborateur',
-    'posts_per_page' => 4,
-    'order' => 'ASC',
-);
-
-$the_query = new WP_Query($args);
-?>
-
-<section id="collaborateur">
-    <div class="row">
-        <div class="column">
-            <div class="wrap">
-
-                <?php if ($the_query->have_posts()) {
-                    while ($the_query->have_posts()) {
-                        $the_query->the_post(); ?>
-                        <div class="card">
-
-                            <?php echo getImageFeature(get_the_ID(), 'imgpicturepresentation', get_the_title()) ?>
-                            <div class="container">
-                                <h2><?php echo get_the_title() ?></h2>
-                                <p class="title"><?php echo get_the_content() ?></p>
-                                <p><?php echo get_the_content() ?></p>
-                                <p><?php echo get_the_content() ?></p>
-                                <p class="contenuBtn"><button class="button">Contact</button></p>
-                            </div>
-                        </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-<?php }
-                } ?>
-
-<?= get_footer() ?>
 
 
 <script>
