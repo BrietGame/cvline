@@ -1,10 +1,10 @@
 <?php
 /* Template Name: GenerationCv */
+get_header();
 ?>
 
 <section id="generate_cv">
     <div class="header">
-        <?= get_header(); ?>
         <h2>Générer mon CV</h2>
     </div>
 

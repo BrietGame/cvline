@@ -27,19 +27,19 @@
     <header>
         <div class="logo">
             <a href="<?php echo path('/'); ?>">
-                <img src=" <?php echo get_template_directory_uri() ?>/asset/img/logoCVline1.svg" alt="logo">
+                <img src=" <?php echo get_template_directory_uri() ?>/asset/img/cvline_blue.svg" alt="logo">
             </a>
         </div>
         <div id="menuprincipal" class="displaynone">
             <a href="javascript:void(0)" id="closeMenuPrincipal" class="closebtn">&times; </a>
             <div class="overlay-content">
                 <?php if (is_user_logged_in()) { ?>
-                    <a class="btnTransparent" id="modalBtn">Accéder à mon espace</a>
+                    <a class="btnTransparent" id="modalBtn3" href="<?= path('/?red=mon-espace') ?>">Accéder à mon espace</a>
                     <a href="<?= path('logout') ?>">Se déconnecter</a>
                 <?php } else { ?>
-                    <a class="btnTransparent" id="modalBtn">S'authentifier</a>
+                    <a class="btnTransparent" id="modalBtn3" href="<?= path('/?red=auth') ?>">S'authentifier</a>
                 <?php } ?>
-                <a href="<?php echo path('faq'); ?>">FAQ</a>
+                <a href=" <?php echo path('faq'); ?>">FAQ</a>
                 <a href="<?php echo path('legals'); ?>">Mentions légales</a>
                 <a href="<?php echo path('/#about'); ?>">À propos</a>
             </div>

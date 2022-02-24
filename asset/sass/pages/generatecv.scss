@@ -1,11 +1,6 @@
 #generate_cv {
-
-
-
     .header {
-
         background-image: url('../cvline/asset/img/bg/working.png');
-
         background-repeat: no-repeat;
         background-size: auto;
         height: 50%;
@@ -14,16 +9,10 @@
             font-family: $noto;
             font-size: 3rem;
             text-align: center;
-
             color: $white;
             text-shadow: 1px 1px 2px black;
-
-
         }
     }
-
-
-
 
     .title {
         text-align: center;
@@ -35,7 +24,9 @@
     // Fil d'Ariane
     #fil_ariane {
         display: flex;
-        flex-flow: row nowrap;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
         gap: .1rem;
         padding-bottom: 3rem;
         #step {
@@ -63,6 +54,12 @@
             .text {
                 font-family: $noto;
                 color: $blue;
+            }
+        }
+        @media screen and (max-width: 700px) {
+            #step {
+                text-align: justify;
+                min-width: 200px;
             }
         }
 
@@ -110,11 +107,16 @@
             transition: .8s;
         }
     }
+    @media screen and (max-width: 700px) {
+        .btnForm {
+            flex-flow: column nowrap;
+        }
+    }
+
 
     // ToDo
     #todo {
         #result_search_skill, #result_search_hobbie {
-            background-image: url('/css/searchicon.png'); /* Add a search icon to input */
             background-position: 10px 12px; /* Position the search icon */
             background-repeat: no-repeat; /* Do not repeat the icon image */
             width: 100%; /* Full-width */
@@ -211,12 +213,11 @@
         /* Style the "Add" button */
         .addBtn {
             padding: 10px;
-            width: 25%;
             background: #d9d9d9;
             color: #555;
             float: left;
             text-align: center;
-            font-size: 16px;
+            font-size: 1rem;
             cursor: pointer;
             transition: 0.3s;
             border-radius: 0;
@@ -236,11 +237,25 @@
             color: $blue;
             margin-top: 2rem;
         }
+        @media screen and (max-width: 700px) {
+            .title_section {
+                text-align: center;
+            }
+        }
 
         .expandparcours {
             display: flex;
             flex-flow: row wrap;
             justify-content: space-between;
+        }
+        @media screen and (max-width: 700px) {
+            .expandparcours {
+                justify-content: center;
+                
+                .left, .right {
+                    gap: .5rem;
+                }
+            }
         }
 
         .stats {
@@ -280,6 +295,12 @@
                 }
             }
         }
+        @media screen and (max-width: 700px) {
+            .stats {
+                flex-flow: column;
+                align-items: center;
+            }
+        }
         .generateGlobalInfo {
             padding: 1rem;
             .post_search {
@@ -308,6 +329,18 @@
                     }
                 }
             }
+            @media screen and (max-width: 700px) {
+                .container {
+                    flex-flow: column;
+                    align-items: center;
+                    text-align: center;
+                    gap: 1rem;
+
+                    .left, .right {
+                        gap: .5rem;
+                    }
+                }
+            }
         }
 
         .generateExp, .generateSchoolCv {
@@ -317,9 +350,15 @@
                 background-color: #FFF;
                 border: 2px solid $blue;
                 padding: .4rem;
+                margin: 1rem;
 
                 p {
                     width: 300px;
+                }
+                @media screen and (max-width: 700px) {
+                   p {
+                        width: auto;
+                    }
                 }
 
                 .container {
@@ -353,6 +392,12 @@
                 color: #FFF;
             }
         }
+        @media screen and (max-width: 700px) {
+            .generateSkillsCv, .generateHobbiesCv {
+                justify-content: center;
+            }
+        }
+        
     }
     .finalBtn {
         display: flex;

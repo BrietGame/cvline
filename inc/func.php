@@ -110,11 +110,27 @@ function viewError($errors, $key)
     }
 }
 
-function getImageAttachment($id_attachment,$size = 'thumbnail', $alt = '')
+function getImageAttachment($id_attachment, $size = 'thumbnail', $alt = '')
 {
-    $image = wp_get_attachment_image_src($id_attachment,$size);
-    if(!empty($image)) {
-        return '<img src="'.$image[0].'" alt="'.$alt.'"/>';
+    $image = wp_get_attachment_image_src($id_attachment, $size);
+    if (!empty($image)) {
+        return '<img src="' . $image[0] . '" alt="' . $alt . '"/>';
     }
     return '';
+}
+
+
+function isNotLogged()
+{
+    if (!is_user_logged_in()) {
+        wp_redirect(path('/?error=login'));
+    }
+}
+function getImageFeature($id, $size, $alt)
+{
+    $image_url = get_the_post_thumbnail_url($id, $size);
+    if (!empty($image_url)) {
+        return '<img src="' . $image_url . '" alt="' . $alt . '" />';
+    }
+    return '<img src="' . asset('img/team1.jpeg') . '" width="300px" height="200px" />';
 }

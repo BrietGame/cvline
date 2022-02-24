@@ -1,6 +1,7 @@
 <?php
-require __DIR__ . '/vendor/autoload.php';
 /* Template Name: Downloadcv */
+require __DIR__ . '/vendor/autoload.php';
+isNotLogged();
 
 use Spipu\Html2Pdf\Html2Pdf;
 

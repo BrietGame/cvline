@@ -1,8 +1,7 @@
 <?php
-if (!is_user_logged_in()) {
-    wp_redirect(path('/'));
-}
 /* Template Name: editProfil */
+isNotLogged();
+get_header();
 $user = wp_get_current_user();
 $meta_user = get_user_meta($user->ID);
 // debug($user);
@@ -11,10 +10,9 @@ $meta_user = get_user_meta($user->ID);
 
 <section id="profil">
     <div class="header">
-        <?= get_header() ?>
         <h2>Mon espace</h2>
     </div>
-    <div class="wrap3">
+    <div class="wrap">
         <div class="titre">
             <h1>Bienvenue John sur votre espace <?php if (!empty($user->roles[0])) {
                                                     echo $user->roles[0];
@@ -23,19 +21,13 @@ $meta_user = get_user_meta($user->ID);
                                                 } ?></h1>
         </div>
         <div id="conteneurProfil">
-
             <div class="profilUser">
                 <div class="imgProfil">
                     <img src=" <?php echo get_template_directory_uri() ?>/asset/img/lucImg.jpg" alt="img profil">
                 </div>
                 <div class="btnGroup">
-                    <div class="btnGroup3">
-                        <a class="btnBlue" href="<?= admin_url('profile.php') ?>">Modifier mon profil </a>
-                    </div>
-
-                    <div class="btnGroup4">
-                        <a class="btnWhite" href="<?= path('espace-recruteur') ?>">Accéder à la CVthèque</a>
-                    </div>
+                    <a class="btnBlue" href="<?= admin_url('profile.php') ?>">Modifier mon profil </a>
+                    <a class="btnWhite" href="<?= path('espace-recruteur') ?>">Accéder à la CVthèque</a>
                 </div>
             </div>
 

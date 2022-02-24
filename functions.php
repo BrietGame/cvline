@@ -23,3 +23,4 @@ require get_template_directory() . '/inc/extra/template-tags.php';
 
 /* custom */
 require get_template_directory() . '/asset/custom/custom-faq.php';
+require get_template_directory() . '/asset/custom/custom-collaborateur.php';
