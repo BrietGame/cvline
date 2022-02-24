@@ -134,3 +134,12 @@ function getImageFeature($id, $size, $alt)
     }
     return '<img src="' . asset('img/team1.jpeg') . '" width="300px" height="200px" />';
 }
+
+
+function deniedAccessRole($roleDenied)
+{
+    $user = wp_get_current_user();
+    if ($user->roles[0] == $roleDenied) {
+        wp_redirect(path('/?access=denied'));
+    }
+}
