@@ -8,43 +8,42 @@ if (!empty($_POST['submitted_register'])) {
     $register_pseudo = cleanXss('register_pseudo');
     $register_password = cleanXss('register_password');
     $confirm_register_password = cleanXss('confirm_register_password');
-    $role_choice = cleanXss('role');
 
-    if (empty($role_choice)) {
-        $errors_register['role'] = 'Veuillez définir votre status entre Candidat et Recruteur';
-    }
+
     $errors_register = emailValidation($errors_register, $register_email, 'register_email');
     $errors_register = textValidation($errors_register, $register_pseudo, 'register_pseudo');
     $errors_register = textValidation($errors_register, $register_password, 'register_password');
     $errors_register = textValidation($errors_register, $confirm_register_password, 'confirm_register_password');
 
 
-    if ($register_password == $confirm_register_password) {
-        if (count($errors_register) === 0) {
-            // Data sent to $_POST
-            $userdata = [
-                'user_login' => $register_pseudo,
-                'user_pass'  => $register_password,
-                'user_email' => $register_email,
-                'role' => $role_choice,
-            ];
+    if ($register_password != $confirm_register_password) {
+        $errors_register['register_password'] = 'Les mots de passe ne correspondent pas.';
+    }
+    if (empty($_POST['cgu'])) {
+        $errors_register['cgu'] = 'Veuillez accepter les CGU';
+    }
+    if (count($errors_register) === 0) {
+        // Data sent to $_POST
+        $userdata = [
+            'user_login' => $register_pseudo,
+            'user_pass'  => $register_password,
+            'user_email' => $register_email,
+            'role' => $role_choice,
+        ];
 
-            /**
-             * It is not necessary to validate/clean the passed fields,
-             * WP will do it by itself.
-             */
+        /**
+         * It is not necessary to validate/clean the passed fields,
+         * WP will do it by itself.
+         */
 
-            $user_id = wp_insert_user($userdata);
+        $user_id = wp_insert_user($userdata);
 
-            if (!is_wp_error($user_id)) {
-                // return true;
-                wp_redirect(path('/'));
-            } else {
-                return $user_id->get_error_message();
-            }
+        if (!is_wp_error($user_id)) {
+            // return true;
+            wp_redirect(path('/'));
+        } else {
+            return $user_id->get_error_message();
         }
-    } else {
-        $errors['password'] = 'Les mots de passe ne correspondent pas.';
     }
 }
 
@@ -130,23 +129,6 @@ $user = wp_get_current_user();
                     <div class="left">
                         <h2>S'inscrire</h2>
                         <form action="" method="POST" novalidate id="loginForm">
-                            <div class="two_input">
-                                <div class="input_group_radio">
-                                    <label class="container" for="candidat"> Candidat
-                                        <input type="radio" id="candidat" name="role" value="Candidat">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <div class="input_group_radio">
-                                    <label class="container" for="recruteur"> Recruteur
-                                        <input type="radio" id="recruteur" name="role" value="Recruteur">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="input_group">
-                                <span id="errorRoleRegister" class="error"><?= viewError($errors_register, 'role') ?></span>
-                            </div>
                             <div class="input_group">
                                 <label for="register_email">Adresse mail</label>
                                 <input type="text" name="register_email" id="register_email" placeholder="email@example.com" value="<?= recupInputValue('register_email') ?>">
@@ -169,6 +151,7 @@ $user = wp_get_current_user();
                             </div>
                             <div class="input_group">
                                 <label for="cgu"><input type="checkbox" id="cgu" name="cgu" value="cgu"> J'accepte les <a class="cgu_link" href="<?= path('/legals') ?>">Conditions Générales d'Utilisations</a> de mes données.</label>
+                                <span class="error"><?= viewError($errors_register, 'cgu') ?></span>
                             </div>
 
                             <div class="btnForm">
@@ -239,31 +222,32 @@ $args = array(
 $the_query = new WP_Query($args);
 ?>
 
-    <section id="collaborateur">
-        <div class="row">
-            <div class="column">
-                 <div class="wrap">
+<section id="collaborateur">
+    <div class="row">
+        <div class="column">
+            <div class="wrap">
 
-                    <?php if ( $the_query->have_posts() ) {
-                    while ( $the_query->have_posts() ){
-                    $the_query->the_post(); ?>
-                <div class="card">
+                <?php if ($the_query->have_posts()) {
+                    while ($the_query->have_posts()) {
+                        $the_query->the_post(); ?>
+                        <div class="card">
 
-                    <?php echo getImageFeature(get_the_ID(),'imgpicturepresentation',get_the_title())?>
-                    <div class="container">
-                        <h2><?php echo get_the_title() ?></h2>
-                        <p class="title"><?php echo get_the_content() ?></p>
-                        <p><?php echo get_the_content() ?></p>
-                        <p><?php echo get_the_content() ?></p>
-                        <p class="contenuBtn"><button class="button">Contact</button></p>
-                    </div>
-                </div>
-                </div>
-
+                            <?php echo getImageFeature(get_the_ID(), 'imgpicturepresentation', get_the_title()) ?>
+                            <div class="container">
+                                <h2><?php echo get_the_title() ?></h2>
+                                <p class="title"><?php echo get_the_content() ?></p>
+                                <p><?php echo get_the_content() ?></p>
+                                <p><?php echo get_the_content() ?></p>
+                                <p class="contenuBtn"><button class="button">Contact</button></p>
+                            </div>
+                        </div>
             </div>
+
         </div>
-    </section>
-<?php }} ?>
+    </div>
+</section>
+<?php }
+                } ?>
 
 <?= get_footer() ?>
 
