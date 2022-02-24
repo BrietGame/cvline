@@ -11,41 +11,40 @@ $(document).ready(function () {
     loginForm.on('submit', function (e) {
         e.preventDefault();
 
-        const registerEmail = $('#register_email').val();
-        const registerPseudo = $('#register_pseudo').val();
+        const email = $('#register_email').val();
+        const pseudo = $('#register_pseudo').val();
         const registerPassword = $('#register_password').val();
         const registerConfirmPassword = $('#confirm_register_password').val();
 
-
+        console.log('Click Auth');
         $.ajax({
             url: ajaxUrl,
             type: 'POST',
             data: {
                 action: 'ajax_auth',
-                email: registerEmail,
-                pseudo: registerPseudo,
+                register_email: email,
+                register_pseudo: pseudo,
                 register_password: registerPassword,
                 confirm_register_password: registerConfirmPassword
             },
             beforeSend: function () {
-                console.log('ajax start : salut');
+                console.log('ajax auth : before');
                 $('.error').html('')
             },
-            success: function (res) {
-                console.log(res)
+            success: function(res){
 
-                if (res.success2) {
-                    console.log("success")
+                if (res.success) {
+                    console.log('Envoi en bdd ...');
                 } else {
                     //if success envoie form
-                    if (res.errors.email != null) {
-                        errorEmailRegister.html(res.errors.email)
+                    if (res.errors.register_email != null) {
+                        errorEmailRegister.html(res.errors.register_email)
                     }
-                    if (res.errors.pseudo != null) {
-                        errorPseudoRegister.html(res.errors.pseudo)
+                    if (res.errors.register_pseudo != null) {
+                        errorPseudoRegister.html(res.errors.register_pseudo)
                     }
-                    if (res.errors.registerPassword != null) {
-                        errorPasswordRegister.html(res.errors.registerPassword)
+                    if (res.errors.register_password != null) {
+                        errorPasswordRegister.html(res.errors.register_password)
                     }
                     if (res.errors.confirm_register_password != null) {
                         errorPasswordRegister.html(res.errors.confirm_register_password)
