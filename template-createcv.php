@@ -8,7 +8,7 @@ if (!empty($_POST)) {
     $postsearch = $_POST['dataFinal'][0]['post_search'];
     $surname = $_POST['dataFinal'][0]['surname'];
     $name = $_POST['dataFinal'][0]['name'];
-    $birthday = $_POST['dataFinal'][0]['birtday'];
+    $birthday = $_POST['dataFinal'][0]['birthday'];
     $email = $_POST['dataFinal'][0]['email'];
     $phone = $_POST['dataFinal'][0]['phone'];
     $adress = $_POST['dataFinal'][0]['adress'];
