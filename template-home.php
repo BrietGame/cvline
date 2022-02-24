@@ -1,5 +1,8 @@
 <?php
 /* Template Name: HomePage */
+if ($_GET['error'] == 'login') {
+    echo '<script>notLogged();</script>';
+}
 $errors_register = [];
 if (!empty($_POST['submitted_register'])) {
 

@@ -20,6 +20,8 @@ header {
     transition: 0.5s;  
 
     .overlay-content {
+      display: flex;
+      flex-flow: column nowrap;
       position: relative;
       top: 25%; 
       width: 100%;
@@ -32,12 +34,12 @@ header {
       text-decoration: none;
       font-size: 1rem;
       color: white;
-      display: block;
       font-family: $franklin;
     }
     div > a:nth-child(2) a:nth-child(2):focus ,a:nth-child(2):hover,
     div > a:nth-child(3) a:nth-child(3):focus ,a:nth-child(3):hover,
-    div > a:nth-child(4) a:nth-child(4):focus ,a:nth-child(4):hover{
+    div > a:nth-child(4) a:nth-child(4):focus ,a:nth-child(4):hover,
+    div > a:nth-child(5) a:nth-child(5):focus ,a:nth-child(5):hover{
       color: $blue;
       background-color: white;
       max-width: 200px;
