@@ -113,8 +113,8 @@ $user = wp_get_current_user();
                     <div class="container_islogged">
                         <div class="left">
                             <h2>Ravi de vous revoir <?php if (!empty($meta_user['first_name'][0])) {
-                                    echo $meta_user['first_name'][0];
-                                } ?> !</h2>
+                                                        echo $meta_user['first_name'][0];
+                                                    } ?> !</h2>
                             <p>Bienvenue sur CVLine ! La solution à portée de main pour générer votre CV.</p>
                             <p>Grâce à notre système, vous n'avez qu'à simplement renseigner les informations dont on a besoin pour vous générer votre CV afin que vous puissez vous lancer dans le monde du travail !</p>
                             <a href="<?= path('logout') ?>" class="btnWhite">Se déconnecter</a>
@@ -230,7 +230,8 @@ $user = wp_get_current_user();
 
 <?php
 
-$metas=get_post_meta(get_the_ID());
+$metas = get_post_meta(get_the_ID());
+if (!empty($metas)) {
 ?>
     <section id="collaborateur">
         <div class="row">
@@ -238,36 +239,36 @@ $metas=get_post_meta(get_the_ID());
                 <div class="card">
                     <?php echo getImageAttachment($metas['photo-collaborateur'][0], 'imgcollaborateur', '') ?>
                     <div class="container">
-                        <h2><?= $metas['titre-collaborateur'][0]?></h2>
-                        <p class="title"><?= $metas['titre-emploi'][0]?></p>
-                        <p><?= $metas['description-collaborateur'][0]?></p>
-                        <p><?= $metas['mail-collaborateur'][0]?></p>
+                        <h2><?= $metas['titre-collaborateur'][0] ?></h2>
+                        <p class="title"><?= $metas['titre-emploi'][0] ?></p>
+                        <p><?= $metas['description-collaborateur'][0] ?></p>
+                        <p><?= $metas['mail-collaborateur'][0] ?></p>
                         <p class="contenuBtn"><button class="button">Contact</button></p>
                     </div>
                 </div>
             </div>
 
-                <div class="column">
-                    <div class="card">
-                        <?php echo getImageAttachment($metas['photo-collaborateur2'][0], 'imgcollaborateur', '') ?>
-                        <div class="container">
-                            <h2><?= $metas['titre-collaborateur2'][0]?></h2>
-                            <p class="title"><?= $metas['titre-emploi2'][0]?></p>
-                            <p><?= $metas['description-collaborateur2'][0]?></p>
-                            <p><?= $metas['mail-collaborateur2'][0]?></p>
-                            <p class="contenuBtn"><button class="button">Contact</button></p>
-                        </div>
+            <div class="column">
+                <div class="card">
+                    <?php echo getImageAttachment($metas['photo-collaborateur2'][0], 'imgcollaborateur', '') ?>
+                    <div class="container">
+                        <h2><?= $metas['titre-collaborateur2'][0] ?></h2>
+                        <p class="title"><?= $metas['titre-emploi2'][0] ?></p>
+                        <p><?= $metas['description-collaborateur2'][0] ?></p>
+                        <p><?= $metas['mail-collaborateur2'][0] ?></p>
+                        <p class="contenuBtn"><button class="button">Contact</button></p>
                     </div>
                 </div>
+            </div>
 
             <div class="column">
                 <div class="card">
                     <?php echo getImageAttachment($metas['photo-collaborateur3'][0], 'imgcollaborateur', '') ?>
                     <div class="container">
-                        <h2><?= $metas['titre-collaborateur3'][0]?></h2>
-                        <p class="title"><?= $metas['titre-emploi3'][0]?></p>
-                        <p><?= $metas['description-collaborateur3'][0]?></p>
-                        <p><?= $metas['mail-collaborateur3'][0]?></p>
+                        <h2><?= $metas['titre-collaborateur3'][0] ?></h2>
+                        <p class="title"><?= $metas['titre-emploi3'][0] ?></p>
+                        <p><?= $metas['description-collaborateur3'][0] ?></p>
+                        <p><?= $metas['mail-collaborateur3'][0] ?></p>
                         <p class="contenuBtn"><button class="button">Contact</button></p>
                     </div>
                 </div>
@@ -277,21 +278,19 @@ $metas=get_post_meta(get_the_ID());
                 <div class="card">
                     <?php echo getImageAttachment($metas['photo-collaborateur4'][0], 'imgcollaborateur', '') ?>
                     <div class="container">
-                        <h2><?= $metas['titre-collaborateur4'][0]?></h2>
-                        <p class="title"><?= $metas['titre-emploi4'][0]?></p>
-                        <p><?= $metas['description-collaborateur4'][0]?></p>
-                        <p><?= $metas['mail-collaborateur4'][0]?></p>
+                        <h2><?= $metas['titre-collaborateur4'][0] ?></h2>
+                        <p class="title"><?= $metas['titre-emploi4'][0] ?></p>
+                        <p><?= $metas['description-collaborateur4'][0] ?></p>
+                        <p><?= $metas['mail-collaborateur4'][0] ?></p>
                         <p class="contenuBtn"><button class="button">Contact</button></p>
                     </div>
                 </div>
             </div>
-
         </div>
+    </section>
+<?php } ?>
 
-
-</section>
-
-        <?= get_footer() ?>
+<?= get_footer() ?>
 
 
 <script>
