@@ -129,24 +129,24 @@ $user = wp_get_current_user();
                 <?php } else { ?>
                     <div class="left">
                         <h2>S'inscrire</h2>
-                        <form method="POST" novalidate id="loginForm">
-<!--                            <div class="two_input">-->
-<!--                                <div class="input_group_radio">-->
-<!--                                    <label class="container" for="candidat"> Candidat-->
-<!--                                        <input type="radio" id="candidat" name="role" value="Candidat">-->
-<!--                                        <span class="checkmark"></span>-->
-<!--                                    </label>-->
-<!--                                </div>-->
-<!--                                <div class="input_group_radio">-->
-<!--                                    <label class="container" for="recruteur"> Recruteur-->
-<!--                                        <input type="radio" id="recruteur" name="role" value="Recruteur">-->
-<!--                                        <span class="checkmark"></span>-->
-<!--                                    </label>-->
-<!--                                </div>-->
-<!--                            </div>-->
-                            <div class="input_group">
-                                <span class="error" id="errorRoleRegister"></span>
+<<<<<<< HEAD
+                        <form action="" method="POST" novalidate id="loginForm">
+                            <div class="two_input">
+                                <div class="input_group_radio">
+                                    <label class="container" for="candidat"> Candidat
+                                        <input type="radio" id="candidat" name="role" value="Candidat">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="input_group_radio">
+                                    <label class="container" for="recruteur"> Recruteur
+                                        <input type="radio" id="recruteur" name="role" value="Recruteur">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
                             </div>
+
+
                             <div class="input_group">
                                 <label for="register_email">Adresse mail</label>
                                 <input type="text" name="register_email" id="register_email" placeholder="email@example.com"">
