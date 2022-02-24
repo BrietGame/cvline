@@ -70,5 +70,16 @@ $(document).ready(function () {
         e.preventDefault();
         closeForgetPwd();
     })
+
+    console.log(document.location.href);
+    function getParamURL() {
+        var str = document.location.href;
+        var url = new URL(str);
+        var name = url.searchParams.get("error");
+        return name;
+    }
+    if (getParamURL() == 'login') {
+        notLogged();
+    }
 });
 
