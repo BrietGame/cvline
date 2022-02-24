@@ -1,70 +1,81 @@
-[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
+[![logo](https://cvline.alexis-briet.fr/wp-content/themes/cvline/asset/img/cvline_blue.svg)]()
+# CVLine
+[![forthebadge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/BrietGame/cvline)
+[![forthebadge](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/fr/docs/Web/HTML)
+[![forthebadge](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/fr/docs/Web/CSS)
+[![forthebadge](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)](https://sass-lang.com)
+[![forthebadge](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/fr/docs/Web/JavaScript)
+[![forthebadge](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)](php.net)
+[![forthebadge](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/fr/)
 
-_s
-===
+[![forthebadge](https://i.ibb.co/S0wNCnd/nfs.png)](https://www.needfor-school.com)
+Projet collaboratif entre 3 personnes au sein de la Formation 1BCIA chez [Need For School](https://www.needfor-school.com).
 
-Hi. I'm a starter theme called `_s`, or `underscores`, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
 
-My ultra-minimal CSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
+## Pour commencer
+Avoir installé [GIT](https://git-scm.com), [Composer](https://getcomposer.org) ainsi que de créer et d'ouvrir un nouveau dossier avec votre IDE favori !
 
-* A modern workflow with a pre-made command-line interface to turn your project into a more pleasant experience.
-* A just right amount of lean, well-commented, modern, HTML5 templates.
-* A custom header implementation in `inc/custom-header.php`. Just add the code snippet found in the comments of `inc/custom-header.php` to your `header.php` template.
-* Custom template tags in `inc/template-tags.php` that keep your templates clean and neat and prevent code duplication.
-* Some small tweaks in `inc/template-functions.php` that can improve your theming experience.
-* A script at `js/navigation.js` that makes your menu a toggled dropdown on small screens (like your phone), ready for CSS artistry. It's enqueued in `functions.php`.
-* 2 sample layouts in `sass/layouts/` made using CSS Grid for a sidebar on either side of your content. Just uncomment the layout of your choice in `sass/style.scss`.
-Note: `.no-sidebar` styles are automatically loaded.
-* Smartly organized starter CSS in `style.css` that will help you to quickly get your design off the ground.
-* Full support for `WooCommerce plugin` integration with hooks in `inc/woocommerce.php`, styling override woocommerce.css with product gallery features (zoom, swipe, lightbox) enabled.
-* Licensed under GPLv2 or later. :) Use it to make something cool.
+### Pré-requis
 
-Installation
----------------
+Ce qu'il est requis pour commencer avec votre projet...
 
-### Requirements
+- Installer [GIT](https://git-scm.com)
+- Installer [Composer](https://getcomposer.org)
+- Initier un nouveau projet [WordPress](https://fr.wordpress.org/download/)
 
-`_s` requires the following dependencies:
 
-- [Node.js](https://nodejs.org/)
-- [Composer](https://getcomposer.org/)
+### Installation
 
-### Quick Start
+1 - Ouvrir votre dossier WordPress dans votre explorateur de fichiers.
 
-Clone or download this repository, change its name to something else (like, say, `megatherium-is-awesome`), and then you'll need to do a six-step find and replace on the name in all the templates.
+2 - Allez à wp-content/themes.
 
-1. Search for `'_s'` (inside single quotations) to capture the text domain and replace with: `'megatherium-is-awesome'`.
-2. Search for `_s_` to capture all the functions names and replace with: `megatherium_is_awesome_`.
-3. Search for `Text Domain: _s` in `style.css` and replace with: `Text Domain: megatherium-is-awesome`.
-4. Search for <code>&nbsp;_s</code> (with a space before it) to capture DocBlocks and replace with: <code>&nbsp;Megatherium_is_Awesome</code>.
-5. Search for `_s-` to capture prefixed handles and replace with: `megatherium-is-awesome-`.
-6. Search for `_S_` (in uppercase) to capture constants and replace with: `MEGATHERIUM_IS_AWESOME_`.
+3 - Ouvrir votre termine à cet endroit.
 
-Then, update the stylesheet header in `style.css`, the links in `footer.php` with your own information and rename `_s.pot` from `languages` folder to use the theme's slug. Next, update or delete this readme.
+4 - Exécuter cette commande après avoir créer un nouveau dossier et après l'avoir ouvert dans votre IDE : ``git init``
 
-### Setup
+5 - Exécuter cette commande : ``git clone https://github.com/BrietGame/cvline.git ``
 
-To start using all the tools that come with `_s`  you need to install the necessary Node.js and Composer dependencies :
+6 - Veuillez installer HTML2PDF grâce à Composer : ``composer require spipu/html2pdf"``
+> [Documentation pour HTML2PDF](https://github.com/spipu/html2pdf/blob/master/doc/README.md)
 
-```sh
-$ composer install
-$ npm install
-```
+Ensuite, vous obtiendrez tout le projet réalisé en *localhost*.
 
-### Available CLI commands
 
-`_s` comes packed with CLI commands tailored for WordPress theme development :
+## Démarrage
 
-- `composer lint:wpcs` : checks all PHP files against [PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/).
-- `composer lint:php` : checks all PHP files for syntax errors.
-- `composer make-pot` : generates a .pot file in the `languages/` directory.
-- `npm run compile:css` : compiles SASS files to css.
-- `npm run compile:rtl` : generates an RTL stylesheet.
-- `npm run watch` : watches all SASS files and recompiles them to css when they change.
-- `npm run lint:scss` : checks all SASS files against [CSS Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/css/).
-- `npm run lint:js` : checks all JavaScript files against [JavaScript Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/javascript/).
-- `npm run bundle` : generates a .zip archive for distribution, excluding development and system files.
+*Attention, nous utilisons la technologie Sass pour compiler notre CSS. Afin de l'utiliser convenablement, il faut exécuter la commande suivante dans un nouveau terminal distinct dans **asset/sass/style.scss** de vos commandes GIT* : ``sass style.scss ../../style.css --watch``
 
-Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
+# Important
+Vous devez créer les pages suivantes dans votre WordPress :
+- **NOM DE LA PAGE** (/slug) NomDuModele
+- **Accueil** (/) HomePage | **A définir en tant que page d'accueil dans** *Réglages > Lecture*
+- **Mentions légales** (/legals) Legals
+- **CV1** (/template-cv1) cv1
+- **Déconnexion** (/logout) Logout
+- **Espace Candidat** (/espace-candidat) EspaceCandidat
+- **Espace Recruteur** (/espace-recruteur) EspaceRecruteur
+- **FAQ** (/faq) FAQ
+- **Générer un CV** (/generer-cv) GenerationCv
+- **CVCreate** (/cv-create) CreateCV
+- **Mon Espace** (/mon-espace) editProfil
 
-Good luck!
+
+## Fabriqué avec
+
+
+_Outils utilisés :_
+* [GitHub](https://github.com/) - Héberge le répertoire du projet
+* [Animista](https://animista.net) - Librairie d'animations CSS
+
+## Versions
+
+**Dernière version stable :** 1.0
+
+**Dernière version :** 1.0
+
+## Auteurs
+* **Jody PINTO** _alias_ [@PintoJody](https://github.com/PintoJody)
+* **Alexis BRIET** _alias_ [@BΓΙΣΤGΛΠΣ](https://github.com/BrietGame)
+* **Anais CRENIER** _alias_ [@AnaisCrenier](https://github.com/anaiscrenier)
+* **Luc DORMAND** _alias_ [@𝑻𝒘_𝒀𝒂𝑩](https://github.com/lucdormand)
