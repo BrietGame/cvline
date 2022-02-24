@@ -20,18 +20,24 @@
       top: 25%; 
       width: 100%;
       text-align: center;
-      margin-top: 30px;
+      margin-top: -50px;
     }
     a {
       padding: 8px;
       text-decoration: none;
-      font-size: 36px;
+      font-size: 1rem;
       color: #818181;
       display: block;
       transition: 0.3s;
     }
     a:hover, a:focus {
       color: #f1f1f1;
+    }
+    .btnBlue {
+      color: $white;
+    }
+    .btnBlue:hover {
+      color: $blue;
     }
     #close {
       padding: 8px;
@@ -199,7 +205,6 @@
 .title {
   color: grey;
 }
-
 .button {
   background-color:  $blue;
   box-sizing: border-box;

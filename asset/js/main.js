@@ -1,43 +1,14 @@
 $(document).ready(function () {
-    // HEADER
+    // HEADER - Menu Principal
     function openMenu() {
         document.getElementById("menuprincipal").className = "popup_header slide-in-left ";
     }
-
     function closeMenu() {
         document.getElementById("menuprincipal").className = "popup_header slide-out-left";
         setTimeout(function () {
             document.getElementById("menuprincipal").className = "displaynone";
         }, 500)
     }
-    function openRegisterMenu() {
-        document.getElementById("auth_popup").className = "popup_sign_form slide-in-left ";
-        document.getElementById("wraphome").className = "displaynone";
-        document.getElementById("footer").className = "displaynone";
-    }
-
-    /* Close when someone clicks on the "x" symbol inside the overlay */
-    function closeRegisterMenu() {
-        document.getElementById("auth_popup").className = "popup_sign_form slide-out-left";
-        setTimeout(function () {
-            document.getElementById("auth_popup").className = "displaynone";
-            document.getElementById("wraphome").className = "wrap1";
-            document.getElementById("footer").className = "";
-        }, 500)
-    }
-
-    function openForgetPwd() {
-        document.getElementById("forgotpwd").className = "overlay slide-in-left ";
-    }
-
-    /* Close when someone clicks on the "x" symbol inside the overlay */
-    function closeForgetPwd() {
-        document.getElementById("forgotpwd").className = "overlay slide-out-left";
-        setTimeout(function () {
-            document.getElementById("forgotpwd").className = "displaynone";
-        }, 500)
-    }
-
     $('#openMenuPrincipal').on('click', function (e) {
         e.preventDefault();
         console.log('MENU');
@@ -49,9 +20,22 @@ $(document).ready(function () {
         closeMenu();
     })
 
-    $('#modalBtn').on('click', function (e) {
-        e.preventDefault();
-        openRegisterMenu();
+    // Popup Inscription
+    function openRegisterMenu() {
+        document.getElementById("auth_popup").className = "popup_sign_form slide-in-left ";
+        document.getElementById("wraphome").className = "displaynone";
+        document.getElementById("footer").className = "displaynone";
+    }
+    function closeRegisterMenu() {
+        document.getElementById("auth_popup").className = "popup_sign_form slide-out-left";
+        setTimeout(function () {
+            document.getElementById("auth_popup").className = "displaynone";
+            document.getElementById("wraphome").className = "wrap1";
+            document.getElementById("footer").className = "";
+        }, 500)
+    }
+    $('#modalBtn3').on('click', function (e) {
+
     })
     $('#modalBtn2').on('click', function (e) {
         e.preventDefault();
@@ -62,6 +46,16 @@ $(document).ready(function () {
         closeRegisterMenu();
     })
 
+    // Popup Mot de passe oublié
+    function openForgetPwd() {
+        document.getElementById("forgotpwd").className = "overlay slide-in-left ";
+    }
+    function closeForgetPwd() {
+        document.getElementById("forgotpwd").className = "overlay slide-out-left";
+        setTimeout(function () {
+            document.getElementById("forgotpwd").className = "displaynone";
+        }, 500)
+    }
     $('#btnForgetPwd').on('click', function (e) {
         e.preventDefault();
         openForgetPwd();
@@ -70,5 +64,22 @@ $(document).ready(function () {
         e.preventDefault();
         closeForgetPwd();
     })
+
+    // Récupérer les paramètres d'une URL
+    function getParamURL(tag, str) {
+        var url = new URL(str);
+        var name = url.searchParams.get(tag);
+        return name;
+    }
+    if (getParamURL('error', document.location.href) == 'login') {
+        notLogged();
+    }
+    if (getParamURL('red', document.location.href) == 'mon-espace' || getParamURL('red', document.location.href) == 'auth') {
+        openRegisterMenu();
+    }
+    if (getParamURL('access', document.location.href) == 'denied') {
+        console.log('DENIED');
+        deniedAccess();
+    }
 });
 

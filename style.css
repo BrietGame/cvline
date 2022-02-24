@@ -456,6 +456,8 @@ header .popup_header {
   transition: 0.5s;
 }
 header .popup_header .overlay-content {
+  display: flex;
+  flex-flow: column nowrap;
   position: relative;
   top: 25%;
   width: 100%;
@@ -468,12 +470,12 @@ header .popup_header a {
   text-decoration: none;
   font-size: 1rem;
   color: white;
-  display: block;
   font-family: Libre Franklin, sans-serif;
 }
 header .popup_header div > a:nth-child(2) a:nth-child(2):focus, header .popup_header a:nth-child(2):hover,
 header .popup_header div > a:nth-child(3) a:nth-child(3):focus, header .popup_header a:nth-child(3):hover,
-header .popup_header div > a:nth-child(4) a:nth-child(4):focus, header .popup_header a:nth-child(4):hover {
+header .popup_header div > a:nth-child(4) a:nth-child(4):focus, header .popup_header a:nth-child(4):hover,
+header .popup_header div > a:nth-child(5) a:nth-child(5):focus, header .popup_header a:nth-child(5):hover {
   color: #2A4876;
   background-color: white;
   max-width: 200px;
@@ -607,18 +609,24 @@ nav ul li a:hover {
   top: 25%;
   width: 100%;
   text-align: center;
-  margin-top: 30px;
+  margin-top: -50px;
 }
 #home .popup_sign_form a {
   padding: 8px;
   text-decoration: none;
-  font-size: 36px;
+  font-size: 1rem;
   color: #818181;
   display: block;
   transition: 0.3s;
 }
 #home .popup_sign_form a:hover, #home .popup_sign_form a:focus {
   color: #f1f1f1;
+}
+#home .popup_sign_form .btnBlue {
+  color: #FFFFFF;
+}
+#home .popup_sign_form .btnBlue:hover {
+  color: #2A4876;
 }
 #home .popup_sign_form #close {
   padding: 8px;
@@ -800,7 +808,7 @@ nav ul li a:hover {
 #login_register .wrap h2 {
   font-family: Noto Serif, serif;
   text-align: center;
-  color: #2A4876;
+  color: #FFFFFF;
   font-size: 2rem;
 }
 #login_register .wrap #submitted_register:hover {
@@ -827,6 +835,12 @@ nav ul li a:hover {
 }
 #login_register .wrap .container_islogged .right .btnWhite, #login_register .wrap .container_islogged .right .btnBlue {
   font-size: 1rem;
+}
+@media screen and (max-width: 600px) {
+  #login_register .wrap .container_islogged {
+    flex-flow: column nowrap;
+    align-items: center;
+  }
 }
 #login_register .wrap #submitted_login {
   padding: 0.5rem;
@@ -1079,171 +1093,151 @@ nav ul li a:hover {
   color: #2A4876;
   padding-bottom: 3rem;
 }
-#profil .input_group {
-  display: flex;
-  flex-flow: column nowrap;
-  margin: 1rem auto;
-}
-#profil .input_group input {
-  background: none;
-  border: none;
-  border-bottom: 2px solid #000000;
-  padding: 0.3rem 0.4rem;
-  font-family: Libre Franklin, sans-serif;
-  color: #000000;
-}
-#profil .input_group input::placeholder {
-  font-family: Libre Franklin, sans-serif;
-  color: rgba(0, 0, 0, 0.5);
-}
-#profil .two_input {
-  display: flex !important;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  margin: 1rem auto;
-}
-#profil .two_input .input_group {
-  width: 50%;
-  margin: 0;
-}
-#profil .wrap3 .titre h1 {
+#profil .wrap .titre h1 {
   display: flex;
   justify-content: center;
-  font-size: 55px;
+  font-size: 3rem;
   color: #2A4876;
   font-family: Noto Serif, serif;
   font-weight: 400;
   padding: 2rem 0rem 5rem;
 }
-#profil .wrap3 #conteneurProfil {
-  display: flex;
+@media screen and (max-width: 700px) {
+  #profil .wrap .titre h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
 }
-#profil .wrap3 #conteneurProfil .profilUser {
+#profil .wrap #conteneurProfil {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+}
+#profil .wrap #conteneurProfil .profilUser {
+  width: 45%;
+}
+#profil .wrap #conteneurProfil .profilUser .imgProfil {
+  width: 50%;
+  min-width: 200px;
+}
+#profil .wrap #conteneurProfil .profilUser .imgProfil img {
+  width: 100%;
+}
+#profil .wrap #conteneurProfil .profilUser .btnGroup {
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+  max-width: 300px;
+}
+#profil .wrap #conteneurProfil .profilUser .btnGroup .btnBlue {
+  display: initial;
+}
+#profil .wrap #conteneurProfil .profilUser .btnGroup .btnWhite {
+  margin: 2rem 0;
+}
+@media screen and (max-width: 700px) {
+  #profil .wrap #conteneurProfil .profilUser {
+    width: auto;
+  }
+  #profil .wrap #conteneurProfil .profilUser .imgProfil {
+    width: auto;
+  }
+}
+#profil .wrap #conteneurProfil .formulaire {
   width: 40%;
 }
-#profil .wrap3 #conteneurProfil .profilUser .btnGroup {
-  padding: 8rem 0 0 6rem;
-}
-#profil .wrap3 #conteneurProfil .profilUser .btnGroup .btnGroup3 {
-  padding-bottom: 3rem;
-  align-items: center;
-}
-#profil .wrap3 #conteneurProfil .profilUser .imgProfil {
-  display: flex;
-  justify-content: center;
-}
-#profil .wrap3 #conteneurProfil .profilUser .imgProfil img {
-  width: 200px;
-  height: 214px;
-  border-radius: 50%;
-  overflow: hidden;
-}
-#profil .wrap3 #conteneurProfil .formulaire {
-  width: 40%;
-}
-#profil .wrap3 #conteneurProfil .formulaire .form {
+#profil .wrap #conteneurProfil .formulaire .form {
   gap: 2rem;
 }
-#profil .wrap3 #conteneurProfil .formulaire .form .two_input {
+#profil .wrap #conteneurProfil .formulaire .form .two_input {
   display: flex;
   gap: 1rem;
   padding-bottom: 1rem;
 }
-#profil .wrap3 #conteneurProfil .formulaire .form .pays {
+#profil .wrap #conteneurProfil .formulaire .form .pays {
   padding-top: 1rem;
 }
-
-@media only screen and (min-width: 390px) {
-  #profil .wrap3 .titre h1 {
-    font-size: 27px;
-    text-align: center;
-    padding: 1rem;
+@media screen and (max-width: 700px) {
+  #profil .wrap #conteneurProfil .formulaire {
+    width: 100%;
   }
-  #profil .wrap3 #conteneurProfil {
-    display: inherit;
-  }
-  #profil .wrap3 #conteneurProfil .profilUser {
-    width: 94%;
-  }
-  #profil .wrap3 #conteneurProfil .profilUser .imgProfil img {
-    height: 134px;
-    width: 133px;
-  }
-  #profil .wrap3 #conteneurProfil .profilUser .btnGroup {
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
+}
+@media screen and (max-width: 700px) {
+  #profil .wrap #conteneurProfil {
+    flex-flow: column nowrap;
     align-items: center;
-    flex-direction: column;
   }
-  #profil .wrap3 #conteneurProfil .formulaire {
-    width: 77%;
-    padding: 0 0 0 4rem;
-  }
-  #profil .btnBlue {
-    font-size: 13px;
-    padding: 2px;
-  }
-  #profil .btnWhite {
-    font-size: 13px;
-    padding: 2px;
+  #profil .wrap #conteneurProfil .profilUser .btnGroup {
+    align-items: center;
   }
 }
-@media only screen and (min-width: 720px) {
-  #profil .wrap3 .titre h1 {
-    font-size: 40px;
-  }
-  #profil .wrap3 #conteneurProfil {
-    display: inherit;
-  }
-  #profil .wrap3 #conteneurProfil .profilUser {
-    width: 94%;
-  }
-  #profil .wrap3 #conteneurProfil .profilUser .imgProfil img {
-    height: 134px;
-    width: 133px;
-  }
-  #profil .wrap3 #conteneurProfil .formulaire {
-    padding: 1rem 1rem 0 9rem;
-  }
-  #profil .btnBlue {
-    font-size: 1rem;
-    padding: 0.2rem 2.5rem;
-  }
-  #profil .btnWhite {
-    font-size: 1rem;
-    padding: 0.2rem 1.5rem;
-  }
+
+#faq .wrap {
+  margin-top: 10rem;
 }
-@media only screen and (min-width: 1024px) {
-  #profil .wrap3 .titre h1 {
-    font-size: 55px;
-  }
-  #profil .wrap3 #conteneurProfil {
-    display: flex;
-  }
-  #profil .wrap3 #conteneurProfil .profilUser {
-    width: 40%;
-  }
-  #profil .wrap3 #conteneurProfil .profilUser .imgProfil img {
-    display: flex;
-    justify-content: center;
-  }
-  #profil .wrap3 #conteneurProfil .profilUser .btnGroup {
-    padding: 8rem 0 0 6rem;
-    display: inherit;
-  }
-  #profil .wrap3 #conteneurProfil .btnBlue {
-    padding: 0.2rem 2.5rem;
-  }
-  #profil .wrap3 #conteneurProfil .btnWhite {
-    padding: 0.2rem 1.5rem;
-  }
-  #profil .wrap3 #conteneurProfil .formulaire {
-    width: 50%;
-  }
+#faq h2 {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  color: #2A4876;
 }
+#faq .accordion {
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  color: white;
+  background: #2A4876;
+}
+#faq .active, #faq .accordion:hover {
+  background-color: #FFFFFF;
+  color: #2A4876;
+  border: solid 1px #2A4876;
+}
+#faq .panel {
+  padding: 1rem;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  color: #2A4876;
+  font-family: Libre Franklin, sans-serif;
+}
+#faq .panel p {
+  font-family: Libre Franklin, sans-serif;
+}
+
+#legals .wrap .title {
+  font-family: Noto Serif, serif;
+  font-size: 3rem;
+  color: #2A4876;
+  text-align: center;
+}
+#legals .wrap #title_section {
+  font-family: Noto Serif, serif;
+  font-size: 2rem;
+  color: #2A4876;
+  padding: 3rem 0;
+}
+#legals .wrap h3 {
+  font-family: Noto Serif, serif;
+  font-size: 1.5rem;
+  color: #2A4876;
+  padding: 1rem 0;
+}
+#legals .wrap p {
+  font-family: Libre Franklin, sans-serif;
+}
+#legals .wrap strong {
+  color: #2A4876;
+}
+#legals .wrap a {
+  color: #2A4876;
+  text-decoration-line: underline;
+}
+
 #candidat .header {
   background-image: url("../cvline/asset/img/bg/banner_candidat.jpg");
   background-repeat: no-repeat;
@@ -1313,72 +1307,6 @@ nav ul li a:hover {
   background-color: #4CAF50;
   color: white;
   border: 1px solid #4CAF50;
-}
-
-#faq .wrap {
-  margin-top: 10rem;
-}
-#faq h2 {
-  font-size: 3rem;
-  display: flex;
-  justify-content: center;
-  color: #2A4876;
-}
-#faq .accordion {
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  outline: none;
-  transition: 0.4s;
-  color: white;
-  background: #2A4876;
-}
-#faq .active, #faq .accordion:hover {
-  background-color: #FFFFFF;
-  color: #2A4876;
-  border: solid 1px #2A4876;
-}
-#faq .panel {
-  padding: 1rem;
-  background-color: white;
-  display: none;
-  overflow: hidden;
-  color: #2A4876;
-  font-family: Libre Franklin, sans-serif;
-}
-#faq .panel p {
-  font-family: Libre Franklin, sans-serif;
-}
-
-#legals .wrap .title {
-  font-family: Noto Serif, serif;
-  font-size: 3rem;
-  color: #2A4876;
-  text-align: center;
-}
-#legals .wrap #title_section {
-  font-family: Noto Serif, serif;
-  font-size: 2rem;
-  color: #2A4876;
-  padding: 3rem 0;
-}
-#legals .wrap h3 {
-  font-family: Noto Serif, serif;
-  font-size: 1.5rem;
-  color: #2A4876;
-  padding: 1rem 0;
-}
-#legals .wrap p {
-  font-family: Libre Franklin, sans-serif;
-}
-#legals .wrap strong {
-  color: #2A4876;
-}
-#legals .wrap a {
-  color: #2A4876;
-  text-decoration-line: underline;
 }
 
 #recruteur .header {
@@ -1472,7 +1400,9 @@ nav ul li a:hover {
 }
 #generate_cv #fil_ariane {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
   gap: 0.1rem;
   padding-bottom: 3rem;
 }
@@ -1501,6 +1431,12 @@ nav ul li a:hover {
 #generate_cv #fil_ariane #step .text {
   font-family: Noto Serif, serif;
   color: #2A4876;
+}
+@media screen and (max-width: 700px) {
+  #generate_cv #fil_ariane #step {
+    text-align: justify;
+    min-width: 200px;
+  }
 }
 #generate_cv #fil_ariane .active {
   background-color: #2A4876 !important;
@@ -1546,6 +1482,11 @@ nav ul li a:hover {
   background-color: #FFFFFF;
   transition: 0.8s;
 }
+@media screen and (max-width: 700px) {
+  #generate_cv .btnForm {
+    flex-flow: column nowrap;
+  }
+}
 #generate_cv #todo {
   /* Style the list items */
   /* Set all odd list items to a different color (zebra-stripes) */
@@ -1556,8 +1497,6 @@ nav ul li a:hover {
   /* Style the "Add" button */
 }
 #generate_cv #todo #result_search_skill, #generate_cv #todo #result_search_hobbie {
-  background-image: url("/css/searchicon.png");
-  /* Add a search icon to input */
   background-position: 10px 12px;
   /* Position the search icon */
   background-repeat: no-repeat;
@@ -1646,12 +1585,11 @@ nav ul li a:hover {
 }
 #generate_cv #todo .addBtn {
   padding: 10px;
-  width: 25%;
   background: #d9d9d9;
   color: #555;
   float: left;
   text-align: center;
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
   transition: 0.3s;
   border-radius: 0;
@@ -1665,10 +1603,23 @@ nav ul li a:hover {
   color: #2A4876;
   margin-top: 2rem;
 }
+@media screen and (max-width: 700px) {
+  #generate_cv #vueCvFinal .title_section {
+    text-align: center;
+  }
+}
 #generate_cv #vueCvFinal .expandparcours {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+}
+@media screen and (max-width: 700px) {
+  #generate_cv #vueCvFinal .expandparcours {
+    justify-content: center;
+  }
+  #generate_cv #vueCvFinal .expandparcours .left, #generate_cv #vueCvFinal .expandparcours .right {
+    gap: 0.5rem;
+  }
 }
 #generate_cv #vueCvFinal .stats {
   display: flex;
@@ -1705,6 +1656,12 @@ nav ul li a:hover {
   font-family: Noto Serif, serif;
   color: #FFFFFF;
 }
+@media screen and (max-width: 700px) {
+  #generate_cv #vueCvFinal .stats {
+    flex-flow: column;
+    align-items: center;
+  }
+}
 #generate_cv #vueCvFinal .generateGlobalInfo {
   padding: 1rem;
 }
@@ -1733,6 +1690,17 @@ nav ul li a:hover {
   font-family: Libre Franklin, sans-serif;
   color: #2A4876;
 }
+@media screen and (max-width: 700px) {
+  #generate_cv #vueCvFinal .generateGlobalInfo .container {
+    flex-flow: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+  #generate_cv #vueCvFinal .generateGlobalInfo .container .left, #generate_cv #vueCvFinal .generateGlobalInfo .container .right {
+    gap: 0.5rem;
+  }
+}
 #generate_cv #vueCvFinal .generateExp, #generate_cv #vueCvFinal .generateSchoolCv {
   padding: 1rem;
 }
@@ -1740,9 +1708,15 @@ nav ul li a:hover {
   background-color: #FFF;
   border: 2px solid #2A4876;
   padding: 0.4rem;
+  margin: 1rem;
 }
 #generate_cv #vueCvFinal .generateExp .bloc p, #generate_cv #vueCvFinal .generateSchoolCv .bloc p {
   width: 300px;
+}
+@media screen and (max-width: 700px) {
+  #generate_cv #vueCvFinal .generateExp .bloc p, #generate_cv #vueCvFinal .generateSchoolCv .bloc p {
+    width: auto;
+  }
 }
 #generate_cv #vueCvFinal .generateExp .bloc .container, #generate_cv #vueCvFinal .generateSchoolCv .bloc .container {
   display: flex;
@@ -1770,6 +1744,11 @@ nav ul li a:hover {
   padding: 1rem 1.5rem;
   background-color: #2A4876;
   color: #FFF;
+}
+@media screen and (max-width: 700px) {
+  #generate_cv #vueCvFinal .generateSkillsCv, #generate_cv #vueCvFinal .generateHobbiesCv {
+    justify-content: center;
+  }
 }
 #generate_cv .finalBtn {
   display: flex;

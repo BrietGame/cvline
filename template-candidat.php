@@ -1,8 +1,7 @@
 <?php
-if (!is_user_logged_in()) {
-    wp_redirect(admin_url() . '../login');
-}
 /* Template Name: EspaceCandidat */
+isNotLogged();
+deniedAccessRole('Recruteur');
 //debug($getCvInfoGlobal);
 //debug($getCvInfo);
 
@@ -38,21 +37,6 @@ if (!is_user_logged_in()) {
             </div>
     </div>
 
-</section>
-<section id="pagination_candidat">
-
-    <div class="center">
-        <div class="pagination">
-            <a href="#">&laquo;</a>
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">6</a>
-            <a href="#">&raquo;</a>
-        </div>
-    </div>
 </section>
 <?php
 get_footer();

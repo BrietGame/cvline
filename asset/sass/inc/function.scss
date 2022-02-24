@@ -40,12 +40,12 @@
   transition: .8s;
 }
 .btnBlue {
-  color: #FFFFFF;
+  color: $white;
   font-family: Libre Franklin, sans-serif;
   font-size: 1rem;
-  background-color: #2A4876;
+  background-color: $blue;
   transition: 0.8s;
-  border: 1px solid #2A4876;
+  border: 1px solid $blue;
   display: flex;
   align-items: center;
   gap: 1rem;
