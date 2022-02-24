@@ -1,6 +1,8 @@
 console.log('Ok Ajax school');
 
 allSchool = [];
+let vide2 = true;
+
 $(document).ready(function () {
 
     const addMoreSchool = $('#addMoreSchool');
@@ -41,11 +43,19 @@ $(document).ready(function () {
                 $('.error').html('')
             },
             success: function (res) {
+
                 allSchool.push(res);
                 console.log(allSchool)
-
                 if (res.success) {
+                    vide2 = false;
                     console.log('success')
+                    underStepSuccess('parcours');
+                    $('#js_school_start').val('');
+                    $('#js_school_end').val('');
+                    $('#js_school_formation').val('');
+                    $('#js_school_name').val('');
+                    $('#js_school_place').val('');
+                    $('#js_school_description').val('');
                 } else {
                     if (res.errors.school_start != null) {
                         errorSchoolStart.html(res.errors.school_start)
@@ -73,102 +83,137 @@ $(document).ready(function () {
 
     $('#school_cv').on('submit', function (e) {
         e.preventDefault();
+        if (vide2 === false) {
+            stepSuccess();
+            recapInfo();
+            submitButton.prop("disabled", true);
+            dataFinal.push(allSchool);
+            console.log(dataFinal)
+            $('#step[data-id="5"]').removeClass('active');
+            $('#step[data-id="5"]').addClass('success');
+            $('#step_five').removeClass('wrap1');
+            $('#step_five').addClass('displaynone');
 
-        submitButton.prop("disabled", true);
-        dataFinal.push(allSchool);
-        console.log(dataFinal)
-        $('#step[data-id="5"]').removeClass('active');
-        $('#step[data-id="5"]').addClass('success');
-        $('#step_five').removeClass('wrap1');
-        $('#step_five').addClass('displaynone');
+            $('#step[data-id="6"]').toggleClass('active');
+            $('#step_six').removeClass('displaynone');
+            $('#step_six').addClass('wrap');
 
-        $('#step[data-id="6"]').toggleClass('active');
-        $('#step_six').removeClass('displaynone');
-        $('#step_six').addClass('wrap1');
+            const generateGlobalInfo = $('.generateGlobalInfo');
+            const generateExpCv = $('.generateExp');
+            const generateSkillsCv = $('.generateSkillsCv');
+            const generateHobbiesCv = $('.generateHobbiesCv');
+            const generateSchoolCv = $('.generateSchoolCv');
 
-        const generateGlobalInfo = $('.generateGlobalInfo');
-        const generateExpCv = $('.generateExp');
-        const generateSkillsCv = $('.generateSkillsCv');
-        const generateHobbiesCv = $('.generateHobbiesCv');
-        const generateSchoolCv = $('.generateSchoolCv');
-
-        const generateGlobalInfoHtml = `
-                <h2>${dataFinal[0].post_search}</h2>
-                <p>Nom : ${dataFinal[0].surname}</p>
-                <p>Prenom : ${dataFinal[0].name}</p>
-                <p>Date de naissance : ${dataFinal[0].birthday}</p>
-                <p>Telephone : ${dataFinal[0].phone}</p>
-                <p>Adresse : ${dataFinal[0].adress}</p>
-                <p>Ville : ${dataFinal[0].city}</p>
-                <p>Postal : ${dataFinal[0].postal}</p>
-                <p>Email : ${dataFinal[0].email}</p>   
+            const generateGlobalInfoHtml = `
+                <h2 class="post_search">${dataFinal[0].post_search}</h2>
+                <div class="container">
+                    <div class="left">
+                        <p>Nom : <span>${dataFinal[0].surname}</span></p>
+                        <p>Prenom : <span>${dataFinal[0].name}</span></p>
+                        <p>Date de naissance : <span>${dataFinal[0].birthday}</span></p>
+                        <p>Telephone : <span>${dataFinal[0].phone}</span></p>
+                    </div>
+                    <div class="right">
+                        <p>Adresse : <span>${dataFinal[0].adress}</span></p>
+                        <p>Ville : <span>${dataFinal[0].city}</span></p>
+                        <p>Postal : <span>${dataFinal[0].postal}</span></p>
+                        <p>Email : <span>${dataFinal[0].email}</span></p>   
+                    </div>
+                </div>
         `
 
-        generateGlobalInfo.append(generateGlobalInfoHtml);
+            generateGlobalInfo.append(generateGlobalInfoHtml);
 
+            let totalExp = 0;
+            let totalSkill = 0;
+            let totalLoisir = 0;
+            let totalSchool = 0;
 
-        $.each(dataFinal[1], function (count) {
+            $.each(dataFinal[1], function (count) {
 
-            const startExp = Object.values(dataFinal[1][count])[0].predate;
-            const endExp = Object.values(dataFinal[1][count])[0].lastdate;
-            const postName = Object.values(dataFinal[1][count])[0].postname;
-            const entrepriseName = Object.values(dataFinal[1][count])[0].entreprisename;
-            const postPlace = Object.values(dataFinal[1][count])[0].postplace;
-            const postDescription = Object.values(dataFinal[1][count])[0].postdescription;
-            const generateExpHtml = ` 
-                                 
-                                  <p>Début : ${startExp}</p>
-                                  <p>Fin : ${endExp}</p>
-                                  <p>Nom du poste : ${postName}</p>
-                                  <p>Entreprise : ${entrepriseName}</p>
-                                  <p>Lieu : ${postPlace}</p>
-                                  <p>Description : ${postDescription}</p>
-                             
+                const startExp = Object.values(dataFinal[1][count])[0].predate;
+                const endExp = Object.values(dataFinal[1][count])[0].lastdate;
+                const postName = Object.values(dataFinal[1][count])[0].postname;
+                const entrepriseName = Object.values(dataFinal[1][count])[0].entreprisename;
+                const postPlace = Object.values(dataFinal[1][count])[0].postplace;
+                const postDescription = Object.values(dataFinal[1][count])[0].postdescription;
+                const generateExpHtml = ` 
+                                <div class="bloc">
+                                    <div class="container">
+                                        <div class="left">
+                                            <span class="title">${postName}</span>
+                                            <span class="under_title">${entrepriseName}</span>
+                                        </div>
+                                        <div class="right">
+                                            <span class="title">${startExp} - ${endExp}</span>
+                                            <span class="under_title">${postPlace}</span>
+                                        </div>
+                                    </div>
+                                    <p>${postDescription}</p>
+                                </div>
                                     `
-            generateExpCv.append(generateExpHtml);
-        });
+                totalExp += 1;
+                generateExpCv.append(generateExpHtml);
+            });
 
-        $.each(dataFinal[2], function (count) {
+            $.each(dataFinal[2], function (count) {
 
-            const skillsName = dataFinal[2][count];
+                const skillsName = dataFinal[2][count];
+                const generateSkills = `
+                <span class="bloc">${skillsName}</span>
+            `
+                totalSkill += 1;
+                generateSkillsCv.append(generateSkills);
+            });
 
-            const generateSkills = `
-                <p>${skillsName}</p>
+            $.each(dataFinal[3], function (count) {
+
+                const hobbiesName = dataFinal[3][count];
+
+                const generateHobbies = `
+                <span class="bloc">${hobbiesName}</span>
             `
 
-            generateSkillsCv.append(generateSkills);
-        });
+                totalLoisir += 1;
+                generateHobbiesCv.append(generateHobbies);
+            });
 
-        $.each(dataFinal[3], function (count) {
+            $.each(dataFinal[4], function (count) {
 
-            const hobbiesName = dataFinal[3][count];
+                const schoolDescription = Object.values(dataFinal[4][count])[0].schoolDescription;
+                const schoolEnd = Object.values(dataFinal[4][count])[0].schoolEnd;
+                const schoolFormation = Object.values(dataFinal[4][count])[0].schoolFormation;
+                const schoolName = Object.values(dataFinal[4][count])[0].schoolName;
+                const schoolPlace = Object.values(dataFinal[4][count])[0].schoolPlace;
+                const schoolStart = Object.values(dataFinal[4][count])[0].schoolStart;
 
-            const generateHobbies = `
-                <p>${hobbiesName}</p>
+                const generateSchoolHtml = `
+
+                <div class="bloc">
+                    <div class="container">
+                        <div class="left">
+                            <span class="title">${schoolFormation}</span>
+                            <span class="under_title">${schoolName}</span>
+                        </div>
+                        <div class="right">
+                            <span class="title">${schoolStart} - ${schoolEnd}</span>
+                            <span class="under_title">${schoolPlace}</span>
+                        </div>
+                    </div>
+                    <p>${schoolDescription}</p>
+                </div>
             `
+                totalSchool += 1;
 
-            generateHobbiesCv.append(generateHobbies);
-        });
+                generateSchoolCv.append(generateSchoolHtml);
+            });
+            $('#exp_count').append(`<span class="nb">${totalExp}</span><span class="text">Expérience(s) renseignée(s)</span>`);
+            $('#skill_count').append(`<span class="nb">${totalSkill}</span><span class="text">Compétence(s) renseignée(s)</span>`);
+            $('#loisir_count').append(`<span class="nb">${totalLoisir}</span><span class="text">Loisir(s) renseigné(s)</span>`);
+            $('#school_count').append(`<span class="nb">${totalSchool}</span><span class="text">Parcours renseigné(s)</span>`);
 
-        $.each(dataFinal[4], function (count) {
-
-            const schoolDescription = Object.values(dataFinal[4][count])[0].schoolDescription;
-            const schoolEnd = Object.values(dataFinal[4][count])[0].schoolEnd;
-            const schoolFormation = Object.values(dataFinal[4][count])[0].schoolFormation;
-            const schoolName = Object.values(dataFinal[4][count])[0].schoolName;
-            const schoolPlace = Object.values(dataFinal[4][count])[0].schoolPlace;
-            const schoolStart = Object.values(dataFinal[4][count])[0].schoolStart;
-
-            const generateSchoolHtml = `
-                <p>${schoolStart}</p>
-                <p>${schoolEnd}</p>
-                <p>${schoolFormation}</p>
-                <p>${schoolName}</p>
-                <p>${schoolPlace}</p>
-                <p>${schoolDescription}</p>
-            `
-            generateSchoolCv.append(generateSchoolHtml);
-        });
-
+        } else {
+            stepError();
+        }
     })
 })

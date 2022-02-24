@@ -1,11 +1,7 @@
 <?php
 
 
-//add_image_size('imgblog',416, 416, true);
-
-
-
-
+add_image_size('imgpicturepresentation',327, 181, true);
 
 
 function remove_default_img_sizes($sizes)

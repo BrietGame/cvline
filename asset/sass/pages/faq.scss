@@ -1,0 +1,45 @@
+#faq {
+
+   .wrap{
+  margin-top: 10rem;
+   }
+  h2 {
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    color: $blue;
+  }
+
+  .accordion {
+
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    color: white;
+    background: $blue;
+  }
+  .active, .accordion:hover {
+    background-color: $white;
+    color: $blue;
+    border: solid 1px $blue;
+  }
+  .panel {
+    padding: 1rem;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    color: $blue;
+    font-family: $franklin;
+
+  }
+  .panel p{
+    font-family: $franklin;
+
+
+  }
+}
+

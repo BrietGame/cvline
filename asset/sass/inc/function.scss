@@ -1,31 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700&family=Noto+Serif:wght@400;700&display=swap');
 
 .btnTransparent{
+
+  max-width: 200px;
+  margin: 0 auto;
   box-sizing: border-box;
-  border-radius: 16px;
-  cursor:pointer;
+  text-shadow: black 0.1em 0.1em 0.2em;
+  cursor: pointer;
   color: $white;
-  font-size: 25px;
+  font-size: 1rem;
   padding: 1rem 2rem 1rem 2rem;
   border: 1px solid $white;
-  Font-family: $noto;
+  font-family: $franklin;
   transition: .8s;
+  opacity: 90%;
 }
 .btnTransparent:hover{
+  text-shadow: white 0.1em 0.1em 0.2em;
+  border-radius: 16px;
   background-color: $white;
-  color: $black;
+  color: $blue;
   transition: .8s;
 }
 
 .btnWhite {
-  color:$blue ;
+  color: $blue;
   border-radius: 16px;
-  font-family:$franklin;
+  font-family: $franklin;
   font-size: 1rem;
   background-color: $white;
   transition: .8s;
-  padding: .2rem 1.5rem;
+  padding: .8rem 1.5rem;
   border: 1px solid $blue;
+  opacity: 90%;
 }
 .btnWhite:hover{
   background-color: $blue;
@@ -34,13 +41,16 @@
 }
 .btnBlue {
   color: $white;
-  border-radius: 16px;
-  font-family: $franklin;
+  font-family: Libre Franklin, sans-serif;
   font-size: 1rem;
   background-color: $blue;
-  padding: .2rem 2.5rem;
-  transition: .8s;
+  transition: 0.8s;
   border: 1px solid $blue;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
+  opacity: 80%;
 
 }
 .btnBlue:hover{
@@ -48,6 +58,7 @@
   border: 1px solid $blue;
   background-color: $white;
   transition: .8s;
+  border-radius: 16px;
 }
 
 .btnBlack{

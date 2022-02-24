@@ -12,6 +12,7 @@ $(document).ready(function () {
     const errorPostal = $('#error_postal');
     const errorCity = $('#error_city');
     const errorBirthday = $('#error_birthday');
+    const errorAbout = $('#error_about_me');
     const errorPhone = $('#error_phone');
 
     $('#global_cv').on('submit', function (e) {
@@ -26,6 +27,7 @@ $(document).ready(function () {
         const postal = $('#js_postal').val();
         const city = $('#js_city').val();
         const birthday = $('#js_birthday').val();
+        const about = $('#js_about_me').val();
         const phone = $('#js_phone').val();
 
         console.log('Clicked');
@@ -42,6 +44,7 @@ $(document).ready(function () {
                 postal: postal,
                 city: city,
                 birthday: birthday,
+                about_me : about,
                 phone: phone,
             },
             beforeSend: function () {
@@ -65,7 +68,10 @@ $(document).ready(function () {
                     createCookie('postal', postal);
                     createCookie('city', city);
                     createCookie('birthday', birthday);
+                    createCookie('about_me', about);
                     createCookie('phone', phone);
+
+                    stepSuccess();
 
                     $('#step[data-id="1"]').removeClass('active');
                     $('#step[data-id="1"]').addClass('success');
@@ -101,6 +107,9 @@ $(document).ready(function () {
                     }
                     if (res.errors.birthday != null) {
                         errorBirthday.html(res.errors.birthday)
+                    }
+                    if(res.errors.about_me != null){
+                        errorAbout.html(res.errors.about_me)
                     }
                     if (res.errors.phone != null) {
                         errorPhone.html(res.errors.phone)

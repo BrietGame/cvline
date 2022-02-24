@@ -1,5 +1,6 @@
 <?php
 /* Template Name: HomePage */
+
 $errors_register = [];
 if (!empty($_POST['submitted_register'])) {
 
@@ -83,7 +84,7 @@ $user = wp_get_current_user();
             <?php if (is_user_logged_in()) { ?>
                 <a class="btnTransparent" id="modalBtn2">Accéder à mon espace</a>
             <?php } else { ?>
-                <a class="btnTransparent" id="modalBtn2">Se créer un compte</a>
+                <a class="btnTransparent" id="modalBtn2">S'authentifier</a>
             <?php } ?>
         </div>
 
@@ -103,17 +104,10 @@ $user = wp_get_current_user();
         </div>
     </div>
 
-    <?php
-    get_footer() ?>
 
-
-    <!-- The overlay -->
-    <div id="myNav" class="displaynone">
-
-        <!-- Button to close the overlay navigation -->
+    <div id="auth_popup" class="displaynone">
         <a href="javascript:void(0)" id="close" class="closebtn" onclick="closeRegisterMenu()">&times;</a>
 
-        <!-- Overlay content -->
         <div id="login_register" class="overlay-content">
             <div class="wrap">
                 <?php if (is_user_logged_in()) { ?>
@@ -173,6 +167,9 @@ $user = wp_get_current_user();
                                 <input type="password" name="confirm_register_password" id="confirm_register_password">
                                 <span id="errorPasswordRegister" class="error"><?= viewError($errors_register, 'register_password') ?></span>
                             </div>
+                            <div class="input_group">
+                                <label for="cgu"><input type="checkbox" id="cgu" name="cgu" value="cgu"> J'accepte les <a class="cgu_link" href="<?= path('/legals') ?>">Conditions Générales d'Utilisations</a> de mes données.</label>
+                            </div>
 
                             <div class="btnForm">
                                 <input type="submit" name="submitted_register" id="submitted_register" value="S'inscrire">
@@ -181,7 +178,7 @@ $user = wp_get_current_user();
                     </div>
                     <div class="right">
                         <h2>Se connecter</h2>
-                        <form action="" method="POST" novalidate>
+                        <form action="" method="POST" novalidate id="registerform">
                             <div class="input_group">
                                 <label for="login">Adresse mail ou nom d'utilisateur</label>
                                 <input type="text" name="login" id="login" placeholder="email@example.com or JohnDoe80" value="">
@@ -194,8 +191,8 @@ $user = wp_get_current_user();
                             </div>
 
                             <div class="btnForm">
-                                <a href="" id="btnForgetPwd" class="btnWhite">Mot de passe oublié</a>
                                 <input type="submit" name="submitted_login" id="submitted_login" value="Se connecter">
+                                <a href="" id="btnForgetPwd" class="btnWhite">Mot de passe oublié</a>
                             </div>
                         </form>
                     </div>
@@ -203,33 +200,73 @@ $user = wp_get_current_user();
             </div>
         </div>
     </div>
-    <!-- The overlay -->
     <div id="forgotpwd" class="displaynone">
-
-        <!-- Button to close the overlay navigation -->
         <a href="javascript:void(0)" id="closeForgetPwd" class="closebtn">&times;</a>
 
-        <!-- Overlay content -->
         <div id="forgot_password" class="overlay-content">
             <div class="wrap">
                 <h2>Mot de passe oublié</h2>
                 <div class="formMp">
-                    <form class="form" action="#" method="post">
-                        <div class="input_group">
-                            <label for="email">Email : </label>
-                            <input type="text" id="email" name="email" value="">
-                        </div>
-                        <div class="btnform">
-                            <input type="submit" name="submitted_mp" id="mp-submitted" value="Récupèrer mon mot de passe">
-                        </div>
-                    </form>
+                    <div id="password-lost-form" class="widecolumn">
+                        <?php if ($attributes['show_title']) : ?>
+                            <h3><?php _e('Mot de passe oublié ?', 'personalize-login'); ?></h3>
+                        <?php endif; ?>
+
+                        <form id="lostpasswordform" action="<?php echo wp_lostpassword_url(); ?>" method="post">
+                            <div class="input_group">
+                                <label for="user_login"><?php _e('Email', 'personalize-login'); ?></label>
+                                <input type="text" name="user_login" id="user_login">
+                            </div>
+
+                            <div class="btnForm">
+                                <input type="submit" name="submit" value="<?php _e('Envoyer la demande de réinitialisation', 'personalize-login'); ?>" />
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <?= get_footer() ?>
-
 </section>
+
+<?php
+$args = array(
+    'post_type' => 'collaborateur',
+    'posts_per_page' => 4,
+    'order' => 'ASC',
+);
+
+$the_query = new WP_Query($args);
+?>
+
+    <section id="collaborateur">
+        <div class="row">
+            <div class="column">
+                 <div class="wrap">
+
+                    <?php if ( $the_query->have_posts() ) {
+                    while ( $the_query->have_posts() ){
+                    $the_query->the_post(); ?>
+                <div class="card">
+
+                    <?php echo getImageFeature(get_the_ID(),'imgpicturepresentation',get_the_title())?>
+                    <div class="container">
+                        <h2><?php echo get_the_title() ?></h2>
+                        <p class="title"><?php echo get_the_content() ?></p>
+                        <p><?php echo get_the_content() ?></p>
+                        <p><?php echo get_the_content() ?></p>
+                        <p class="contenuBtn"><button class="button">Contact</button></p>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+<?php }} ?>
+
+<?= get_footer() ?>
+
 
 <script>
     function showHidePassword(id) {

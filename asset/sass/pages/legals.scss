@@ -1,0 +1,32 @@
+#legals {
+    .wrap {
+        .title {
+            font-family: $noto;
+            font-size: 3rem;
+            color: $blue;
+            text-align: center;
+        }
+        #title_section {
+            font-family: $noto;
+            font-size: 2rem;
+            color: $blue; 
+            padding: 3rem 0;
+        }
+        h3 {
+            font-family: $noto;
+            font-size: 1.5rem;
+            color: $blue;
+            padding: 1rem 0;
+        }
+        p {
+            font-family: $franklin;
+        }
+        strong {
+            color: $blue;
+        }
+        a {
+            color: $blue;
+            text-decoration-line: underline;
+        }
+    }
+}

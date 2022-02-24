@@ -146,6 +146,7 @@ function projet_cvtheques_scripts()
 
     wp_enqueue_style('projet-cvtheques-style', get_stylesheet_uri(), array(), _S_VERSION);
     wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css', array(), '1.0.0');
+    wp_enqueue_style('izitoastcss', 'https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css', array(), '1.0.0');
 
     wp_deregister_script('jquery');
     wp_enqueue_script('jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', array(), '3.6.0', true);
@@ -153,11 +154,11 @@ function projet_cvtheques_scripts()
 
 
     wp_enqueue_script('data-cookie', get_template_directory_uri() . '/asset/js/data-cookie.js', array('jquery'), _S_VERSION, true);
+    wp_enqueue_script('toastjs', get_template_directory_uri() . '/asset/js/toast.js', _S_VERSION, true);
+    wp_enqueue_script('izitoastjs', 'https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.js', _S_VERSION, true);
 
-    if (is_page_template('template-home.php')) {
-        wp_enqueue_script('mainjs', get_template_directory_uri() . '/asset/js/main.js', array('jquery'), _S_VERSION, true);
-        // wp_enqueue_script('ajax-auth', get_template_directory_uri() . '/asset/js/ajax-auth.js', array('jquery'), _S_VERSION, true);
-    }
+    // wp_enqueue_script('ajax-auth', get_template_directory_uri() . '/asset/js/ajax-auth.js', array('jquery'), _S_VERSION, true);
+
 
     if (is_page_template('template-generatecv.php')) {
         wp_enqueue_script('fil-ariane', get_template_directory_uri() . '/asset/js/fil-ariane.js', array('jquery'), _S_VERSION, true);
@@ -168,12 +169,20 @@ function projet_cvtheques_scripts()
         wp_enqueue_script('ajax-skill', get_template_directory_uri() . '/asset/js/ajax-skill.js', array('jquery'), _S_VERSION, true);
         wp_enqueue_script('ajax-hobbie', get_template_directory_uri() . '/asset/js/ajax-hobbie.js', array('jquery'), _S_VERSION, true);
         wp_enqueue_script('ajax-school', get_template_directory_uri() . '/asset/js/ajax-school.js', array('jquery'), _S_VERSION, true);
+        wp_enqueue_script('ajax-recruteur', get_template_directory_uri() . '/asset/js/ajax-recruteur.js', array('jquery'), _S_VERSION, true);
         wp_enqueue_script('ajax-final', get_template_directory_uri() . '/asset/js/ajax-final.js', array('jquery'), _S_VERSION, true);
         wp_add_inline_script('ajax-generatecv', 'const ajaxUrl = ' . json_encode(admin_url('admin-ajax.php')), 'before');
     }
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
+
+    if (is_page_template('template-recruteur.php') || is_page_template('template-candidat.php')) {
+        wp_enqueue_script('search', get_template_directory_uri() . '/asset/js/search.js', array('jquery'), _S_VERSION, true);
+    }
+
+
+    wp_enqueue_script('mainjs', get_template_directory_uri() . '/asset/js/main.js', array('jquery'), _S_VERSION, true);
 }
 add_action('wp_enqueue_scripts', 'projet_cvtheques_scripts');
 
@@ -193,6 +202,15 @@ function my_login_logo()
         }
     </style>
 <?php }
+
+add_action('after_setup_theme', 'remove_admin_bar');
+function remove_admin_bar()
+{
+    if (!current_user_can('administrator') && !is_admin()) {
+        show_admin_bar(false);
+    }
+}
+
 add_action('login_enqueue_scripts', 'my_login_logo');
 
 function my_custom_login()
@@ -200,3 +218,215 @@ function my_custom_login()
     echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/asset/sass/pages/login.scss" />';
 }
 add_action('login_head', 'my_custom_login');
+
+/* 
+
+MOT DE PASSE OUBLIE | INSCRIPTION | CONNEXION
+
+*/
+
+/**
+ * Finds and returns a matching error message for the given error code.
+ *
+ * @param string $error_code    The error code to look up.
+ *
+ * @return string               An error message.
+ */
+function get_error_message($error_code)
+{
+    switch ($error_code) {
+        case 'empty_username':
+            return __('You do have an email address, right?', 'personalize-login');
+
+        case 'empty_password':
+            return __('You need to enter a password to login.', 'personalize-login');
+
+        case 'invalid_username':
+            return __(
+                "We don't have any users with that email address. Maybe you used a different one when signing up?",
+                'personalize-login'
+            );
+
+        case 'incorrect_password':
+            $err = __(
+                "The password you entered wasn't quite right. <a href='%s'>Did you forget your password</a>?",
+                'personalize-login'
+            );
+            return sprintf($err, wp_lostpassword_url());
+
+        default:
+            break;
+    }
+
+    return __('An unknown error occurred. Please try again later.', 'personalize-login');
+}
+
+
+
+
+
+// Information needed for creating the plugin's pages
+$page_definitions = array(
+    'member-login' => array(
+        'title' => __('Sign In', 'personalize-login'),
+        'content' => '[custom-login-form]'
+    ),
+    'member-account' => array(
+        'title' => __('Your Account', 'personalize-login'),
+        'content' => '[account-info]'
+    ),
+    'member-register' => array(
+        'title' => __('Register', 'personalize-login'),
+        'content' => '[custom-register-form]'
+    ),
+    'member-password-lost' => array(
+        'title' => __('Forgot Your Password?', 'personalize-login'),
+        'content' => '[custom-password-lost-form]'
+    ),
+    'member-password-reset' => array(
+        'title' => __('Pick a New Password', 'personalize-login'),
+        'content' => '[custom-password-reset-form]'
+    )
+);
+
+function redirect_to_custom_lostpassword()
+{
+    if ('GET' == $_SERVER['REQUEST_METHOD']) {
+        if (is_user_logged_in()) {
+            redirect_logged_in_user();
+            exit;
+        }
+
+        wp_redirect(home_url('member-password-lost'));
+        exit;
+    }
+}
+
+add_action('login_form_lostpassword', 'redirect_to_custom_lostpassword');
+add_shortcode('custom-password-lost-form', 'render_password_lost_form');
+
+/*
+INSCRIPTION
+*/
+
+// Retrieve possible errors from request parameters
+$attributes['errors'] = array();
+if (isset($_REQUEST['register-errors'])) {
+    $error_codes = explode(',', $_REQUEST['register-errors']);
+
+    foreach ($error_codes as $error_code) {
+        $attributes['errors'][] = get_error_message($error_code);
+    }
+}
+
+
+/**
+ * A shortcode for rendering the new user registration form.
+ *
+ * @param  array   $attributes  Shortcode attributes.
+ * @param  string  $content     The text content for shortcode. Not used.
+ *
+ * @return string  The shortcode output
+ */
+function render_register_form($attributes, $content = null)
+{
+    // Parse shortcode attributes
+    $default_attributes = array('show_title' => false);
+    $attributes = shortcode_atts($default_attributes, $attributes);
+
+    if (is_user_logged_in()) {
+        return __('You are already signed in.', 'personalize-login');
+    } elseif (!get_option('users_can_register')) {
+        return __('Registering new users is currently not allowed.', 'personalize-login');
+    } else {
+        return get_template_html('register_form', $attributes);
+    }
+}
+add_shortcode('custom-register-form', 'render_register_form');
+/**
+ * Redirects the user to the custom registration page instead
+ * of wp-login.php?action=register.
+ */
+function redirect_to_custom_register()
+{
+    if ('GET' == $_SERVER['REQUEST_METHOD']) {
+        if (is_user_logged_in()) {
+            redirect_logged_in_user();
+        } else {
+            wp_redirect(path('/'));
+        }
+        exit;
+    }
+}
+add_action('login_form_register', 'redirect_to_custom_register');
+function register_user($email, $first_name, $last_name)
+{
+    $errors = new WP_Error();
+
+    // Email address is used as both username and email. It is also the only
+    // parameter we need to validate
+    if (!is_email($email)) {
+        $errors->add('email', get_error_message('email'));
+        return $errors;
+    }
+
+    if (username_exists($email) || email_exists($email)) {
+        $errors->add('email_exists', get_error_message('email_exists'));
+        return $errors;
+    }
+
+    // Generate the password so that the subscriber will have to check email...
+    $password = wp_generate_password(12, false);
+
+    $user_data = array(
+        'user_login'    => $email,
+        'user_email'    => $email,
+        'user_pass'     => $password,
+        'first_name'    => $first_name,
+        'last_name'     => $last_name,
+        'nickname'      => $first_name,
+    );
+
+    $user_id = wp_insert_user($user_data);
+    wp_new_user_notification($user_id, $password);
+
+    return $user_id;
+}
+
+/**
+ * Handles the registration of a new user.
+ *
+ * Used through the action hook "login_form_register" activated on wp-login.php
+ * when accessed through the registration action.
+ */
+function do_register_user()
+{
+    if ('POST' == $_SERVER['REQUEST_METHOD']) {
+        $redirect_url = home_url('');
+
+        if (!get_option('users_can_register')) {
+            // Registration closed, display error
+            $redirect_url = add_query_arg('register-errors', 'closed', $redirect_url);
+        } else {
+            $email = $_POST['email'];
+            $first_name = sanitize_text_field($_POST['first_name']);
+            $last_name = sanitize_text_field($_POST['last_name']);
+
+            $result = register_user($email, $first_name, $last_name);
+
+            if (is_wp_error($result)) {
+                // Parse errors into a string and append as parameter to redirect
+                $errors = join(',', $result->get_error_codes());
+                $redirect_url = add_query_arg('register-errors', $errors, $redirect_url);
+            } else {
+                // Success, redirect to login page.
+                $redirect_url = home_url('member-login');
+                $redirect_url = add_query_arg('registered', $email, $redirect_url);
+            }
+        }
+
+        wp_redirect($redirect_url);
+        exit;
+    }
+}
+add_action('login_form_register', 'do_register_user');

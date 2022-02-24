@@ -1,10 +1,10 @@
 <?php
 /* Template Name: GenerationCv */
+get_header();
 ?>
 
 <section id="generate_cv">
     <div class="header">
-        <?= get_header(); ?>
         <h2>Générer mon CV</h2>
     </div>
 
@@ -83,26 +83,12 @@
                     </div>
                 </div>
 
-                <div class="two_input">
-                    <div class="input_group">
-                        <label for="js_birthday">Date de Naissance</label>
-                        <input type="date" id="js_birthday" name="birthday">
-                        <span class="error" id="error_birthday"></span>
-                    </div>
-                    <div class="input_group">
-                        <label for="pet-select">Sélectionnez vot:</label>
-
-                        <select name="pets" id="pet-select">
-                            <option value="">--Please choose an option--</option>
-                            <option value="dog">Dog</option>
-                            <option value="cat">Cat</option>
-                            <option value="hamster">Hamster</option>
-                            <option value="parrot">Parrot</option>
-                            <option value="spider">Spider</option>
-                            <option value="goldfish">Goldfish</option>
-                        </select>
-                    </div>
+                <div class="input_group">
+                    <label for="js_birthday">Date de Naissance</label>
+                    <input type="date" id="js_birthday" name="birthday">
+                    <span class="error" id="error_birthday"></span>
                 </div>
+
 
                 <div class="input_group">
                     <label for="js_phone">Telephone</label>
@@ -133,13 +119,13 @@
             <form method="POST" id="experience_cv">
                 <div class="two_input">
                     <div class="input_group">
-                        <label for="js_predate">Année de début</label>
+                        <label for="js_predate">Début</label>
                         <input type="date" id="js_predate" name="predate" placeholder="">
                         <span class="error" id="error_predate"></span>
                     </div>
 
                     <div class="input_group">
-                        <label for="js_lastdate">Année de fin</label>
+                        <label for="js_lastdate">Fin</label>
                         <input type="date" id="js_lastdate" name="lastdate" placeholder="">
                         <span class="error" id="error_lastdate"></span>
                         <label for="js_post_active"><input type="checkbox" id="js_post_active" name="js_post_active" value="Je suis à ce poste"> Je suis encore à ce poste</label>
@@ -176,7 +162,7 @@
                 </div>
 
                 <div class="btnForm">
-                    <a href="#" class="btnBlack" id="addMoreExp">Ajouter un autre</a>
+                    <a href="#" class="btnBlack" id="addMoreExp">Ajouter cette expérience</a>
                     <input class="btnBlue" type="submit" name="submitted" id="js_submitted_experience" value="Suivant">
                 </div>
             </form>
@@ -190,7 +176,9 @@
                     <span class="error" id="error_search_skill"></span>
                     <ul id="result_search_skill">
                         <!-- Mettre dans une boucle -->
-                        <li><a href="" id="bdd_item_skill" data-content="Adele">Adele</a></li>
+                        <li><a href="" id="bdd_item_skill" data-content="HTML">HTML</a></li>
+                        <li><a href="#" id="bdd_item_skill" data-content="CSS">CSS</a></li>
+                        <li><a href="#" id="bdd_item_skill" data-content="JavaScript">JavaScript</a></li>
                         <!-- Fin de la boucle -->
                     </ul>
                     <span onclick="newSkill()" class="addBtn">Ajouter cette compétence</span>
@@ -215,6 +203,8 @@
                     <ul id="result_search_hobbie">
                         <!-- Mettre dans une boucle -->
                         <li><a href="" id="bdd_item_hobbie" data-content="Jeux-vidéos">Jeux-vidéos</a></li>
+                        <li><a href="" id="bdd_item_hobbie" data-content="Netflix">Netflix</a></li>
+                        <li><a href="" id="bdd_item_hobbie" data-content="Cinéma">Cinéma</a></li>
                         <!-- Fin de la boucle -->
                     </ul>
                     <span onclick="newHobbie()" class="addBtn">Ajouter ce loisir</span>
@@ -276,7 +266,7 @@
                     <span class="error" id="error_school_description"></span>
                 </div>
 
-                <a href="#" class="btnBlack" id="addMoreSchool">Ajouter</a>
+                <a href="#" class="btnBlack" id="addMoreSchool">Ajouter ce parcours</a>
 
                 <div class="btnForm">
                     <input type="submit" name="submit_school" id="js_school_button" value="Suivant">
@@ -290,27 +280,50 @@
 
                 <div class="generateGlobalInfo"></div>
 
-                <h2>Expériences</h2>
-                <div class="generateExp"></div>
+                <div class="stats">
+                    <div id="exp_count" class="bloc">
 
-                <h2>Mes compétences</h2>
+                    </div>
+                    <div id="skill_count" class="bloc">
+
+                    </div>
+                    <div id="loisir_count" class="bloc">
+
+                    </div>
+                    <div id="school_count" class="bloc">
+
+                    </div>
+                </div>
+
+                <div class="expandparcours">
+                    <div class="left">
+                        <h2 class="title_section">Mes expériences</h2>
+                        <div class="generateExp"></div>
+                    </div>
+
+                    <div class="right">
+                        <h2 class="title_section">Mon Parcours</h2>
+                        <div class="generateSchoolCv"></div>
+                    </div>
+                </div>
+
+
+                <h2 class="title_section">Mes compétences</h2>
                 <div class="generateSkillsCv"></div>
 
-                <h2>Mes loisirs</h2>
+                <h2 class="title_section">Mes loisirs</h2>
                 <div class="generateHobbiesCv"></div>
-
-
-                <h2>Parcours</h2>
-                <div class="generateSchoolCv"></div>
 
             </div>
 
+            <div class="finalBtn">
+                <a href="" class="btnBlue" id="final_submit">Générer son CV</a>
+            </div>
         </section>
 
 
 
 
-        <a href="" class="btnBlue" id="final_submit">Générer son CV</a>
 
     </div>
 </section>

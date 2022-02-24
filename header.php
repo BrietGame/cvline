@@ -24,37 +24,25 @@
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
-
-    <div class="logo">
-
-        <a href="<?php echo path('/'); ?>"><img src=" <?php echo get_template_directory_uri() ?>/asset/img/logoCVline1.svg" alt="logo"></a>
+    <header>
+        <div class="logo">
+            <a href="<?php echo path('/'); ?>">
+                <img src=" <?php echo get_template_directory_uri() ?>/asset/img/cvline_blue.svg" alt="logo">
+            </a>
+        </div>
         <div id="menuprincipal" class="displaynone">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">&times;</a>
+            <a href="javascript:void(0)" id="closeMenuPrincipal" class="closebtn">&times; </a>
             <div class="overlay-content">
                 <?php if (is_user_logged_in()) { ?>
-                    <a class="btnTransparent" id="modalBtn">Accéder à mon espace</a>
-                    <a href="<?= path('logout') ?>" class="btnWhite">Se déconnecter</a>
+                    <a class="btnTransparent" id="modalBtn3" href="<?= path('/?red=mon-espace') ?>">Accéder à mon espace</a>
+                    <a href="<?= path('logout') ?>">Se déconnecter</a>
                 <?php } else { ?>
-                    <a class="btnTransparent" id="modalBtn">Se créer un compte</a>
+                    <a class="btnTransparent" id="modalBtn3" href="<?= path('/?red=auth') ?>">S'authentifier</a>
                 <?php } ?>
-                <a href="<?php echo path('faq'); ?>">FAQ</a>
-                <a href="<?php echo path('cgu'); ?>">CGU</a>
+                <a href=" <?php echo path('faq'); ?>">FAQ</a>
                 <a href="<?php echo path('legals'); ?>">Mentions légales</a>
-                <a href="<?php echo path('about'); ?>">À propos</a>
+                <a href="<?php echo path('/#about'); ?>">À propos</a>
             </div>
         </div>
-        <span class="openNav" onclick="openMenu()">&#9776;</span>
-    </div>
-    <script>
-        // HEADER
-        function openMenu() {
-            document.getElementById("menuprincipal").className = "overlay slide-in-left ";
-        }
-
-        function closeMenu() {
-            document.getElementById("menuprincipal").className = "overlay slide-out-left";
-            setTimeout(function() {
-                document.getElementById("menuprincipal").className = "displaynone";
-            }, 500)
-        }
-    </script>
+        <span id="openMenuPrincipal">&#9776; </span>
+    </header>

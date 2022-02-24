@@ -1,0 +1,21 @@
+#notfound {
+    .wrap {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+       .title {
+           font-family: $noto;
+           font-size: 5rem;
+           color: $blue;
+       } 
+       .undertitle {
+           font-family: $franklin;
+           font-size: 2rem;
+           color: black;
+       }
+       .btnBlue {
+           margin: 1rem auto;
+       }
+    }
+}

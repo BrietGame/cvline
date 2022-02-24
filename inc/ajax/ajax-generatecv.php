@@ -17,6 +17,7 @@ function getGeneratecvWithAjax(){
     $postal = cleanXss('postal');
     $city = cleanXss('city');
     $birthday = cleanXss('birthday');
+    $about = cleanXss('about_me');
     $phone = cleanXss('phone');
 
     $errors = textValidation($errors, $postsearch, 'post_search', 2, 55);
@@ -27,6 +28,7 @@ function getGeneratecvWithAjax(){
     $errors = intValidation($errors, $postal, 'postal');
     $errors = textValidation($errors, $city, 'city', 4, 70);
     $errors = dateValidation($errors, $birthday, 'birthday');
+    $errors = textValidation($errors, $about, 'about_me', 4, 70);
     $errors = phoneValidation($errors, $phone, 'phone');
 
 
@@ -41,7 +43,8 @@ function getGeneratecvWithAjax(){
             'adress' => $adress,
             'postal' => $postal,
             'city' => $city,
-            'birtday' => $birthday,
+            'birthday' => $birthday,
+            'about_me' => $about,
             'phone' => $phone,
         ];
 
