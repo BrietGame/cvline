@@ -174,6 +174,85 @@ if (!empty($_POST)) {
     }
 }
 
+$to = $email;
+$subject = 'Votre CV a été généré sur CVLine !';
+$body = '
+<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;700&family=Noto+Serif&display=swap"
+		rel="stylesheet">
+<style>
+		.wrap {
+			max-width: 800px;
+			width: 100%;
+			margin: 0 auto;
+			padding: 1rem;
+			display: flex;
+			flex-flow: column nowrap;
+			align-items: center;
+		}
+
+		h1 {
+			font-family: "Noto Serif", serif;
+		}
+
+		a {
+			text-decoration-line: none;
+			color: #2A4876;
+			font-weight: 700;
+			font-size: 1.4rem;
+		}
+
+		a:hover {
+			text-decoration-line: underline;
+		}
+
+		p,
+		span,
+		a {
+			font-family: "Libre Franklin", sans-serif;
+		}
+
+
+		footer {
+			display: flex;
+			flex-flow: column nowrap;
+			align-items: center;
+			justify-content: center;
+			gap: 1rem;
+			letter-spacing: .1rem;
+			font-size: 1.1rem;
+			padding: 3rem 0;
+		}
+
+		footer span {
+			opacity: 40%;
+		}
+	</style>
+	<div class="wrap">
+		<div class="banner">
+			<img src="https://cvline.alexis-briet.fr/wp-content/themes/cvline/asset/img/bg/banner_email.jpg"
+				alt="Bannière CVLine">
+		</div>
+		<h1>Votre CV a été généré</h1>
+		<p>Vous pouvez accéder à votre cv en cliquant sur le lien suivant :</p>
+		<a href="https://cvline.alexis-briet.fr/espace-candidat/">https://cvline.alexis-briet.fr/espace-candidat/</a>
+
+		<p><strong>Important :</strong> Vous devez être connecté à votre espace afin de pouvoir accéder à votre CV
+			généré par CVLine.</p>
+
+		<footer>
+			<span>Merci pour votre confiance</span>
+		</footer>
+	</div>
+';
+$headers = array(
+    'Content-Type: text/html; charset=UTF-8',
+    'From: CVLine <wordpress@cvline.alexis-briet.fr>'
+);
+
+wp_mail($to, $subject, $body, $headers);
+
 ?>
 
 
