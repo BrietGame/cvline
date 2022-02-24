@@ -109,12 +109,11 @@ function viewError($errors, $key)
         echo $errors[$key];
     }
 }
-
-function getImageAttachment($id_attachment,$size = 'thumbnail', $alt = '')
+function getImageFeature($id, $size, $alt)
 {
-    $image = wp_get_attachment_image_src($id_attachment,$size);
-    if(!empty($image)) {
-        return '<img src="'.$image[0].'" alt="'.$alt.'"/>';
+    $image_url = get_the_post_thumbnail_url($id, $size);
+    if(!empty($image_url)){
+        return '<img src="' . $image_url. '" alt="' .$alt.'" />' ;
     }
-    return '';
+    return '<img src="' .asset('img/team1.jpeg').'" width="300px" height="200px" />';
 }
