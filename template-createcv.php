@@ -1,7 +1,7 @@
 <?php
-get_header();
 /* Template Name: CreateCv */
-
+get_header();
+isNotLogged();
 $user = wp_get_current_user();
 
 if (!empty($_POST)) {
@@ -43,7 +43,7 @@ if (!empty($_POST)) {
         $wpdb->prefix . 'pivot_usertocv',
         array(
             "cv_id" => $lastIdCv,
-            "user_id"=> $user->ID,
+            "user_id" => $user->ID,
         )
     );
 
@@ -71,13 +71,13 @@ if (!empty($_POST)) {
             )
         );
         $lastIdSchool = $wpdb->insert_id;
-        if($lastIdSchool != 0){
+        if ($lastIdSchool != 0) {
             $wpdb->insert(
                 $wpdb->prefix . 'pivot_school',
-                    array(
-                        "school_id" => $lastIdSchool,
-                        "cv_id"=> $lastIdCv,
-                    )
+                array(
+                    "school_id" => $lastIdSchool,
+                    "cv_id" => $lastIdCv,
+                )
             );
         }
     }
@@ -110,13 +110,13 @@ if (!empty($_POST)) {
             )
         );
         $lastIdWork = $wpdb->insert_id;
-        if($lastIdWork != 0){
+        if ($lastIdWork != 0) {
             $wpdb->insert(
                 $wpdb->prefix . 'pivot_work',
-                    array(
-                        "work_id" => $lastIdWork,
-                        "cv_id"=> $lastIdCv,
-                    )
+                array(
+                    "work_id" => $lastIdWork,
+                    "cv_id" => $lastIdCv,
+                )
             );
         }
     }
@@ -136,12 +136,12 @@ if (!empty($_POST)) {
             )
         );
         $lastIdSkill = $wpdb->insert_id;
-        if($lastIdSkill != 0){
+        if ($lastIdSkill != 0) {
             $wpdb->insert(
                 $wpdb->prefix . 'pivot_skills',
                 array(
                     "skills_id" => $lastIdSkill,
-                    "cv_id"=> $lastIdCv,
+                    "cv_id" => $lastIdCv,
                 )
             );
         }
@@ -162,17 +162,16 @@ if (!empty($_POST)) {
             )
         );
         $lastIdHobbie = $wpdb->insert_id;
-        if($lastIdHobbie != 0){
+        if ($lastIdHobbie != 0) {
             $wpdb->insert(
                 $wpdb->prefix . 'pivot_hobbie',
                 array(
                     "hobbie_id" => $lastIdHobbie,
-                    "cv_id"=> $lastIdCv,
+                    "cv_id" => $lastIdCv,
                 )
             );
         }
     }
-
 }
 
 ?>

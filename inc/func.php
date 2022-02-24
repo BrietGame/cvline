@@ -110,11 +110,19 @@ function viewError($errors, $key)
     }
 }
 
-function getImageAttachment($id_attachment,$size = 'thumbnail', $alt = '')
+function getImageAttachment($id_attachment, $size = 'thumbnail', $alt = '')
 {
-    $image = wp_get_attachment_image_src($id_attachment,$size);
-    if(!empty($image)) {
-        return '<img src="'.$image[0].'" alt="'.$alt.'"/>';
+    $image = wp_get_attachment_image_src($id_attachment, $size);
+    if (!empty($image)) {
+        return '<img src="' . $image[0] . '" alt="' . $alt . '"/>';
     }
     return '';
+}
+
+
+function isNotLogged()
+{
+    if (!is_user_logged_in()) {
+        wp_redirect(path('/?error=login'));
+    }
 }

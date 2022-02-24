@@ -1,8 +1,6 @@
 <?php
-if (!is_user_logged_in()) {
-    wp_redirect(path('/'));
-}
 /* Template Name: editProfil */
+isNotLogged();
 $user = wp_get_current_user();
 $meta_user = get_user_meta($user->ID);
 // debug($user);
