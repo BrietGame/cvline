@@ -1,38 +1,43 @@
 <?php
 
-/* Template Name: FAQ */?>
+/* Template Name: FAQ */ ?>
 
- <?php
- $args = array(
-         'post_type' => 'faq',
-         'posts_per_page' => 9,
-        'order' => 'ASC',
- );
+<?php
+$args = array(
+    'post_type' => 'faq',
+    'posts_per_page' => 9,
+    'order' => 'ASC',
+);
 
- $the_query = new WP_Query($args);
+$the_query = new WP_Query($args);
 
 ?>
-    <section id="faq">
-        <div class="header">
-            <?= get_header() ?>
-            <h2>FAQ</h2>
-        </div>
-        <div class="wrap">
-        <?php if ( $the_query->have_posts() ) {
-        while ( $the_query->have_posts() ){
-        $the_query->the_post(); ?>
-        <button class="accordion">
-            <?=get_the_title();?></button>
-            <div class="panel">
-                <p><?=get_the_content(); ?></p>
-            </div>
+<section id="faq">
+    <div class="header">
+        <?= get_header() ?>
+        <h2>FAQ</h2>
+    </div>
+    <div class="wrap">
+        <?php if ($the_query->have_posts()) {
+            while ($the_query->have_posts()) {
+                $the_query->the_post(); ?>
+                <button class="accordion">
+                    <?= get_the_title(); ?></button>
+                <div class="panel">
+                    <p><?= get_the_content(); ?></p>
+                </div>
 
         <?php
+            }
         }
-        }
-?>
-        </div>
-    </section>
+        ?>
+    </div>
+    <?php
+    $date = date_create("2013-03-15");
+    $newdate = date_format($date, "Y");
+    echo $newdate;
+    ?>
+</section>
 
 <script>
     var acc = document.getElementsByClassName("accordion");
@@ -52,5 +57,6 @@
                 panel.style.display = "block";
             }
         });
-    }</script>
-  <?php get_footer();?>
+    }
+</script>
+<?php get_footer(); ?>
