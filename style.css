@@ -557,36 +557,15 @@ nav ul li a:hover {
   text-align: center;
   justify-content: center;
   font-family: Noto Serif, serif;
-  font-size: 18px;
+  font-size: 1rem;
 }
 .copyright .text-copy {
-  color: #FFFFFF;
+  color: #000000;
 }
 
-@media only screen and (min-width: 390px) {
-  nav ul {
-    flex-direction: column;
-    display: flex;
-  }
-  nav ul li a {
-    font-size: 14px;
-  }
-
+@media screen and (max-width: 420px) {
   .copyright {
-    font-size: 13px;
-  }
-}
-@media only screen and (min-width: 720px) {
-  nav ul {
-    flex-direction: row;
-    display: flex;
-  }
-  nav ul li a {
-    font-size: 18px;
-  }
-
-  .copyright {
-    font-size: 16px;
+    padding-top: 0;
   }
 }
 #home {

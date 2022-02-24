@@ -24,39 +24,14 @@ nav {
   text-align: center;
   justify-content: center;
   font-family: $noto;
-  font-size: 18px;
+  font-size: 1rem;
       .text-copy{
-    color: $white;
+    color: $black;
   }
 }
 
-@media only screen and (min-width : 390px){
-  nav{
-    ul{
-      flex-direction: column;
-      display: flex;
-      li a {
-        font-size: 14px;
-
-      }
-    }
-  }
+@media screen and (max-width: 420px) {
   .copyright{
-    font-size: 13px;
-  }
-}
-
-@media only screen and (min-width : 720px){
-  nav{
-    ul{
-      flex-direction: row;
-      display: flex;
-      li a {
-        font-size: 18px;
-      }
-    }
-  }
-  .copyright{
-    font-size: 16px;
+    padding-top: 0;
   }
 }
