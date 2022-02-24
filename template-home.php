@@ -182,12 +182,12 @@ $user = wp_get_current_user();
                             <div class="input_group">
                                 <label for="login">Adresse mail ou nom d'utilisateur</label>
                                 <input type="text" name="login" id="login" placeholder="email@example.com or JohnDoe80" value="">
-                                <span class="error"><?= viewError($errors_login, 'login') ?></span>
+                                <span class="error" id="errors_login"></span>
                             </div>
                             <div class="input_group">
                                 <label for="login_password">Mot de passe <i id="eye" class="far fa-eye" onclick="showHidePassword('login_password')"></i></label>
                                 <input type="password" name="login_password" id="login_password">
-                                <span class="error"><?= viewError($errors_login, 'login_password') ?></span>
+                                <span class="error" id="login_password"></span>
                             </div>
 
                             <div class="btnForm">
