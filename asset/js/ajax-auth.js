@@ -31,23 +31,24 @@ $(document).ready(function () {
                 console.log('ajax auth : before');
                 $('.error').html('')
             },
-            success: function(res){
-
-                if (res.success) {
+            success: function (res) {
+                console.log(res.success3);
+                if (res.success3 === undefined) {
                     console.log('Envoi en bdd ...');
+                    window.document.href = "/success=register"
                 } else {
                     //if success envoie form
-                    if (res.errors.register_email != null) {
-                        errorEmailRegister.html(res.errors.register_email)
+                    if (res.errorregister.register_email != null) {
+                        errorEmailRegister.html(res.errorregister.register_email)
                     }
-                    if (res.errors.register_pseudo != null) {
-                        errorPseudoRegister.html(res.errors.register_pseudo)
+                    if (res.errorregister.register_pseudo != null) {
+                        errorPseudoRegister.html(res.errorregister.register_pseudo)
                     }
-                    if (res.errors.register_password != null) {
-                        errorPasswordRegister.html(res.errors.register_password)
+                    if (res.errorregister.register_password != null) {
+                        errorPasswordRegister.html(res.errorregister.register_password)
                     }
-                    if (res.errors.confirm_register_password != null) {
-                        errorPasswordRegister.html(res.errors.confirm_register_password)
+                    if (res.errorregister.confirm_register_password != null) {
+                        errorPasswordRegister.html(res.errorregister.confirm_register_password)
                     }
                 }
             }

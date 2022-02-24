@@ -129,7 +129,6 @@ $user = wp_get_current_user();
                 <?php } else { ?>
                     <div class="left">
                         <h2>S'inscrire</h2>
-<<<<<<< HEAD
                         <form action="" method="POST" novalidate id="loginForm">
                             <div class="two_input">
                                 <div class="input_group_radio">
@@ -150,12 +149,12 @@ $user = wp_get_current_user();
                             <div class="input_group">
                                 <label for="register_email">Adresse mail</label>
                                 <input type="text" name="register_email" id="register_email" placeholder="email@example.com"">
-                                <span class="error" id="errorEmailRegister"></span>
+                                <span class=" error" id="errorEmailRegister"></span>
                             </div>
                             <div class="input_group">
                                 <label for="register_pseudo">Nom d'utilisateur</label>
                                 <input type="text" name="register_pseudo" id="register_pseudo" placeholder="JohnDoe80"">
-                                <span class="error" id="errorPseudoRegister"></span>
+                                <span class=" error" id="errorPseudoRegister"></span>
                             </div>
                             <div class="input_group">
                                 <label for="register_password">Mot de passe <i id="eye" class="far fa-eye" onclick="showHidePassword('register_password')"></i></label>
@@ -168,7 +167,8 @@ $user = wp_get_current_user();
                                 <span class="error" id="errorPasswordRegisterConf"></span>
                             </div>
                             <div class="input_group">
-                                <label for="cgu"><input type="checkbox" id="cgu" name="cgu" value="cgu"> J'accepte les <a class="cgu_link" href="<?= path('/legals') ?>">Conditions Générales d'Utilisations</a> de mes données.</label>
+                                <label for="cgu"><input type="checkbox" id="cgu" name="register_cgu" value="cgu"> J'accepte les <a class="cgu_link" href="<?= path('/legals') ?>">Conditions Générales d'Utilisations</a> de mes données.</label>
+                                <span class="error" id="errorCGU"></span>
                             </div>
 
                             <div class="btnForm">
@@ -239,31 +239,32 @@ $args = array(
 $the_query = new WP_Query($args);
 ?>
 
-    <section id="collaborateur">
-        <div class="row">
-            <div class="column">
-                 <div class="wrap">
+<section id="collaborateur">
+    <div class="row">
+        <div class="column">
+            <div class="wrap">
 
-                    <?php if ( $the_query->have_posts() ) {
-                    while ( $the_query->have_posts() ){
-                    $the_query->the_post(); ?>
-                <div class="card">
+                <?php if ($the_query->have_posts()) {
+                    while ($the_query->have_posts()) {
+                        $the_query->the_post(); ?>
+                        <div class="card">
 
-                    <?php echo getImageFeature(get_the_ID(),'imgpicturepresentation',get_the_title())?>
-                    <div class="container">
-                        <h2><?php echo get_the_title() ?></h2>
-                        <p class="title"><?php echo get_the_content() ?></p>
-                        <p><?php echo get_the_content() ?></p>
-                        <p><?php echo get_the_content() ?></p>
-                        <p class="contenuBtn"><button class="button">Contact</button></p>
-                    </div>
-                </div>
-                </div>
-
+                            <?php echo getImageFeature(get_the_ID(), 'imgpicturepresentation', get_the_title()) ?>
+                            <div class="container">
+                                <h2><?php echo get_the_title() ?></h2>
+                                <p class="title"><?php echo get_the_content() ?></p>
+                                <p><?php echo get_the_content() ?></p>
+                                <p><?php echo get_the_content() ?></p>
+                                <p class="contenuBtn"><button class="button">Contact</button></p>
+                            </div>
+                        </div>
             </div>
+
         </div>
-    </section>
-<?php }} ?>
+    </div>
+</section>
+<?php }
+                } ?>
 
 <?= get_footer() ?>
 
