@@ -159,12 +159,12 @@ function projet_cvtheques_scripts()
 
     // wp_enqueue_script('ajax-auth', get_template_directory_uri() . '/asset/js/ajax-auth.js', array('jquery'), _S_VERSION, true);
 
-    if(is_page_template('template-home.php')){
-        wp_enqueue_script('ajax-auth', get_template_directory_uri() . '/asset/js/ajax-auth.js', array('jquery'), _S_VERSION, true);
-        wp_enqueue_script('ajax-log', get_template_directory_uri() . '/asset/js/ajax-login.js', array('jquery'), _S_VERSION, true);
-        wp_add_inline_script('ajax-auth', 'const ajaxUrl = ' . json_encode(admin_url('admin-ajax.php')), 'before');
-        wp_add_inline_script('ajax-log', 'const ajaxUrlLog = ' . json_encode(admin_url('admin-ajax.php')), 'before');
-    }
+    // if(is_page_template('template-home.php')){
+    //     wp_enqueue_script('ajax-auth', get_template_directory_uri() . '/asset/js/ajax-auth.js', array('jquery'), _S_VERSION, true);
+    //     wp_enqueue_script('ajax-log', get_template_directory_uri() . '/asset/js/ajax-login.js', array('jquery'), _S_VERSION, true);
+    //     wp_add_inline_script('ajax-auth', 'const ajaxUrl = ' . json_encode(admin_url('admin-ajax.php')), 'before');
+    //     wp_add_inline_script('ajax-log', 'const ajaxUrlLog = ' . json_encode(admin_url('admin-ajax.php')), 'before');
+    // }
 
     if (is_page_template('template-generatecv.php')) {
         wp_enqueue_script('fil-ariane', get_template_directory_uri() . '/asset/js/fil-ariane.js', array('jquery'), _S_VERSION, true);
