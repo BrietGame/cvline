@@ -14,11 +14,15 @@ $meta_user = get_user_meta($user->ID);
     </div>
     <div class="wrap">
         <div class="titre">
-            <h1>Bienvenue John sur votre espace <?php if (!empty($user->roles[0])) {
-                                                    echo $user->roles[0];
-                                                } else {
-                                                    echo 'Personnel';
-                                                } ?></h1>
+            <h1>Bienvenue <?php if (!empty($meta_user['first_name'][0])) {
+                                echo $meta_user['first_name'][0];
+                            } else {
+                                echo '';
+                            } ?> sur votre espace <?php if (!empty($user->roles[0])) {
+                                                                                                                    echo $user->roles[0];
+                                                                                                                } else {
+                                                                                                                    echo '';
+                                                                                                                } ?></h1>
         </div>
         <div id="conteneurProfil">
             <div class="profilUser">

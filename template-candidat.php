@@ -1,6 +1,7 @@
 <?php
 /* Template Name: EspaceCandidat */
 isNotLogged();
+deniedAccessRole('Recruteur');
 //debug($getCvInfoGlobal);
 //debug($getCvInfo);
 

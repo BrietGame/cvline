@@ -1,6 +1,7 @@
 <?php
 /* Template Name: EspaceRecruteur */
 isNotLogged();
+deniedAccessRole('Candidat');
 get_header();
 
 ?>

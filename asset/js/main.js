@@ -77,5 +77,9 @@ $(document).ready(function () {
     if (getParamURL('red', document.location.href) == 'mon-espace' || getParamURL('red', document.location.href) == 'auth') {
         openRegisterMenu();
     }
+    if (getParamURL('access', document.location.href) == 'denied') {
+        console.log('DENIED');
+        deniedAccess();
+    }
 });
 
