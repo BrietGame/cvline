@@ -6,10 +6,10 @@ $(document).ready(function () {
     const errorLoginCo = $('#errors_login');
     const errorLoginPassword = $('#login_password');
 
-    loginFormulaire.on('submit', function (e){
+    loginFormulaire.on('submit', function (e) {
         e.preventDefault();
-        const logId = $('#login').val();
-        const logPassword = $('#login_password').val();
+        const login = $('#login').val();
+        const loginPwd = $('#login_password').val();
 
         console.log('Click Login : ok');
 
@@ -18,24 +18,25 @@ $(document).ready(function () {
             type: 'POST',
             data: {
                 action: 'ajax_login',
-                logId: logId,
-                logPassword: logPassword,
+                login: login,
+                loginPwd: loginPwd,
             },
             beforeSend: function () {
                 console.log('ajax login : before');
                 $('.error').html('')
             },
-            success: function (res) {
-                if (res.success) {
-                    console.log('Connexion ...');
-                } else {
-                    if (res.errors.logId != null) {
-                        errorLoginCo.html(res.errors.logId)
-                    }
-                    if (res.errors.logPassword != null) {
-                        errorLoginPassword.html(res.errors.logPassword)
-                    }
-                }
+            success: function (reslogin) {
+                console.log(reslogin);
+                // if (res.success4) {
+                //     console.log('Connexion ...');
+                // } else {
+                //     if (res.errors.login != null) {
+                //         errorLoginCo.html(res.errors.login)
+                //     }
+                //     if (res.errors.loginPwd != null) {
+                //         errorLoginPassword.html(res.errors.loginPwd)
+                //     }
+                // }
             }
         })
     })
