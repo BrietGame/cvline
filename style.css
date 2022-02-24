@@ -1432,6 +1432,12 @@ nav ul li a:hover {
   font-family: Noto Serif, serif;
   color: #2A4876;
 }
+@media screen and (max-width: 700px) {
+  #generate_cv #fil_ariane #step {
+    text-align: justify;
+    min-width: 200px;
+  }
+}
 #generate_cv #fil_ariane .active {
   background-color: #2A4876 !important;
 }
