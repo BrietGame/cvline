@@ -144,9 +144,7 @@ $user = wp_get_current_user();
                                     </label>
                                 </div>
                             </div>
-                            <div class="input_group">
-                                <span id="errorRoleRegister" class="error"><?= viewError($errors_register, 'role') ?></span>
-                            </div>
+
                             <div class="input_group">
                                 <label for="register_email">Adresse mail</label>
                                 <input type="text" name="register_email" id="register_email" placeholder="email@example.com" value="<?= recupInputValue('register_email') ?>">
