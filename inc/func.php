@@ -126,3 +126,11 @@ function isNotLogged()
         wp_redirect(path('/?error=login'));
     }
 }
+function getImageFeature($id, $size, $alt)
+{
+    $image_url = get_the_post_thumbnail_url($id, $size);
+    if (!empty($image_url)) {
+        return '<img src="' . $image_url . '" alt="' . $alt . '" />';
+    }
+    return '<img src="' . asset('img/team1.jpeg') . '" width="300px" height="200px" />';
+}
