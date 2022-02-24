@@ -90,15 +90,15 @@ a {
 
 .btnBlue {
   color: #FFFFFF;
-  border-radius: 16px;
   font-family: Libre Franklin, sans-serif;
   font-size: 1rem;
   background-color: #2A4876;
-  padding: 0.2rem 2.5rem;
   transition: 0.8s;
   border: 1px solid #2A4876;
   display: flex;
   align-items: center;
+  gap: 1rem;
+  padding: 0.5rem;
   opacity: 80%;
 }
 
@@ -107,6 +107,7 @@ a {
   border: 1px solid #2A4876;
   background-color: #FFFFFF;
   transition: 0.8s;
+  border-radius: 16px;
 }
 
 .btnBlack {
@@ -784,6 +785,10 @@ nav ul li a:hover {
 #registerform .btnForm #btnForgetPwd {
   font-size: 1rem;
   margin-top: 1rem;
+}
+
+#modalBtn2 {
+  max-width: 100%;
 }
 
 #login_register .wrap {
