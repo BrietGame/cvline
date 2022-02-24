@@ -8,43 +8,42 @@ function authWithAjax()
 {
     // wp_create_user($pseudo, $password, $email);
 
+    $errorRegister = [];
+    $success3 = 22;
 
-    $errors = [];
-    $success2 = false;
+    $email = cleanXss('register_email');
+    $pseudo = cleanXss('register_pseudo');
+    $register_password = cleanXss('register_password');
+    $confirm_register_password = cleanXss('confirm_register_password');
 
-    if (!empty($_POST['submitted_register'])) {
+    $errorRegister = emailValidation($errorRegister, $email, 'register_email');
+    $errorRegister = textValidation($errorRegister, $pseudo, 'register_pseudo', 3, 30);
+    $errorRegister = textValidation($errorRegister, $register_password, 'register_password');
+    $errorRegister = textValidation($errorRegister, $confirm_register_password, 'confirm_register_password');
 
-        $email = cleanXss('email');
-        $pseudo = cleanXss('pseudo');
-        $register_password = cleanXss('register_password');
-        $confirm_register_password = cleanXss('confirm_register_password');
-
-        $errors = emailValidation($errors, $email, 'email');
-        $errors = textValidation($errors, $pseudo, 'pseudo');
-        $errors = textValidation($errors, $register_password, 'register_password');
-        $errors = textValidation($errors, $confirm_register_password, 'confirm_register_password');
-
-        if ($register_password == $confirm_register_password) {
-            if (count($errors) === 0) {
-                $success2 = true;
-                $data = [
-                    'success2' => $success2,
-                    [
-                        'email' => $email,
-                        'pseudo' => $pseudo,
-                        'register_password' => $register_password,
-                        'confirm_register_password' => $confirm_register_password
-                    ],
-                ];
-            } else {
-                $data = array(
-                    'errors' => $errors,
-                    'success2' => $success2,
-                );
-            }
-        } else {
-            echo "<script>openNav();</script>";
-            $errors['password'] = 'Les mots de passe ne correspondent pas.';
-        }
+    if ($register_password != $confirm_register_password) {
+        $errorRegister['register_password'] = 'Les mots de passe ne correspondent pas.';
     }
+    // if (empty($_POST['register_cgu'])) {
+    //     $errorRegister['register_email'] = 'Veuilelz renseigner les CGU';
+    // }
+
+    if (count($errorRegister) === 0) {
+        $success3 = 11;
+        $userdata = [
+            'success' => $success3,
+            'user_login' => $pseudo,
+            'user_pass'  => $confirm_register_password,
+            'user_email' => $email,
+        ];
+
+        wp_insert_user($userdata);
+        wp_redirect(path('/generer-cv'));
+    } else {
+        $userdata = [
+            'errorregister' => $errorRegister,
+            'success3' => $success3,
+        ];
+    }
+    showJson($userdata);
 }

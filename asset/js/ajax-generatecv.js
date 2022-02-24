@@ -44,7 +44,7 @@ $(document).ready(function () {
                 postal: postal,
                 city: city,
                 birthday: birthday,
-                about_me : about,
+                about_me: about,
                 phone: phone,
             },
             beforeSend: function () {
@@ -108,7 +108,7 @@ $(document).ready(function () {
                     if (res.errors.birthday != null) {
                         errorBirthday.html(res.errors.birthday)
                     }
-                    if(res.errors.about_me != null){
+                    if (res.errors.about_me != null) {
                         errorAbout.html(res.errors.about_me)
                     }
                     if (res.errors.phone != null) {

@@ -1,7 +1,6 @@
 #recruteur {
-
   .header{
-    background-image: url('../cvline/asset/img/bg/banner_recruteur.jpg');
+    background-image: url('../cvline/asset/img/bg/banner_candidat.jpg');
     background-repeat: no-repeat;
      background-size: cover;
 
@@ -11,8 +10,10 @@
       text-align: center;
       color: $blue;
       padding-bottom: 3rem;
+
     }
   }
+
 
   #input_recrut {
     background-position: 10px 12px;
@@ -24,15 +25,21 @@
     margin-bottom: 12px;
   }
 
+  .titre {
+    font-family: $noto;
+  }
+
 
   #recrutcv {
     list-style-type: none;
     padding: 0;
     margin: 0;
 
+    p {
+      font-family: $franklin;
+    }
     a {
       list-style: none;
-      color: grey;
     }
 
       div{
@@ -45,6 +52,15 @@
         color: black;
         display: block;
 
+        a {
+          font-family: $franklin;
+          font-weight: 700;
+          color: $blue;
+        }
+        p {
+          font-family: $franklin;
+        }
+
         &:hover {
           &:not(.header) {
             background-color: #eee;
@@ -53,35 +69,3 @@
       }
     }
   }
-#pagination_recrut {
-  margin-top: 50px;
-  .center {
-    text-align: center;
-  }
-
-  .pagination {
-    display: inline-block;
-
-    a {
-      color: black;
-      float: left;
-      padding: 8px 16px;
-      text-decoration: none;
-      transition: background-color .3s;
-      border: 1px solid #ddd;
-      margin: 0 4px;
-
-      &:hover {
-        &:not(.active) {
-          background-color: #ddd;
-        }
-      }
-    }
-
-    a.active {
-      background-color: #4CAF50;
-      color: white;
-      border: 1px solid #4CAF50;
-    }
-  }
-}

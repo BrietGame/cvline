@@ -32,11 +32,7 @@ $the_query = new WP_Query($args);
         }
         ?>
     </div>
-    <?php
-    $date = date_create("2013-03-15");
-    $newdate = date_format($date, "Y");
-    echo $newdate;
-    ?>
+
 </section>
 
 <script>

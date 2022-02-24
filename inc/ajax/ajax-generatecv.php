@@ -4,7 +4,8 @@
 add_action('wp_ajax_ajax_generatecv', 'getGeneratecvWithAjax');
 add_action('wp_ajax_nopriv_ajax_generatecv', 'getGeneratecvWithAjax'); //Pour que tout le monde puisse y accéder
 
-function getGeneratecvWithAjax(){
+function getGeneratecvWithAjax()
+{
 
     $errors = array();
     $success = false;
@@ -32,10 +33,10 @@ function getGeneratecvWithAjax(){
     $errors = phoneValidation($errors, $phone, 'phone');
 
 
-    if(count($errors) === 0) {
+    if (count($errors) === 0) {
         $success = true;
         $data = [
-            'post_search'=> $postsearch,
+            'post_search' => $postsearch,
             'success' => $success,
             'surname' => $surname,
             'name' => $name,
@@ -47,8 +48,7 @@ function getGeneratecvWithAjax(){
             'about_me' => $about,
             'phone' => $phone,
         ];
-
-    }else{
+    } else {
         $data = array(
             'errors' => $errors,
             'success' => $success,
@@ -57,4 +57,3 @@ function getGeneratecvWithAjax(){
 
     showJson($data);
 }
-
