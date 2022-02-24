@@ -35,7 +35,7 @@
             <div class="overlay-content">
                 <?php if (is_user_logged_in()) { ?>
                     <a class="btnTransparent" id="modalBtn">Accéder à mon espace</a>
-                    <a href="<?= path('logout') ?>" class="btnWhite">Se déconnecter</a>
+                    <a href="<?= path('logout') ?>">Se déconnecter</a>
                 <?php } else { ?>
                     <a class="btnTransparent" id="modalBtn">S'authentifier</a>
                 <?php } ?>
