@@ -1486,7 +1486,9 @@ nav ul li a:hover {
 }
 #generate_cv #fil_ariane {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
   gap: 0.1rem;
   padding-bottom: 3rem;
 }
