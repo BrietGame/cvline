@@ -47,7 +47,6 @@ function getGeneratecvWithAjax(){
             'about_me' => $about,
             'phone' => $phone,
         ];
-
     }else{
         $data = array(
             'errors' => $errors,
