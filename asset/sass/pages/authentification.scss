@@ -25,7 +25,7 @@
         h2 {
             font-family: $noto;
             text-align: center;
-            color: $blue;
+            color: $white;
             font-size: 2rem;
         }
 
@@ -56,6 +56,12 @@
                 .btnWhite, .btnBlue {
                     font-size: 1rem;
                 }
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .container_islogged {
+                flex-flow: column nowrap;
+                align-items: center;
             }
         }
 
