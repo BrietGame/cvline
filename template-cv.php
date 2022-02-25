@@ -64,7 +64,8 @@ $singleCvID = $getCvInfo[$_GET['id']]
                 <div class="text_left_cv">
                     <h3><?= $singleCvID->cv_title_work ?></h3>
                     <span><?= $singleCvID->cv_surname . ' ' . $singleCvID->cv_name ?></span>
-                    <p>Né(e) le : <?= $singleCvID->cv_birthday ?></p>
+                    <p>Né(e) le : <?php $dateBirthday = date_create($singleCvID->cv_birthday);
+                    echo date_format($dateBirthday, 'D d F') ?></p>
                     <p>Adresse : <?= $singleCvID->cv_adress ?></p>
                     <p><?= $singleCvID->cv_postal . ', ' . $singleCvID->cv_city ?></p>
                     <p>Téléphone : <?= $singleCvID->cv_phone ?></p>
@@ -82,6 +83,7 @@ $singleCvID = $getCvInfo[$_GET['id']]
                 <h2><?= $getCvWork[$i]->jobname ?></h2>
                 <span><?= $getCvWork[$i]->jobcompany . ' | ' . $getCvWork[$i]->jobstart . ' - ' . $getCvWork[$i]->jobend ?></span>
                 <p class="description_post"><?= $getCvWork[$i]->jobdescription ?></p>
+
             </div>
         <?php } ?>
 

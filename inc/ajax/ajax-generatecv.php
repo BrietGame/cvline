@@ -29,7 +29,7 @@ function getGeneratecvWithAjax()
     $errors = intValidation($errors, $postal, 'postal');
     $errors = textValidation($errors, $city, 'city', 4, 70);
     $errors = dateValidation($errors, $birthday, 'birthday');
-    $errors = textValidation($errors, $about, 'about_me', 4, 70);
+    $errors = textValidation($errors, $about, 'about_me', 4, 300);
     $errors = phoneValidation($errors, $phone, 'phone');
 
 

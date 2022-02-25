@@ -174,13 +174,7 @@ get_header();
                 <div id="todo" class="input_group">
                     <input type="text" id="js_search_skill" name="searchskill" placeholder="*Savoir faire, savoir être." onkeyup="searchSkill()">
                     <span class="error" id="error_search_skill"></span>
-                    <ul id="result_search_skill">
-                        <!-- Mettre dans une boucle -->
-                        <li><a href="" id="bdd_item_skill" data-content="HTML">HTML</a></li>
-                        <li><a href="#" id="bdd_item_skill" data-content="CSS">CSS</a></li>
-                        <li><a href="#" id="bdd_item_skill" data-content="JavaScript">JavaScript</a></li>
-                        <!-- Fin de la boucle -->
-                    </ul>
+
                     <span onclick="newSkill()" class="addBtn">Ajouter cette compétence</span>
 
                     <span>Ma sélection</span>
@@ -200,13 +194,7 @@ get_header();
                 <div id="todo" class="input_group">
                     <input type="text" id="js_search_hobbie" name="hobbie" placeholder="Mon loisir" onkeyup="searchHobbie()">
                     <span class="error" id="error_hobbie"></span>
-                    <ul id="result_search_hobbie">
-                        <!-- Mettre dans une boucle -->
-                        <li><a href="" id="bdd_item_hobbie" data-content="Jeux-vidéos">Jeux-vidéos</a></li>
-                        <li><a href="" id="bdd_item_hobbie" data-content="Netflix">Netflix</a></li>
-                        <li><a href="" id="bdd_item_hobbie" data-content="Cinéma">Cinéma</a></li>
-                        <!-- Fin de la boucle -->
-                    </ul>
+
                     <span onclick="newHobbie()" class="addBtn">Ajouter ce loisir</span>
                     <span>Ma sélection</span>
                     <ul id="result_hobbies">
