@@ -23,7 +23,10 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <?php wp_body_open(); ?>
+    <?php wp_body_open();
+    $user = wp_get_current_user();
+
+    ?>
     <header>
         <div class="logo">
             <a href="<?php echo path('/'); ?>">
