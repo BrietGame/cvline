@@ -17,7 +17,7 @@ get_header();
             <?php if (!empty($getCvInfo)) { ?>
                 <?php for ($i = 0; $i <= count($getCvRecruteur) - 1; $i++) { ?>
                     <div class="decritpion_cv_info">
-                        <a href="<?= path('template-cv1') . '?id=' . $i . '&cv=' . $getCvRecruteur[$i]->id; ?>"><?= $getCvRecruteur[$i]->cv_title_work ?></a>
+                        <a href="<?= path('template-cv2') . '?id=' . $i . '&cv=' . $getCvRecruteur[$i]->id; ?>"><?= $getCvRecruteur[$i]->cv_title_work ?></a>
                         <p><i class="fas fa-user"></i> : <?= $getCvRecruteur[$i]->cv_surname . ' ' . $getCvRecruteur[$i]->cv_name ?></p>
                         <p><i class="fas fa-calendar"></i> :<?php $dateCreate = date_create($getCvRecruteur[$i]->cv_created_at);
                                                             echo date_format($dateCreate, 'D d F à G:i'); ?></p>
