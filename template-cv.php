@@ -2,11 +2,15 @@
 /* Template Name: cv1 */
 require __DIR__ . '/vendor/autoload.php';
 isNotLogged();
+if( $_GET['id'] <0 || $_GET['cv'] < 0){
+    wp_redirect(path('/?access=denied'));
+}
 
 use Spipu\Html2Pdf\Html2Pdf;
 
 $html2pdf = new Html2Pdf();
 //debug($getInfoWork);
+$singleCvID = $getCvInfo[$_GET['id']]
 ?>
 <style>
     * {
@@ -54,9 +58,6 @@ $html2pdf = new Html2Pdf();
     }
 </style>
 <div id="cv_2">
-
-    <?php if (is_page_template('template-candidat.php')) {
-        $singleCvID = $getCvInfo[$_GET['id']]; ?>
         <div class="left">
             <div class="about">
                 <img class="img_cv1" src="https://studiobontant.fr/images/galeries/Big/_DSC6716.jpg" alt="Logo Alexis BRIET">
@@ -73,26 +74,6 @@ $html2pdf = new Html2Pdf();
             </div>
             <p class="aboutmecv"><?= $singleCvID->cv_presentation ?></p>
         </div>
-    <?php } else {
-        $allCvId = $getCvRecruteur[$_GET['id']]; ?>
-
-        <div class="left">
-            <div class="about">
-                <img class="img_cv1" src="https://studiobontant.fr/images/galeries/Big/_DSC6716.jpg" alt="Logo Alexis BRIET">
-                <div class="text_left_cv">
-                    <h3><?= $allCvId->cv_title_work ?></h3>
-                    <span><?= $allCvId->cv_surname . ' ' . $allCvId->cv_name ?></span>
-                    <p>Né(e) le : <?= $allCvId->cv_birthday ?></p>
-                    <p>Adresse : <?= $allCvId->cv_adress ?></p>
-                    <p><?= $allCvId->cv_postal . ', ' . $allCvId->cv_city ?></p>
-                    <p>Téléphone : <?= $allCvId->cv_phone ?></p>
-                    <p>Email : <?= $allCvId->cv_email ?></p>
-                    <p>Permis B</p>
-                </div>
-            </div>
-            <p class="aboutmecv"><?= $allCvId->cv_presentation ?></p>
-        </div>
-    <?php } ?>
 
     <div class="right">
         <h1>Mon expérience</h1>
